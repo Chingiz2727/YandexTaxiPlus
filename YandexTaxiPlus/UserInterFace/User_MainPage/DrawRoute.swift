@@ -21,7 +21,7 @@ class Route {
         let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destionation)&key=AIzaSyAuSB9DXj45y7Ln8x45gTDOv-DhaFBm7Ys"
         Alamofire.request(url).responseJSON { (response) in
             let datar = response.data
-            let json = JSON(datar)
+            let json = JSON(datar!)
             let routes = json["routes"].arrayValue
             
             for route in routes
@@ -31,7 +31,7 @@ class Route {
                 let path = GMSPath.init(fromEncodedPath: points!)
                 let polyline = GMSPolyline.init(path: path)
                 polyline.strokeWidth = 4
-                polyline.strokeColor = UIColor.blue
+                polyline.strokeColor = maincolor
                 
                 polyline.map = map
             }

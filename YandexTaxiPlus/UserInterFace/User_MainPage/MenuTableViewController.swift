@@ -15,34 +15,32 @@ class MenuTableViewController: UITableViewController {
     var outbutton : UIButton = UIButton()
     var titlemenu = [
         MenuModule(menu: "Такси", img: "icon_taxi"),
-        MenuModule(menu: "Инва Такси", img: "icon_inva"),
+        MenuModule(menu: "Lady Такси", img: "icon_taxi"),
         MenuModule(menu: "Межгород", img: "icon_cities_taxi"),
-        MenuModule(menu: "Грузоперевозка", img: "icon_cargo"),
-        MenuModule(menu: "Эвакуатор", img: "icon_evo"),
         MenuModule(menu: "Инва Такси", img: "icon_inva"),
+        MenuModule(menu: "Грузоперевозки", img: "icon_cargo"),
+        MenuModule(menu: "Эвакуатор", img: "icon_evo"),
+        MenuModule(menu: "Трезвый Водитель", img: "icon_driver"),
         MenuModule(menu: "История поездок", img: "wall-clock"),
-        MenuModule(menu: "Добавить карту", img: "006-credit-card-10"),
         MenuModule(menu: "Настройки", img: "settings-6"),
-        MenuModule(menu: "Мои монеты", img: "icon_driver"),
+        MenuModule(menu: "Мои Монеты", img: "icon_driver"),
         MenuModule(menu: "Режим Водителя", img: "icon_switch"),
         MenuModule(menu: "Поделиться", img: "icon_share")]
-
-    var header : MainPageHeader!
+    var headerid = "headerid"
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserInformation.getinfo { (info) in
-            self.header.nameLabel.text = info.user.name!
-            self.header.phone.text = info.user.phone!
-        }
+        UIColourScheme.instance.set(for:self)
+
         tableView.bounces = false
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         navigationController?.isNavigationBarHidden = true
         tableView.register(MainPageMenuCell.self, forCellReuseIdentifier: cellid)
+        tableView.register(MainPageHeader.self, forCellReuseIdentifier: headerid)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        SetupMainView()
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -53,25 +51,29 @@ class MenuTableViewController: UITableViewController {
         return 200
     }
    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let head = tableView.dequeueReusableCell(withIdentifier: headerid) as! MainPageHeader
     if section == 1 {
         view.addSubview(outview)
         outview.addSubview(outbutton)
         outbutton.setAnchor(top: outview.topAnchor, left: outview.leftAnchor, bottom: outview.bottomAnchor, right: outview.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
         outbutton.setTitle("Выйти", for: .normal)
         outbutton.layer.cornerRadius = 10
-        outbutton.backgroundColor = UIColor.red
+        outbutton.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.2588235294, blue: 0.368627451, alpha: 1)
         outbutton.addTarget(self, action: #selector(remove), for: .touchUpInside)
         return outview
     }
-        return header
+    UserInformation.shared.getinfo { (info) in
+        var name = info.user?.name
+        head.nameLabel.text = name! ?? "user"
+        head.phone.text = info.user?.phone!
+    }
+    GetAvatar.get { (string) in
+        print(string)
+    }
+        return head
     }
     @objc func remove() {
         PushDriver.Exit()
-    }
-    func SetupMainView() {
-        let mainView = MainPageHeader(frame: CGRect(x: 0, y: 0, width: view.frame.width - view.frame.width*0.2, height: 200))
-        self.header = mainView
-        self.view.addSubview(mainView)
     }
     // MARK: - Table view data source
 
@@ -94,14 +96,23 @@ class MenuTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.img.image = UIImage(named: titlemenu[indexPath.row].img)
+        if APItoken.getColorType() == 0 {
+            cell.img.setImageColor(color: maincolor)
+            cell.label.textColor = maincolor
+
+        }
+        else {
+            cell.img.setImageColor(color: UIColor.white)
+            cell.label.textColor = UIColor.white
+
+        }
         cell.label.text = titlemenu[indexPath.row].menu
-        cell.label.textColor = maincolor
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        return 40
     }
-    let main = UserMainPageViewController()
+    let main = TestViewController()
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true, completion: nil)
         main.index(index: indexPath)
@@ -110,32 +121,66 @@ class MenuTableViewController: UITableViewController {
 class PushFromMain : UINavigationController {
     class func push (index:IndexPath){
         guard let window = UIApplication.shared.keyWindow else {return}
-        window.makeKeyAndVisible()
+        let fuull = FullChatsTableViewController()
+        var Mainpage = TestViewController()
         switch index.row {
         case 0:
-            (window.rootViewController as? UINavigationController)?.pushViewController(UserMainPageViewController(), animated: true)
+            Mainpage.type = "1"
+            (window.rootViewController as? UINavigationController)?.pushViewController(Mainpage, animated: true)
         case 1:
-            (window.rootViewController as? UINavigationController)?.pushViewController(InvaTaxiTableViewController(), animated: true)
+            Mainpage.type = "2"
+            (window.rootViewController as? UINavigationController)?.pushViewController(Mainpage, animated: true)
         case 2:
             (window.rootViewController as? UINavigationController)?.pushViewController(CityTaxi(), animated: true)
         case 3:
-            (window.rootViewController as? UINavigationController)?.pushViewController(GruzTableViewController(), animated: true)
+            fuull.type = 4
+            (window.rootViewController as? UINavigationController)?.pushViewController(fuull, animated: true)
         case 4:
-            (window.rootViewController as? UINavigationController)?.pushViewController(EvoTaxiTableViewController(), animated: true)
+            fuull.type = 2
+            (window.rootViewController as? UINavigationController)?.pushViewController(fuull, animated: true)
+
         case 5:
-            (window.rootViewController as? UINavigationController)?.pushViewController(InvaTaxiTableViewController(), animated: true)
+            fuull.type = 3
+            (window.rootViewController as? UINavigationController)?.pushViewController(fuull, animated: true)
         case 6:
+            
+            (window.rootViewController as? UINavigationController)?.pushViewController(DrunkTaxiTable(), animated: true)
+        case 7:
             (window.rootViewController as? UINavigationController)?.pushViewController(HistoryTableViewController(), animated: true)
         case 8:
               (window.rootViewController as? UINavigationController)?.pushViewController(UserSettingsTableViewController(), animated: true)
+        case 9:
+              (window.rootViewController as? UINavigationController)?.pushViewController(DriverCoinsViewController(), animated: true)
         case 10:
-              (window.rootViewController as? UINavigationController)?.pushViewController(DriverRegisterTableViewController(), animated: true)
-            
+            ChangeRole.Change { (touser,todriver,torregister) in
+                if todriver == true {
+                    window.makeToastActivity(.center)
+                    let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: DriverMenuTableViewController())
+                    SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+                    menuLeftNavigationController.sideMenuManager.menuWidth = window.frame.width - window.frame.width*0.2
+                    SideMenuManager.default.menuFadeStatusBar = false
+                    SideMenuManager.default.menuPushStyle = .replace
+                    menuLeftNavigationController.sideMenuManager.menuPresentMode = .menuSlideIn
+                    window.rootViewController = UINavigationController.init(rootViewController: SessionOpenViewController())
+                    window.hideToast()
+                }
+                if torregister == true {
+                    (window.rootViewController as? UINavigationController)?.pushViewController(DriverRegisterTableViewController(), animated: true)
+                }
+            }
         default:
             break
         }
-        
+        window.makeKeyAndVisible()
+
       
     }
    
+}
+extension UIImageView {
+    func setImageColor(color: UIColor) {
+        let templateImage = self.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        self.image = templateImage
+        self.tintColor = color
+    }
 }

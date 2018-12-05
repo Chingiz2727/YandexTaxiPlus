@@ -8,7 +8,6 @@ pod 'Alamofire', '~> 4.7'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'IQKeyboardManagerSwift'
 pod "SwiftPhoneNumberFormatter"
-pod "Koyomi"
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
 pod 'Firebase/AdMob'
@@ -16,11 +15,12 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'Firebase/Crash'
-pod 'RealmSwift'
 pod 'SwiftyStarRatingView'
 pod 'Toast-Swift'
 pod 'JSQMessagesViewController'
-pod 'SideMenu'
+pod 'Presentr'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+pod 'SideMenu', '~> 4.0.0'
 
 
 

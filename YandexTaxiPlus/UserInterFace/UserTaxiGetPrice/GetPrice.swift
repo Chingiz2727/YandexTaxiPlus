@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 class getPrice {
-    class func getprice(type:String,completion:@escaping(_ price:[carPrice])->Void){
+    class func getprice(first_long:String,first_lat:String,second_lat:String,second_long:String,type:String,completion:@escaping(_ price:[carPrice])->Void){
         let params = [
             "token":APItoken.getToken()!,
             "longitude_a":first_long,

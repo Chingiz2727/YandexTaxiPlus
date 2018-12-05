@@ -20,11 +20,8 @@ import FirebaseInstanceID
 import FirebaseMessaging
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var locationManager:CLLocationManager!
-    private var currentCoordinate: CLLocationCoordinate2D?
-    var currentLocation:CLLocation?
     var window: UIWindow?
     
     let gcmMessageIDKey = "gcm.message_id"
@@ -36,14 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         FirebaseApp.configure()
+        
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Ок"
         GMSPlacesClient.provideAPIKey("AIzaSyAuSB9DXj45y7Ln8x45gTDOv-DhaFBm7Ys")
         GMSServices.provideAPIKey("AIzaSyAuSB9DXj45y7Ln8x45gTDOv-DhaFBm7Ys")
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 0), for:UIBarMetrics.default)
         UINavigationBar.appearance().tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         UINavigationBar.appearance().backgroundColor = UIColor(displayP3Red: 104/255, green: 205/255, blue: 179/255, alpha: 1.0)
         Messaging.messaging().delegate = self
-
+        
       
         if #available(iOS 10.0, *) {
             // from github
@@ -65,56 +64,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
             application.registerUserNotificationSettings(settings)
         }
         application.registerForRemoteNotifications()
-        setupLocationManager()
         if APItoken.getToken() != nil {
+            
             window?.rootViewController = GetUser()
+
         }
         else {
             window?.rootViewController = EnterPhone()
         }
         return true
     }
-    func setupLocationManager(){
-        self.locationManager?.requestAlwaysAuthorization()
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        self.locationManager?.requestAlwaysAuthorization()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager?.startUpdatingLocation()
-    }
-    
-    // Below method will provide you current location.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let defaults = UserDefaults.standard
-        if currentLocation == nil {
-            currentLocation = locations.last
-            locationManager?.stopMonitoringSignificantLocationChanges()
-            let locationValue:CLLocationCoordinate2D = manager.location!.coordinate
 
-            if APItoken.getToken() != nil {
-                let token = defaults.string(forKey: "pushId")
-                if token != nil {
-                    sendPushId.send(token: token!, long_a: locationValue.longitude, lat_a: locationValue.latitude) { (session, balance, status,order_status,order_id) in
-                    }
-                }
-              
-            }
-            print("locations = \(locationValue)")
-            
-            locationManager?.stopUpdatingLocation()
-        }
-    }
+    
+ 
     
     // Below Mehtod will print error if not able to update location.
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error")
-    }
-    
+ 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         print(userInfo)
         let dict = userInfo["aps"] as! NSDictionary
         let message = dict["alert"]
-        print(message!)
+        let type = userInfo[AnyHashable("type")] as! String
+ 
+    }
+
+    func showAlert() {
+        let objAlert = UIAlertController(title: "Alert", message: "Request authorization succeeded", preferredStyle: UIAlertController.Style.alert)
+        
+        objAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        //self.presentViewController(objAlert, animated: true, completion: nil)
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(objAlert, animated: true, completion: nil)
     }
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -171,9 +151,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         }
         print("Push notification received: \(userInfo)")
         let type = userInfo[AnyHashable("type")] as! String
+        print(type)
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: type), object: nil, userInfo: userInfo)
-        
         
         print(userInfo)
         // Print full message.
@@ -210,7 +190,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
-        
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
@@ -263,7 +242,6 @@ extension AppDelegate : MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
         print("Received data message: \(remoteMessage.appData)")
     }
-    // [END ios_10_data_message]
 }
 
 

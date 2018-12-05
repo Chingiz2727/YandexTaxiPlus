@@ -36,13 +36,14 @@ class EnterPhoneViewController: UIViewController {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
     }
-    func accessing(){
-        var url = baseurl + "/verify-code/"
-        var params = [
+    func accessing() {
+        let url = "http://185.236.130.126:443/verify-code"
+        let params = [
             "phone":phone!,
             "code":accessview.PhoneField.text!
         ]
-        var name = EnterNameViewController()
+        
+        let name = EnterNameViewController()
         print(params)
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
@@ -50,12 +51,14 @@ class EnterPhoneViewController: UIViewController {
                 case.failure(let err):
                     print(err)
                 case.success(let val):
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-                    self.window?.makeKeyAndVisible()
                     var json = JSON(val)
-                    
-                    if json["state"] == "success" {
-                   
+                    print(json)
+                    if json["state"] == "error" {
+                      self.view.makeToast("Неправильный Код")
+                    }
+                    else {
+                        self.window = UIWindow(frame: UIScreen.main.bounds)
+                        self.window?.makeKeyAndVisible()
                         let token = json["user"]["token"].stringValue
                         if json["type"].intValue == 2 {
                             APItoken.saveapitoken(token: token)
@@ -68,22 +71,19 @@ class EnterPhoneViewController: UIViewController {
                             self.window?.rootViewController = UINavigationController.init(rootViewController: SessionOpenViewController())
                         }
                         if json["type"].intValue == 1 {
-//                            let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: MenuTableViewController())
-//                            SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-//                            menuLeftNavigationController.sideMenuManager.menuWidth = self.window!.frame.width - self.window!.frame.width*0.2
-//                            SideMenuManager.default.menuFadeStatusBar = false
-//                            SideMenuManager.default.menuPushStyle = .replace
-//                            menuLeftNavigationController.sideMenuManager.menuPresentMode = .menuSlideIn
+                            //                            let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: MenuTableViewController())
+                            //                            SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+                            //                            menuLeftNavigationController.sideMenuManager.menuWidth = self.window!.frame.width - self.window!.frame.width*0.2
+                            //                            SideMenuManager.default.menuFadeStatusBar = false
+                            //                            SideMenuManager.default.menuPushStyle = .replace
+                            //                            menuLeftNavigationController.sideMenuManager.menuPresentMode = .menuSlideIn
                             APItoken.saveapitoken(token: token)
-                            self.window?.rootViewController = UINavigationController.init(rootViewController: UserMainPageViewController())
+                            self.window?.rootViewController = UINavigationController.init(rootViewController: TestViewController())
                         }
                         if json["type"].intValue == 0 {
                             name.phone = self.phone
                             self.window?.rootViewController = UINavigationController.init(rootViewController: name)
-                       }
-                    }
-                    else {
-                      self.view.makeToast("Неправильный Код")
+                        }
                     }
                 }
             }

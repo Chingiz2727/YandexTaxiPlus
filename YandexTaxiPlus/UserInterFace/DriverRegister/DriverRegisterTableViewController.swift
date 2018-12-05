@@ -10,58 +10,83 @@ import UIKit
 class Taxi {
     var id : String?
     var name: String?
-    init (id:String,name:String)
+    var icon : String?
+    init (id:String,name:String,icon:String)
     {
+        self.icon = icon
         self.id = id
         self.name = name
     }
 }
-class DriverRegisterTableViewController: UITableViewController,UITextFieldDelegate,CarModelDelegate,CarMarkDelegate {
-    func CarMark(Id: Int, Name: String) {
-    self.carMark = Name
-        
+
+
+
+class DriverRegisterTableViewController: UITableViewController,UITextFieldDelegate,CarModelDelegate,CarMarkDelegate,JKDropDownDelegate {
+    func remove() {
+        car_mark_name = ""
     }
     
-    func CarModel(Id: Int, Name: String) {
-        self.id = Id
-        self.carModel = Name
-    }
+    var car_mark_name: String = "Марка Машины"
     
+    var car_model_id: Int = 0
+    
+    var car_model_name: String  = "Модель машины"
     var cellid = "cellid"
     var cellid5 = "cellid5"
     var cellid2 = "cellid2"
     var cellid3 = "cellid3"
     var cellid4 = "cellid4"
-    var email: String?
-    var carMark: String? = "Марка Машины"
-    var carModel  : String? = "Модель машины"
-    var sits : String?
-    var number_car : String?
-    var create_year : String?
-    var id : Int?
-    var typeID : String?
+  
+ 
     
+
+    var email: String!
+    var sits : String!
+    var number_car : String!
+    var create_year : String!
+    var typeID : String?
+    var gender_id : Int?
     var facilities = [Facilities]()
-    var fac = Array<Int>()
+    var fac = Array<String>()
     var expanded = false
     var avatar : UIImageView = UIImageView()
+    
+    
+    
     var button : UIButton = UIButton()
+    var buttonFrame : CGRect?
+    var dropDownObject:JKDropDown!
+    
+    
+    
     let registerButton = UIButton()
+    var maleButton = MainButton()
+    var femaleButton = MainButton()
+    let fram = UIView()
 
+    
+    
+    var ids = ["1","2","1","3","4"]
+    var item = ["Такси","Грузоперевозка","Межгород","Эвакуатор","Инва Такси"]
+    var img = ["icon_taxi","icon_cargo","icon_cities_taxi","icon_evo","icon_inva"]
+    
+    
     var option = ["Имя","Номер","E-mail"]
     var option3 = ["Марка автомашины","Модель автомашины"]
 
-    var img = ["icon_taxi","icon_cargo","icon_cities_taxi","icon_evo","icon_inva"]
-    var taxies = [Taxi(id: "1", name: "Такси"),
-                  Taxi(id: "5", name: "Грузоперевозка"),
-                  Taxi(id: "4", name: "Межгород"),
-                  Taxi(id: "6", name: "Эвакуатор"),
-                  Taxi(id: "5", name: "Инва Такси")]
+    var taxies = [Taxi(id: "1", name: "Такси", icon: "icon_taxi"),
+                  Taxi(id: "2", name: "Грузоперевозка", icon: "icon_cargo"),
+                  Taxi(id: "1", name: "Межгород", icon: "icon_cities_taxi"),
+                  Taxi(id: "3", name: "Эвакуатор", icon: "icon_evo"),
+                  Taxi(id: "4", name: "Инва Такси", icon: "icon_inva")]
+    
     var option2 = ["Количество мест","Гос номер","Год выпуска"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         get()
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = maincolor
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100
@@ -71,6 +96,8 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         tableView.register(ButtonsTableViewCell.self, forCellReuseIdentifier: cellid2)
         tableView.register(CarInfoCell.self, forCellReuseIdentifier: cellid5)
         tableView.separatorStyle = .none
+        UIColourScheme.instance.set(for:self)
+
     }
    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if indexPath.section == 2 {
@@ -94,11 +121,6 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
         print(fac)
-        if indexPath.section == 2 {
-            button.setTitle(taxies[indexPath.row].name!, for: .normal)
-            self.typeID = taxies[indexPath.row].id!
-            toggleSection()
-        }
     }
     func get() {
         DriverRegisterApi.getOption { (facilities:[Facilities]!) in
@@ -110,185 +132,119 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if section == 4 {
-            return facilities.count
-        }
-        if section == 2 {
-            return img.count
-        }
-        if section == 3 {
-            return option2.count
-        }
-        if section == 1 {
-            return option3.count
-        }
-        if section == 0 {
+        switch section {
+        case 0:
             return option.count
-
+        case 1:
+            return option3.count
+        case 2:
+            return img.count
+        case 3:
+            return option2.count
+        case 4:
+            return facilities.count
+        default:
+            break
         }
         return 0
     }
+    
    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    if section == 2 {
-        return 30
-    }
-    if section == 3 {
-        return 0
-    }
-    if section == 4 {
-        return 0
-    }
-    if section == 1 {
-        return 0
-    }
+    switch section {
+    case 0:
         return 100
+    case 2:
+        return 60
+    default:
+        break
+    }
+        return 0
     }
     
-    @objc func push(sender:UIButton)
-    {
-        sender.tintColor = UIColor.brown
-        
-    }
-   @objc func toggleSection() {
-        expanded = !expanded
-        tableView.beginUpdates()
-        for i in 0..<img.count {
-            tableView.reloadRows(at: [IndexPath(row: i, section: 2)], with: .automatic)
-        }
-        tableView.endUpdates()
-    }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 2 {
-            view.addSubview(button)
-            button.setTitle("Выберите машину", for: .normal)
-            button.addTarget(self, action: #selector(toggleSection), for: .touchUpInside)
-            button.backgroundColor = maincolor
-            return button
-        }
-        if section == 3 {
-            return nil
-        }
-        if section == 4 {
-            return nil
-        }
-        if section == 1 {
-            return nil
-        }
-        view.addSubview(avatar)
-        avatar.setAnchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
-        avatar.layer.cornerRadius = 50
-        avatar.image = UIImage(named: "zhan")
-        avatar.clipsToBounds = true
-        avatar.contentMode = .scaleAspectFill
-        let centerXavatar = avatar.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        NSLayoutConstraint.activate([centerXavatar])
-        return avatar
-    }
+ 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section == 2 && expanded {
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: cellid2) as! ButtonsTableViewCell
-            cell2.TaxiLabel.textAlignment = .left
-            cell2.TaxiLabel.text = taxies[indexPath.row].name
-            cell2.TaxiButton.image = UIImage(named: img[indexPath.row])
-            return cell2
-        }
-        if indexPath.section == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellid3) as! DriverRegisterTableViewCell2
-            let text = cell.TextField.text
-            cell.TextField.tag  = indexPath.row + 3
-            let tag = cell.TextField.tag
-            switch tag {
-            case 3 :
-                self.sits = text
-            case 4:
-                self.number_car = text
-            case 5:
-                self.create_year = text
-            default:
-                print("")
-            }
-            cell.TextField.delegate = self
-            cell.TextField.placeholder = option2[indexPath.row]
-            cell.selectionStyle = .none
-            return cell
-        }
-        
-        if indexPath.section == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellid4) as! CheckBoxTableViewCell
-            cell.label.text = facilities[indexPath.row].name
-            cell.check.tag = facilities[indexPath.row].id
-            cell.check.addTarget(self, action: #selector(chec(check:)), for: .valueChanged)
-            cell.selectionStyle = .none
-            return cell
-        }
-        if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellid5) as! CarInfoCell
-            cell.ButtonClick.setTitle(option3[indexPath.row], for: .normal)
-            cell.ButtonClick.setTitleColor(maincolor, for: .normal)
-            cell.ButtonClick.isEnabled = true
-            switch cell.ButtonClick.tag {
-            case 0:
-                cell.ButtonClick.setTitle(carModel, for: .normal)
-            case 1:
-                cell.ButtonClick.setTitle(carMark, for: .normal)
 
-            default:
-                break
-            }
-            cell.ButtonClick.tag = indexPath.row
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 2:
+            view.addSubview(fram)
+            fram.addSubview(button)
             
-            cell.ButtonClick.addTarget(self, action: #selector(sender(sender:)), for: .touchUpInside)
-            cell.selectionStyle = .none
-            return cell
+            button.setTitle("Выберите машину", for: .normal)
+            button.setAnchor(top: fram.topAnchor, left: fram.leftAnchor, bottom: fram.bottomAnchor, right: fram.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 5, paddingRight: 10)
+            button.addTarget(self, action: #selector(tapsOnButton), for: .touchUpInside)
+            button.setTitleColor(maincolor, for: .normal)
+            button.layer.cornerRadius = 10.0
+            button.layer.borderColor = maincolor.cgColor
+            button.layer.borderWidth = 1
+            buttonFrame = view.convert(fram.frame, to: view)
+            return fram
+        case 0:
+            view.addSubview(avatar)
+            avatar.setAnchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
+            avatar.layer.cornerRadius = 50
+            avatar.image = UIImage(named: "zhan")
+            avatar.clipsToBounds = true
+            avatar.contentMode = .scaleAspectFill
+            let centerXavatar = avatar.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            NSLayoutConstraint.activate([centerXavatar])
+            return avatar
+        default:
+        break
         }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellid) as! DriverRegisterTableViewCell
-        cell.TextField.tag = indexPath.row
-        UserInformation.getinfo { (info) in
-            print(info.user.name)
-            switch cell.TextField.tag {
-            case 0:
-                cell.TextField.isEnabled = false
-                cell.TextField.text = info.user.name!
-            case 1:
-                cell.TextField.isEnabled = false
-                cell.TextField.text = info.user.phone!
-            case 2 :
-                cell.TextField.placeholder = "Email"
-                cell.TextField.isEnabled = true
-               self.email = cell.TextField.text
-            default:
-                print("")
-            }
-        }
-      
-        cell.selectionStyle = .none
-        return cell
+        return nil
     }
-   
+    @objc func tapsOnButton() {
+        if dropDownObject == nil {
+            
+            dropDownObject = JKDropDown()
+            dropDownObject.dropDelegate = self
+            dropDownObject.showJKDropDown(senderObject: button, height: CGFloat(img.count*50), arrayList: item , arrayImages: img,buttonFrame:buttonFrame!,direction : "down")
+            view.addSubview(dropDownObject)
+            
+        }
+        else {
+            dropDownObject.hideDropDown(senderObject: button,buttonFrame:buttonFrame!)
+            dropDownObject = nil
+        }
+    }
+    func recievedSelectedValue(name: String, imageName: String) {
+        print(name)
+        var index = item.firstIndex(of: name)
+        self.typeID = ids[index!]
+        print(self.typeID)
+        dropDownObject.hideDropDown(senderObject: button, buttonFrame: buttonFrame!)
+        dropDownObject = nil
+        button.setTitle(name, for: .normal)
+        var imageView : UIImageView?
+        imageView = UIImageView(image: UIImage(named:imageName))
+        
+        imageView?.frame = CGRect(x: 25, y: 5, width: 40, height: 40)
+        imageView?.contentMode = .scaleAspectFit
+        button.addSubview(imageView!)
+    }
+    
     @objc func sender(sender:UIButton) {
         let setting = GetCarSettingsTableViewController()
         print(sender.tag)
         switch sender.tag {
         case 0:
-            
             setting.carmodel = self
         case 1:
             setting.carmark = self
-            setting.id = id
+            setting.id = car_model_id
         default:
             break
         }
         setting.type = sender.tag
-
-        self.present(setting, animated: true, completion: nil)
+        self.navigationController?.pushViewController(setting, animated: true)
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == 4 {
+            return 60
+        }
+        if section == 0 {
             return 60
         }
         return 0
@@ -302,19 +258,85 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
             registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
             return registerButton
         }
+        if section == 0 {
+            let GenderView = UIView()
+            view.addSubview(GenderView)
+            maleButton.initialize()
+            femaleButton.initialize()
+            GenderView.addSubview(femaleButton)
+            GenderView.addSubview(maleButton)
+            femaleButton.backgroundColor = UIColor.white
+            maleButton.backgroundColor = UIColor.white
+            femaleButton.Title(title: "Женский")
+            maleButton.Title(title: "Мужской")
+            maleButton.setTitleColor(maincolor, for: .normal)
+            femaleButton.setTitleColor(maincolor, for: .normal)
+            femaleButton.tag = 1
+            maleButton.tag = 2
+            maleButton.setAnchor(top: GenderView.topAnchor, left: GenderView.leftAnchor, bottom: GenderView.bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 15, paddingBottom: 5, paddingRight: 15, width: view.frame.width/2-20, height: 0)
+            femaleButton.setAnchor(top: GenderView.topAnchor, left: nil, bottom: GenderView.bottomAnchor, right: GenderView.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 5, paddingRight: 15, width: view.frame.width/2-20, height: 0)
+            femaleButton.addTarget(self, action: #selector(gender(sender:)), for: .touchUpInside)
+            maleButton.addTarget(self, action: #selector(gender(sender:)), for: .touchUpInside)
+            
+            return GenderView
+        }
         return UIView()
     }
+    @objc func gender(sender:UIButton) {
+        switch sender.tag {
+        case 1:
+            femaleButton.backgroundColor = maincolor
+            femaleButton.setTitleColor(UIColor.white, for: .normal)
+            maleButton.backgroundColor = UIColor.white
+            maleButton.setTitleColor(maincolor, for: .normal)
+        case 2:
+            maleButton.backgroundColor = maincolor
+            maleButton.setTitleColor(UIColor.white, for: .normal)
+            femaleButton.backgroundColor = UIColor.white
+            femaleButton.setTitleColor(maincolor, for: .normal)
+        default:
+            break
+        }
+        
+        self.gender_id = sender.tag
+        
+        
+        
+        
+    }
   @objc  func register() {
-    let car_model = "\(carMark ?? "" ) \(carModel ?? "")"
-    
-        Register.register(gender: 2, car_number: number_car!, car_model: car_model, year_of_birth: 1998, car_year: create_year!, seats_num: sits!, fac: fac, type: typeID!)
-//    guard let window = UIApplication.shared.keyWindow else {return}
-//    window.makeKeyAndVisible()
-//    (window.rootViewController as? UINavigationController)?.pushViewController(SessionOpenViewController(), animated: true)
+        let car_model = "\(car_mark_name ) \(car_model_name)"
+//        Register.register(gender: gender_id!, car_number: number_car!, car_model: car_model, year_of_birth: 1998, car_year: create_year!, seats_num: sits!, fac: fac, type: typeID!)
+ 
+    let params = [
+        "token":APItoken.getToken(),
+        "gender":gender_id,
+        "car_number":number_car,
+        "car_model":car_model,
+        "year_of_birth":1998,
+        "car_year":create_year,
+        "seats_number":sits,
+        "facilities":fac,
+        "type":typeID
+        ] as [String : Any?]
+    let check = checkEmptyDict(params)
+    switch check {
+    case true:
+        view.makeToast("Заполните все поля")
+    case false:
+      
+        Register.register(gender: gender_id!, car_number: number_car!, car_model: car_model, year_of_birth: 1900, car_year: create_year!, seats_num: sits!, fac: fac, type: typeID!)
+        guard let window = UIApplication.shared.keyWindow else {return}
+        window.makeKeyAndVisible()
+        window.rootViewController = UINavigationController.init(rootViewController: SessionOpenViewController())
+   
+    }
     
     }
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let text = textField.text
+ 
+   
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        let text = textField.text!
         switch textField.tag {
         case 2:
             self.email = text
@@ -325,21 +347,30 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         case 5:
             self.create_year = text
         default:
-            print("")
+            break
         }
-        return true
     }
    @objc func chec(check:CheckboxButton) {
         if check.on {
-            self.fac.append(check.tag)
+            self.fac.append(String(check.tag))
             print(self.fac)
         }
         else {
-            if let index = self.fac.index(of: check.tag) {
+            if let index = self.fac.index(of: String(check.tag)) {
                 self.fac.remove(at: index)
             }
     }
     
+    }
+   
+    func checkEmptyDict(_ dict:[String:Any?]) -> Bool {
+        
+        for (_,value) in dict {
+            if value == nil || value as? String == "" { return true }
+        }
+        
+        return false
+        
     }
 
 }

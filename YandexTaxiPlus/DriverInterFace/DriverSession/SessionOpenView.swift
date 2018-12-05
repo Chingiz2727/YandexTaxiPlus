@@ -12,38 +12,42 @@ class SessionOpenView: UIView {
     var view : UIView = UIView()
     var view2 : UIView = UIView()
     
-    let Coins : UILabel = UILabel()
-    let Coins_count : UILabel = UILabel()
-    let Label_six: UILabel = UILabel()
-    let Label_tw : UILabel = UILabel()
-    let six_price : UILabel = UILabel()
-    let tw_price : UILabel = UILabel()
+    let Coins : MainLabel = MainLabel()
+    let Coins_count : MainLabel = MainLabel()
+    let Label_six: MainLabel = MainLabel()
+    let Label_tw : MainLabel = MainLabel()
+    let six_price : MainLabel = MainLabel()
+    let tw_price : MainLabel = MainLabel()
     let six_check : CheckboxButton = CheckboxButton()
     let tw_check : CheckboxButton = CheckboxButton()
     
-    let ostatok : UILabel = UILabel()
-    let ostatok_m : UILabel = UILabel()
+    let ostatok : MainLabel = MainLabel()
+    let ostatok_m : MainLabel = MainLabel()
     
-    let OpenButton : UIButton = UIButton()
+    let OpenButton : MainButton = MainButton()
     let view3 : UIView = UIView()
     
     func add() {
         self.addSubview(view)
         self.addSubview(view2)
         self.addSubview(view3)
-
+        Coins.initialize()
+        Coins_count.initialize()
         view3.addSubview(Coins)
         view3.addSubview(Coins_count)
-        
+        Label_tw.initialize()
+        Label_six.initialize()
         view.addSubview(Label_six)
         view.addSubview(Label_tw)
-        
+        six_price.initialize()
+        tw_price.initialize()
         view.addSubview(six_price)
         view.addSubview(tw_price)
         
         view.addSubview(six_check)
         view.addSubview(tw_check)
-        
+        ostatok.initialize()
+        ostatok_m.initialize()
         view2.addSubview(ostatok)
         view2.addSubview(ostatok_m)
         
@@ -79,7 +83,7 @@ class SessionOpenView: UIView {
     
         Coins.setAnchor(top: nil, left: view3.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         Coins_count.setAnchor(top: nil, left: Coins.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 40, paddingBottom: 0, paddingRight: 0)
-        OpenButton.backgroundColor = maincolor
+        OpenButton.initialize()
         OpenButton.layer.cornerRadius = 5
         OpenButton.setTitleColor(UIColor.white, for: .normal)
         let center = view.centerXAnchor.constraint(equalTo: self.centerXAnchor)
@@ -98,19 +102,13 @@ class SessionOpenView: UIView {
         Label_tw.text = "12 часов"
         ostatok.text = "Остаток:"
         Coins.text = "Монеты:"
-        Coins_count.textColor = maincolor
-        six_check.checkColor = maincolor
-        six_check.tintColor = maincolor
-        tw_check.checkColor = maincolor
+   
         six_check.containerColor = maincolor
         tw_check.containerColor = maincolor
-        six_price.textColor = maincolor
-        Label_six.textColor = maincolor
+   
         six_check.tag = 0
         tw_check.tag = 1
-        Label_tw.textColor = maincolor
-        tw_price.textColor = maincolor
-        ostatok_m.textColor = maincolor
+       
         NSLayoutConstraint.activate([CenterX2,CenterX4,center,centerX5,centerX6,centerv2,centerv3])
         
         

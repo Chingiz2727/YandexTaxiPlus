@@ -9,46 +9,45 @@
 import UIKit
 import Toast_Swift
 import SideMenu
-class SessionOpenViewController: UIViewController,CLLocationManagerDelegate {
+class SessionOpenViewController:DayMode,CLLocationManagerDelegate{
     var MainView : SessionOpenView!
     var locationManager:CLLocationManager!
     private var currentCoordinate: CLLocationCoordinate2D?
     var currentLocation:CLLocation?
     
     
-    var six : Int? = 0 {
+    var six : Int = 0 {
     didSet {
-        MainView.six_price.text = "\(six!) тг"
+        MainView.six_price.text = (String(describing: six)) + " тг"
     }
     }
-    var tw : Int? = 0 {
+    var tw : Int = 0 {
         didSet
         {
-            MainView.tw_price.text = "\(tw!) тг"
+            MainView.tw_price.text = (String(describing: tw)) + " тг"
 
         }
     }
-    var ostatok : Int? = 0 {
+    var ostatok : Int = 0 {
         didSet {
-            MainView.ostatok_m.text = "\(ostatok!) тг"
+            MainView.ostatok_m.text = String(ostatok) + " тг"
         }
     }
     
-    var balance : Int? = 0 {
+    var balance : Int = 0 {
         didSet {
-            MainView.Coins_count.text = "\(balance!)"
+            MainView.Coins_count.text = String(balance) + " тг"
         }
     }
-    var tag : Int? = 0 {
+    var tag : Int = 0 {
         didSet {
-            MainView.OpenButton.tag = tag!
+            MainView.OpenButton.tag = tag
         }
     }
-    var session : String? = ""
+    var session : String? = "Открыть Сессию"
     {
         didSet {
             MainView.OpenButton.setTitle(session, for: .normal)
-
         }
     }
     let customSideMenuManager = SideMenuManager()
@@ -60,26 +59,22 @@ class SessionOpenViewController: UIViewController,CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         let menubutton = UIBarButtonItem.init(image: UIImage(named: "hamburger-menu-icon"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(OpenMenu))
         self.navigationItem.leftBarButtonItem = menubutton
-        
         navigationController?.navigationBar.barTintColor = maincolor
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.isHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIColourScheme.instance.set(for:self)
+
         SetupMainView()
+
         SessionPrice.GetPrice { (six, tw) in
-            self.six = six
-            self.tw = tw
+            self.six = six ?? 0
+            self.tw = tw ?? 0
         }
-        
-        
-        
-       
-        
         MainView.six_check.addTarget(self, action: #selector(check(check:)), for: .touchUpInside)
         MainView.tw_check.addTarget(self, action: #selector(check1(check:)), for: .touchUpInside)
-        view.backgroundColor = UIColor.white
         setupLocationManager()
         // Do any additional setup after loading the view.
         MainView.OpenButton.addTarget(self, action: #selector(SetSession(button:)), for: .touchUpInside)
@@ -89,14 +84,14 @@ class SessionOpenViewController: UIViewController,CLLocationManagerDelegate {
         let mainView = SessionOpenView(frame: self.view.frame)
         self.MainView = mainView
         self.view.addSubview(mainView)
-        
+       
     }
     
     
     @objc func check(check:CheckboxButton) {
         if  MainView.six_check.on {
             MainView.tw_check.on = false
-            ostatok = balance! - six!
+            ostatok = balance - six
 
         }
       
@@ -106,7 +101,7 @@ class SessionOpenViewController: UIViewController,CLLocationManagerDelegate {
         
         if MainView.tw_check.on {
             MainView.six_check.on = false
-            ostatok = balance! - tw!
+            ostatok = balance - tw
         }
     }
 
@@ -136,15 +131,17 @@ class SessionOpenViewController: UIViewController,CLLocationManagerDelegate {
             if APItoken.getToken() != nil {
                 let token = defaults.string(forKey: "pushId")
                 if token != nil {
-                    sendPushId.send(token: token!, long_a: locationValue.longitude, lat_a: locationValue.latitude) { (session, balance, status,order_status,order_id) in
-                        self.balance = balance
-                        self.ostatok = balance
-                        self.tag = session
-                        if session == 0 {
+                    sendPushId.send { (info,order)  in
+                        
+                        self.balance = info.balance ?? 0
+                        self.ostatok = info.balance ?? 0
+                        switch info.is_session_opened {
+                        case 0:
                             self.session = "Открыть смену"
-                        }
-                        if session == 1 {
+                        case 1:
                             self.session = "Закрыть смену"
+                        default:
+                            break
                         }
                     }
                 }
@@ -155,13 +152,17 @@ class SessionOpenViewController: UIViewController,CLLocationManagerDelegate {
             locationManager?.stopUpdatingLocation()
         }
     }
-     @objc func SetSession(button:UIButton) {
+    @objc func SetSession(button:UIButton)
+    {
         switch button.tag {
         case 0:
             if MainView.six_check.on {
                 SessionPrice.OpenSession(params: ["token":APItoken.getToken()!]) { (success, error) in
                     if success {
-                        print(123)
+                        self.view.makeToast("Сессия успешна открыта")
+                        self.session = "Закрыть смену"
+                        self.tag = 1
+
                     }
                     if error {
                         print(321)
@@ -171,23 +172,22 @@ class SessionOpenViewController: UIViewController,CLLocationManagerDelegate {
             if MainView.tw_check.on {
                 SessionPrice.OpenSession(params: ["token":APItoken.getToken()!,"duration":"akbdciamidoandnasu27ˆ81n"]) { (success, error) in
                     if success {
-                    
+                        self.view.makeToast("Сессия успешна открыта")
+                        self.session = "Закрыть смену"
+                        self.tag = 1
+
                     }
                     if error {
                         print(456)
                     }
                 }
             }
-            view.makeToast("Сессия успешна открыта")
-            self.session = "Закрыть смену"
-            self.tag = 1
         case 1 :
             SessionPrice.closeSession()
             setupLocationManager()
             self.session = "Открыть смену"
             self.tag = 0
             view.makeToast("Сессия успешна закрыта")
-
         default:
             break
         }

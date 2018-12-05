@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class RoadedTaxi {
-    class func get(start_id:String,end_id:String,completion:@escaping(_ list:[RoadedList])->()) {
+    class func get(start_id:String,end_id:String,completion:@escaping(_ list:[RoadedList],_ success:Bool,_ pay:Bool)->()) {
         let url = baseurl + "/get-mejdugorodniy-chat/"
         let params = ["token": APItoken.getToken()!,
                       "start_id":start_id,
@@ -24,26 +24,33 @@ class RoadedTaxi {
                 case.success(let value):
                     let json = JSON(value)
                     print(json)
-                    guard let dataarr = json["orders"].array else {
-                        return
-                    }
                     var list = [RoadedList]()
-                    for cities in dataarr {
-                        guard let city = cities.dictionary else {return}
-                        let citizen = RoadedList()
-                        citizen.name = city["name"]?.stringValue
-                        citizen.start = city["start"]?.stringValue
-                        citizen.end = city["end"]?.stringValue
-                        citizen.price = city["price"]?.stringValue
-                        citizen.phone = city["phone"]?.stringValue
-                        citizen.date = city["date"]?.stringValue
-                        citizen.submodel = city["submodel"]?.stringValue
-                        citizen.model = city["model"]?.stringValue
-                        citizen.seatsnum = city["seats_number"]?.stringValue
-                        citizen.comment = city["comment"]?.stringValue
-                        list.append(citizen)
+                    print(json["state"].stringValue)
+                    if json["state"].stringValue == "success" {
+                        guard let dataarr = json["orders"].array else {
+                            return
+                        }
+                        for cities in dataarr {
+                            guard let city = cities.dictionary else {return}
+                            let citizen = RoadedList()
+                            citizen.name = city["name"]?.stringValue
+                            citizen.start = city["start"]?.stringValue
+                            citizen.end = city["end"]?.stringValue
+                            citizen.price = city["price"]?.stringValue
+                            citizen.phone = city["phone"]?.stringValue
+                            citizen.date = city["date"]?.stringValue
+                            citizen.submodel = city["submodel"]?.stringValue
+                            citizen.model = city["model"]?.stringValue
+                            citizen.seatsnum = city["seats_number"]?.stringValue
+                            citizen.comment = city["comment"]?.stringValue
+                            list.append(citizen)
+                        }
+                         completion(list,true,false)
                     }
-                    completion(list)
+                    if  json["state"].stringValue == "do not have access"  {
+                        completion(list,false,true)
+
+                    }
                 }
             }
         }

@@ -52,7 +52,7 @@ class AddTableViewController: UITableViewController,ToCitiesTableViewControllerD
     
     var menu = [MenuCity(text: "Количество мест", img: "icon_seat"),
                 MenuCity(text: "Цена за одного пассажира", img: "icon_by_bonuses"),
-                MenuCity(text: "Дата", img: "icon_calendar"),
+                MenuCity(text: "Дата", img: "icon_calendar_gray"),
                 MenuCity(text: "Комментарий,пожелания", img: "icon_dialog")]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +71,8 @@ class AddTableViewController: UITableViewController,ToCitiesTableViewControllerD
         toButton.addTarget(self, action: #selector(sender(sender:)), for: .touchUpInside)
     }
     override func viewWillAppear(_ animated: Bool) {
-        print(id)
-        print(FromId)
+        UIColourScheme.instance.set(for:self)
+
     }
     
     @objc func sender(sender:UIButton) {
@@ -137,90 +137,87 @@ class AddTableViewController: UITableViewController,ToCitiesTableViewControllerD
         cell.textfield.tag = indexPath.row
         return cell
     }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
-        case 0:
-            sits = textField.text
-        case 1:
-            price = textField.text
         case 2:
-            DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .dateAndTime) {
-                (date) -> Void in
-                if let dt = date {
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
-                  textField.text = formatter.string(from: dt)
-                    let vremya = dt.timeIntervalSince1970
-                    self.time = CLong(vremya)
-                    print(vremya)
-                }
-            }
-        case 3 :
-            comment = textField.text
+            textField.inputView = datePicker
+        case 0:
+            textField.keyboardType = .numberPad
+        case 1:
+            textField.keyboardType = .numberPad
         default:
             break
         }
+        return true
     }
-    @objc func Add() {
-        AddSpecificOrder.City(seats_number: sits!, start_id: FromId!, end_Id: id!, date: time!*1000, price: price!) { (success, failure) in
-            self.view.makeToastActivity(.center)
-            if success {
-                self.view.hideToastActivity()
-                self.dismiss(animated: true, completion: nil)
-            }
-            if failure {
-                self.view.makeToast("Ошибка")
-            }
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        switch textField.tag {
+        case 1:
+            textField.keyboardType = .numberPad
+            price = textField.text
+        case 2:
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
+            datePicker.datePickerMode = .dateAndTime
+            self.time = datePicker.date.millisecondsSince1970
+            textField.text = dateFormatter.string(from: datePicker.date)
+        case 3:
+            comment = textField.text
+        case 0:
+            sits = textField.text
+        default:
+            break
+            
         }
     }
- 
     
     
+    
+    @objc func Add() {
+        let params = ["token":APItoken.getToken()!,
+                      "type":"\(1)",
+                      "seats_number":sits,
+                      "start_id":FromId,
+                      "end_id":id,
+                      "price":price,
+                      "date":"\(time ?? 0)"]
+        print(params)
+  
+        if params.values.filter({ $0 == nil }).isEmpty
+        {
+            let param = ["token":APItoken.getToken()!,
+                          "type":"\(1)",
+                "seats_number":sits!,
+                "start_id":FromId!,
+                "end_id":id!,
+                "price":price!,
+                "date":"\(time ?? 0)"]
+            print(param)
+            AddSpecificOrder.City(params: param as [String:Any]) { (success, failure) in
+                            if success {
+                                self.view.hideToastActivity()
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                            if failure {
+                                let alert = CustomAlert(title: "", message: "", preferredStyle: .alert)
+                                alert.publish = "1"
+                                alert.type = "1"
+                                alert.title = ""
+                                alert.show()
+                            }
+                        }
+            }
+        else
+        {
+            let error = ErrorAlert(title: "", message: "", preferredStyle: .alert)
+            error.show()
+            
+        }
+      
+     
+      
+    }
  
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

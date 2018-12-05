@@ -25,7 +25,7 @@ struct client:Codable {
     var last_visit : String?
     var email : String?
     var token : String?
-    var city_id : String?
+    var city_id : Int?
     var company_id : String?
     var gender_id : String?
     var year_of_birth : String?

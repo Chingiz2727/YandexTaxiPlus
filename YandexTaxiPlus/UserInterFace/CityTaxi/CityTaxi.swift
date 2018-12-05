@@ -15,17 +15,16 @@ class CityTaxi: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         make()
-
-     
         navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "Межгород"
         let menubutton = UIBarButtonItem.init(image: UIImage(named: "icon_add"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(go))
         self.navigationItem.rightBarButtonItem = menubutton
         tableView.bounces = false
-
+        navigationController?.navigationBar.barTintColor = maincolor
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+        UIColourScheme.instance.set(for:self)
 
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -53,7 +52,7 @@ class CityTaxi: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var road = RoadedCityTableViewController()
+        let road = RoadedCityTableViewController()
         road.startid = list[indexPath.row].StartId
         road.endid = list[indexPath.row].endId
         navigationController?.pushViewController(road, animated: true)
@@ -71,7 +70,15 @@ class CityTaxi: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath)
+        if APItoken.getColorType() == 0 {
+            cell.textLabel?.textColor = UIColor.black
+        }
+        else {
+            cell.textLabel?.textColor = UIColor.white
+        }
         cell.textLabel?.text = "\(list[indexPath.row].Start!) -> \(list[indexPath.row].end!)"
+        cell.backgroundColor = UIColor.clear
+        
         // Configure the cell...
 
         return cell

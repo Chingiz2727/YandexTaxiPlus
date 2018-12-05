@@ -20,6 +20,7 @@ class PhoneFieldView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     let TitleView : UILabel = {
         let title = UILabel()
         title.frame.size = CGSize(width: 100, height: 100)
@@ -38,7 +39,7 @@ class PhoneFieldView: UIView {
         phone.layer.cornerRadius = 5.0
         let mycolor = UIColor.init(r: 44, g: 192, b: 154)
         phone.frame.size = CGSize(width: 100, height: 100)
-        phone.layer.borderColor = mycolor.cgColor
+        phone.layer.borderColor = maincolor.cgColor
         phone.layer.borderWidth = 1.0
         phone.placeholder = "Номер телефона"
         phone.textAlignment = .center
@@ -47,7 +48,7 @@ class PhoneFieldView: UIView {
     }()
     let Next : UIButton = {
         let next = UIButton()
-        next.backgroundColor = UIColor.init(r: 44, g: 192, b: 154)
+        next.backgroundColor = maincolor
         next.layer.cornerRadius = 10.0
         next.frame.size = CGSize(width: 100, height: 100)
         
@@ -65,7 +66,7 @@ class PhoneFieldView: UIView {
         self.addSubview(PhoneField)
         self.addSubview(Next)
         TitleView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 50, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 50)
-        PhoneField.setAnchor(top: TitleView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 200, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 50)
+        PhoneField.setAnchor(top: TitleView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 50, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 50)
         Next.setAnchor(top: PhoneField.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 20, paddingLeft: 50, paddingBottom: 0, paddingRight: 50, width: 100, height: 50)
         
     }

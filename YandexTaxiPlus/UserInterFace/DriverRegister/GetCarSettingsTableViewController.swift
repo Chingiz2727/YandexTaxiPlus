@@ -54,12 +54,16 @@ class GetCarSettingsTableViewController: UITableViewController {
 
         if type! == 0
         {
-            carmodel?.CarModel(Id: model[indexPath.row].id, Name: model[indexPath.row].model)
+            carmodel?.remove()
+            carmodel?.car_model_id = model[indexPath.row].id
+            carmodel?.car_model_name = model[indexPath.row].model
+            
         }
         if type! == 1 {
-            carmark?.CarMark(Id: model[indexPath.row].id, Name: model[indexPath.row].model)
+            carmark?.car_mark_name = model[indexPath.row].model
         }
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+        
     }
 
     

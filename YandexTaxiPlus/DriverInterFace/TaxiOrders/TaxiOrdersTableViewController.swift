@@ -7,87 +7,161 @@
 //
 
 import UIKit
-
-class TaxiOrdersTableViewController: UITableViewController {
+import Presentr
+class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDelegate {
     var cellid = "cellid"
+    var ViewModel : TableViewTaxiOrdersModelType?
+    var module = TaxiOrdersViewModel()
+    var locationManager = CLLocationManager()
+    var segment = UISegmentedControl()
+    var lat : Double!
+    var long : Double!
+    var reloadButton  = UIButton()
+    let presenter : Presentr = {
+        let width = ModalSize.fluid(percentage: 0.9)
+        let heigh = ModalSize.fluid(percentage: 0.9)
+        let center = ModalCenterPosition.center
+        let customtype = PresentationType.custom(width: width, height: heigh, center: center)
+        let customPresenter = Presentr(presentationType: customtype)
+        customPresenter.backgroundOpacity  = 0.5
+        
+        return customPresenter
+    }()
+
+    var items : [String] = [] {
+        didSet {
+            segment = UISegmentedControl(items: items)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ViewModel = module
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        UIColourScheme.instance.set(for:self)
+
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(TaxiOrdersTableViewCell.self, forCellReuseIdentifier: cellid)
-        tableView.estimatedRowHeight = 200
-        tableView.rowHeight = UITableView.automaticDimension
+               NotificationCenter.default.addObserver(self, selector: #selector(reloadBut(notification:)), name: NSNotification.Name(rawValue: "101"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sendcoor(notification:)), name: NSNotification.Name(rawValue: "1"), object: nil)
         navigationController?.navigationBar.isHidden = false
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        reloadButton.addTarget(self, action: #selector(reload), for: .touchUpInside)
+        CheckForChats.check { (state) in
+            switch state {
+            case true:
+                self.items = ["Общий чат","Мой таксопарк"]
+            case false :
+                self.items = ["Общий чат"]
+            }
+            self.makeSegment()
+            self.reload()
+        }
+        navigationController?.navigationBar.barTintColor = maincolor
     }
-
-    // MARK: - Table view data source
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.lat = locValue.latitude
+        self.long = locValue.longitude
+        
+    }
+    
+    @objc func sendcoor(notification:NSNotification) {
+        let ord_id = notification.userInfo![AnyHashable("order_id")] as? String
+        SendLocation.sendloc(longitude: String(self.long!), latitude: String(self.lat!), order_id: ord_id!)
+    }
+    @objc func reloadBut(notification:NSNotification) {
+        if reloadButton.isDescendant(of: self.view) {
+            
+        }
+        else {
+            view.addSubview(reloadButton)
+            reloadButton.setAnchor(top: tableView.layoutMarginsGuide.topAnchor, left: tableView.layoutMarginsGuide.leftAnchor, bottom: nil, right: tableView.layoutMarginsGuide.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 10, height: 40)
+            reloadButton.layer.cornerRadius = 5
+            reloadButton.setTitle("Новые заказы", for: .normal)
+            reloadButton.backgroundColor = maincolor
+            reloadButton.setTitleColor(UIColor.white, for: .normal)
+        }
+    }
+    
+    func makeSegment() {
+        segment.tintColor = UIColor.white
+        segment.backgroundColor  = maincolor
+        navigationItem.titleView = segment
+        segment.addTarget(self, action: #selector(segment(seg:)), for: .valueChanged)
+        segment.selectedSegmentIndex = 0
+    }
+    
+    @objc func segment(seg:UISegmentedControl) {
+        reload()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.estimatedRowHeight = 70
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+        
+  @objc func reload () {
+    if reloadButton.isDescendant(of: self.view) {
+        reloadButton.removeFromSuperview()
+    }
+        var mainurl : String!
+        switch segment.selectedSegmentIndex {
+        case 0:
+            mainurl = "/get-shared-orders/"
+        case 1:
+            mainurl = "/get-own-orders/"
+        default:
+            break
+        }
+        getcharorders.get(url: mainurl!) { (info) in
+            print(mainurl!)
+            self.module.chats = info
+            self.tableView.reloadData()
+        }
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+        return ViewModel?.numofrows ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! TaxiOrdersTableViewCell
-        cell.selectionStyle = .none
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as? TaxiOrdersTableViewCell
+        guard let tableViewCell = cell, let viewModel = ViewModel else {
+            return UITableViewCell()
+        }
+        let cellviewmodel = ViewModel?.cellViewModile(forIndexPath: indexPath)
+        tableViewCell.viewModel = cellviewmodel
+        
+        return tableViewCell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    
+    
+  override  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let table = InfoTableViewController()
+    guard let viewModel = ViewModel else {
+        return
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    viewModel.selecRow(atIndexPath: indexPath)
+    table.order_id = module.chats[indexPath.row].id!
+    customPresentViewController(presenter, viewController: table, animated: true)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

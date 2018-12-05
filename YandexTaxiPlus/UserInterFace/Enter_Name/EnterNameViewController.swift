@@ -37,6 +37,8 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
         setupview()
         updateView.City.addTarget(self, action: #selector(gotoCity), for: .touchUpInside)
         updateView.loginAction = accessing
+        navigationController?.isNavigationBarHidden = true
+
     }
     
     func setupview()
@@ -48,7 +50,7 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
     func goToMain(){
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController.init(rootViewController: UserMainPageViewController())
+        window?.rootViewController = UINavigationController.init(rootViewController: TestViewController())
     }
     
     @objc func  gotoCity() {

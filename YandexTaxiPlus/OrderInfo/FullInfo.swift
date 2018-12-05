@@ -1,48 +1,95 @@
-//
-//  FullInfo.swift
-//  YandexTaxiPlus
-//
-//  Created by Чингиз on 29.10.2018.
-//  Copyright © 2018 Чингиз. All rights reserved.
-//
 
-import Foundation
-struct OrderInfo:Codable {
-    var client : client?
-    var driver : driver?
-    var order : order?
-    var state : String?
-    var car : [car]?
-    enum CodingKeys:String,CodingKey{
-        case client = "client"
-        case driver = "driver"
-        case order = "order"
-        case state = "state"
-        case car = "car"
+struct OrderInfo: Codable {
+    let state: String?
+    let order: Orderd?
+    let car: [Card]?
+    let driver, client: Clientd?
+}
+
+struct Card: Codable {
+    let tonns: String?
+    let seatsNumber, model, number, id: String?
+    let type: String?
+    let body: String?
+    let carID, year, submodel: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case tonns
+        case seatsNumber = "seats_number"
+        case model, number, id, type, body
+        case carID = "car_id"
+        case year, submodel
     }
 }
-struct car:Codable {
-    var id : String?
-    var car_id : String?
-    var seats_number : String?
-    var tonns : String?
-    var body : String?
-    var number : String?
-    var year : String?
-    var type : String?
-    var model : String?
-    var submodel : String?
-    enum CodingKeys:String,CodingKey{
-        case id = "id"
-        case car_id = "car_id"
-        case seats_number = "seats_number"
-        case tonns = "tonns"
-        case body = "body"
-        case number = "number"
-        case year = "year"
-        case type = "type"
-        case model = "model"
-        case submodel = "submodel"
 
+struct Clientd: Codable {
+    let platform, taxiParkID: Int?
+    let pushID: String?
+    let parentID: Int?
+    let created: Int?
+    let phone, token: String?
+    let genderID: Int?
+    let id, cityID, isActive: Int?
+    let name, lastEdit: String?
+    let companyID: Int?
+    let rating, roleID, balance: Double?
+    let yearOfBirth: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case platform
+        case taxiParkID = "taxi_park_id"
+        case pushID = "push_id"
+        case parentID = "parent_id"
+        case created, phone, token
+        case genderID = "gender_id"
+        case id
+        case cityID = "city_id"
+        case isActive = "is_active"
+        case name
+        case lastEdit = "last_edit"
+        case companyID = "company_id"
+        case rating
+        case roleID = "role_id"
+        case balance
+        case yearOfBirth = "year_of_birth"
+    }
+}
+
+struct Orderd: Codable {
+    let comment: String?
+    let taxiParkID: Int?
+    let dispatcherID: Int?
+    let isCommon, isRated, price: Int?
+    let created: String?
+    let userID: Int?
+    let toLongitude, fromLatitude: String?
+    let driverID: Int?
+    let toLatitude: String?
+    let id, paymentType: Int?
+    let fromLongitude, lastEdit: String?
+    let companyID: Int?
+    let status, deleted, orderType: Int?
+    let date: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case comment
+        case taxiParkID = "taxi_park_id"
+        case dispatcherID = "dispatcher_id"
+        case isCommon = "is_common"
+        case isRated = "is_rated"
+        case price, created
+        case userID = "user_id"
+        case toLongitude = "to_longitude"
+        case fromLatitude = "from_latitude"
+        case driverID = "driver_id"
+        case toLatitude = "to_latitude"
+        case id
+        case paymentType = "payment_type"
+        case fromLongitude = "from_longitude"
+        case lastEdit = "last_edit"
+        case companyID = "company_id"
+        case status, deleted
+        case orderType = "order_type"
+        case date
     }
 }

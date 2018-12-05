@@ -19,6 +19,8 @@ var cellid = "cellid"
         tableView.dataSource = self
         tableView.register(CityTaxiTableViewCell.self, forCellReuseIdentifier: cellid)
         reload()
+        UIColourScheme.instance.set(for:self)
+
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
@@ -28,13 +30,30 @@ var cellid = "cellid"
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+ 
 
     
     func reload() {
-        RoadedTaxi.get(start_id: startid!, end_id: endid!) { (list) in
-            self.road = list
-            self.tableView.reloadData()
+        RoadedTaxi.get(start_id: startid!, end_id: endid!) { (list, access, buy) in
+            print("GO")
+           
+            if access == true {
+                self.road = list
+                self.tableView.reloadData()
+            }
+            
+            if buy == true {
+                var alert = CustomAlert(title: "", message: "", preferredStyle: .alert)
+                alert.publish = "0"
+                alert.type = "1"
+                alert.title = ""
+                alert.show()
+                self.road = list
+                self.tableView.reloadData()
+                }
+              
         }
+    
     }
 
 
@@ -52,14 +71,20 @@ var cellid = "cellid"
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! CityTaxiTableViewCell
         let info = road[indexPath.row]
+        var timer = Double(info.date!)
+        let data = Date(timeIntervalSince1970: timer!)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+06:00") //Set timezone that you want
+        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss" //Specify your format that you want
+        let strDate = dateFormatter.string(from: data)
         cell.name.text = info.name!
         cell.price.text = "\(info.price!) тг"
         cell.from.text = info.start!
         cell.to.text = info.end!
-        cell.car.text = "\(info.submodel!) \(info.model!)"
+        cell.car.text = "\(info.submodel ?? "") \(info.model ?? "" )"
         cell.phone.text = "(\(info.phone!))"
-       cell.time.text = info.date
-        cell.sits.text = info.seatsnum!
+       cell.time.text = strDate
+        cell.sits.text = "Место: \(info.seatsnum!)"
         // Configure the cell...
         cell.selectionStyle = .none
         return cell

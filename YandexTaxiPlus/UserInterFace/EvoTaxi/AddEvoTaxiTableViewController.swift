@@ -7,38 +7,40 @@
 //
 
 import UIKit
-
+import Toast_Swift
 class AddEvoTaxiTableViewController: UITableViewController,UITextFieldDelegate {
-
-    var sendButton : UIButton = UIButton()
-    var sits : String?
-    var price : String?
-    var comment : String?
-    var time : CLong?
+    var textfd : UITextField = UITextField()
+    var sendButton : MainButton = MainButton()
+    var sits : String!
+    var price : String!
+    var comment : String!
+    var time : CLong!
     var datePicker : UIDatePicker = UIDatePicker()
     var headerView: UIView = UIView()
     var fromButton : UITextField = UITextField()
     var toButton : UITextField = UITextField()
     var cellid = "cellid"
-    
+    var from : String!
+    var to : String!
     var menu = [
         MenuCity(text: "Цена", img: "icon_by_bonuses"),
-        MenuCity(text: "Дата", img: "icon_calendar"),
+        MenuCity(text: "Дата", img: "icon_calendar_gray"),
         MenuCity(text: "Описание", img: "icon_dialog")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIColourScheme.instance.set(for:self)
+
         tableView.tableFooterView = UIView()
         tableView.register(AddTaxiTableViewCell.self, forCellReuseIdentifier: cellid)
         tableView.bounces = false
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(sendButton)
-        sendButton.setAnchor(top: nil, left: tableView.layoutMarginsGuide.leftAnchor, bottom: tableView.layoutMarginsGuide.bottomAnchor, right: tableView.layoutMarginsGuide.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 30, paddingRight: 10, width: 0, height: 60)
+        sendButton.initialize()
+        sendButton.setAnchor(top: nil, left: tableView.layoutMarginsGuide.leftAnchor, bottom: tableView.layoutMarginsGuide.bottomAnchor, right: tableView.layoutMarginsGuide.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 30, paddingRight: 10, width: 0, height: 50)
         sendButton.addTarget(self, action: #selector(Add), for: .touchUpInside)
-        sendButton.backgroundColor = maincolor
         sendButton.setTitle("Оставить заявку", for: .normal)
-        sendButton.layer.cornerRadius = 15
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,83 +93,94 @@ class AddEvoTaxiTableViewController: UITableViewController,UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! AddTaxiTableViewCell
         cell.icon.image = UIImage(named: menu[indexPath.row].img)
+        
         cell.textfield.placeholder = menu[indexPath.row].text
         cell.selectionStyle = .none
         cell.textfield.delegate = self
         cell.textfield.tag = indexPath.row
         return cell
     }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+   
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
-        case 0:
-            price = textField.text
         case 1:
-            DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .dateAndTime) {
-                (date) -> Void in
-                if let dt = date {
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
-                    textField.text = formatter.string(from: dt)
-                    let vremya = dt.timeIntervalSince1970
-                    self.time = CLong(vremya)
-                    print(vremya)
-                }
-            }
-        case 2 :
-            comment = textField.text
+            textField.inputView = datePicker
+            
+        case 0:
+            textField.keyboardType = .numberPad
         default:
             break
         }
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        switch textField.tag {
+        case 0:
+            textField.keyboardType = .numberPad
+            price = textField.text
+        case 1:
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
+            datePicker.datePickerMode = .dateAndTime
+            self.time = datePicker.date.millisecondsSince1970
+            textField.text = dateFormatter.string(from: datePicker.date)
+        case 2:
+            comment = textField.text
+        default:
+            break
+            
+        }
+    }
+    
+    
+    
+    func checkEmptyDict(_ dict:[String:Any?]) -> Bool {
+        
+        for (_,value) in dict {
+            if value == nil || value as? String == "" { return true }
+        }
+        
+        return false
     }
     @objc func Add() {
-        
+        from = fromButton.text!
+        to = toButton.text!
+        let params = [
+            "token":APItoken.getToken()!,
+            "type":"2",
+            "comment":comment,
+            "start_string":from,
+            "price":price,
+            "end_string":to,
+            "date":time
+            ] as [String : Any?]
+        print(params)
+        let check = checkEmptyDict(params)
+        if check == true {
+            let error = ErrorAlert(title: "", message: "", preferredStyle: .alert)
+            error.show()
+        }
+        else {
+            
+            EvoMakeOrder.MakeOrder(type: "3", comment: comment!, start: from!, end: to!, price: price, date: String(time!)) { (state) in
+                self.view.makeToastActivity(.center)
+                
+                if state == true {
+                    self.view.hideToastActivity()
+                    self.view.makeToast("Успешно")
+                    self.navigationController?.popViewController(animated: true)
+                }
+                if state == false {
+                    let alert = CustomAlert(title: "", message: "", preferredStyle: .alert)
+                    alert.publish = "1"
+                    alert.type = "3"
+                    alert.title = ""
+                    alert.show()
+                }
+            }
+        }
     }
     
     
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }

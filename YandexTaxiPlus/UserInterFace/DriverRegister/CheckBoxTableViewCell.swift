@@ -36,12 +36,14 @@ class CheckBoxTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
-    let label:UILabel = UILabel()
+    let label:MainLabel = MainLabel()
     let check:CheckboxButton = CheckboxButton()
     func add()
     {
+        
         self.addSubview(label)
         self.addSubview(check)
+        label.initialize()
         label.setAnchor(top: nil, left: check.rightAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20)
         check.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20,width: 20,height: 20)
         check.checkColor = maincolor
@@ -50,7 +52,8 @@ class CheckBoxTableViewCell: UITableViewCell {
         let CenterX2 = check.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         NSLayoutConstraint.activate([CenterX1,CenterX2])
         label.font = UIFont.systemFont(ofSize: 16)
-        
+        self.backgroundColor = UIColor.clear
+
     }
 
 }

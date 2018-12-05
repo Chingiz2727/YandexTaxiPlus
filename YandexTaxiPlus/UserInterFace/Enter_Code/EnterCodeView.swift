@@ -33,8 +33,7 @@ class EnterCodeView: UIView {
     let PhoneField : PhoneFormattedTextField = {
         let phone = PhoneFormattedTextField()
         phone.layer.cornerRadius = 5.0
-        let mycolor = UIColor.init(r: 44, g: 192, b: 154)
-        phone.layer.borderColor = mycolor.cgColor
+        phone.layer.borderColor = maincolor.cgColor
         phone.layer.borderWidth = 1.0
         phone.placeholder = "Код"
         phone.textAlignment = .center
@@ -42,7 +41,7 @@ class EnterCodeView: UIView {
     }()
     let Next : UIButton = {
         let next = UIButton()
-        next.backgroundColor = UIColor.init(r: 44, g: 192, b: 154)
+        next.backgroundColor = maincolor
         next.layer.cornerRadius = 10.0
         next.setTitle("Далее", for: .normal)
         next.addTarget(self, action: #selector(handlelogin), for: .touchUpInside)
@@ -60,7 +59,7 @@ class EnterCodeView: UIView {
         self.addSubview(Next)
         
         TitleView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 50, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 50)
-        PhoneField.setAnchor(top: TitleView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 200, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 50)
+        PhoneField.setAnchor(top: TitleView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 50, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 50)
         Next.setAnchor(top: PhoneField.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 20, paddingLeft: 50, paddingBottom: 0, paddingRight: 50, width: 100, height: 50)
         
     }

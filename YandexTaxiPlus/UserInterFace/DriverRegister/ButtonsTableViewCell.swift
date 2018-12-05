@@ -10,12 +10,13 @@ import UIKit
 
 class ButtonsTableViewCell: UITableViewCell {
     var TaxiButton : UIImageView = UIImageView()
-    var TaxiLabel : UILabel = UILabel()
+    var TaxiLabel : MainLabel = MainLabel()
     
   
     
     func anchors() {
         self.addSubview(TaxiLabel)
+        TaxiLabel.initialize()
         self.addSubview(TaxiButton)
         TaxiButton.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0,width: 50,height: 50)
         TaxiLabel.setAnchor(top: nil, left: TaxiButton.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
@@ -24,6 +25,7 @@ class ButtonsTableViewCell: UITableViewCell {
           let CenterYLabel = TaxiLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
           let CenterYButton = TaxiButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         NSLayoutConstraint.activate([CenterYLabel,CenterYButton])
+        self.backgroundColor = UIColor.clear
 
     }
     

@@ -16,12 +16,14 @@ class InvaTaxiTableViewController: UITableViewController,UITextFieldDelegate {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = maincolor
         self.navigationItem.title = "Инва Такси"
         let menubutton = UIBarButtonItem.init(image: UIImage(named: "icon_add"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(go))
         self.navigationItem.rightBarButtonItem = menubutton
         tableView.bounces = false
         tableView.register(CityTaxiTableViewCell.self, forCellReuseIdentifier: cellid)
-        
+        UIColourScheme.instance.set(for:self)
+
         tableView.delegate = self
         tableView.dataSource = self
     }

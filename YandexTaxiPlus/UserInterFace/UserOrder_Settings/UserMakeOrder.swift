@@ -14,8 +14,8 @@ import Alamofire
 import SwiftyJSON
 import Toast_Swift
 class MakeOrder {
-    class func OrderApi(service_id:Int,comment:String,date:String,payment_type:String,completion:@escaping (_ success:Bool,_ fail:Bool)->Void) {
-        var fields = [
+    class func OrderApi(second_long:String,second_lat:String,first_long:String,first_lat:String,service_id:Int,comment:String,date:String,payment_type:String,completion:@escaping (_ success:Bool,_ fail:Bool,_ url:String)->Void) {
+        let fields = [
             "token":APItoken.getToken()!,
             "longitude_b":second_long,
             "latitude_b":second_lat,
@@ -26,7 +26,7 @@ class MakeOrder {
             "date":date,
             "payment_type":payment_type
             ] as [String : Any]
-        var url = baseurl + "/make-order/"
+        let url = baseurl + "/make-order/"
         Alamofire.request(url, method: .post, parameters: fields, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
                 switch response.result {
@@ -36,14 +36,19 @@ class MakeOrder {
                     let json = JSON(val)
                     print(json)
                     let state = json["state"].string!
+                     let url = json["url"].string
+                    
                     if state == "success"
                     {
                         
-                        completion(true,false)
+                        completion(true,false, url ?? "")
                     }
                         
                     else {
-                        completion(false,true)
+                        completion(false,true, "")
+                    }
+                    if state == "fail" {
+                        completion(false,true,"")
                     }
                 }
             }

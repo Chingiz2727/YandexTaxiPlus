@@ -103,7 +103,6 @@ PODS:
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
-  - Koyomi (1.2.7)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -111,13 +110,10 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Neon (0.4.0)
+  - Presentr (1.3.2)
   - Protobuf (3.6.1)
-  - Realm (3.7.6):
-    - Realm/Headers (= 3.7.6)
-  - Realm/Headers (3.7.6)
-  - RealmSwift (3.7.6):
-    - Realm (= 3.7.6)
   - SideMenu (4.0.0)
+  - Spring (1.0.6)
   - SwiftPhoneNumberFormatter (1.4)
   - SwiftyJSON (4.1.0)
   - SwiftyStarRatingView (1.0.4)
@@ -137,10 +133,10 @@ DEPENDENCIES:
   - GooglePlaces
   - IQKeyboardManagerSwift
   - JSQMessagesViewController
-  - Koyomi
   - Neon
-  - RealmSwift
-  - SideMenu
+  - Presentr
+  - SideMenu (~> 4.0.0)
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftPhoneNumberFormatter
   - SwiftyJSON (~> 4.0)
   - SwiftyStarRatingView
@@ -170,18 +166,25 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
-    - Koyomi
     - leveldb-library
     - nanopb
     - Neon
+    - Presentr
     - Protobuf
-    - Realm
-    - RealmSwift
     - SideMenu
     - SwiftPhoneNumberFormatter
     - SwiftyJSON
     - SwiftyStarRatingView
     - Toast-Swift
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: fafd0b2e8d4d46405bd86fa7ba84bb7f73a20b13
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -206,19 +209,18 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
-  Koyomi: f03615b8d2bb5a5a4752c6404a9794ed7ef7b327
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Neon: 7fb5a9327e7e57911843f608e08f4893a74deaf9
+  Presentr: 797ae6ec8904eaba4ec58a4c2065bd66e31569ea
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
-  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwiftPhoneNumberFormatter: 089f2a71dd7be621e0045b01c689cd38eac0ce58
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyStarRatingView: a2b0057700e0adeb8e7442c55d99cb53b531d2f4
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: e314a9099eae603f5a480596bd79f1ca5fd3e1d2
+PODFILE CHECKSUM: cf549845515f7ea430288708ed9fa8a66376b714
 
 COCOAPODS: 1.5.0

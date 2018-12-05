@@ -10,13 +10,13 @@ import UIKit
 
 class TaxiOrdersTableViewCell: UITableViewCell {
     var AcceptButton : UIButton = UIButton()
-    var AccepLabel : UILabel = UILabel()
-    var DistanLabel : UILabel = UILabel()
-    var CancelButton : UIButton = UIButton()
-    var CancelLabel : UILabel = UILabel()
-    var from : UILabel = UILabel()
-    var to : UILabel = UILabel()
-    var price : UILabel = UILabel()
+  private  var AccepLabel : MainLabel = MainLabel()
+    var DistanLabel : MainLabel = MainLabel()
+    var CancelButton : MainLabel = MainLabel()
+  private  var CancelLabel : MainLabel = MainLabel()
+    var from : MainLabel = MainLabel()
+    var to : MainLabel = MainLabel()
+    var price : MainLabel = MainLabel()
     var bottomView : UIView = UIView()
     var bot : UIView = UIView()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -34,48 +34,67 @@ class TaxiOrdersTableViewCell: UITableViewCell {
         
     }
     func addview() {
-        self.addSubview(bot)
-        self.addSubview(from)
+       self.addSubview(from)
+        from.initialize()
+        to.initialize()
+        price.initialize()
+        DistanLabel.initialize()
         self.addSubview(to)
         self.addSubview(price)
-        bot.addSubview(bottomView)
         self.addSubview(DistanLabel)
-        bottomView.addSubview(AcceptButton)
-        bottomView.addSubview(CancelButton)
-        bottomView.addSubview(AccepLabel)
-        bottomView.addSubview(CancelLabel)
     }
     
     func anchors() {
-        from.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
-        to.setAnchor(top: from.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
-        price.setAnchor(top: self.topAnchor, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 20)
-        DistanLabel.setAnchor(top: price.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20)
-        bottomView.setAnchor(top: bot.topAnchor, left: AccepLabel.leftAnchor, bottom: bot.bottomAnchor, right: CancelLabel.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 20, paddingRight: 0)
-        AcceptButton.setAnchor(top: bottomView.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 40, height: 40)
-        CancelButton.setAnchor(top: bottomView.topAnchor, left: AcceptButton.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 70, paddingBottom: 0, paddingRight: 0, width: 40, height: 40)
-        AccepLabel.setAnchor(top: AcceptButton.bottomAnchor, left: bottomView.leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        CancelLabel.setAnchor(top: CancelButton.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        bot.setAnchor(top: to.bottomAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        let CenterXview = bottomView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        let CenterYView = bottomView.centerYAnchor.constraint(equalTo: bot.centerYAnchor)
-        let CenterXAccept = AccepLabel.centerXAnchor.constraint(equalTo: AcceptButton.centerXAnchor)
-        let CenterXCancle = CancelLabel.centerXAnchor.constraint(equalTo: CancelButton.centerXAnchor)
-        NSLayoutConstraint.activate([CenterXview,CenterXAccept,CenterXCancle,CenterYView])
-        bot.backgroundColor = maincolor
-        
-        CancelLabel.text = "На карте"
-        AccepLabel.text = "Принять"
-        AcceptButton.setImage(UIImage(named: "icon_accept"), for: .normal)
-        CancelButton.setImage(UIImage(named: "icon_onmap"), for: .normal)
-        from.text = "Manasa 32"
-        to.text = "Abaya 1"
-        DistanLabel.text = "5 km"
-        price.text = "500tg"
-        DistanLabel.textColor = maincolor
-        AccepLabel.textColor = UIColor.white
-        CancelLabel.textColor = UIColor.white
+       from.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: price.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 10, paddingRight: 30,width: 0,height: 30)
+        to.setAnchor(top: from.bottomAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: DistanLabel.leftAnchor, paddingTop: 15, paddingLeft: 10, paddingBottom: 0, paddingRight: 30,width: 0,height: 30)
+        price.setAnchor(top: nil, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
+        DistanLabel.setAnchor(top: nil, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
+        price.textAlignment = .left
+        price.textColor = maincolor
+        DistanLabel.textColor = UIColor.red
+        let center_price = price.centerYAnchor.constraint(equalTo: from.centerYAnchor)
+        let center_distance = DistanLabel.centerYAnchor.constraint(equalTo: to.centerYAnchor)
+        NSLayoutConstraint.activate([center_price,center_distance])
+        from.numberOfLines = 3
+        to.numberOfLines = 3
+        from.text = "place1"
+        to.text = "place2"
+    }
+    weak var viewModel : TableViewCellTaxiOrdersModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else {
+                return
+            }
+            
+            Geocoding.LocationName(lat: viewModel.from_lat!, long: viewModel.from_long!) { (first_loc) in
+                let first_place2 = first_loc!.results![0].addressComponents![0].shortName ?? ""
+                let first_place3 = first_loc!.results![0].addressComponents![1].shortName ?? ""
+                let finist = "\(first_place3) \(first_place2)"
+                
+                print(first_place2)
+                self.from.text = finist
+            }
+            
+            
+            Geocoding.LocationName(lat: viewModel.to_lat!, long: viewModel.to_long!) { (first_loc) in
+                let first_place2 = first_loc!.results![0].addressComponents![0].shortName ?? ""
+                let first_place3 = first_loc!.results![0].addressComponents![1].shortName ?? ""
+                let finist = "\(first_place3) \(first_place2)"
+                print(first_loc!.results![0].addressComponents!)
+                self.to.text = finist
+            }
+            
+            
+            GetDistance.getinfo(from_lat: viewModel.from_lat!, from_long: viewModel.from_long!, to_lat: viewModel.to_lat!, to_long: viewModel.to_long!) { (info) in
+                for i in info.rows! {
+                    for a in i.elements! {
+                        self.DistanLabel.text = a.distance.text!
 
+                    }
+                }
+            }
+            price.text = viewModel.price
+        }
     }
 
 }

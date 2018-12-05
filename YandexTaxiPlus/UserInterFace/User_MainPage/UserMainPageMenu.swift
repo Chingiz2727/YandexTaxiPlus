@@ -2,14 +2,23 @@ import UIKit
 import Neon
 import Alamofire
 import SwiftyJSON
-class MainPageHeader:UIView {
+class MainPageHeader:UITableViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         subview()
         setup()
         setuplayout()
     }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+    }
+    
     let searchBar : UIImageView = UIImageView()
     let bannerImageView : UIImageView = UIImageView()
     let bannerMaskView : UIView = UIView()
@@ -19,15 +28,9 @@ class MainPageHeader:UIView {
     
     let buttonContainerView2 : UIView = UIView()
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+  
     func setup()
     {
-        bannerImageView.backgroundColor = maincolor
-        bannerImageView.contentMode = .scaleAspectFill
-        bannerImageView.clipsToBounds = true
-        bannerImageView.isUserInteractionEnabled=true
         nameLabel.textColor = UIColor.white
         nameLabel.numberOfLines = 1
         nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
@@ -41,37 +44,32 @@ class MainPageHeader:UIView {
     func subview()
     {
         
-        self.addSubview(bannerImageView)
-        bannerImageView.addSubview(bannerMaskView)
-        bannerImageView.addSubview(nameLabel)
-        bannerImageView.addSubview(phone)
-        bannerImageView.addSubview(avatarImageView)
+        
+        self.addSubview(nameLabel)
+        self.addSubview(phone)
+        self.addSubview(avatarImageView)
+        self.backgroundColor = maincolor
         avatarImageView.image = UIImage(named: "zhan")
         avatarImageView.layer.cornerRadius = 35.0
         avatarImageView.clipsToBounds = true
         avatarImageView.contentMode = .scaleAspectFill
         
-        self.phone.text = "+7 747 750 2321"
-        self.nameLabel.text = "Chingiz"
-        GetAvatar.get { (avatar) in
-            print(avatar)
-        }
+     
+      
     }
     
     func setuplayout ()
     {
         
         let isLandscape : Bool = UIDevice.current.orientation.isLandscape
-        let bannerHeight : CGFloat = 180
         let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
-        bannerImageView.anchorAndFillEdge(.top, xPad: 0, yPad: 0, otherSize: bannerHeight)
-        bannerMaskView.fillSuperview()
-        let avatarSize = bannerHeight * avatarHeightMultipler * 0.94
+      
+        let avatarSize = self.height * avatarHeightMultipler * 0.94
         //        avatarImageView.anchorInCorner(.bottomLeft, xPad: 120, yPad: 90, width: avatarSize, height: avatarSize)
         
         let centerX = nameLabel.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor)
         let centerXph = phone.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor)
-        let centerXphoto = avatarImageView.centerXAnchor.constraint(equalTo: bannerImageView.centerXAnchor)
+        let centerXphoto = avatarImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         nameLabel.setAnchor(top: avatarImageView.bottomAnchor ,left: nil, bottom: nil, right: nil, paddingTop: 15, paddingLeft: 0, paddingBottom:0, paddingRight: 0)
         NSLayoutConstraint.activate([centerX,centerXph,centerXphoto])
         phone.setAnchor(top: nameLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
@@ -90,7 +88,7 @@ class MenuModule {
 }
 class MainPageMenuCell: UITableViewCell {
     let img = UIImageView()
-    let label = UILabel()
+    let label = MainLabel()
     let view = UIView()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -107,19 +105,25 @@ class MainPageMenuCell: UITableViewCell {
     func setView() {
         self.addSubview(view)
         view.addSubview(label)
+        label.initialize()
         view.addSubview(img)
         img.contentMode = .scaleAspectFit
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor.init(r: 44, g: 192, b: 154)
+        label.textColor = maincolor
         label.text = "che tam"
         img.tintColor = maincolor
-        
+        img.image?.maskWithColor(color: maincolor)
+        GetAvatar.get { (url) in
+            Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                self.img.image = UIImage.init(data: response.data!)
+            })
+        }
         let centerY = img.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         let centerYLabel = label.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         label.setAnchor(top: self.topAnchor, left: img.rightAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
         img.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0,width: 30,height: 30)
         NSLayoutConstraint.activate([centerY,centerYLabel])
-        
+        self.backgroundColor = UIColor.clear
     }
     
 }

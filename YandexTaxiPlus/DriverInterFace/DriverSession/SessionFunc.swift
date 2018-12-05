@@ -39,6 +39,9 @@ class SessionPrice {
                 case.success(let val):
                     let json = JSON(val)
                     print(json)
+                    if json["message"].stringValue == "Сессия успешно открыта" {
+                        completion(true,false)
+                    }
                 }
             }
         }

@@ -13,6 +13,7 @@ class ChatViewController: JSQMessagesViewController {
     var chatid : String!
     var name : String!
     var phone : String!
+    var receiver : String!
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: maincolor)
     }()
@@ -25,12 +26,12 @@ class ChatViewController: JSQMessagesViewController {
         
     }
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print(chatid!)
         
+        super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
         let defaults = UserDefaults.standard
         
-        if  let id = defaults.string(forKey: "jsq_id"),
+        if  let id = receiver,
             let name = name
         {
             senderId = id
@@ -38,21 +39,19 @@ class ChatViewController: JSQMessagesViewController {
         }
         else
         {
-            senderId = String(arc4random_uniform(999999))
-            senderDisplayName = ""
+            senderId = phone
+            senderDisplayName = name
             
             defaults.set(senderId, forKey: "jsq_id")
             defaults.synchronize()
             
-            showDisplayNameDialog()
         }
         
         title = "Chat: \(senderDisplayName!)"
+        print("senderid")
+        print(senderId)
+
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showDisplayNameDialog))
-        tapGesture.numberOfTapsRequired = 1
-        
-        navigationController?.navigationBar.addGestureRecognizer(tapGesture)
         inputToolbar.contentView.leftBarButtonItem = nil
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
@@ -62,7 +61,6 @@ class ChatViewController: JSQMessagesViewController {
         let mquery = query.child("chat")
         let message = ["id":chatid!,"sender":phone]
         query.observe(.value) { (snapshot) in
-            print(snapshot.childrenCount)
             if snapshot.childrenCount == 0 {
                 query.setValue(message)
             }
@@ -84,43 +82,11 @@ class ChatViewController: JSQMessagesViewController {
             }
         })
     }
-    @objc func showDisplayNameDialog()
-    {
-        let defaults = UserDefaults.standard
-        
-        let alert = UIAlertController(title: "Your Display Name", message: "Before you can chat, please choose a display name. Others will see this name when you send chat messages. You can change your display name again by tapping the navigation bar.", preferredStyle: .alert)
-        
-        alert.addTextField { textField in
-            
-            if let name = defaults.string(forKey: "jsq_name")
-            {
-                textField.text = name
-            }
-            else
-            {
-                let names = ["Ford", "Arthur", "Zaphod", "Trillian", "Slartibartfast", "Humma Kavula", "Deep Thought"]
-                textField.text = names[Int(arc4random_uniform(UInt32(names.count)))]
-            }
-        }
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self, weak alert] _ in
-            
-            if let textField = alert?.textFields?[0], !textField.text!.isEmpty {
-                
-                self?.senderDisplayName = textField.text
-                
-                self?.title = "Chat: \(self!.senderDisplayName!)"
-                
-                defaults.set(textField.text, forKey: "jsq_name")
-                defaults.synchronize()
-            }
-        }))
-        
-        present(alert, animated: true, completion: nil)
-    }
+ 
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource!
     {
-        return messages[indexPath.item].senderId == senderId ? outgoingBubble : incomingBubble
+        
+        return messages[indexPath.item].senderDisplayName == senderId ? incomingBubble : outgoingBubble
     }
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource!
     {
@@ -142,8 +108,9 @@ class ChatViewController: JSQMessagesViewController {
         let ref = Constants.refs.databaseChats.child(chatid!)
         let chat = ref.child("chat")
         let messages = chat.childByAutoId()
-        let time = Date().timeIntervalSince1970
-        let message = ["time": String(time), "from": name, "message": text]
+        let time = Date().millisecondsSince1970
+        print(phone!)
+        let message = ["time": String(time), "from": receiver!, "message": text]
         messages.setValue(message)
         finishSendingMessage()
     }
@@ -158,12 +125,4 @@ class ChatViewController: JSQMessagesViewController {
     
     
 }
-extension Date {
-    var millisecondsSince1970:Int {
-        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
-    }
-    
-    init(milliseconds:Int) {
-        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
-    }
-}
+

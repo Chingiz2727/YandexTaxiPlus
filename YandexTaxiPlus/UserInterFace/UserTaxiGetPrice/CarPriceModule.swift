@@ -24,8 +24,10 @@ class carPrice {
 class Payment {
     var type : String = ""
     var icon : String = ""
-    init(type:String,icon:String) {
+    var sec_icon:String = ""
+    init(type:String,icon:String,sec_icon:String) {
         self.icon = icon
         self.type = type
+        self.sec_icon = sec_icon
     }
 }

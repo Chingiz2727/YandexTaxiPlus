@@ -24,6 +24,7 @@ class DriverRegisterApi {
             "facilities":facilities,
             "token":APItoken.getToken()!
             ] as [String : Any]
+        print(params)
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
                 switch response.result {

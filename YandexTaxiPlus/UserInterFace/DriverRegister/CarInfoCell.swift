@@ -11,7 +11,7 @@ import UIKit
 
 class CarInfoCell: UITableViewCell {
 
-    let ButtonClick : UIButton = UIButton()
+    var ButtonClick : UIButton = UIButton()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         super.awakeFromNib()
@@ -20,6 +20,8 @@ class CarInfoCell: UITableViewCell {
         ButtonClick.layer.cornerRadius = 10.0
         ButtonClick.layer.borderColor = maincolor.cgColor
         ButtonClick.layer.borderWidth = 1
+        self.backgroundColor = UIColor.clear
+
     }
     required init?(coder aDecoder: NSCoder) {
         

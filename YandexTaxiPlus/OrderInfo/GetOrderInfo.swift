@@ -21,10 +21,11 @@ class GetOrderInfo {
                     print(error)
                 case.success(let val):
                     let json = JSON(val)
+                    print(json)
                     guard let data = response.data else {return}
                     do {
                         let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        decoder.keyDecodingStrategy = .useDefaultKeys
                         let root = try decoder.decode(OrderInfo.self, from: data)
                         completion(root)
                     }

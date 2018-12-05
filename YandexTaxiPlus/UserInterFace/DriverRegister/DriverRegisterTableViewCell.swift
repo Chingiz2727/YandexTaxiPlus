@@ -44,6 +44,8 @@ class DriverRegisterTableViewCell2: UITableViewCell {
         TextField.layer.cornerRadius = 10.0
         TextField.layer.borderColor = maincolor.cgColor
         TextField.layer.borderWidth = 1
+        self.backgroundColor = UIColor.clear
+
     }
     required init?(coder aDecoder: NSCoder) {
         

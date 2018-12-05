@@ -20,10 +20,11 @@ class EnterPhone: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupview()
-        loginview.PhoneField.config.defaultConfiguration = PhoneFormat(defaultPhoneFormat: " (###) ###-##-##")
+        loginview.PhoneField.config.defaultConfiguration = PhoneFormat(defaultPhoneFormat: "(###) ###-##-##")
         loginview.PhoneField.prefix = "+7"
         loginview.loginAction = response
-        
+        navigationController?.isNavigationBarHidden = true
+        APItoken.savecolor(color: 0)
     }
     
     
@@ -37,12 +38,12 @@ class EnterPhone: UIViewController {
     
     func response() {
         let tet = loginview.PhoneField.text!
-        var phone = tet.replacingOccurrences(of:" ", with: "").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: "+", with: "")
+        let phone = tet.replacingOccurrences(of:" ", with: "").replacingOccurrences(of: "-", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: "+", with: "")
         
       
         let url = baseurl + "/send-sms/"
         let text = ["phone":phone]
-        if phone.count < 9 {
+        if phone.count != 11 {
             self.view.makeToast("Введите корректный номер телефона")
         }
         else {

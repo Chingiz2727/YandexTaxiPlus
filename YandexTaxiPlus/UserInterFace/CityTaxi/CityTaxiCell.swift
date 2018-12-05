@@ -9,14 +9,14 @@
 import UIKit
 
 class CityTaxiTableViewCell: UITableViewCell {
-    var name : UILabel = UILabel()
-    var phone : UILabel = UILabel()
-    var from : UILabel = UILabel()
-    var to : UILabel = UILabel()
-    var car : UILabel = UILabel()
-    var price : UILabel = UILabel()
-    var time : UILabel = UILabel()
-    var sits : UILabel = UILabel()
+    var name : MainLabel = MainLabel()
+    var phone : MainLabel = MainLabel()
+    var from : MainLabel = MainLabel()
+    var to : MainLabel = MainLabel()
+    var car : MainLabel = MainLabel()
+    var price : MainLabel = MainLabel()
+    var time : MainLabel = MainLabel()
+    var sits : MainLabel = MainLabel()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         add()
@@ -42,6 +42,14 @@ class CityTaxiTableViewCell: UITableViewCell {
         self.addSubview(sits)
         self.addSubview(price)
         self.addSubview(time)
+        name.initialize()
+        phone.initialize()
+        from.initialize()
+        to.initialize()
+        car.initialize()
+        sits.initialize()
+        price.initialize()
+        time.initialize()
     }
     
     func attr(){
@@ -64,8 +72,31 @@ class CityTaxiTableViewCell: UITableViewCell {
         price.setAnchor(top: phone.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 5)
         time.setAnchor(top: from.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 5)
         sits.setAnchor(top: to.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 5)
+        self.backgroundColor = UIColor.clear
     }
     
+    
+    weak var viewModel : TableViewCellFullChatsModelType?  {
+        willSet(viewModel)  {
+            guard  let viewModel = viewModel else {
+                return
+            }
+            var timer = Double(viewModel.date!)
+            let data = Date(timeIntervalSince1970: timer!)
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+06:00") //Set timezone that you want
+            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss" //Specify your format that you want
+            let strDate = dateFormatter.string(from: data)
+        
+            name.text = viewModel.name!
+            time.text = strDate
+            price.text = viewModel.price!
+            phone.text = "("+viewModel.phone!+")"
+            from.text = viewModel.from!
+            to.text = viewModel.to!
+            car.text = viewModel.comment!
+        }
+    }
     
     
 }

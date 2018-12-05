@@ -7,9 +7,4 @@
 //
 
 import Foundation
-protocol CarModelDelegate{
-    func CarModel(Id:Int,Name:String)
-}
-protocol CarMarkDelegate{
-    func CarMark(Id:Int,Name:String)
-}
+

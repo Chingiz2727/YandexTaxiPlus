@@ -21,6 +21,7 @@ class CitiesTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+        UIColourScheme.instance.set(for:self)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,7 +53,7 @@ class CitiesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath)
-        // Configure the cell...
+
         cell.textLabel?.text = "\(citie[indexPath.row].Name!),\(citie[indexPath.row].Region!)"
         return cell
     }
@@ -113,10 +114,3 @@ class CitiesTableViewController: UITableViewController {
     */
 
 }
-protocol FromCitiesTableViewControllerDelegate {
-    func CityFromData(id:String,region_id:String,name:String,cname:String)
-}
-protocol  ToCitiesTableViewControllerDelegate{
-    func CityToData(id:String,region_id:String,name:String,cname:String)
-}
-
