@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "041-van-1.png",
+      "filename" : "icon_cargo.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icon_cargo-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icon_cargo-2.png",
       "scale" : "3x"
     }
   ],
