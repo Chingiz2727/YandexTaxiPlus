@@ -22,7 +22,6 @@ class getHistory {
                 print(err)
             case.success(let val):
                 var json = JSON(val)
-                print(json)
                 guard let dataarr = json["orders"].array else {return}
                 var history = [History]()
                 for h in dataarr {

@@ -9,6 +9,7 @@
 import UIKit
 
 class TaxiOrdersTableViewCell: UITableViewCell {
+
     var AcceptButton : UIButton = UIButton()
   private  var AccepLabel : MainLabel = MainLabel()
     var DistanLabel : MainLabel = MainLabel()
@@ -66,34 +67,24 @@ class TaxiOrdersTableViewCell: UITableViewCell {
                 return
             }
             
-            Geocoding.LocationName(lat: viewModel.from_lat!, long: viewModel.from_long!) { (first_loc) in
-                let first_place2 = first_loc!.results![0].addressComponents![0].shortName ?? ""
-                let first_place3 = first_loc!.results![0].addressComponents![1].shortName ?? ""
-                let finist = "\(first_place3) \(first_place2)"
-                
-                print(first_place2)
-                self.from.text = finist
-            }
-            
-            
-            Geocoding.LocationName(lat: viewModel.to_lat!, long: viewModel.to_long!) { (first_loc) in
-                let first_place2 = first_loc!.results![0].addressComponents![0].shortName ?? ""
-                let first_place3 = first_loc!.results![0].addressComponents![1].shortName ?? ""
-                let finist = "\(first_place3) \(first_place2)"
-                print(first_loc!.results![0].addressComponents!)
-                self.to.text = finist
-            }
-            
-            
+         
+          
             GetDistance.getinfo(from_lat: viewModel.from_lat!, from_long: viewModel.from_long!, to_lat: viewModel.to_lat!, to_long: viewModel.to_long!) { (info) in
                 for i in info.rows! {
                     for a in i.elements! {
-                        self.DistanLabel.text = a.distance.text!
+                        self.DistanLabel.text = a.distance?.text!
 
                     }
                 }
             }
+            getfromgeo.get(lat: viewModel.from_lat!, long: viewModel.from_long!) { (palce) in
+                self.to.text = palce
+            }
+            getfromgeo.get(lat: viewModel.to_lat!, long: viewModel.to_long!) { (place) in
+                self.from.text = place
+            }
             price.text = viewModel.price
+            
         }
     }
 

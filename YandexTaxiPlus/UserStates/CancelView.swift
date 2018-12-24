@@ -13,6 +13,7 @@ class CancelView : NSObject {
     var window : UIView?
     var cancel : UIButton = UIButton()
     var can : orderCanceled?
+    var order_id: Int?
     var label:MainLabel = MainLabel()
     func addcancel(view:UIView) {
         self.window = view
@@ -36,13 +37,22 @@ class CancelView : NSObject {
         
         let alert = UIAlertController.init(title: "Отмена", message: "Вы хотите отменить заказ?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { (action) in
-            sendPushId.send { (info, order) in
-                Cancel.Cancel(order_id:String(order!))
-                self.can?.Canceled()
-                self.cancel.removeFromSuperview()
-                self.label.removeFromSuperview()
-                
+            if let order_id = self.order_id {
+                Cancel.Cancel(order_id: String(order_id), complition: { (success) in
+                    if success == true {
+                        self.can?.Canceled()
+                        self.cancel.removeFromSuperview()
+                        self.label.removeFromSuperview()
+                    }
+                    else {
+                        self.window?.makeToast("Ошибка")
+                    }
+                })
             }
+     
+            
+                
+            
         }))
         alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
         alert.show()

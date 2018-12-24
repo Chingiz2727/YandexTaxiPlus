@@ -65,7 +65,7 @@ class SessionOpenView: UIView {
     }
     func anchors() {
         view3.setAnchor(top: self.topAnchor, left: Coins.leftAnchor, bottom: nil, right: Coins_count.rightAnchor, paddingTop: 100, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        view.setAnchor(top: view3.bottomAnchor, left: Label_six.leftAnchor, bottom: six_check.bottomAnchor, right: Label_tw.rightAnchor, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        view.setAnchor(top: view3.bottomAnchor, left: Label_six.leftAnchor, bottom: six_check.bottomAnchor, right: Label_tw.rightAnchor, paddingTop: 40, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         Label_six.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         six_price.setAnchor(top: Label_six.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         six_check.setAnchor(top: six_price.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,width: 20,height: 20)
@@ -73,16 +73,14 @@ class SessionOpenView: UIView {
         Label_tw.setAnchor(top: view.topAnchor, left: Label_six.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 40, paddingBottom: 0, paddingRight: 0)
         tw_price.setAnchor(top: Label_tw.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         tw_check.setAnchor(top: tw_price.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,width: 20,height: 20)
-        
-        
-        view2.setAnchor(top: view.bottomAnchor, left: ostatok.leftAnchor, bottom: nil, right: ostatok_m.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        view2.setAnchor(top: view.bottomAnchor, left: ostatok.leftAnchor, bottom: nil, right: ostatok_m.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         ostatok.setAnchor(top: view2.topAnchor, left: view2.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         ostatok_m.setAnchor(top: view2.topAnchor, left: ostatok.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
         OpenButton.setAnchor(top: view2.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 50, paddingLeft: 10, paddingBottom: 20, paddingRight: 10,width: 0,height: 40)
         
     
-        Coins.setAnchor(top: nil, left: view3.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        Coins_count.setAnchor(top: nil, left: Coins.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 40, paddingBottom: 0, paddingRight: 0)
+        Coins.setAnchor(top: view3.topAnchor, left: view3.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        Coins_count.setAnchor(top: view3.topAnchor, left: Coins.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 40, paddingBottom: 0, paddingRight: 0)
         OpenButton.initialize()
         OpenButton.layer.cornerRadius = 5
         OpenButton.setTitleColor(UIColor.white, for: .normal)

@@ -42,7 +42,6 @@ class HistoryTableViewCell: UITableViewCell {
         place.initialize()
         date.font = UIFont.systemFont(ofSize: 8)
         label.font = UIFont.systemFont(ofSize: 18)
-        label.text = "che tam"
         let centerY = img.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         let centerYtime = timeview.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         let centerpolace = place.centerYAnchor.constraint(equalTo: self.centerYAnchor)
@@ -51,11 +50,12 @@ class HistoryTableViewCell: UITableViewCell {
         place.font = UIFont.systemFont(ofSize: 13)
         label.setAnchor(top: nil, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 20)
         date.setAnchor(top: label.bottomAnchor, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 20)
-        img.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0,width: 24,height: 24)
+        img.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0,width: 40,height: 30)
+        img.contentMode = .scaleAspectFit
         timeview.setAnchor(top: label.topAnchor, left: label.leftAnchor, bottom: date.bottomAnchor, right: label.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         self.backgroundColor = UIColor.clear
         NSLayoutConstraint.activate([centerY,centerYtime,centerpolace])
-        
+        self.selectionStyle = .none
     }
 
 }

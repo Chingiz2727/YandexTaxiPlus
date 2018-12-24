@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7206EEEB21BA7CAD00F29A08 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206EEEA21BA7CAD00F29A08 /* NewsTableViewCell.swift */; };
+		7206EEED21BA83AF00F29A08 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206EEEC21BA83AF00F29A08 /* NewsDetailViewController.swift */; };
 		720D450621B141A1005BF98E /* PayByCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D450521B141A1005BF98E /* PayByCardViewController.swift */; };
 		720D450821B15D75005BF98E /* GetHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D450721B15D75005BF98E /* GetHistory.swift */; };
 		7212B5D521B1AB1D00DD2610 /* DrunkTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212B5D421B1AB1D00DD2610 /* DrunkTableViewHeader.swift */; };
 		7212B5D721B2565900DD2610 /* DrunkTaxiGetPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212B5D621B2565900DD2610 /* DrunkTaxiGetPrice.swift */; };
 		7212B5D921B27B2100DD2610 /* DrunkMakeOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7212B5D821B27B2100DD2610 /* DrunkMakeOrder.swift */; };
 		72130A91218C28D600309FDD /* TaxiOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72130A90218C28D600309FDD /* TaxiOrdersTableViewCell.swift */; };
+		7218287921C3A5910090ECF4 /* ListOfOrdersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218287821C3A5910090ECF4 /* ListOfOrdersTable.swift */; };
+		7218287B21C3B42B0090ECF4 /* ListOfOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218287A21C3B42B0090ECF4 /* ListOfOrdersTableViewCell.swift */; };
+		7218287D21C3B89E0090ECF4 /* GeoPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218287C21C3B89E0090ECF4 /* GeoPlace.swift */; };
+		7218288121C3BCFB0090ECF4 /* DriverMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218288021C3BCFB0090ECF4 /* DriverMap.swift */; };
+		7218288321C3BD120090ECF4 /* DriverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218288221C3BD120090ECF4 /* DriverProtocol.swift */; };
+		721A3A6321C6B9CB00D26BF0 /* UserMainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A3A6221C6B9CB00D26BF0 /* UserMainPageView.swift */; };
+		721A3A6521C6D2A100D26BF0 /* TestViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A3A6421C6D2A100D26BF0 /* TestViewExtension.swift */; };
 		721BEDF6219C3544003799DB /* UserTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721BEDF5219C3544003799DB /* UserTypeInfo.swift */; };
 		721D962B21903EFB0030EB13 /* GetChatOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D962A21903EFB0030EB13 /* GetChatOrders.swift */; };
 		721D962D219040110030EB13 /* ChatOrderStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D962C219040110030EB13 /* ChatOrderStructure.swift */; };
@@ -32,8 +41,9 @@
 		7231EC6521A55E810000295A /* Image color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231EC6421A55E810000295A /* Image color.swift */; };
 		7231EC6721A573990000295A /* DistanceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231EC6621A573990000295A /* DistanceClass.swift */; };
 		7231EC6921A5762B0000295A /* GetDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231EC6821A5762B0000295A /* GetDistance.swift */; };
-		7236068B21799D20000D1E10 /* GetAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236068A21799D20000D1E10 /* GetAvatar.swift */; };
 		7236068E2179AC05000D1E10 /* InvaTaxiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236068D2179AC05000D1E10 /* InvaTaxiTableViewController.swift */; };
+		723F901F21BE611900CA95B1 /* GetFullAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F901E21BE611900CA95B1 /* GetFullAmount.swift */; };
+		723F902121BE7F9B00CA95B1 /* UploadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F902021BE7F9B00CA95B1 /* UploadPhoto.swift */; };
 		7242DF8E2175F3CC00DE7089 /* MenuClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242DF8D2175F3CC00DE7089 /* MenuClass.swift */; };
 		7242DF9021760EFD00DE7089 /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242DF8F21760EFD00DE7089 /* GetUser.swift */; };
 		7242DF9221760F8100DE7089 /* MainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242DF9121760F8100DE7089 /* MainInfo.swift */; };
@@ -42,6 +52,7 @@
 		724625E5219EDE5F005BD2AC /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724625E4219EDE5F005BD2AC /* FooterCollectionViewCell.swift */; };
 		724DEFB22194180B00BF47B7 /* CommendAndDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DEFB12194180B00BF47B7 /* CommendAndDate.swift */; };
 		724DEFB42194386600BF47B7 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724DEFB32194386600BF47B7 /* protocols.swift */; };
+		724F7CDB21B92AF300C98283 /* DriverCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724F7CDA21B92AF300C98283 /* DriverCoins.swift */; };
 		724FCFC621899BD600D4CB7D /* AcceptByTaxiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FCFC521899BD600D4CB7D /* AcceptByTaxiCell.swift */; };
 		7264F8F9219FD0B9009D26E3 /* TaxiOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264F8F8219FD0B9009D26E3 /* TaxiOrdersViewModel.swift */; };
 		7264F8FB21A17F3A009D26E3 /* EvoMakeOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264F8FA21A17F3A009D26E3 /* EvoMakeOrder.swift */; };
@@ -68,16 +79,21 @@
 		726A91E821AD63C800B4FA5B /* FullChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A91E721AD63C800B4FA5B /* FullChatsTableViewController.swift */; };
 		726A91EA21AD646E00B4FA5B /* FullChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A91E921AD646E00B4FA5B /* FullChatsViewModel.swift */; };
 		726A91EC21AD6B0600B4FA5B /* CheckParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A91EB21AD6B0600B4FA5B /* CheckParams.swift */; };
+		726B442E21C53E1C00DF6C02 /* UserMainPageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726B442D21C53E1C00DF6C02 /* UserMainPageProtocol.swift */; };
 		7270E504218AFD6900E9E7DA /* AcceptFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270E503218AFD6900E9E7DA /* AcceptFunc.swift */; };
 		7270E506218AFF9100E9E7DA /* AcceptDriverOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270E505218AFF9100E9E7DA /* AcceptDriverOrder.swift */; };
 		727248652188367E00FAC508 /* DriverMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727248642188367E00FAC508 /* DriverMenuTableViewController.swift */; };
 		7272486821884C2B00FAC508 /* DriverMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272486721884C2B00FAC508 /* DriverMapView.swift */; };
-		7272486A21884D8900FAC508 /* DriverMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272486921884D8900FAC508 /* DriverMapViewController.swift */; };
 		7272486E2188518400FAC508 /* AcceptTaxi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7272486D2188518400FAC508 /* AcceptTaxi.swift */; };
 		72724872218854C400FAC508 /* AcceptDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72724871218854C400FAC508 /* AcceptDriver.swift */; };
 		727248742188552400FAC508 /* SendLocationMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727248732188552400FAC508 /* SendLocationMain.swift */; };
 		7275C85B21817AE50018BFEE /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7275C85A21817AE50018BFEE /* ButtonsTableViewCell.swift */; };
+		727BE4E221CA0220003808E9 /* AddZayava.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727BE4E121CA0220003808E9 /* AddZayava.swift */; };
+		727BE4E421CA02E3003808E9 /* ZayavaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727BE4E321CA02E3003808E9 /* ZayavaViewController.swift */; };
 		727EE08421B11353009F2772 /* AnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EE08321B11353009F2772 /* AnimateViewController.swift */; };
+		7282B34321C9193700C2EC4F /* OrderDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282B34221C9193700C2EC4F /* OrderDetailTableViewController.swift */; };
+		7286E52921C0F4E4000F92A4 /* GetReferal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7286E52821C0F4E4000F92A4 /* GetReferal.swift */; };
+		7286E52D21C128E2000F92A4 /* SetView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7286E52C21C128E2000F92A4 /* SetView2.swift */; };
 		7287ADFC21A2CA1B00A69AE2 /* CancelOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287ADFB21A2CA1B00A69AE2 /* CancelOrder.swift */; };
 		7288096B217E0E4500FD073C /* CityTaxi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288096A217E0E4500FD073C /* CityTaxi.swift */; };
 		7288096D217E156900FD073C /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288096C217E156900FD073C /* AddTableViewController.swift */; };
@@ -97,6 +113,7 @@
 		728B641021833BDF00B3CF7E /* SessionFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728B640F21833BDF00B3CF7E /* SessionFunc.swift */; };
 		728B641221833C3800B3CF7E /* SessionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728B641121833C3800B3CF7E /* SessionStruct.swift */; };
 		728B641421833DDD00B3CF7E /* SessionOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728B641321833DDD00B3CF7E /* SessionOpenView.swift */; };
+		7295475321CB65EF00B66CB5 /* HeaderOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7295475221CB65EF00B66CB5 /* HeaderOrderTableViewCell.swift */; };
 		7296A946219ABEC6003B9A64 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296A945219ABEC6003B9A64 /* MainButton.swift */; };
 		7296A948219ACB8F003B9A64 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296A947219ACB8F003B9A64 /* TestViewController.swift */; };
 		729927CA2186C76D0039C2EC /* AddRecomend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729927C92186C76D0039C2EC /* AddRecomend.swift */; };
@@ -107,7 +124,6 @@
 		729927E021872A460039C2EC /* AddGruzTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729927DF21872A460039C2EC /* AddGruzTableViewController.swift */; };
 		729927E221872E990039C2EC /* AddInvaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729927E121872E990039C2EC /* AddInvaTableViewController.swift */; };
 		729927E721872EFC0039C2EC /* AddEvoTaxiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729927E621872EFC0039C2EC /* AddEvoTaxiTableViewController.swift */; };
-		729D25B2217734F300BF10FF /* UserOrderSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729D25B1217734F300BF10FF /* UserOrderSettingViewController.swift */; };
 		729D25B6217739B800BF10FF /* GetUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729D25B5217739B800BF10FF /* GetUserInfo.swift */; };
 		729D25B821773C0400BF10FF /* UserMainPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729D25B721773C0400BF10FF /* UserMainPageMenu.swift */; };
 		729D25BB2177410500BF10FF /* UserMakeOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729D25BA2177410500BF10FF /* UserMakeOrder.swift */; };
@@ -123,6 +139,11 @@
 		72A6F734218475F90037AA13 /* TaxiOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A6F733218475F90037AA13 /* TaxiOrdersTableViewController.swift */; };
 		72B2B19D21B3EA5A00406DAD /* GeoCodingStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B2B19C21B3EA5A00406DAD /* GeoCodingStructure.swift */; };
 		72B2B19F21B40BFF00406DAD /* FullGeoCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B2B19E21B40BFF00406DAD /* FullGeoCode.swift */; };
+		72B590DF21BA2E370027C229 /* CoinAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B590DE21BA2E370027C229 /* CoinAlertViewController.swift */; };
+		72B590E121BA371B0027C229 /* MoneyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B590E021BA371B0027C229 /* MoneyRequest.swift */; };
+		72B590E421BA40AC0027C229 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B590E321BA40AC0027C229 /* NewsTableViewController.swift */; };
+		72B590E621BA40E90027C229 /* getNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B590E521BA40E90027C229 /* getNews.swift */; };
+		72B590E821BA41D60027C229 /* NewsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B590E721BA41D60027C229 /* NewsModule.swift */; };
 		72B6816D21B7CEB4008FA95B /* GetDriverCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6816C21B7CEB4008FA95B /* GetDriverCoins.swift */; };
 		72BFAAF321A66B4700C70E50 /* CheckContains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAAF221A66B4700C70E50 /* CheckContains.swift */; };
 		72BFAAF621A6B65D00C70E50 /* SecondRegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAAF521A6B65D00C70E50 /* SecondRegisterTableViewController.swift */; };
@@ -148,6 +169,7 @@
 		72DAF30C21746E5100603559 /* MapStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAF30B21746E5100603559 /* MapStyle.swift */; };
 		72DAF3452174949900603559 /* ChoosePlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAF3442174949900603559 /* ChoosePlaceTableViewController.swift */; };
 		72DAF3472174A48600603559 /* ExtenSionAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAF3462174A48600603559 /* ExtenSionAutoComplete.swift */; };
+		72E72FC621CE8A8F00B9B25C /* GetDriverAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E72FC521CE8A8F00B9B25C /* GetDriverAvatar.swift */; };
 		72EC886321AE607E00C25095 /* SavePlacePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC885C21AE607E00C25095 /* SavePlacePost.swift */; };
 		72EC886421AE607E00C25095 /* GetMyPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC885D21AE607E00C25095 /* GetMyPlace.swift */; };
 		72EC886521AE607E00C25095 /* SavePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC885E21AE607E00C25095 /* SavePlaceViewController.swift */; };
@@ -155,30 +177,45 @@
 		72EC886721AE607E00C25095 /* MyPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC886021AE607E00C25095 /* MyPlace.swift */; };
 		72EC886821AE607E00C25095 /* SavePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC886121AE607E00C25095 /* SavePlaceView.swift */; };
 		72EC886921AE607E00C25095 /* MyPlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC886221AE607E00C25095 /* MyPlacesTableViewController.swift */; };
-		72EC886C21AE60F100C25095 /* DriverCoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC886B21AE60F000C25095 /* DriverCoinsViewController.swift */; };
+		72EC886C21AE60F100C25095 /* UserCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC886B21AE60F000C25095 /* UserCoins.swift */; };
 		72EC886E21AE631800C25095 /* ChangeRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC886D21AE631800C25095 /* ChangeRole.swift */; };
 		72EC887021AE709400C25095 /* Quit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC886F21AE709400C25095 /* Quit.swift */; };
 		72EC887221AEA36800C25095 /* CellForRowRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC887121AEA36800C25095 /* CellForRowRegister.swift */; };
 		72F78783218ACEC3005F9A83 /* Geocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F78782218ACEC3005F9A83 /* Geocoding.swift */; };
-		E303EB399F93991F965E8110 /* Pods_YandexTaxiPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFAD270CAD718D46ADA73748 /* Pods_YandexTaxiPlus.framework */; };
+		72F80DB021C96561003A57E9 /* SendChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F80DAF21C96561003A57E9 /* SendChat.swift */; };
+		72F80DB221C97D91003A57E9 /* AddComent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F80DB121C97D91003A57E9 /* AddComent.swift */; };
+		72F80DB421C97DF4003A57E9 /* AddFAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F80DB321C97DF3003A57E9 /* AddFAQTableViewController.swift */; };
+		72F80DB821C97E4B003A57E9 /* MakeFAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F80DB721C97E4B003A57E9 /* MakeFAQViewController.swift */; };
+		DA836F9F392224CD318B0403 /* Pods_YandexTaxiPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4BE7FF6728D754FBB69517 /* Pods_YandexTaxiPlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F4BE7FF6728D754FBB69517 /* Pods_YandexTaxiPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexTaxiPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36978A6D91CDD54B9B87635B /* Pods-YandexTaxiPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTaxiPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus.release.xcconfig"; sourceTree = "<group>"; };
+		7206EEEA21BA7CAD00F29A08 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		7206EEEC21BA83AF00F29A08 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		720D450521B141A1005BF98E /* PayByCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayByCardViewController.swift; sourceTree = "<group>"; };
 		720D450721B15D75005BF98E /* GetHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHistory.swift; sourceTree = "<group>"; };
 		7212B5D421B1AB1D00DD2610 /* DrunkTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrunkTableViewHeader.swift; sourceTree = "<group>"; };
 		7212B5D621B2565900DD2610 /* DrunkTaxiGetPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrunkTaxiGetPrice.swift; sourceTree = "<group>"; };
 		7212B5D821B27B2100DD2610 /* DrunkMakeOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrunkMakeOrder.swift; sourceTree = "<group>"; };
 		72130A90218C28D600309FDD /* TaxiOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiOrdersTableViewCell.swift; sourceTree = "<group>"; };
+		7218287821C3A5910090ECF4 /* ListOfOrdersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfOrdersTable.swift; sourceTree = "<group>"; };
+		7218287A21C3B42B0090ECF4 /* ListOfOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfOrdersTableViewCell.swift; sourceTree = "<group>"; };
+		7218287C21C3B89E0090ECF4 /* GeoPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPlace.swift; sourceTree = "<group>"; };
+		7218288021C3BCFB0090ECF4 /* DriverMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMap.swift; sourceTree = "<group>"; };
+		7218288221C3BD120090ECF4 /* DriverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverProtocol.swift; sourceTree = "<group>"; };
+		721A3A6221C6B9CB00D26BF0 /* UserMainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainPageView.swift; sourceTree = "<group>"; };
+		721A3A6421C6D2A100D26BF0 /* TestViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewExtension.swift; sourceTree = "<group>"; };
 		721BEDF5219C3544003799DB /* UserTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeInfo.swift; sourceTree = "<group>"; };
 		721D962A21903EFB0030EB13 /* GetChatOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChatOrders.swift; sourceTree = "<group>"; };
 		721D962C219040110030EB13 /* ChatOrderStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatOrderStructure.swift; sourceTree = "<group>"; };
+		722E657521CBC039006449EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		722E657621CBC03C006449EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
 		722F6E1C2170927200FB11E4 /* YandexTaxiPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexTaxiPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		722F6E1F2170927200FB11E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		722F6E212170927200FB11E4 /* EnterPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhone.swift; sourceTree = "<group>"; };
-		722F6E242170927200FB11E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		722F6E262170927500FB11E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		722F6E292170927500FB11E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		722F6E2B2170927500FB11E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		722F6E322170956400FB11E4 /* PhoneFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFieldView.swift; sourceTree = "<group>"; };
 		722F6E352170976B00FB11E4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -191,8 +228,9 @@
 		7231EC6421A55E810000295A /* Image color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image color.swift"; sourceTree = "<group>"; };
 		7231EC6621A573990000295A /* DistanceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceClass.swift; sourceTree = "<group>"; };
 		7231EC6821A5762B0000295A /* GetDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDistance.swift; sourceTree = "<group>"; };
-		7236068A21799D20000D1E10 /* GetAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAvatar.swift; sourceTree = "<group>"; };
 		7236068D2179AC05000D1E10 /* InvaTaxiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaTaxiTableViewController.swift; sourceTree = "<group>"; };
+		723F901E21BE611900CA95B1 /* GetFullAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFullAmount.swift; sourceTree = "<group>"; };
+		723F902021BE7F9B00CA95B1 /* UploadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhoto.swift; sourceTree = "<group>"; };
 		7242DF8D2175F3CC00DE7089 /* MenuClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuClass.swift; sourceTree = "<group>"; };
 		7242DF8F21760EFD00DE7089 /* GetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 		7242DF9121760F8100DE7089 /* MainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfo.swift; sourceTree = "<group>"; };
@@ -201,6 +239,7 @@
 		724625E4219EDE5F005BD2AC /* FooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell.swift; sourceTree = "<group>"; };
 		724DEFB12194180B00BF47B7 /* CommendAndDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommendAndDate.swift; sourceTree = "<group>"; };
 		724DEFB32194386600BF47B7 /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
+		724F7CDA21B92AF300C98283 /* DriverCoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverCoins.swift; sourceTree = "<group>"; };
 		724FCFC521899BD600D4CB7D /* AcceptByTaxiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptByTaxiCell.swift; sourceTree = "<group>"; };
 		7264F8F8219FD0B9009D26E3 /* TaxiOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiOrdersViewModel.swift; sourceTree = "<group>"; };
 		7264F8FA21A17F3A009D26E3 /* EvoMakeOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvoMakeOrder.swift; sourceTree = "<group>"; };
@@ -227,16 +266,21 @@
 		726A91E721AD63C800B4FA5B /* FullChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullChatsTableViewController.swift; sourceTree = "<group>"; };
 		726A91E921AD646E00B4FA5B /* FullChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullChatsViewModel.swift; sourceTree = "<group>"; };
 		726A91EB21AD6B0600B4FA5B /* CheckParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckParams.swift; sourceTree = "<group>"; };
+		726B442D21C53E1C00DF6C02 /* UserMainPageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainPageProtocol.swift; sourceTree = "<group>"; };
 		7270E503218AFD6900E9E7DA /* AcceptFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptFunc.swift; sourceTree = "<group>"; };
 		7270E505218AFF9100E9E7DA /* AcceptDriverOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDriverOrder.swift; sourceTree = "<group>"; };
 		727248642188367E00FAC508 /* DriverMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMenuTableViewController.swift; sourceTree = "<group>"; };
 		7272486721884C2B00FAC508 /* DriverMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMapView.swift; sourceTree = "<group>"; };
-		7272486921884D8900FAC508 /* DriverMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMapViewController.swift; sourceTree = "<group>"; };
 		7272486D2188518400FAC508 /* AcceptTaxi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTaxi.swift; sourceTree = "<group>"; };
 		72724871218854C400FAC508 /* AcceptDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDriver.swift; sourceTree = "<group>"; };
 		727248732188552400FAC508 /* SendLocationMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLocationMain.swift; sourceTree = "<group>"; };
 		7275C85A21817AE50018BFEE /* ButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTableViewCell.swift; sourceTree = "<group>"; };
+		727BE4E121CA0220003808E9 /* AddZayava.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddZayava.swift; sourceTree = "<group>"; };
+		727BE4E321CA02E3003808E9 /* ZayavaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZayavaViewController.swift; sourceTree = "<group>"; };
 		727EE08321B11353009F2772 /* AnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateViewController.swift; sourceTree = "<group>"; };
+		7282B34221C9193700C2EC4F /* OrderDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailTableViewController.swift; sourceTree = "<group>"; };
+		7286E52821C0F4E4000F92A4 /* GetReferal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReferal.swift; sourceTree = "<group>"; };
+		7286E52C21C128E2000F92A4 /* SetView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView2.swift; sourceTree = "<group>"; };
 		7287ADFB21A2CA1B00A69AE2 /* CancelOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrder.swift; sourceTree = "<group>"; };
 		7288096A217E0E4500FD073C /* CityTaxi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTaxi.swift; sourceTree = "<group>"; };
 		7288096C217E156900FD073C /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +300,7 @@
 		728B640F21833BDF00B3CF7E /* SessionFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFunc.swift; sourceTree = "<group>"; };
 		728B641121833C3800B3CF7E /* SessionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStruct.swift; sourceTree = "<group>"; };
 		728B641321833DDD00B3CF7E /* SessionOpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOpenView.swift; sourceTree = "<group>"; };
+		7295475221CB65EF00B66CB5 /* HeaderOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOrderTableViewCell.swift; sourceTree = "<group>"; };
 		7296A945219ABEC6003B9A64 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		7296A947219ACB8F003B9A64 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		729927C92186C76D0039C2EC /* AddRecomend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecomend.swift; sourceTree = "<group>"; };
@@ -266,7 +311,6 @@
 		729927DF21872A460039C2EC /* AddGruzTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGruzTableViewController.swift; sourceTree = "<group>"; };
 		729927E121872E990039C2EC /* AddInvaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvaTableViewController.swift; sourceTree = "<group>"; };
 		729927E621872EFC0039C2EC /* AddEvoTaxiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvoTaxiTableViewController.swift; sourceTree = "<group>"; };
-		729D25B1217734F300BF10FF /* UserOrderSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrderSettingViewController.swift; sourceTree = "<group>"; };
 		729D25B5217739B800BF10FF /* GetUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInfo.swift; sourceTree = "<group>"; };
 		729D25B721773C0400BF10FF /* UserMainPageMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainPageMenu.swift; sourceTree = "<group>"; };
 		729D25BA2177410500BF10FF /* UserMakeOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMakeOrder.swift; sourceTree = "<group>"; };
@@ -284,6 +328,11 @@
 		72A6F733218475F90037AA13 /* TaxiOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiOrdersTableViewController.swift; sourceTree = "<group>"; };
 		72B2B19C21B3EA5A00406DAD /* GeoCodingStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingStructure.swift; sourceTree = "<group>"; };
 		72B2B19E21B40BFF00406DAD /* FullGeoCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullGeoCode.swift; sourceTree = "<group>"; };
+		72B590DE21BA2E370027C229 /* CoinAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAlertViewController.swift; sourceTree = "<group>"; };
+		72B590E021BA371B0027C229 /* MoneyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRequest.swift; sourceTree = "<group>"; };
+		72B590E321BA40AC0027C229 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		72B590E521BA40E90027C229 /* getNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getNews.swift; sourceTree = "<group>"; };
+		72B590E721BA41D60027C229 /* NewsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModule.swift; sourceTree = "<group>"; };
 		72B6816C21B7CEB4008FA95B /* GetDriverCoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDriverCoins.swift; sourceTree = "<group>"; };
 		72BFAAF221A66B4700C70E50 /* CheckContains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckContains.swift; sourceTree = "<group>"; };
 		72BFAAF521A6B65D00C70E50 /* SecondRegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRegisterTableViewController.swift; sourceTree = "<group>"; };
@@ -309,6 +358,7 @@
 		72DAF30B21746E5100603559 /* MapStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyle.swift; sourceTree = "<group>"; };
 		72DAF3442174949900603559 /* ChoosePlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceTableViewController.swift; sourceTree = "<group>"; };
 		72DAF3462174A48600603559 /* ExtenSionAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtenSionAutoComplete.swift; sourceTree = "<group>"; };
+		72E72FC521CE8A8F00B9B25C /* GetDriverAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDriverAvatar.swift; sourceTree = "<group>"; };
 		72EC885C21AE607E00C25095 /* SavePlacePost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavePlacePost.swift; sourceTree = "<group>"; };
 		72EC885D21AE607E00C25095 /* GetMyPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMyPlace.swift; sourceTree = "<group>"; };
 		72EC885E21AE607E00C25095 /* SavePlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavePlaceViewController.swift; sourceTree = "<group>"; };
@@ -316,14 +366,16 @@
 		72EC886021AE607E00C25095 /* MyPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlace.swift; sourceTree = "<group>"; };
 		72EC886121AE607E00C25095 /* SavePlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavePlaceView.swift; sourceTree = "<group>"; };
 		72EC886221AE607E00C25095 /* MyPlacesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlacesTableViewController.swift; sourceTree = "<group>"; };
-		72EC886B21AE60F000C25095 /* DriverCoinsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverCoinsViewController.swift; sourceTree = "<group>"; };
+		72EC886B21AE60F000C25095 /* UserCoins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCoins.swift; sourceTree = "<group>"; };
 		72EC886D21AE631800C25095 /* ChangeRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRole.swift; sourceTree = "<group>"; };
 		72EC886F21AE709400C25095 /* Quit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quit.swift; sourceTree = "<group>"; };
 		72EC887121AEA36800C25095 /* CellForRowRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellForRowRegister.swift; sourceTree = "<group>"; };
 		72F78782218ACEC3005F9A83 /* Geocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoding.swift; sourceTree = "<group>"; };
-		96F09A0AAEBA6C21FC711C71 /* Pods-YandexTaxiPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTaxiPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus.release.xcconfig"; sourceTree = "<group>"; };
-		991924581311DB121E815DA8 /* Pods-YandexTaxiPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTaxiPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus.debug.xcconfig"; sourceTree = "<group>"; };
-		FFAD270CAD718D46ADA73748 /* Pods_YandexTaxiPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexTaxiPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F80DAF21C96561003A57E9 /* SendChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChat.swift; sourceTree = "<group>"; };
+		72F80DB121C97D91003A57E9 /* AddComent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComent.swift; sourceTree = "<group>"; };
+		72F80DB321C97DF3003A57E9 /* AddFAQTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFAQTableViewController.swift; sourceTree = "<group>"; };
+		72F80DB721C97E4B003A57E9 /* MakeFAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeFAQViewController.swift; sourceTree = "<group>"; };
+		9C24D717C82F68D196773341 /* Pods-YandexTaxiPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTaxiPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,28 +383,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E303EB399F93991F965E8110 /* Pods_YandexTaxiPlus.framework in Frameworks */,
+				DA836F9F392224CD318B0403 /* Pods_YandexTaxiPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08533102C26B12706728518B /* Pods */ = {
+		2A940E6C874B9721ABCF3EA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				991924581311DB121E815DA8 /* Pods-YandexTaxiPlus.debug.xcconfig */,
-				96F09A0AAEBA6C21FC711C71 /* Pods-YandexTaxiPlus.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		1E782BCAA595C8B8CCF3019F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FFAD270CAD718D46ADA73748 /* Pods_YandexTaxiPlus.framework */,
+				2F4BE7FF6728D754FBB69517 /* Pods_YandexTaxiPlus.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D5CD82C352E3A23EED69311 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C24D717C82F68D196773341 /* Pods-YandexTaxiPlus.debug.xcconfig */,
+				36978A6D91CDD54B9B87635B /* Pods-YandexTaxiPlus.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		722F6E132170927200FB11E4 = {
@@ -360,8 +412,8 @@
 			children = (
 				722F6E1E2170927200FB11E4 /* YandexTaxiPlus */,
 				722F6E1D2170927200FB11E4 /* Products */,
-				08533102C26B12706728518B /* Pods */,
-				1E782BCAA595C8B8CCF3019F /* Frameworks */,
+				6D5CD82C352E3A23EED69311 /* Pods */,
+				2A940E6C874B9721ABCF3EA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -382,6 +434,7 @@
 				722F6E1F2170927200FB11E4 /* AppDelegate.swift */,
 				729927CB2186CDF10039C2EC /* OrderInfo */,
 				729F4160217897140057A788 /* MessageChat.swift */,
+				7218287C21C3B89E0090ECF4 /* GeoPlace.swift */,
 				72886E1521B5496F00B1135E /* SetColor.swift */,
 				729F4163217898D70057A788 /* Bridging-Header.h */,
 				72A20DB121B5022300C5C36C /* OtherStructure */,
@@ -476,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				724625DF219EBEBD005BD2AC /* SettingView.swift */,
+				7286E52C21C128E2000F92A4 /* SetView2.swift */,
 				724625E4219EDE5F005BD2AC /* FooterCollectionViewCell.swift */,
 				724625E2219EC4BA005BD2AC /* CarCell.swift */,
 			);
@@ -571,10 +625,13 @@
 			isa = PBXGroup;
 			children = (
 				7272486721884C2B00FAC508 /* DriverMapView.swift */,
+				727BE4E321CA02E3003808E9 /* ZayavaViewController.swift */,
+				727BE4E121CA0220003808E9 /* AddZayava.swift */,
 				727248732188552400FAC508 /* SendLocationMain.swift */,
 				72724871218854C400FAC508 /* AcceptDriver.swift */,
 				7272486D2188518400FAC508 /* AcceptTaxi.swift */,
-				7272486921884D8900FAC508 /* DriverMapViewController.swift */,
+				7218288021C3BCFB0090ECF4 /* DriverMap.swift */,
+				7218288221C3BD120090ECF4 /* DriverProtocol.swift */,
 			);
 			path = DriverMap;
 			sourceTree = "<group>";
@@ -583,8 +640,12 @@
 			isa = PBXGroup;
 			children = (
 				729927C92186C76D0039C2EC /* AddRecomend.swift */,
-				7236068A21799D20000D1E10 /* GetAvatar.swift */,
+				7295475221CB65EF00B66CB5 /* HeaderOrderTableViewCell.swift */,
+				7282B34221C9193700C2EC4F /* OrderDetailTableViewController.swift */,
+				726B442D21C53E1C00DF6C02 /* UserMainPageProtocol.swift */,
+				721A3A6221C6B9CB00D26BF0 /* UserMainPageView.swift */,
 				7296A947219ACB8F003B9A64 /* TestViewController.swift */,
+				721A3A6421C6D2A100D26BF0 /* TestViewExtension.swift */,
 				729D25C5217755CD00BF10FF /* DrawRoute.swift */,
 				729D25B721773C0400BF10FF /* UserMainPageMenu.swift */,
 				72DAF30B21746E5100603559 /* MapStyle.swift */,
@@ -612,6 +673,8 @@
 		728B640D21833BC200B3CF7E /* DriverInterFace */ = {
 			isa = PBXGroup;
 			children = (
+				72E72FC521CE8A8F00B9B25C /* GetDriverAvatar.swift */,
+				72B590E221BA40940027C229 /* DriverNews */,
 				72D4A72021B08C3800923BC5 /* DriverSettingTableView */,
 				726A91E121AD614300B4FA5B /* FullChats */,
 				72BFAAF421A6B63200C70E50 /* SecondRegister */,
@@ -621,6 +684,8 @@
 				72A6F732218475D90037AA13 /* TaxiOrders */,
 				728B640E21833BCB00B3CF7E /* DriverSession */,
 				721BEDF5219C3544003799DB /* UserTypeInfo.swift */,
+				7218287A21C3B42B0090ECF4 /* ListOfOrdersTableViewCell.swift */,
+				7218287821C3A5910090ECF4 /* ListOfOrdersTable.swift */,
 				72BFF8A921ABE1EC0008981B /* CheckAccess */,
 				72EC886D21AE631800C25095 /* ChangeRole.swift */,
 			);
@@ -670,7 +735,9 @@
 		729D25A8217729E800BF10FF /* UserOrder_Settings */ = {
 			isa = PBXGroup;
 			children = (
-				729D25B1217734F300BF10FF /* UserOrderSettingViewController.swift */,
+				72F80DB121C97D91003A57E9 /* AddComent.swift */,
+				72F80DB321C97DF3003A57E9 /* AddFAQTableViewController.swift */,
+				72F80DB721C97E4B003A57E9 /* MakeFAQViewController.swift */,
 				729D25BA2177410500BF10FF /* UserMakeOrder.swift */,
 			);
 			path = UserOrder_Settings;
@@ -698,6 +765,7 @@
 			isa = PBXGroup;
 			children = (
 				729F415E21788E4D0057A788 /* ChatController.swift */,
+				72F80DAF21C96561003A57E9 /* SendChat.swift */,
 			);
 			path = ChatController;
 			sourceTree = "<group>";
@@ -706,7 +774,10 @@
 			isa = PBXGroup;
 			children = (
 				72B2B19E21B40BFF00406DAD /* FullGeoCode.swift */,
+				7286E52821C0F4E4000F92A4 /* GetReferal.swift */,
+				723F902021BE7F9B00CA95B1 /* UploadPhoto.swift */,
 				72886E1321B53AD200B1135E /* DayMode.swift */,
+				723F901E21BE611900CA95B1 /* GetFullAmount.swift */,
 				72886E1121B51D4B00B1135E /* JKDropDown.swift */,
 				72D4A71821AFC4AF00923BC5 /* InfoForDriver.swift */,
 				72B2B19C21B3EA5A00406DAD /* GeoCodingStructure.swift */,
@@ -749,6 +820,18 @@
 				72D4A71621AFBDF100923BC5 /* TaxiOrdersDetailOrderId.swift */,
 			);
 			path = TaxiOrders;
+			sourceTree = "<group>";
+		};
+		72B590E221BA40940027C229 /* DriverNews */ = {
+			isa = PBXGroup;
+			children = (
+				72B590E321BA40AC0027C229 /* NewsTableViewController.swift */,
+				7206EEEC21BA83AF00F29A08 /* NewsDetailViewController.swift */,
+				7206EEEA21BA7CAD00F29A08 /* NewsTableViewCell.swift */,
+				72B590E721BA41D60027C229 /* NewsModule.swift */,
+				72B590E521BA40E90027C229 /* getNews.swift */,
+			);
+			path = DriverNews;
 			sourceTree = "<group>";
 		};
 		72BFAAF421A6B63200C70E50 /* SecondRegister */ = {
@@ -818,8 +901,11 @@
 		72EC886A21AE60F000C25095 /* DriverCoins */ = {
 			isa = PBXGroup;
 			children = (
-				72EC886B21AE60F000C25095 /* DriverCoinsViewController.swift */,
+				72EC886B21AE60F000C25095 /* UserCoins.swift */,
+				72B590E021BA371B0027C229 /* MoneyRequest.swift */,
 				72B6816C21B7CEB4008FA95B /* GetDriverCoins.swift */,
+				724F7CDA21B92AF300C98283 /* DriverCoins.swift */,
+				72B590DE21BA2E370027C229 /* CoinAlertViewController.swift */,
 			);
 			path = DriverCoins;
 			sourceTree = "<group>";
@@ -831,12 +917,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 722F6E2E2170927500FB11E4 /* Build configuration list for PBXNativeTarget "YandexTaxiPlus" */;
 			buildPhases = (
-				D26D0F69FB4E101D62CE088F /* [CP] Check Pods Manifest.lock */,
+				881DFCD32F39F69CDAEC80E2 /* [CP] Check Pods Manifest.lock */,
 				722F6E182170927200FB11E4 /* Sources */,
 				722F6E192170927200FB11E4 /* Frameworks */,
 				722F6E1A2170927200FB11E4 /* Resources */,
-				DE7BAAC278411DB5C377CDEF /* [CP] Embed Pods Frameworks */,
-				1AFD86B9A98981BED7527F71 /* [CP] Copy Pods Resources */,
+				E1C0954D106FD4465F4463F5 /* [CP] Embed Pods Frameworks */,
+				733E97483ACAA3A3200711B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -871,10 +957,6 @@
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
 			mainGroup = 722F6E132170927200FB11E4;
 			productRefGroup = 722F6E1D2170927200FB11E4 /* Products */;
 			projectDirPath = "";
@@ -900,7 +982,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1AFD86B9A98981BED7527F71 /* [CP] Copy Pods Resources */ = {
+		733E97483ACAA3A3200711B9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -922,7 +1004,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D26D0F69FB4E101D62CE088F /* [CP] Check Pods Manifest.lock */ = {
+		881DFCD32F39F69CDAEC80E2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -940,7 +1022,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE7BAAC278411DB5C377CDEF /* [CP] Embed Pods Frameworks */ = {
+		E1C0954D106FD4465F4463F5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1007,18 +1089,22 @@
 				72D027C621A3BFFC009529CD /* CancelView.swift in Sources */,
 				7212B5D921B27B2100DD2610 /* DrunkMakeOrder.swift in Sources */,
 				7296A946219ABEC6003B9A64 /* MainButton.swift in Sources */,
-				7236068B21799D20000D1E10 /* GetAvatar.swift in Sources */,
 				722F6E222170927200FB11E4 /* EnterPhone.swift in Sources */,
 				727EE08421B11353009F2772 /* AnimateViewController.swift in Sources */,
 				724DEFB42194386600BF47B7 /* protocols.swift in Sources */,
 				72BFF8B121ABEAA30008981B /* AccessShowFunc.swift in Sources */,
 				72D027C821A3D214009529CD /* OnOrderView.swift in Sources */,
+				72B590E121BA371B0027C229 /* MoneyRequest.swift in Sources */,
+				723F901F21BE611900CA95B1 /* GetFullAmount.swift in Sources */,
 				726808AD21806E980039183A /* GetChats.swift in Sources */,
 				7265EEF02181F11100DF34F3 /* CheckBoxTableViewCell.swift in Sources */,
 				722F6E202170927200FB11E4 /* AppDelegate.swift in Sources */,
 				726808C621809DAB0039183A /* DriverRegisterTableViewController.swift in Sources */,
 				72886E1421B53AD200B1135E /* DayMode.swift in Sources */,
 				7231EC6721A573990000295A /* DistanceClass.swift in Sources */,
+				72B590E821BA41D60027C229 /* NewsModule.swift in Sources */,
+				724F7CDB21B92AF300C98283 /* DriverCoins.swift in Sources */,
+				7206EEED21BA83AF00F29A08 /* NewsDetailViewController.swift in Sources */,
 				72886E1221B51D4B00B1135E /* JKDropDown.swift in Sources */,
 				726808B12180806A0039183A /* RoadedCityTableViewController.swift in Sources */,
 				726808BF218091830039183A /* UserSetting.swift in Sources */,
@@ -1030,14 +1116,15 @@
 				729D25B6217739B800BF10FF /* GetUserInfo.swift in Sources */,
 				728B640821830F9F00B3CF7E /* CarInfoCell.swift in Sources */,
 				72724872218854C400FAC508 /* AcceptDriver.swift in Sources */,
+				727BE4E221CA0220003808E9 /* AddZayava.swift in Sources */,
 				72B6816D21B7CEB4008FA95B /* GetDriverCoins.swift in Sources */,
 				724625E0219EBEBD005BD2AC /* SettingView.swift in Sources */,
+				7286E52D21C128E2000F92A4 /* SetView2.swift in Sources */,
 				72880973217F1D7200FD073C /* CitiesTableViewController.swift in Sources */,
 				72BFF8AD21ABE28F0008981B /* BuyAcessFunc.swift in Sources */,
 				726808B3218080C80039183A /* RoadedTaxi.swift in Sources */,
 				721D962D219040110030EB13 /* ChatOrderStructure.swift in Sources */,
 				726808B9218090FE0039183A /* HistoryModule.swift in Sources */,
-				729D25B2217734F300BF10FF /* UserOrderSettingViewController.swift in Sources */,
 				722F6E3F2170ACDD00FB11E4 /* SaveToken.swift in Sources */,
 				72DAF3452174949900603559 /* ChoosePlaceTableViewController.swift in Sources */,
 				72D4A72621B08FB200923BC5 /* ChangeSettingTableViewCell.swift in Sources */,
@@ -1045,11 +1132,13 @@
 				72EC887021AE709400C25095 /* Quit.swift in Sources */,
 				7288096D217E156900FD073C /* AddTableViewController.swift in Sources */,
 				7212B5D721B2565900DD2610 /* DrunkTaxiGetPrice.swift in Sources */,
+				721A3A6321C6B9CB00D26BF0 /* UserMainPageView.swift in Sources */,
 				729927CA2186C76D0039C2EC /* AddRecomend.swift in Sources */,
 				72D4A72921B09F6100923BC5 /* DrunkTaxiTable.swift in Sources */,
 				72DAF3472174A48600603559 /* ExtenSionAutoComplete.swift in Sources */,
 				72BFF8AB21ABE2000008981B /* BuyAccessStruct.swift in Sources */,
 				726A91E321AD615200B4FA5B /* FullChatsStruct.swift in Sources */,
+				7206EEEB21BA7CAD00F29A08 /* NewsTableViewCell.swift in Sources */,
 				728B640A2183209E00B3CF7E /* Registration.swift in Sources */,
 				728B640C21833B0F00B3CF7E /* SessionOpenViewController.swift in Sources */,
 				726808AB218066AB0039183A /* AddSpecificOrder.swift in Sources */,
@@ -1060,14 +1149,18 @@
 				727248652188367E00FAC508 /* DriverMenuTableViewController.swift in Sources */,
 				7272486E2188518400FAC508 /* AcceptTaxi.swift in Sources */,
 				726A91E521AD61E900B4FA5B /* GetFullChatList.swift in Sources */,
+				727BE4E421CA02E3003808E9 /* ZayavaViewController.swift in Sources */,
+				72F80DB021C96561003A57E9 /* SendChat.swift in Sources */,
 				722F6E3D2170A67D00FB11E4 /* EnterPhoneViewController.swift in Sources */,
 				724625E3219EC4BA005BD2AC /* CarCell.swift in Sources */,
 				72D4A71721AFBDF100923BC5 /* TaxiOrdersDetailOrderId.swift in Sources */,
 				72EC886521AE607E00C25095 /* SavePlaceViewController.swift in Sources */,
+				7218287921C3A5910090ECF4 /* ListOfOrdersTable.swift in Sources */,
 				72BFF8B521AC2ED00008981B /* CustomAlert.swift in Sources */,
 				72EC886721AE607E00C25095 /* MyPlace.swift in Sources */,
 				729927E021872A460039C2EC /* AddGruzTableViewController.swift in Sources */,
-				72EC886C21AE60F100C25095 /* DriverCoinsViewController.swift in Sources */,
+				72EC886C21AE60F100C25095 /* UserCoins.swift in Sources */,
+				72B590E421BA40AC0027C229 /* NewsTableViewController.swift in Sources */,
 				729927E221872E990039C2EC /* AddInvaTableViewController.swift in Sources */,
 				72B2B19D21B3EA5A00406DAD /* GeoCodingStructure.swift in Sources */,
 				7236068E2179AC05000D1E10 /* InvaTaxiTableViewController.swift in Sources */,
@@ -1076,7 +1169,9 @@
 				7242DF8E2175F3CC00DE7089 /* MenuClass.swift in Sources */,
 				72D4A71921AFC4AF00923BC5 /* InfoForDriver.swift in Sources */,
 				720D450621B141A1005BF98E /* PayByCardViewController.swift in Sources */,
+				72F80DB421C97DF4003A57E9 /* AddFAQTableViewController.swift in Sources */,
 				726808BA218090FE0039183A /* HistoryTableViewController.swift in Sources */,
+				726B442E21C53E1C00DF6C02 /* UserMainPageProtocol.swift in Sources */,
 				721D962B21903EFB0030EB13 /* GetChatOrders.swift in Sources */,
 				7242DF9221760F8100DE7089 /* MainInfo.swift in Sources */,
 				726A91EA21AD646E00B4FA5B /* FullChatsViewModel.swift in Sources */,
@@ -1085,7 +1180,10 @@
 				72EC886921AE607E00C25095 /* MyPlacesTableViewController.swift in Sources */,
 				726808AF21807A8C0039183A /* CityTaxiCell.swift in Sources */,
 				72BFF8AF21ABE9C50008981B /* AccessShowTypes.swift in Sources */,
+				723F902121BE7F9B00CA95B1 /* UploadPhoto.swift in Sources */,
 				72EC886821AE607E00C25095 /* SavePlaceView.swift in Sources */,
+				721A3A6521C6D2A100D26BF0 /* TestViewExtension.swift in Sources */,
+				7218288321C3BD120090ECF4 /* DriverProtocol.swift in Sources */,
 				72A6F734218475F90037AA13 /* TaxiOrdersTableViewController.swift in Sources */,
 				72D4A71521AFB0F600923BC5 /* CheckForChats.swift in Sources */,
 				72EC886421AE607E00C25095 /* GetMyPlace.swift in Sources */,
@@ -1094,10 +1192,13 @@
 				7275C85B21817AE50018BFEE /* ButtonsTableViewCell.swift in Sources */,
 				72BFAAF321A66B4700C70E50 /* CheckContains.swift in Sources */,
 				72880977217F1E2700FD073C /* GetCitie.swift in Sources */,
+				72B590DF21BA2E370027C229 /* CoinAlertViewController.swift in Sources */,
 				72F78783218ACEC3005F9A83 /* Geocoding.swift in Sources */,
 				72D4A71B21AFC53400923BC5 /* GetInfoForDriver.swift in Sources */,
 				72D027CA21A41361009529CD /* RateDriver.swift in Sources */,
+				7218288121C3BCFB0090ECF4 /* DriverMap.swift in Sources */,
 				729F415F21788E4D0057A788 /* ChatController.swift in Sources */,
+				7286E52921C0F4E4000F92A4 /* GetReferal.swift in Sources */,
 				726808A92180616A0039183A /* DatePickerDialog.swift in Sources */,
 				7242DF9021760EFD00DE7089 /* GetUser.swift in Sources */,
 				722F6E362170976B00FB11E4 /* Extension.swift in Sources */,
@@ -1114,26 +1215,34 @@
 				7287ADFC21A2CA1B00A69AE2 /* CancelOrder.swift in Sources */,
 				726A91E821AD63C800B4FA5B /* FullChatsTableViewController.swift in Sources */,
 				72B2B19F21B40BFF00406DAD /* FullGeoCode.swift in Sources */,
+				7282B34321C9193700C2EC4F /* OrderDetailTableViewController.swift in Sources */,
 				72EC886321AE607E00C25095 /* SavePlacePost.swift in Sources */,
 				7264F8FB21A17F3A009D26E3 /* EvoMakeOrder.swift in Sources */,
+				72B590E621BA40E90027C229 /* getNews.swift in Sources */,
 				72EC887221AEA36800C25095 /* CellForRowRegister.swift in Sources */,
 				728B641021833BDF00B3CF7E /* SessionFunc.swift in Sources */,
 				729D25C22177452100BF10FF /* PriceCell.swift in Sources */,
 				720D450821B15D75005BF98E /* GetHistory.swift in Sources */,
+				72F80DB821C97E4B003A57E9 /* MakeFAQViewController.swift in Sources */,
 				72880971217F046100FD073C /* AddTaxiTableViewCell.swift in Sources */,
 				726808C821809DD70039183A /* DriverRegisterTableViewCell.swift in Sources */,
 				721BEDF6219C3544003799DB /* UserTypeInfo.swift in Sources */,
 				722F6E452170B00300FB11E4 /* EnterNameViewController.swift in Sources */,
+				7295475321CB65EF00B66CB5 /* HeaderOrderTableViewCell.swift in Sources */,
 				727248742188552400FAC508 /* SendLocationMain.swift in Sources */,
+				72F80DB221C97D91003A57E9 /* AddComent.swift in Sources */,
 				72DAF30C21746E5100603559 /* MapStyle.swift in Sources */,
 				72880975217F1DAF00FD073C /* CitiesList.swift in Sources */,
 				724DEFB22194180B00BF47B7 /* CommendAndDate.swift in Sources */,
 				729927D52186D3120039C2EC /* GetOrderInfo.swift in Sources */,
+				7218287B21C3B42B0090ECF4 /* ListOfOrdersTableViewCell.swift in Sources */,
 				722F6E38217097F200FB11E4 /* GlobalVars.swift in Sources */,
 				7231EC6921A5762B0000295A /* GetDistance.swift in Sources */,
 				722F6E472170B01100FB11E4 /* EnterNameView.swift in Sources */,
+				72E72FC621CE8A8F00B9B25C /* GetDriverAvatar.swift in Sources */,
 				729927E721872EFC0039C2EC /* AddEvoTaxiTableViewController.swift in Sources */,
 				729D25C42177453F00BF10FF /* CarPriceModule.swift in Sources */,
+				7218287D21C3B89E0090ECF4 /* GeoPlace.swift in Sources */,
 				72D4A72221B08C6400923BC5 /* DriverSettingTableViewController.swift in Sources */,
 				7265EEF22181F18700DF34F3 /* DriverRegisterApi.swift in Sources */,
 				7270E506218AFF9100E9E7DA /* AcceptDriverOrder.swift in Sources */,
@@ -1145,7 +1254,6 @@
 				729D25BB2177410500BF10FF /* UserMakeOrder.swift in Sources */,
 				72BFAAF621A6B65D00C70E50 /* SecondRegisterTableViewController.swift in Sources */,
 				72886E1621B5496F00B1135E /* SetColor.swift in Sources */,
-				7272486A21884D8900FAC508 /* DriverMapViewController.swift in Sources */,
 				728B641221833C3800B3CF7E /* SessionStruct.swift in Sources */,
 				728B641421833DDD00B3CF7E /* SessionOpenView.swift in Sources */,
 			);
@@ -1157,7 +1265,7 @@
 		722F6E232170927200FB11E4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				722F6E242170927200FB11E4 /* Base */,
+				722E657621CBC03C006449EB /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1165,7 +1273,7 @@
 		722F6E282170927500FB11E4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				722F6E292170927500FB11E4 /* Base */,
+				722E657521CBC039006449EB /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1177,6 +1285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1224,7 +1333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1238,6 +1347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1279,7 +1389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1291,7 +1401,7 @@
 		};
 		722F6E2F2170927500FB11E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 991924581311DB121E815DA8 /* Pods-YandexTaxiPlus.debug.xcconfig */;
+			baseConfigurationReference = 9C24D717C82F68D196773341 /* Pods-YandexTaxiPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = YandexTaxiPlus/YandexTaxiPlus.entitlements;
@@ -1308,13 +1418,13 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		722F6E302170927500FB11E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96F09A0AAEBA6C21FC711C71 /* Pods-YandexTaxiPlus.release.xcconfig */;
+			baseConfigurationReference = 36978A6D91CDD54B9B87635B /* Pods-YandexTaxiPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = YandexTaxiPlus/YandexTaxiPlus.entitlements;
@@ -1331,7 +1441,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

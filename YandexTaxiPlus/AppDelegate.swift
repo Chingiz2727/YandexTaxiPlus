@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         FirebaseApp.configure()
-        
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Ок"
         GMSPlacesClient.provideAPIKey("AIzaSyAuSB9DXj45y7Ln8x45gTDOv-DhaFBm7Ys")
@@ -81,7 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Below Mehtod will print error if not able to update location.
  
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        print(userInfo)
         let dict = userInfo["aps"] as! NSDictionary
         let message = dict["alert"]
         let type = userInfo[AnyHashable("type")] as! String
@@ -139,19 +137,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // If you are receiving a notification message while your app is in the background,
-        // this callback will not be fired till the user taps on the notification launching the application.
-        // TODO: Handle data of notification
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        // Print message ID.
-        
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
         }
+        let content = UNMutableNotificationContent()
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+
         print("Push notification received: \(userInfo)")
         let type = userInfo[AnyHashable("type")] as! String
         print(type)
+        switch type {
+        case "201":
+                        content.title = "Taxi +"
+                        content.body = "Водитель принял ваш заказ"
+                        content.sound  = UNNotificationSound.default
+                        let request = UNNotificationRequest(identifier: "201", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        case "401":
+                        content.title = "Taxi +"
+                        content.body = "Водитель подъехал"
+                        content.sound  = UNNotificationSound.default
+                        let request = UNNotificationRequest(identifier: "401", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        case "501":
+                        content.title = "Taxi +"
+                        content.body = "Оцените водителя"
+                        content.sound  = UNNotificationSound.default
+                        let request = UNNotificationRequest(identifier: "501", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        default:
+            break
+        }
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: type), object: nil, userInfo: userInfo)
         
@@ -199,8 +215,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
         print(userInfo)
         
+        print("infois")
         
-        completionHandler([.sound])
+        completionHandler([.sound,.badge,.alert])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,

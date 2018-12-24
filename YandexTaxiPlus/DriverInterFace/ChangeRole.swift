@@ -32,7 +32,6 @@ class ChangeRole {
                     print(error)
                 case.success(let val):
                     var json = JSON(val)
-                    print(json)
                     
                     if json["state"].stringValue == "fail" {
                         complition(false,false,true)

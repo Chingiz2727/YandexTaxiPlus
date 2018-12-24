@@ -23,7 +23,6 @@ class GetChats {
                     print(error)
                 case.success(let val):
                     let json = JSON(val)
-                    print(json)
                     guard let dataarr = json["chats"].array else {
                         return
                     }

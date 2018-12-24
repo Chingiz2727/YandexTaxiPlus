@@ -46,7 +46,6 @@ class CitiesTableViewController: UITableViewController {
     func data() {
         Citylist.List { (list:[CitiesList]) in
             self.citie = list
-            print(list)
             self.tableView.reloadData()
         }
     }

@@ -163,9 +163,7 @@ class AddGruzTableViewController: UITableViewController,UITextFieldDelegate {
             "end_string":to,
             "date":time
             ] as [String : Any?]
-        print(params)
         let check = checkEmptyDict(params)
-        print(check)
         if check == true {
             let error = ErrorAlert(title: "", message: "", preferredStyle: .alert)
             error.show()
@@ -183,11 +181,17 @@ class AddGruzTableViewController: UITableViewController,UITextFieldDelegate {
                 }
                 if state == false {
                     let alert = CustomAlert(title: "", message: "", preferredStyle: .alert)
-                    alert.publish = "1"
-                    alert.type = "2"
-                    alert.title = ""
-                    alert.show()
-                }
+                    AccessShowFunc.Show(completion: { (info) in
+                        if let info = info {
+                            alert.label.text = "Для публикации оплатите \(info.types[1].publishPrice ?? 0) тг"
+                            alert.show()
+                            if alert.isBeingDismissed  {
+                                self.view.hideToastActivity()
+                                self.tableView.reloadData()
+                            }
+
+                        }
+                    })                }
             }
         }
     }

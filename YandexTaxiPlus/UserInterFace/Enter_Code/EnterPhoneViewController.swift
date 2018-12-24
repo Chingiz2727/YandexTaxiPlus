@@ -19,7 +19,6 @@ class EnterPhoneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupview()
-        print(phone!)
         navigationController?.navigationBar.isHidden = true
         
         accessview.loginAction = accessing
@@ -44,7 +43,6 @@ class EnterPhoneViewController: UIViewController {
         ]
         
         let name = EnterNameViewController()
-        print(params)
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
                 switch response.result {
@@ -52,7 +50,6 @@ class EnterPhoneViewController: UIViewController {
                     print(err)
                 case.success(let val):
                     var json = JSON(val)
-                    print(json)
                     if json["state"] == "error" {
                       self.view.makeToast("Неправильный Код")
                     }
@@ -62,14 +59,12 @@ class EnterPhoneViewController: UIViewController {
                         let token = json["user"]["token"].stringValue
                         if json["type"].intValue == 2 {
                             APItoken.saveapitoken(token: token)
-                            let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: DriverMenuTableViewController())
-                            SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-                            menuLeftNavigationController.sideMenuManager.menuWidth = self.window!.frame.width - self.window!.frame.width*0.2
-                            SideMenuManager.default.menuFadeStatusBar = false
-                            SideMenuManager.default.menuPushStyle = .replace
-                            menuLeftNavigationController.sideMenuManager.menuPresentMode = .menuSlideIn
-                            self.window?.rootViewController = UINavigationController.init(rootViewController: SessionOpenViewController())
-                        }
+                            self.window = UIWindow(frame: UIScreen.main.bounds)
+                            let nav1 = UINavigationController()
+                            let mainView = SessionOpenViewController(nibName: nil, bundle: nil) //ViewController = Name of your controller
+                            nav1.viewControllers = [mainView]
+                            self.window!.rootViewController = nav1
+                            self.window?.makeKeyAndVisible()                        }
                         if json["type"].intValue == 1 {
                             //                            let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: MenuTableViewController())
                             //                            SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
@@ -78,11 +73,17 @@ class EnterPhoneViewController: UIViewController {
                             //                            SideMenuManager.default.menuPushStyle = .replace
                             //                            menuLeftNavigationController.sideMenuManager.menuPresentMode = .menuSlideIn
                             APItoken.saveapitoken(token: token)
-                            self.window?.rootViewController = UINavigationController.init(rootViewController: TestViewController())
+                            self.window = UIWindow(frame: UIScreen.main.bounds)
+                            let nav1 = UINavigationController()
+                            let mainView = TestViewController(nibName: nil, bundle: nil) //ViewController = Name of your controller
+                            nav1.viewControllers = [mainView]
+                            self.window!.rootViewController = nav1
+                            self.window?.makeKeyAndVisible()
                         }
                         if json["type"].intValue == 0 {
                             name.phone = self.phone
-                            self.window?.rootViewController = UINavigationController.init(rootViewController: name)
+                            self.window?.rootViewController = UINavigationController(rootViewController: name)
+                            
                         }
                     }
                 }

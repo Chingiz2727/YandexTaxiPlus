@@ -24,7 +24,7 @@ struct Row:Codable {
    
 }
 struct Elements:Codable {
-    let distance,duration : Distan
+    let distance,duration : Distan?
     var status : String?
     
 }

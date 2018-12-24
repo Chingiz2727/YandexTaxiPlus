@@ -25,7 +25,6 @@ class RegiterSettingApi {
                     print(error)
                 case.success(let val):
                     var json = JSON(val)
-                    print(json)
                     var model = [SetModel]()
                 
                         guard let dataar = json["models"].array else{return}
@@ -45,7 +44,6 @@ class RegiterSettingApi {
     
     class func Mark(id:Int,completion:@escaping([SetModel])->()) {
         let params = ["id":id]
-        print(params)
         let url  = baseurl + "/get-car-submodels/"
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
@@ -55,7 +53,6 @@ class RegiterSettingApi {
                 case.success(let val):
                     let json = JSON(val)
                     var model = [SetModel]()
-                    print(json)
                     guard let dataar = json["models"].array else{return}
                     for data in dataar {
                         guard let add = data.dictionary else { return }

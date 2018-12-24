@@ -61,10 +61,10 @@ class CellFooterInfo:UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(chat)
         self.addSubview(call)
-        chat.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 60, height: 60)
-        call.setAnchor(top: nil, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 60, height: 60)
-        call.layer.cornerRadius = 30
-        chat.layer.cornerRadius = 30
+        chat.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 50, height: 50)
+        call.setAnchor(top: nil, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 50, height: 50)
+        call.layer.cornerRadius = 25
+        chat.layer.cornerRadius = 25
         chat.setImage(UIImage.init(named: "icon_message"), for: .normal)
         call.setImage(UIImage.init(named: "icon_call"), for: .normal)
         call.backgroundColor = maincolor

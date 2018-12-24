@@ -14,13 +14,9 @@ class ChatViewController: JSQMessagesViewController {
     var name : String!
     var phone : String!
     var receiver : String!
-    lazy var outgoingBubble: JSQMessagesBubbleImage = {
-        return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: maincolor)
-    }()
-    
-    lazy var incomingBubble: JSQMessagesBubbleImage = {
-        return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
-    }()
+    var token : String!
+    let incomingBubble = JSQMessagesBubbleImageFactory()?.incomingMessagesBubbleImage(with: UIColor.lightGray)
+    let outgoingBubble = JSQMessagesBubbleImageFactory()?.outgoingMessagesBubbleImage(with: maincolor)
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -29,8 +25,12 @@ class ChatViewController: JSQMessagesViewController {
         
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = maincolor
         let defaults = UserDefaults.standard
-        
+        print(name)
+        print(phone)
+        print(receiver)
+        print(chatid)
         if  let id = receiver,
             let name = name
         {
@@ -39,7 +39,7 @@ class ChatViewController: JSQMessagesViewController {
         }
         else
         {
-            senderId = phone
+            senderId = receiver
             senderDisplayName = name
             
             defaults.set(senderId, forKey: "jsq_id")
@@ -48,18 +48,13 @@ class ChatViewController: JSQMessagesViewController {
         }
         
         title = "Chat: \(senderDisplayName!)"
-        print("senderid")
-        print(senderId)
-
         
-        inputToolbar.contentView.leftBarButtonItem = nil
-        collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
-        collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
-        // Do any additional setup after loading the view.
+
         
         let query = Constants.refs.databaseChats.child(chatid!)
         let mquery = query.child("chat")
-        let message = ["id":chatid!,"sender":phone]
+        let message = ["id":senderId!,"sender":phone]
+        
         query.observe(.value) { (snapshot) in
             if snapshot.childrenCount == 0 {
                 query.setValue(message)
@@ -68,7 +63,7 @@ class ChatViewController: JSQMessagesViewController {
         _ = mquery.observe(.childAdded, with: { [weak self] snapshot in
             
             if  let data        = snapshot.value as? [String: String],
-                let id          = data["time"],
+                let id          = data["from"],
                 let name        = data["from"],
                 let text        = data["message"],
                 !text.isEmpty
@@ -81,37 +76,60 @@ class ChatViewController: JSQMessagesViewController {
                 }
             }
         })
+        self.collectionView.collectionViewLayout.messageBubbleLeftRightMargin = 5
+        
+        self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
+        self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        
+    }
+    override func didPressAccessoryButton(_ sender: UIButton!) {
+        sender.isHidden = true
+        sender.isEnabled = false
     }
  
+    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource!
     {
         
-        return messages[indexPath.item].senderDisplayName == senderId ? incomingBubble : outgoingBubble
+        let message = messages[indexPath.row]
+        if receiver == message.senderId {
+            return outgoingBubble
+        }
+        else {
+            return incomingBubble
+        }
+        
     }
+
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource!
     {
+        
         return nil
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString!
+        
     {
+        
         return messages[indexPath.item].senderId == senderId ? nil : NSAttributedString(string: messages[indexPath.item].senderDisplayName)
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat
     {
-        return messages[indexPath.item].senderId == senderId ? 0 : 15
+        return 15
     }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
+        
         let ref = Constants.refs.databaseChats.child(chatid!)
         let chat = ref.child("chat")
         let messages = chat.childByAutoId()
         let time = Date().millisecondsSince1970
-        print(phone!)
         let message = ["time": String(time), "from": receiver!, "message": text]
         messages.setValue(message)
+        SendChat.send(token: token, message: text)
         finishSendingMessage()
     }
     

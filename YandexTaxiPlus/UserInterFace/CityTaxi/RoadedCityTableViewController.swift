@@ -35,7 +35,6 @@ var cellid = "cellid"
     
     func reload() {
         RoadedTaxi.get(start_id: startid!, end_id: endid!) { (list, access, buy) in
-            print("GO")
            
             if access == true {
                 self.road = list
@@ -43,12 +42,21 @@ var cellid = "cellid"
             }
             
             if buy == true {
-                var alert = CustomAlert(title: "", message: "", preferredStyle: .alert)
+                let alert = CustomAlert(title: "", message: "", preferredStyle: .alert)
                 alert.publish = "0"
                 alert.type = "1"
                 alert.title = ""
+                AccessShowFunc.Show(completion: { (info) in
+                    if let info = info {
+                        print(info)
+                        alert.label.text = "Для публикации оплатите \(info.types[0].hourPrice ?? 0) тг"
+                        self.road = list
+                    }
+                })
+                if alert.isBeingDismissed == true {
+                    self.tableView.reloadData()
+                }
                 alert.show()
-                self.road = list
                 self.tableView.reloadData()
                 }
               

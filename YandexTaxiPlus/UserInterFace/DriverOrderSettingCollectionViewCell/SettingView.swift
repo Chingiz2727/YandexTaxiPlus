@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 import GoogleMaps
 import Toast_Swift
-class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class SettingColectionVierw : NSObject,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     var paybaycard:payByCard?
     var Profview : FooterCollectionViewCell?
     let blackview = UIView()
@@ -74,6 +74,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
             }, completion: nil)
         
     }
+    
     @objc func handleDismiss() {
         UIView.animate(withDuration: 0.1) {
             if let window = UIApplication.shared.keyWindow {
@@ -133,7 +134,6 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
 
         }
         
-        print(indexPath.row)
        
     }
     required init?(coder aDecoder: NSCoder) {
@@ -146,8 +146,6 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         Alamofire.request(PriceCar[indexPath.row].img).response { (response) in
             cell.img.image = UIImage.init(data: response.data!)
         }
-        
-        
         if indexPath == selectedindexpath {
             cell.price.textColor = maincolor
             cell.type.textColor = maincolor
@@ -160,6 +158,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         cell.price.text = String(PriceCar[indexPath.row].price)
         cell.type.text = PriceCar[indexPath.row].type
         cell.type.textColor =  UIColor.black
+        
         if indexPath.section == 1 {
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: cellid2, for: indexPath) as! CarCell
            
@@ -217,7 +216,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         button.isEnabled = false
         guard let window = UIApplication.shared.keyWindow else {return}
         window.makeKeyAndVisible()
-        MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id!, comment: comment!, date: date!, payment_type: String(payment_type!)) { (yes, no,url)  in
+        MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id!, comment: comment!, date: date!, payment_type: String(payment_type!)) { (yes, no,url,order_id)  in
             if yes {
                 if self.payment_type! == 2 {
                     self.paybaycard?.PayingByCard(url: url)
@@ -239,23 +238,21 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 1
-        var totalSpace = flowLayout.sectionInset.left
+        let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(PriceCar.count - 1))
-        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(PriceCar.count ))
         if indexPath.section == 1 {
             let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(paytype.count ))
-            if PriceCar.count == 1 {
-                
-                return CGSize(width: collectionView.frame.width, height: 80)
-            }
             return CGSize(width: size, height: 80)
         }
         if indexPath.section == 2 {
             return CGSize(width: (collectionView.window?.width)!, height: 80)
         }
-        return CGSize(width: size, height: 80)
+        let siz = CGFloat(collectionView.frame.width / CGFloat(PriceCar.count))
+
+        return CGSize(width: siz, height: 80)
     }
+    
     
     
     

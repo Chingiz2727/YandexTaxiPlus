@@ -23,9 +23,7 @@ class RoadedTaxi {
                     print(error)
                 case.success(let value):
                     let json = JSON(value)
-                    print(json)
                     var list = [RoadedList]()
-                    print(json["state"].stringValue)
                     if json["state"].stringValue == "success" {
                         guard let dataarr = json["orders"].array else {
                             return

@@ -26,7 +26,6 @@ class BuyAcessFunc {
                 print(err)
             case.success(let val):
                 var json = JSON(val)
-                print(json)
                 if json["state"].stringValue == "success" {
                   completion(true,false)
                 }

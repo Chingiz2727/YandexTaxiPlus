@@ -11,12 +11,10 @@ class CheckParams {
     class func check(params:[String:Any],complition:@escaping(_ Yes:Bool,_ No:Bool)->()) {
         if params.values.filter({ $0 == nil }).isEmpty
         {
-           print("yes")
            complition(true,false)
         }
         else
         {
-            print("no")
             complition(false,true)
         }
     }

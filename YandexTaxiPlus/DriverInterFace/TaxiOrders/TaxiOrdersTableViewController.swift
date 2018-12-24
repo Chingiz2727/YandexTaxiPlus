@@ -8,6 +8,7 @@
 
 import UIKit
 import Presentr
+import Toast_Swift
 class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDelegate {
     var cellid = "cellid"
     var ViewModel : TableViewTaxiOrdersModelType?
@@ -16,7 +17,6 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
     var segment = UISegmentedControl()
     var lat : Double!
     var long : Double!
-    var reloadButton  = UIButton()
     let presenter : Presentr = {
         let width = ModalSize.fluid(percentage: 0.9)
         let heigh = ModalSize.fluid(percentage: 0.9)
@@ -37,6 +37,8 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isTranslucent = false
+
         ViewModel = module
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
@@ -50,10 +52,9 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TaxiOrdersTableViewCell.self, forCellReuseIdentifier: cellid)
-               NotificationCenter.default.addObserver(self, selector: #selector(reloadBut(notification:)), name: NSNotification.Name(rawValue: "101"), object: nil)
+               NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "101"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(sendcoor(notification:)), name: NSNotification.Name(rawValue: "1"), object: nil)
         navigationController?.navigationBar.isHidden = false
-        reloadButton.addTarget(self, action: #selector(reload), for: .touchUpInside)
         CheckForChats.check { (state) in
             switch state {
             case true:
@@ -78,19 +79,7 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
         let ord_id = notification.userInfo![AnyHashable("order_id")] as? String
         SendLocation.sendloc(longitude: String(self.long!), latitude: String(self.lat!), order_id: ord_id!)
     }
-    @objc func reloadBut(notification:NSNotification) {
-        if reloadButton.isDescendant(of: self.view) {
-            
-        }
-        else {
-            view.addSubview(reloadButton)
-            reloadButton.setAnchor(top: tableView.layoutMarginsGuide.topAnchor, left: tableView.layoutMarginsGuide.leftAnchor, bottom: nil, right: tableView.layoutMarginsGuide.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 10, height: 40)
-            reloadButton.layer.cornerRadius = 5
-            reloadButton.setTitle("Новые заказы", for: .normal)
-            reloadButton.backgroundColor = maincolor
-            reloadButton.setTitleColor(UIColor.white, for: .normal)
-        }
-    }
+   
     
     func makeSegment() {
         segment.tintColor = UIColor.white
@@ -112,9 +101,7 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
     }
         
   @objc func reload () {
-    if reloadButton.isDescendant(of: self.view) {
-        reloadButton.removeFromSuperview()
-    }
+    self.view.makeToastActivity(.center)
         var mainurl : String!
         switch segment.selectedSegmentIndex {
         case 0:
@@ -125,9 +112,12 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
             break
         }
         getcharorders.get(url: mainurl!) { (info) in
-            print(mainurl!)
-            self.module.chats = info
-            self.tableView.reloadData()
+            if let info = info {
+                self.module.chats = info
+                self.tableView.reloadData()
+                self.view.hideToastActivity()
+            }
+          
         }
     }
 

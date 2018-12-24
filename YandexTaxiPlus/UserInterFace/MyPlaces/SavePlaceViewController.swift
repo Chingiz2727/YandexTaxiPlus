@@ -18,7 +18,6 @@ class SavePlaceViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
     var manager = CLLocationManager()
 
   @objc  func send() {
-        print(name)
         if saveView.name.text! == "" && lang == nil {
             self.view.makeToast("Заполните все поля")
         }

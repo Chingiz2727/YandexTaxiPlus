@@ -10,14 +10,20 @@ import UIKit
 
 class DriverSettingTableViewController: UITableViewController {
     let cellid = "cellid"
-    var menu = [MenuModule(menu: "Настройки аккаунта", img: "user"),
-                MenuModule(menu: "FAQ", img: "icon_faq"),]
+    var menu = [MenuModule(menu: "Настройки аккаунта", img: "user", id: "1", contains: false),
+                MenuModule(menu: "FAQ", img: "icon_faq", id: "1", contains: false)]
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(MainPageMenuCell.self, forCellReuseIdentifier: cellid)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         UIColourScheme.instance.set(for:self)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = maincolor
+        navigationController?.navigationBar.isHidden = false
+
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -55,7 +61,7 @@ class DriverSettingTableViewController: UITableViewController {
     case 0:
         self.navigationController?.pushViewController(UserSettingsTableViewController(), animated: true)
     case 1:
-        print(1)
+        self.navigationController?.pushViewController(AddFAQTableViewController(), animated: true)
     default:
         break
     }

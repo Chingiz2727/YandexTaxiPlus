@@ -23,7 +23,6 @@ class CheckForChats {
                     print(error)
                 case.success(let val):
                     let json = JSON(val)
-                    print(json)
                     let state = json["show_chat"].boolValue
                     complition(state)
                 }

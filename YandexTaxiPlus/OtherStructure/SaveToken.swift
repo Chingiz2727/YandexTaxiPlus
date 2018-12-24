@@ -25,6 +25,7 @@ class APItoken: NSObject {
         def.set(token, forKey: "token")
         def.synchronize()
     }
+
     
     class func getToken() -> String?
     {
@@ -37,6 +38,7 @@ class APItoken: NSObject {
         def.set(color, forKey: "color")
         def.synchronize()
     }
+
     
     class func getColorType() -> Int
     {

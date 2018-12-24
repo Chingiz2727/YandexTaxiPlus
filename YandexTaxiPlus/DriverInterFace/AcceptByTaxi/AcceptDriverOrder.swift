@@ -13,7 +13,6 @@ class OrderDriverAction {
                     print(err)
                 case.success(let val):
                     let json = JSON(val)
-                    print(json)
                     let state = json["state"].stringValue
                     completion(state)
                 }

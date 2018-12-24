@@ -13,7 +13,7 @@ import Toast_Swift
 class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDelegate {
     var updateView : EnterNameView!
 
-    var id_city : String?
+    var id_city : String? = ""
     var region : String?
     var name : String?
     var cname : String? = "Выберите город" {
@@ -38,7 +38,6 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
         updateView.City.addTarget(self, action: #selector(gotoCity), for: .touchUpInside)
         updateView.loginAction = accessing
         navigationController?.isNavigationBarHidden = true
-
     }
     
     func setupview()
@@ -54,24 +53,23 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
     }
     
     @objc func  gotoCity() {
-        print("lol")
         let city = CitiesTableViewController()
         city.tag = 0
         city.delegateFrom = self
         navigationController?.present(city, animated: true, completion: nil)
     }
     func accessing(){
-        let name = updateView.PhoneField.text
+        let name = updateView.PhoneField.text!
         let url = baseurl + "/sign-up/"
         let url2 = baseurl + "/set-city/"
         let parametr = [
-            "phone":phone!,
-            "name":name!
+            "phone":phone,
+            "name":name
         ]
-        print(parametr)
-        if id_city! == "" {
-            view.makeToast("Выберите город")
+        if id_city! == "" || name == "" {
+            view.makeToast("Заполните все поля")
         }
+  
         else {
             Alamofire.request(url, method: .post, parameters: parametr, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
                 if response.data != nil {
@@ -90,7 +88,6 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
                                     print(error)
                                 case.success(let val2):
                                     let js = JSON(val2)
-                                    print(js)
                                     APItoken.saveapitoken(token: token!)
                                     self.goToMain()
                                 }

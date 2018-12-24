@@ -32,7 +32,7 @@ extension DriverRegisterTableViewController {
             case 5:
                 self.create_year = text
             default:
-                print("")
+                break
             }
             cell.TextField.delegate = self
             cell.TextField.placeholder = option2[indexPath.row]
@@ -84,7 +84,7 @@ extension DriverRegisterTableViewController {
                     cell.TextField.isEnabled = true
                     self.email = cell.TextField.text
                 default:
-                    print("")
+                    break
                 }
             }
             return cell

@@ -13,7 +13,77 @@ import GoogleMaps
 import Toast_Swift
 import SideMenu
 import UserNotifications
-class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,secondplaceclicked,secondplacedelegate,firstplacebuttonclicked,firstplacedelegate,commentAndDate,ordermaked,orderCanceled,Rated,UIGestureRecognizerDelegate,payByCard {
+import Presentr
+class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,commentAndDate,ordermaked,orderCanceled,Rated,UIGestureRecognizerDelegate,payByCard,UserMainPageProtocol {
+
+    func first_added() {
+        marker1.position = CLLocationCoordinate2D(latitude: from_lat!, longitude: from_long!)
+        marker1.icon = self.imageWithImage(image: UIImage(named: "icon_point_a")!, scaledToSize: CGSize(width: 30, height: 30))
+        marker1.map = mapview?.map
+    }
+    
+    func second_added() {
+        marker2.position = CLLocationCoordinate2D(latitude: to_lat!, longitude: to_long!)
+        marker2.icon = self.imageWithImage(image: UIImage(named: "icon_point_b")!, scaledToSize: CGSize(width: 30, height: 30))
+        marker2.map = mapview?.map
+    }
+    var orderbutton = UIButton()
+
+    var userprotocol : UserMainPageProtocol?
+    var first_clicked: Bool? = false
+    var second_clicked: Bool? = false
+    var from_lat: Double? = 0
+    var from_long: Double? = 0
+    var to_lat: Double? = 0
+    var to_long: Double? = 0
+    var order_id: Int? = 0
+    var first_name: String? = "Откуда" {
+        didSet {
+            ButView?.FromButton.setTitle(first_name, for: .normal)
+        }
+    }
+    var state_type: Int?
+    
+    func addbuttons() {
+        switch state_type! {
+        case 0 :
+            addview()
+        case 1:
+            remove()
+            self.Cancel.can = self
+            Cancel.order_id = order_id
+            self.Cancel.addcancel(view: self.view)
+            Route.Draw(startlat: from_lat!, startlong: from_long!, endlat: to_lat!, englong: to_long!, map: (mapview?.map)!)
+        default:
+            remove()
+            addbut()
+            Route.Draw(startlat: from_lat!, startlong: from_long!, endlat: to_lat!, englong: to_long!, map: (mapview?.map)!)
+            onOnder.order_id = order_id!
+            
+        }
+    }
+    
+    func newOrders() {
+        self.addview()
+    }
+    let presenter : Presentr = {
+       
+        let width = ModalSize.fluid(percentage: 1)
+        let heigh = ModalSize.fluid(percentage: 1.4)
+        
+        let center = ModalCenterPosition.bottomCenter
+        
+        let customtype = PresentationType.custom(width: width, height: heigh, center: center)
+        let customPresenter = Presentr(presentationType: customtype)
+        customPresenter.backgroundOpacity  = 0
+        return customPresenter
+    }()
+
+
+    
+    var ButView : ButtonView?
+    var mapview : MapView?
+    
     func PayingByCard(url: String) {
         let card = PayByCardViewController()
         card.url = url
@@ -22,51 +92,20 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
     
     func rated() {
         addview()
-        map.clear()
+        mapview?.map.clear()
         first_name = "Откуда"
         second_name = "Куда"
     }
-    let Detect : UIButton = {
-        let next = UIButton()
-        next.backgroundColor = maincolor
-        next.layer.cornerRadius = 18.0
-        next.layer.shadowRadius = 1.0
-        next.layer.shadowColor = UIColor.black.cgColor
-        next.layer.shadowOffset = CGSize(width: 1, height: 1)
-        next.layer.shadowOpacity = 0.4
-        next.setImage(UIImage(named: "location-marker"), for: .normal)
-        next.imageView?.contentMode = .scaleAspectFit
-        next.addTarget(self, action: #selector(Detection), for: .touchUpInside)
-        return next
-    }()
-    var menuimage : UIImageView = UIImageView()
-
+    
     func index(index:IndexPath) {
-        print(index)
         PushFromMain.push(index: index)
     }
     
-    func firstadded() {
-        marker1.position = CLLocationCoordinate2D(latitude: first_lat, longitude: first_long)
-        marker1.icon = self.imageWithImage(image: UIImage(named: "icon_point_a")!, scaledToSize: CGSize(width: 40, height: 40))
-        marker1.map = map
-    }
-    
-    func secondadded() {
-        marker2.position = CLLocationCoordinate2D(latitude: second_lat, longitude: second_long)
-        marker2.icon = self.imageWithImage(image: UIImage(named: "icon_point_b")!, scaledToSize: CGSize(width: 40, height: 40))
-        print("added")
-        marker2.map = map
-    }
     
     func Canceled() {
-        map.clear()
+        mapview?.map.clear()
         first_name = "Откуда"
         second_name = "Куда"
-        first_lat = 0
-        first_long = 0
-        second_lat = 0
-        second_long = 0
         addview()
     }
     
@@ -74,214 +113,154 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
         remove()
         first_clicked = false
         second_clicked = false
-        
-        Route.Draw(startlat: first_lat, startlong: first_long, endlat: second_lat, englong: second_long, map: map)
+        Route.Draw(startlat: from_lat!, startlong: from_long!, endlat: to_lat!, englong: to_long!, map: (mapview?.map)!)
         Cancel.addcancel(view: self.view)
     }
     
     var Cancel = CancelView()
     func remove() {
-        FromButton.removeFromSuperview()
-        toButton.removeFromSuperview()
-        Send.removeFromSuperview()
+        ButView?.removeFromSuperview()
     }
-    var map : GMSMapView = GMSMapView()
     var setting_view = SettingColectionView()
+    
     func getdata(coment: String, data: String){
-        print("typesis")
-        print(type)
-        setting_view.datareload(first_long: String(first_long), first_lat: String(first_lat), second_lat: String(second_lat), second_long: String(second_long),comment: coment,date:data, type: type)
+        setting_view.datareload(first_long: String(from_long!), first_lat: String(from_lat!), second_lat: String(to_lat!), second_long: String(to_long!),comment: coment,date:data, type: type)
+        setting_view.user = self
         setting_view.Ordered = self
         setting_view.paybaycard = self
     }
     
     var type : String = "1"
-    let marker1 = GMSMarker()
-    let marker2 = GMSMarker()
+    var marker1 = GMSMarker()
+    var marker2 = GMSMarker()
     var myloc_lat : Double?
     var myloc_long: Double?
-    var first_lat: Double = 0.0
-    var first_long: Double = 0.0
-    var first_name: String = "Откуда" {
+    var second_name: String = "Куда" {
         didSet {
-            FromButton.setTitle(first_name, for: .normal)
+            ButView?.toButton.setTitle(second_name, for: .normal)
         }
     }
     
-    var first_clicked: Bool = false
-    var second_lat: Double = 0.0
-    var second_long: Double = 0.0
-    var second_name: String = "Куда" {
-        didSet {
-            toButton.setTitle(second_name, for: .normal)
-        }
-    }
-    var onOnder = OnOrder()
-    var second_clicked: Bool = false
+    var onOnder = OrderDetailTableViewController()
     var manager = CLLocationManager()
-    var FromButton : MainButton = MainButton()
-    var toButton : MainButton = MainButton()
-    var Send : MainButton = MainButton()
     var Rating = RateDriver()
     func addview() {
-        self.view.addSubview(Send)
-        self.view.addSubview(FromButton)
-        self.view.addSubview(toButton)
-        
-        FromButton.setAnchor(top: nil, left: self.view.leftAnchor, bottom: toButton.topAnchor, right: self.view.rightAnchor, paddingTop: 0, paddingLeft: 40, paddingBottom: 10, paddingRight: 40, width: 50, height: 50)
-        toButton.setAnchor(top: nil, left: self.view.leftAnchor, bottom: Send.topAnchor, right: self.view.rightAnchor, paddingTop: 0, paddingLeft: 40, paddingBottom: 10, paddingRight: 40, width: 50, height: 50)
-        Send.setAnchor(top: nil, left: self.view.leftAnchor, bottom: self.view.bottomAnchor, right: self.view.rightAnchor, paddingTop: 0, paddingLeft: 40, paddingBottom: 40, paddingRight: 40, width: 50, height: 50)
-        FromButton.initialize()
-        toButton.initialize()
-        Send.initialize()
-        FromButton.addTarget(self, action: #selector(ChoosePlace(sender:)), for: .touchUpInside)
-        toButton.addTarget(self, action: #selector(ChoosePlace(sender:)), for: .touchUpInside)
-        Send.addTarget(self, action: #selector(PushDetail), for: .touchUpInside)
-        FromButton.backgroundColor = UIColor.white
-        toButton.backgroundColor = UIColor.white
-        FromButton.Title(title: first_name)
-        toButton.Title(title: second_name)
-        toButton.setTitleColor(maincolor, for: .normal)
-        FromButton.setTitleColor(maincolor, for: .normal)
-        FromButton.tag = 0
-        toButton.tag = 1
-        Send.setTitle("Заказать", for: .normal)
-        Send.setTitleColor(UIColor.white, for: .normal)
+        let bottomMargin = CGFloat(0) //Space between button and bottom of the screen
+        let new = ButtonView(frame: CGRect(x: 0, y: 0, width: view.frame.width-100, height: 200))
+        new.center = CGPoint(x: (parent?.view.bounds.size.width)! / 2, y: (parent?.view.bounds.size.height)! - new.height / 2 - bottomMargin)
+        ButView = new
+        new.isOpaque = false
+        ButView?.FromButton.addTarget(self, action: #selector(ChoosePlace(sender:)), for: .touchUpInside)
+        ButView?.toButton.addTarget(self, action: #selector(ChoosePlace(sender:)), for: .touchUpInside)
+        ButView?.Send.addTarget(self, action: #selector(PushDetail), for: .touchUpInside)
+        view.addSubview(ButView!)
     }
     
     
     @objc func ChoosePlace(sender:UIButton) {
         let place = ChoosePlaceTableViewController()
         let my_places = MyPlacesTableViewController()
+        my_places.userprotocol = self
         place.tag = sender.tag
-        switch  place.tag {
-        case 0:
-            second_clicked = false
-            my_places.first_delegate = self
-            place.firstdelegate = self
-            place.firtsclick = self
-        case 1:
-            first_clicked = false
-            my_places.second_delegate = self
-            place.secondplacedelegate = self
-            place.secondcicked = self
-        default:
-            break
-        }
+        place.userprotcol = self
         self.navigationController!.pushViewController(place, animated: true)
     }
     
+    
     @objc func PushDetail() {
-        print(first_lat)
-        print(second_long)
-        if first_lat != 0 && second_long != 0 {
+        if from_lat != 0 && to_long != 0 {
             let sets = SettingTableViewController()
             sets.delegate = self
             self.navigationController!.pushViewController(sets, animated: true)
         }
+            
         else  {
             view.makeToast("Заполните все поля")
         }
 
     }
     
-   @objc func Detection() {
-        let camera = GMSCameraPosition.camera(withLatitude: (map.myLocation?.coordinate.latitude)!, longitude: (map.myLocation?.coordinate.longitude)!, zoom: 16.0)
-        map.camera = camera
-        //                setupLocationManager()
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(map)
-        view.addSubview(menuimage)
-        view.addSubview(Detect)
-        if APItoken.getColorType() == 1 {
-            do {
-                map.mapStyle = try! GMSMapStyle(jsonString: MapStyle().kMapStyle)
-            } catch {
-                NSLog("One or more of the map styles failed to load. \(error)")
-            }
-        }
-         Detect.setAnchor(top: nil, left: nil, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 280, paddingRight: 35, width: 35, height: 35)
-        Detect.addTarget(self, action: #selector(Detection), for: .touchUpInside)
-        GetAvatar.get { (str) in
-            print("avatar")
-            print(str)
-        }
-   
+        let maps = MapView(frame: view.bounds)
+        mapview = maps
+        view.addSubview(mapview!)
+        addview()
+        userprotocol = self
+        check()
+        mapview?.map.delegate = self
         Cancel.can = self
-        menuimage.setAnchor(top: self.view.topAnchor, left: self.view.leftAnchor, bottom: nil, right: nil, paddingTop: 30, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 35, height: 25)
-        menuimage.image = UIImage(named: "icon_menu")
-        menuimage.isUserInteractionEnabled = true
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        menuimage.addGestureRecognizer(tapGestureRecognizer)
-        map.isMyLocationEnabled = true
-        map.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        mapview!.menuimage.addGestureRecognizer(tapGestureRecognizer)
         let menuLeft = UISideMenuNavigationController(rootViewController: MenuTableViewController())
         menuLeft.sideMenuManager.menuPresentMode = .menuSlideIn
         menuLeft.sideMenuManager.menuWidth = view.frame.width - view.frame.width*0.2
         SideMenuManager.default.menuLeftNavigationController = menuLeft
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: menuimage)
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: menuimage)
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: mapview!.menuimage)
+        SideMenuManager.default.menuAddPanGestureToPresent(toView: mapview!.menuimage)
         SideMenuManager.default.menuFadeStatusBar = false
         SideMenuManager.default.menuPushStyle = .subMenu
         manager.delegate = self
+        SideMenuManager.default.menuLeftNavigationController?.dismiss(animated: true, completion: nil)
         manager.requestWhenInUseAuthorization()
-        
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
-        map.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(drivercame(notification:)), name: NSNotification.Name(rawValue: "201"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(drivercame(notification:)), name: NSNotification.Name(rawValue: "401"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(drivercame(notification:)), name: NSNotification.Name(rawValue: "501"), object: nil)
-   
+    }
+    
+    func check() {
+        sendPushId.send { (info, type) in
+            if info.activeOrders!.count != 0 {
+                let orders = info.activeOrders![0]
+                self.userprotocol?.from_lat = Double(orders.fromLatitude!)
+                self.userprotocol?.from_long = Double(orders.fromLongitude!)
+                self.userprotocol?.to_lat = Double(orders.toLatitude!)
+                self.userprotocol?.to_long = Double(orders.toLongitude!)
+                self.userprotocol?.state_type = orders.status
+                self.userprotocol?.order_id = orders.id
+                self.userprotocol?.addbuttons()
+                self.userprotocol?.first_added()
+                self.userprotocol?.second_added()
+                self.userprotocol?.first_clicked = false
+                self.userprotocol?.second_clicked = false
+                self.userprotocol?.second_added()
+            }
+        }
     }
     
     
     
     func setup() {
-        if map.myLocation?.coordinate.longitude != nil {
-            Geocoding.LocationName(lat: "\(String(describing: map.myLocation?.coordinate.latitude))", long: "\(String(describing: map.myLocation?.coordinate.longitude))") { (first_loc) in
-                let first_place2 = first_loc?.results?[0].addressComponents?[0].shortName ?? ""
-                let first_place3 = first_loc?.results?[0].addressComponents?[1].shortName ?? ""
-                let finist = "\(first_place3) \(first_place2)"
-                self.first_lat = (self.map.myLocation?.coordinate.latitude)!
-                self.first_long = (self.map.myLocation?.coordinate.longitude)!
-                self.first_name = finist
+        if mapview?.map.myLocation?.coordinate.longitude != nil {
+            let coord =   mapview?.map.myLocation?.coordinate
+            let lat = coord?.latitude
+            let long = coord?.longitude
+            getfromgeo.get(lat: String(lat!), long: String(long!)) { (place) in
+                self.first_name = place
             }
+            self.from_lat = lat
+            self.from_long = long
         }
     }
     
+    
+    
     @objc func drivercame(notification:NSNotification) {
-        let content = UNMutableNotificationContent()
-        let ord_id = notification.userInfo![AnyHashable("order_id")] as? String
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-
+     
         switch notification.name.rawValue {
         case "201":
-            self.onOnder.addview(nav: self.navigationController!)
-            content.title = "Taxi +"
-            content.body = "Водитель принял ваш заказ"
-            content.sound  = UNNotificationSound.default
-            let request = UNNotificationRequest(identifier: "201", content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            addbut()
             Cancel.cancel.removeFromSuperview()
+            Cancel.label.removeFromSuperview()
             view.makeToast("Водитель принял ваш Заказ")
         case "401":
-            content.title = "Taxi +"
-            content.body = "Водитель подъехал"
-            content.sound  = UNNotificationSound.default
-            view.makeToast("Водитель подъехал")
-            let request = UNNotificationRequest(identifier: "401", content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            break
         case "501":
-            content.title = "Taxi +"
-            content.body = "Оцените водителя"
-            content.sound  = UNNotificationSound.default
-            let request = UNNotificationRequest(identifier: "501", content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-
-            onOnder.remove()
+            orderbutton.removeFromSuperview()
             Rating.addRating()
             Rating.rat = self
         default:
@@ -290,84 +269,31 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
 
     }
     
+    func addbut() {
+        view.addSubview(orderbutton)
+        Route.Draw(startlat: from_lat!, startlong: from_long!, endlat: to_lat!, englong: to_long!, map: (mapview?.map)!)
+        orderbutton.backgroundColor = maincolor
+        orderbutton.setAnchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        orderbutton.setTitle("Информация о заказе", for: .normal)
+        orderbutton.setTitleColor(UIColor.white, for: .normal)
+        orderbutton.addTarget(self, action: #selector(showdes), for: .touchUpInside)
+    }
     
+    @objc func showdes() {
+ 
+            self.customPresentViewController(self.presenter, viewController: self.onOnder, animated: true, completion: nil)
+       
+    }
     override func viewWillAppear(_ animated: Bool)
-    {        navigationController?.navigationBar.isHidden = true
+    {       navigationController?.navigationBar.isHidden = true
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-
         
-        sendPushId.send { (info, order) in
-            switch info.status! {
-            case 0:
-                self.addview()
-            case 1:
-                self.Cancel.can = self
-                self.Cancel.addcancel(view: self.view)
-            case 2:
-                self.onOnder.addview(nav: self.navigationController!)
-            case 3:
-                self.onOnder.addview(nav: self.navigationController!)
-            case 4:
-                self.onOnder.addview(nav: self.navigationController!)
-
-            default:
-                break
-            }
-        }
-      
-   
     }
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
+        
         present(SideMenuManager.defaultManager.menuLeftNavigationController!,animated: true,completion: nil)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 13)
-        self.map.animate(to: camera)
-        
-        Geocoding.LocationName(lat: String(describing: (location?.coordinate.latitude)!), long: String(describing: (location?.coordinate.longitude)!)) { (first_loc) in
-            let first_place2 = first_loc!.results![0].addressComponents![0].shortName ?? ""
-            let first_place3 = first_loc!.results![0].addressComponents![1].shortName ?? ""
-            let finist = "\(first_place3) \(first_place2)"
-            self.first_long = (location?.coordinate.longitude)!
-            self.first_lat = (location?.coordinate.latitude)!
-            self.first_name = finist
-        }
-        self.manager.stopUpdatingLocation()
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
-        if first_clicked == true {
-            marker1.map = nil
-            marker1.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-            marker1.icon = self.imageWithImage(image: UIImage(named: "icon_point_a")!, scaledToSize: CGSize(width: 20, height: 20))
-            marker1.map = map
-            first_lat = coordinate.latitude
-            first_long = coordinate.longitude
-           
-        }
-        if second_clicked == true {
-            marker2.map = nil
-            marker2.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-            marker2.icon = self.imageWithImage(image: UIImage(named: "icon_point_b")!, scaledToSize: CGSize(width: 20, height: 20))
-            marker2.map = map
-            second_lat = coordinate.latitude
-            second_long = coordinate.longitude
-     
-        }
-    }
-    
-    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return newImage
-    }
-
-    
-
     
     }

@@ -13,6 +13,7 @@ class OnOrder : NSObject,UITableViewDataSource,UITableViewDelegate {
     var menu = [AccepTaxiModule]()
     var cellid = "cellid"
     var footerid = "footer"
+    var order_id : Int?
     var navigation : UINavigationController?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
@@ -100,7 +101,6 @@ class OnOrder : NSObject,UITableViewDataSource,UITableViewDelegate {
     
     @objc func gotoChat() {
         let chat = ChatViewController()
-        sendPushId.send { (info, order_id) in
             GetOrderInfo.GetInfo(order_id: String(order_id!)) { (order) in
                 let phone_driver = order.driver?.phone
                 let phone_user = order.client?.phone
@@ -114,7 +114,7 @@ class OnOrder : NSObject,UITableViewDataSource,UITableViewDelegate {
                 self.tableview.removeFromSuperview()
                 self.navigation?.pushViewController(chat, animated: true)
             }
-        }
+        
         
     }
     
@@ -124,7 +124,8 @@ class OnOrder : NSObject,UITableViewDataSource,UITableViewDelegate {
     }
     @objc func call() {
         sendPushId.send { (info, order_id) in
-            GetOrderInfo.GetInfo(order_id: String(order_id!)) { (order) in
+            var inf = info.activeOrders![0]
+            GetOrderInfo.GetInfo(order_id: String(inf.id!)) { (order) in
                 let phone_user = order.driver?.phone
                 if let url = URL(string: "tel://\("+" + phone_user!)") {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -135,26 +136,30 @@ class OnOrder : NSObject,UITableViewDataSource,UITableViewDelegate {
     }
     func datareload() {
         sendPushId.send { (info, order) in
-            GetOrderInfo.GetInfo(order_id: "\(order!)", completion: { (info) in
-                print(info.order?.fromLatitude as Any)
+            let id = info.activeOrders![0]
+            GetOrderInfo.GetInfo(order_id: "\(id.id!)", completion: { (info) in
                 var car_name : String?
                 var car_number : String?
                 for i in info.car! {
                     car_name = i.submodel!
                     car_number = i.number!
                 }
-              
                 
-                let module = [AccepTaxiModule(detail: "Откуда", menu: FullGeo.get(lat: (info.order?.fromLatitude!)!, long: (info.order?.fromLongitude!)!) ?? "", img: "icon_point_a"),
-                              AccepTaxiModule(detail: "Куда", menu: FullGeo.get(lat: (info.order?.toLatitude!)!, long: (info.order?.fromLongitude!)!) ?? "", img: "icon_point_b"),
-                              AccepTaxiModule(detail: "Имя", menu: (info.driver?.name!)!, img: "user"),
-                              AccepTaxiModule(detail: "Номер телефона", menu: (info.driver?.phone!)!, img: "icon_phone"),
-                              AccepTaxiModule(detail: "Марка машины", menu: car_name!, img: "icon_car"),
-                              AccepTaxiModule(detail: "Номер машины", menu: (car_number)!, img: "icon_card"),
-                              AccepTaxiModule(detail: "Дата посадки", menu: (info.order?.created!)!, img: "clock-1"),
-                              AccepTaxiModule(detail: "Режим", menu: ("Такси"), img: "icon_mode")]
+                getfromgeo.get(lat: (info.order?.fromLatitude)!, long: (info.order?.fromLongitude)!, completion: { (place) in
+                    getfromgeo.get(lat: (info.order?.toLatitude)!, long: (info.order?.toLongitude)!, completion: { (place2) in
+                        let module = [AccepTaxiModule(detail: "Откуда", menu: place, img: "icon_point_a"),
+                                      AccepTaxiModule(detail: "Куда", menu: place2, img: "icon_point_b"),
+                                      AccepTaxiModule(detail: "Имя", menu: (info.driver?.name!)!, img: "user"),
+                                      AccepTaxiModule(detail: "Номер телефона", menu: (info.driver?.phone!)!, img: "icon_phone"),
+                                      AccepTaxiModule(detail: "Марка машины", menu: car_name!, img: "icon_car"),
+                                      AccepTaxiModule(detail: "Номер машины", menu: (car_number)!, img: "icon_card"),
+                                      AccepTaxiModule(detail: "Дата посадки", menu: (info.order?.created!)!, img: "clock-1"),
+                                      AccepTaxiModule(detail: "Режим", menu: ("Такси"), img: "icon_mode")]
+                        self.menu = module
+                    })
+                })
                 
-                self.menu = module
+       
              
 
                 

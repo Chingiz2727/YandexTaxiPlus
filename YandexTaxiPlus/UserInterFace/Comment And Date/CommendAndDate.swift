@@ -19,10 +19,12 @@
     var datestring : CLong?
     var cellid = "cellid"
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         UIColourScheme.instance.set(for:self)
-
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = maincolor
+        navigationController?.navigationBar.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {

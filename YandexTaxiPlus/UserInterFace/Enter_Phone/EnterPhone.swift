@@ -54,7 +54,6 @@ class EnterPhone: UIViewController {
                         print(error)
                     case.success(let value):
                         let json = JSON(value)
-                                            print(json)
                                             let acces = EnterPhoneViewController()
                                             acces.phone = phone
                                             self.window = UIWindow(frame: UIScreen.main.bounds)

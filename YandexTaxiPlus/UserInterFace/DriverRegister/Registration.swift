@@ -24,7 +24,6 @@ class Register {
             "facilities":fac,
             "type":type
             ] as [String : Any]
-        print(params)
      
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
@@ -34,7 +33,6 @@ class Register {
                 case.success(let value):
                     let json = JSON(value)
                     print(json)
-                    print("registered")
                 }
             }
         }

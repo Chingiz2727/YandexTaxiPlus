@@ -20,7 +20,6 @@ class SessionPrice {
                     print(error)
                 case.success(let val):
                     var json = JSON(val)
-                    print(json)
                     let six = json["six_hours_price"].int
                     let unlim = json["unlim_price"].int
                     completion(six,unlim)
@@ -38,7 +37,6 @@ class SessionPrice {
                     print(error)
                 case.success(let val):
                     let json = JSON(val)
-                    print(json)
                     if json["message"].stringValue == "Сессия успешно открыта" {
                         completion(true,false)
                     }
@@ -56,7 +54,6 @@ class SessionPrice {
                     print(err)
                 case.success(let val):
                     var json = JSON(val)
-                    print(json)
                 }
             }
         }

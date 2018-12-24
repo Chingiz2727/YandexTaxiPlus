@@ -181,7 +181,6 @@ class AddTableViewController: UITableViewController,ToCitiesTableViewControllerD
                       "end_id":id,
                       "price":price,
                       "date":"\(time ?? 0)"]
-        print(params)
   
         if params.values.filter({ $0 == nil }).isEmpty
         {
@@ -192,7 +191,6 @@ class AddTableViewController: UITableViewController,ToCitiesTableViewControllerD
                 "end_id":id!,
                 "price":price!,
                 "date":"\(time ?? 0)"]
-            print(param)
             AddSpecificOrder.City(params: param as [String:Any]) { (success, failure) in
                             if success {
                                 self.view.hideToastActivity()
@@ -203,6 +201,9 @@ class AddTableViewController: UITableViewController,ToCitiesTableViewControllerD
                                 alert.publish = "1"
                                 alert.type = "1"
                                 alert.title = ""
+                                AccessShowFunc.Show(completion: { (info) in
+                                    alert.label.text = "Для публикации оплатите \(info!.types[1].publishPrice!) тг"
+                                })
                                 alert.show()
                             }
                         }

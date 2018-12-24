@@ -10,8 +10,7 @@ import UIKit
 
 class MyPlacesTableViewController: UITableViewController {
     var cellid = "cellid"
-    var first_delegate : firstplacedelegate?
-    var second_delegate : secondplacedelegate?
+    var userprotocol : UserMainPageProtocol?
     var tag : Int!
     var myplace = [MyPlace]()
     override func viewDidLoad() {
@@ -66,75 +65,29 @@ class MyPlacesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! MyPlacesTableViewCell
         cell.place.text = myplace[indexPath.row].place
         let item = myplace[indexPath.row]
-        print(item.lat)
-        print(item.lang)
-        cell.img.image = UIImage(named: "placeholder")
+                cell.img.image = UIImage(named: "placeholder")
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = myplace[indexPath.row]
         switch tag {
         case 0:
-            first_delegate?.first_lat = Double(item.lat)!
-            first_delegate?.first_long = Double(item.lang)!
-            first_delegate?.first_name = item.place
-            first_delegate?.firstadded()
+            userprotocol?.first_name = item.place
+            userprotocol?.from_lat = Double(item.lat)!
+            userprotocol?.from_long = Double(item.lang)!
+            userprotocol?.first_added()
         case 1:
-            second_delegate?.second_lat = Double(item.lat)!
-            second_delegate?.second_long = Double(item.lang)!
-            second_delegate?.second_name = item.place
-            second_delegate?.secondadded()
+            userprotocol?.second_name = item.place
+            userprotocol?.to_long = Double(item.lang)!
+            userprotocol?.to_lat = Double(item.lat)!
+            userprotocol?.second_added()
+            
         default:
             break
         }
-        
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
  
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -34,9 +34,6 @@ class CustomAlert: UIAlertController {
         button.setAnchor(top: label.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
         button.setTitle("Оплатить", for: .normal)
         button.setTitleColor(maincolor, for: .normal)
-            label.text = "Для публикации необходимо оплатить 50тг"
-
-        
         button.addTarget(self, action: #selector(dismissing), for: .touchUpInside)
     }
     

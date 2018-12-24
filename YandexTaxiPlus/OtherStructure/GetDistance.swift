@@ -16,7 +16,6 @@ class GetDistance {
     let des = "&destinations=\(to_lat),\(to_long)"
     let all = "&mode=car&language=ru-RU&key=AIzaSyAuSB9DXj45y7Ln8x45gTDOv-DhaFBm7Ys"
     let url = "https://maps.googleapis.com/maps/api/distancematrix/json?" + orig + des + all
-   print(url)
 
     
     Alamofire.request(url).responseJSON { (response) in

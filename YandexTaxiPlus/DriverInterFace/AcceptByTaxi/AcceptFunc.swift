@@ -29,7 +29,6 @@ class AcceptFunc {
                 if json["state"].stringValue == "exist" {
                     completion(false,true)
                 }
-                print(json)
             }
         }
     }

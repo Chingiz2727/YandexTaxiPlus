@@ -13,9 +13,9 @@ class PayByCardViewController: UIViewController {
 
     let WebView : UIWebView = UIWebView()
     override func viewDidLoad() {
-        self.navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.isTranslucent = true
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = maincolor
+        navigationController?.navigationBar.isHidden = false
         view.addSubview(WebView)
         WebView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         let myurl = URL(string: url)

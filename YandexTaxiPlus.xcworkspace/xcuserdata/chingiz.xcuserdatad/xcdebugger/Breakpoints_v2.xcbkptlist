@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.050874"
+            timestampString = "566978879.715668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -26,13 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/UserMainPageView.swift"
-            timestampString = "564498992.695413"
+            timestampString = "566843966.223008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "Detect"
-            landmarkType = "24">
+            startingLineNumber = "98"
+            endingLineNumber = "98">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.173661"
+            timestampString = "566854830.7918071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "getprice(first_long:first_lat:second_lat:second_long:type:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.173777"
+            timestampString = "566854830.791878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "getprice(first_long:first_lat:second_lat:second_long:type:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,23 +72,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.173821"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "getprice(first_long:first_lat:second_lat:second_long:type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.173857"
+            timestampString = "566854830.7919329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -106,7 +88,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.17389"
+            timestampString = "566854830.792006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -122,7 +104,7 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-                  timestampString = "565616852.069887"
+                  timestampString = "567331435.1196949"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -137,7 +119,7 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-                  timestampString = "565616852.072112"
+                  timestampString = "567331435.122385"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -154,13 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/UserMainPageView.swift"
-            timestampString = "564498992.695585"
+            timestampString = "566843966.223193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "remove(notification:)"
-            landmarkType = "7">
+            startingLineNumber = "98"
+            endingLineNumber = "98">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,13 +150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/UserMainPageView.swift"
-            timestampString = "564498992.695632"
+            timestampString = "566843966.223228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "remove(notification:)"
-            landmarkType = "7">
+            startingLineNumber = "98"
+            endingLineNumber = "98">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.564799"
+            timestampString = "567185578.250211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "messaging(_:didReceiveRegistrationToken:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5648921"
+            timestampString = "567185578.2503"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,7 +196,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.173988"
+            timestampString = "566854830.7924809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -234,7 +212,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.174023"
+            timestampString = "566854830.792552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -298,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.565212"
+            timestampString = "567185578.250388"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.565281"
+            timestampString = "567185578.250425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.565338"
+            timestampString = "567185578.250458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5653909"
+            timestampString = "567185578.250491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5654449"
+            timestampString = "567185578.250523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "saveContext()"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.565504"
+            timestampString = "567185578.250556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "persistentContainer"
             landmarkType = "24">
             <Locations>
@@ -426,11 +404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.565563"
+            timestampString = "567185578.250589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5656151"
+            timestampString = "567185578.250621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,11 +436,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.565666"
+            timestampString = "567185578.250652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "userNotificationCenter(_:didReceive:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,11 +452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5657181"
+            timestampString = "567185578.250683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.56577"
+            timestampString = "567185578.250715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -506,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.56582"
+            timestampString = "567185578.250747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -522,11 +500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5658799"
+            timestampString = "567185578.250779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "application(_:didFailToRegisterForRemoteNotificationsWithError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5659339"
+            timestampString = "567185578.25081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "application(_:didFailToRegisterForRemoteNotificationsWithError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,11 +532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.565987"
+            timestampString = "567185578.250841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,11 +548,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.566041"
+            timestampString = "567185578.2508709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,12 +564,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.566097"
+            timestampString = "567185578.250904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "saveContext()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -602,23 +580,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5661449"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.566193"
+            timestampString = "567185578.250936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -634,27 +596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.566247"
+            timestampString = "567185578.250967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "saveContext()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5662971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "persistentContainer"
             landmarkType = "24">
          </BreakpointContent>
@@ -746,7 +692,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.174433"
+            timestampString = "566854830.7956409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -762,7 +708,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.174495"
+            timestampString = "566854830.795696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -778,7 +724,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.17453"
+            timestampString = "566854830.795753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -794,7 +740,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-            timestampString = "565614452.174562"
+            timestampString = "566854830.795805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -810,7 +756,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.189296"
+            timestampString = "566854830.795859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -826,7 +772,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.189339"
+            timestampString = "566854830.795966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -842,7 +788,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.189375"
+            timestampString = "566854830.796032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -858,7 +804,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.18941"
+            timestampString = "566854830.796123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -874,7 +820,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.189445"
+            timestampString = "566854830.796205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -890,23 +836,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.1894799"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "OrderApi(second_long:second_lat:first_long:first_lat:service_id:comment:date:payment_type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.189514"
+            timestampString = "566854830.796296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -922,7 +852,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.1895469"
+            timestampString = "566854830.796357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -938,7 +868,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.189581"
+            timestampString = "566854830.796409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -954,7 +884,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.189616"
+            timestampString = "566854830.796491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -970,7 +900,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
-            timestampString = "565618290.189651"
+            timestampString = "566854830.796573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -986,11 +916,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.3073241"
+            timestampString = "566854830.796657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "List(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1002,11 +932,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.307362"
+            timestampString = "566854830.796742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "List(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1018,7 +948,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.307395"
+            timestampString = "566854830.796793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "List(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
+            timestampString = "566854830.7968481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -1034,7 +980,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.307427"
+            timestampString = "566854830.796905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -1046,27 +992,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.307459"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "List(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.3074909"
+            timestampString = "566854830.796952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -1082,7 +1012,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.3075221"
+            timestampString = "566854830.797007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -1098,7 +1028,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.3075531"
+            timestampString = "566854830.797063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -1114,7 +1044,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.307583"
+            timestampString = "566854830.79711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -1130,7 +1060,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/GetCitie.swift"
-            timestampString = "565366114.307615"
+            timestampString = "566854830.797145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "7"
@@ -1272,11 +1202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
-            timestampString = "565618290.189939"
+            timestampString = "566854830.797533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "getOption(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1288,7 +1218,55 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
-            timestampString = "565618290.189979"
+            timestampString = "566854830.797608"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "getOption(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
+            timestampString = "566854830.7976739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "getOption(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
+            timestampString = "566854830.797732"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getOption(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
+            timestampString = "566854830.797767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -1304,59 +1282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
-            timestampString = "565618290.190014"
+            timestampString = "566854830.797824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "getOption(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
-            timestampString = "565618290.190048"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "getOption(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
-            timestampString = "565618290.190082"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "getOption(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterApi.swift"
-            timestampString = "565618290.190115"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
             landmarkName = "getOption(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1496,7 +1426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OrderInfo/GetOrderInfo.swift"
-            timestampString = "565273502.746909"
+            timestampString = "567331434.5475121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -1512,7 +1442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OrderInfo/GetOrderInfo.swift"
-            timestampString = "565273502.746964"
+            timestampString = "567331434.5475791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -1528,7 +1458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OrderInfo/GetOrderInfo.swift"
-            timestampString = "565273502.747008"
+            timestampString = "567331434.547622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -1544,7 +1474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OrderInfo/GetOrderInfo.swift"
-            timestampString = "565273502.747058"
+            timestampString = "567331434.547658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -1560,7 +1490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OrderInfo/GetOrderInfo.swift"
-            timestampString = "565273502.747098"
+            timestampString = "567331434.547694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -1576,27 +1506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OrderInfo/GetOrderInfo.swift"
-            timestampString = "565273502.74713"
+            timestampString = "567331434.54773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "GetInfo(order_id:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/OrderInfo/GetOrderInfo.swift"
-            timestampString = "565273502.747162"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
             landmarkName = "GetInfo(order_id:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1660,15 +1574,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMenu/DriverMenuTableViewController.swift"
-            timestampString = "565618290.190416"
+            timestampString = "567185578.25176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "Exit()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1676,15 +1590,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMenu/DriverMenuTableViewController.swift"
-            timestampString = "565618290.190456"
+            timestampString = "567185578.251799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
             landmarkName = "Exit()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1692,15 +1606,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMenu/DriverMenuTableViewController.swift"
-            timestampString = "565618290.190491"
+            timestampString = "567185578.25183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
             landmarkName = "Exit()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1708,15 +1622,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMenu/DriverMenuTableViewController.swift"
-            timestampString = "565618290.190524"
+            timestampString = "567185578.251861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "Exit()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1728,7 +1642,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
-            timestampString = "565515895.120652"
+            timestampString = "566854830.799054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -1740,15 +1654,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
-            timestampString = "565515895.120746"
+            timestampString = "566854830.799156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "get(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1760,45 +1674,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-            timestampString = "565612490.143311"
+            timestampString = "566842644.743345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "DriverAction(sender:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTaxiPlus.DriverMapViewController.DriverAction(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-                  timestampString = "565616852.346031"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTaxiPlus.DriverMapViewController.DriverAction(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-                  timestampString = "565616852.348613"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "115">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1808,75 +1690,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-            timestampString = "565612490.143368"
+            timestampString = "566842644.743668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "DriverMapViewController"
+            landmarkName = "DriverMapViewControlle"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTaxiPlus.DriverMapViewController.order_id.getter : Swift.Optional&lt;Swift.Int&gt;"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-                  timestampString = "565616852.3557121"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "113">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTaxiPlus.DriverMapViewController.order_id.setter : Swift.Optional&lt;Swift.Int&gt;"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-                  timestampString = "565616852.358422"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "130">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTaxiPlus.DriverMapViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; YandexTaxiPlus.DriverMapViewController"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-                  timestampString = "565616852.3613091"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "426">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTaxiPlus.DriverMapViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;YandexTaxiPlus.DriverMapViewController&gt;"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-                  timestampString = "565616852.364454"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "394">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1886,11 +1706,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.569037"
+            timestampString = "567185578.251936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "saveContext()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1902,27 +1722,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.569084"
+            timestampString = "567185578.251979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.569124"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2014,11 +1818,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-            timestampString = "565612490.143535"
+            timestampString = "566842644.744135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "DriverAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2110,11 +1914,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/CitiesTableViewController.swift"
-            timestampString = "565538133.569645"
+            timestampString = "566854830.799964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117">
+            startingLineNumber = "116"
+            endingLineNumber = "116">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2124,11 +1928,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/EvoTaxi/EvoMakeOrder.swift"
-            timestampString = "565224760.057897"
+            timestampString = "566854830.800066"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "MakeOrder(type:comment:start:end:price:date:state:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2140,11 +1944,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/EvoTaxi/EvoMakeOrder.swift"
-            timestampString = "565224760.057983"
+            timestampString = "566854830.800169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "MakeOrder(type:comment:start:end:price:date:state:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2156,11 +1960,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/EvoTaxi/EvoMakeOrder.swift"
-            timestampString = "565224760.05808"
+            timestampString = "566854830.800227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "MakeOrder(type:comment:start:end:price:date:state:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2252,11 +2056,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverOrderSettingCollectionViewCell/SettingView.swift"
-            timestampString = "565696334.802493"
+            timestampString = "566854830.800452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "makeorder()"
             landmarkType = "7">
             <Locations>
@@ -2300,12 +2104,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserStates/CancelOrder.swift"
-            timestampString = "565448003.3665709"
+            timestampString = "567154879.351222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "Cancel(order_id:)"
+            landmarkName = "Cancel(order_id:complition:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2316,12 +2120,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserStates/CancelOrder.swift"
-            timestampString = "565448003.366616"
+            timestampString = "567154879.353983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "Cancel(order_id:)"
+            landmarkName = "Cancel(order_id:complition:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2332,12 +2136,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserStates/CancelOrder.swift"
-            timestampString = "565448003.36665"
+            timestampString = "567154879.354382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
             endingLineNumber = "15"
-            landmarkName = "Cancel(order_id:)"
+            landmarkName = "Cancel(order_id:complition:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2348,43 +2152,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserStates/CancelOrder.swift"
-            timestampString = "565448003.366683"
+            timestampString = "567154879.3549269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
-            landmarkName = "Cancel(order_id:)"
+            landmarkName = "Cancel(order_id:complition:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static YandexTaxiPlus.Cancel.Cancel(order_id: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  symbolName = "static YandexTaxiPlus.Cancel.Cancel(order_id: Swift.Optional&lt;Swift.String&gt;, complition: (Swift.Bool) -&gt; ()) -&gt; ()"
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/CancelOrder.swift"
-                  timestampString = "565616852.433502"
+                  timestampString = "567331435.352142"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "914">
+                  offsetFromSymbolStart = "942">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static YandexTaxiPlus.Cancel.Cancel(order_id: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static YandexTaxiPlus.Cancel.Cancel(order_id: Swift.Optional&lt;Swift.String&gt;, complition: (Swift.Bool) -&gt; ()) -&gt; ()"
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/CancelOrder.swift"
-                  timestampString = "565616852.436092"
+                  timestampString = "567331435.354215"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "30">
+                  offsetFromSymbolStart = "46">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2396,11 +2200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverOrderSettingCollectionViewCell/SettingView.swift"
-            timestampString = "565696334.802763"
+            timestampString = "566854830.800843"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "makeorder()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2428,11 +2232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserStates/CancelView.swift"
-            timestampString = "565618290.191556"
+            timestampString = "566910087.028308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "showCancel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2524,11 +2328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.5707459"
+            timestampString = "567185578.2525491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2540,11 +2344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.570839"
+            timestampString = "567185578.252627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2556,11 +2360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.570902"
+            timestampString = "567185578.252687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2572,11 +2376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.57096"
+            timestampString = "567185578.252743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "saveContext()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2588,11 +2392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.57102"
+            timestampString = "567185578.252799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2604,11 +2408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.571079"
+            timestampString = "567185578.252853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2620,11 +2424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/AppDelegate.swift"
-            timestampString = "565538133.571133"
+            timestampString = "567185578.252908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "persistentContainer"
             landmarkType = "24">
          </BreakpointContent>
@@ -2636,11 +2440,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserStates/OnOrderView.swift"
-            timestampString = "565456315.040087"
+            timestampString = "566854830.802494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "datareload()"
             landmarkType = "7">
             <Locations>
@@ -2652,11 +2456,11 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "565616852.454381"
+                  timestampString = "567331435.376454"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
                   offsetFromSymbolStart = "26">
                </Location>
                <Location
@@ -2667,11 +2471,11 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "565616852.456573"
+                  timestampString = "567331435.3782721"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
                   offsetFromSymbolStart = "59">
                </Location>
             </Locations>
@@ -2684,11 +2488,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserStates/OnOrderView.swift"
-            timestampString = "565456315.040386"
+            timestampString = "566854830.802574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "datareload()"
             landmarkType = "7">
             <Locations>
@@ -2700,12 +2504,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "565616852.461794"
+                  timestampString = "567331435.384094"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
-                  offsetFromSymbolStart = "2678">
+                  offsetFromSymbolStart = "2573">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2715,12 +2519,27 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "565616852.4644181"
+                  timestampString = "567331435.386049"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
-                  offsetFromSymbolStart = "7948">
+                  offsetFromSymbolStart = "3911">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #1 (YandexTaxiPlus.OrderInfo) -&gt; () in closure #1 (YandexTaxiPlus.UserTypeInfo, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in YandexTaxiPlus.OnOrder.datareload() -&gt; ()"
+                  moduleName = "YandexTaxiPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
+                  timestampString = "567331435.387849"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "83">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2732,11 +2551,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
-            timestampString = "565515895.121406"
+            timestampString = "566854830.802654"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "get(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2748,7 +2567,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
-            timestampString = "565515895.121484"
+            timestampString = "566854830.80274"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.802808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -2763,24 +2598,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
-            timestampString = "565515895.121541"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "get(url:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/RoadedCityTableViewController.swift"
-            timestampString = "565538133.571452"
+            timestampString = "566910087.028844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -2796,11 +2615,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/RoadedCityTableViewController.swift"
-            timestampString = "565538133.571514"
+            timestampString = "566910087.028895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "reload()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2812,11 +2631,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/RoadedCityTableViewController.swift"
-            timestampString = "565538133.571568"
+            timestampString = "566910087.028934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "reload()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2828,11 +2647,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/RoadedCityTableViewController.swift"
-            timestampString = "565538133.57162"
+            timestampString = "566910087.028971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "reload()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2844,7 +2663,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/CityTaxi/RoadedCityTableViewController.swift"
-            timestampString = "565538133.571671"
+            timestampString = "566910087.029009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -2904,63 +2723,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserStates/CancelView.swift"
-            timestampString = "565618290.191932"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "showCancel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserStates/CancelView.swift"
-            timestampString = "565618290.191974"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "showCancel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "565618290.192014"
+            timestampString = "567335334.200135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "Canceled()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "565618290.192064"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "Canceled()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3084,7 +2855,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Phone/EnterPhone.swift"
-            timestampString = "565618290.192204"
+            timestampString = "566854830.803769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -3100,7 +2871,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Phone/EnterPhone.swift"
-            timestampString = "565618290.192239"
+            timestampString = "566854830.8038501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -3116,7 +2887,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Phone/EnterPhone.swift"
-            timestampString = "565618290.19227"
+            timestampString = "566854830.8039269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -3132,7 +2903,7 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/Enter_Phone/EnterPhone.swift"
-                  timestampString = "565616852.5344959"
+                  timestampString = "567331435.4493279"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
@@ -3147,7 +2918,7 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/Enter_Phone/EnterPhone.swift"
-                  timestampString = "565616852.536496"
+                  timestampString = "567331435.451117"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
@@ -3164,11 +2935,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterTableViewController.swift"
-            timestampString = "565618290.192305"
+            timestampString = "566854830.804011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
             landmarkName = "register()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3180,11 +2951,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterTableViewController.swift"
-            timestampString = "565618290.192347"
+            timestampString = "566854830.804086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "register()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3196,11 +2967,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverRegister/DriverRegisterTableViewController.swift"
-            timestampString = "565618290.192387"
+            timestampString = "566854830.8041379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "register()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3612,45 +3383,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-            timestampString = "565612490.145503"
+            timestampString = "566842644.746878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "DriverAction(sender:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTaxiPlus.DriverMapViewController.DriverAction(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-                  timestampString = "565616852.573566"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTaxiPlus.DriverMapViewController.DriverAction(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/DriverMap/DriverMapViewController.swift"
-                  timestampString = "565616852.575995"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "115">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3660,87 +3399,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.061958"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "accessing()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.062003"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "accessing()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.062063"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "accessing()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.062103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "accessing()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.062142"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "accessing()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.062179"
+            timestampString = "566978879.720511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -3756,7 +3415,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.06222"
+            timestampString = "566978879.720579"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "accessing()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
+            timestampString = "566978879.720625"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "accessing()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
+            timestampString = "566978879.720669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -3772,11 +3463,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "565224760.062258"
+            timestampString = "566978879.72071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "accessing()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3784,15 +3475,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMenu/DriverMenuTableViewController.swift"
-            timestampString = "565618290.192883"
+            timestampString = "567185578.256191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "Exit()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3800,15 +3491,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMenu/DriverMenuTableViewController.swift"
-            timestampString = "565618290.192919"
+            timestampString = "567185578.256243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
             landmarkName = "Exit()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3816,15 +3507,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/DriverMenu/DriverMenuTableViewController.swift"
-            timestampString = "565618290.192953"
+            timestampString = "567185578.256279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "Exit()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3836,7 +3527,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/ChangeRole.swift"
-            timestampString = "565524046.539642"
+            timestampString = "566854830.805603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -3851,24 +3542,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/ChangeRole.swift"
-            timestampString = "565524046.539674"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "Change(complition:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptFunc.swift"
-            timestampString = "565224760.062718"
+            timestampString = "566854830.805658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -3884,7 +3559,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-            timestampString = "565530848.213243"
+            timestampString = "566854830.805701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -3900,7 +3575,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-            timestampString = "565530848.2133189"
+            timestampString = "566854830.805763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -3916,7 +3591,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-            timestampString = "565530848.21336"
+            timestampString = "566854830.805802"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -3932,7 +3607,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-            timestampString = "565530848.213398"
+            timestampString = "566854830.80588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "8"
@@ -3948,7 +3623,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-            timestampString = "565530848.2135251"
+            timestampString = "566854830.805914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "9"
@@ -3964,7 +3639,7 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-                  timestampString = "565616852.65511"
+                  timestampString = "567331435.570164"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "9"
@@ -3979,7 +3654,7 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-                  timestampString = "565616852.657318"
+                  timestampString = "567331435.572584"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "10"
@@ -3996,7 +3671,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-            timestampString = "565530848.21359"
+            timestampString = "566854830.805952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "7"
@@ -4028,13 +3703,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserSettings/UserSettingsTableViewController.swift"
-            timestampString = "565538133.575003"
+            timestampString = "566995564.379738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "CityFromData(id:region_id:name:cname:)"
-            landmarkType = "7">
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4044,13 +3719,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/UserSettings/UserSettingsTableViewController.swift"
-            timestampString = "565538133.575053"
+            timestampString = "566995564.399192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "CityFromData(id:region_id:name:cname:)"
-            landmarkType = "7">
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4060,11 +3735,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/TaxiOrdersTableViewController.swift"
-            timestampString = "565538133.5750999"
+            timestampString = "566854830.806183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4075,28 +3750,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
-            timestampString = "565515895.123345"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "get(url:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/TaxiOrdersTableViewController.swift"
-            timestampString = "565538133.575207"
+            timestampString = "566854830.8062789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4108,11 +3767,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
-            timestampString = "565457970.675493"
+            timestampString = "566854830.806424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4120,15 +3779,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
-            continueAfterRunningActions = "No"
+            continueAfterRunningActions = "Yes"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
-            timestampString = "565457970.675532"
+            timestampString = "566854830.8068531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "didPressSend(_:withMessageText:senderId:senderDisplayName:date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4140,11 +3799,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
-            timestampString = "565353767.486931"
+            timestampString = "566854830.807214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "get(date:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4156,39 +3815,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
-            timestampString = "565353767.487648"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "get(date:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
-            timestampString = "565353767.48827"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "get(date:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
-            timestampString = "565353767.488676"
+            timestampString = "566854830.807289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -4204,23 +3831,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
-            timestampString = "565353767.489225"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "get(date:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
-            timestampString = "565353767.489637"
+            timestampString = "566854830.8073339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -4236,11 +3847,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
-            timestampString = "565353767.489941"
+            timestampString = "566854830.807381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "get(date:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
+            timestampString = "566854830.807436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "get(date:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
+            timestampString = "566854830.8074909"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "get(date:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/History/GetHistory.swift"
+            timestampString = "566854830.807537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "get(date:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4252,11 +3911,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.7759579"
+            timestampString = "566854830.8075891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "Get(type:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4268,7 +3927,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.7760201"
+            timestampString = "566854830.807673"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.8077281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -4284,7 +3959,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.7760561"
+            timestampString = "566854830.807775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -4300,87 +3975,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.7760921"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776127"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776176"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776212"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776248"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776284"
+            timestampString = "566854830.807821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -4396,279 +3991,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776319"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776353"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776387"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776419"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.7764519"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776493"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776528"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static YandexTaxiPlus.GetFullChats.Get(type: Swift.Int, completion: (Swift.Array&lt;YandexTaxiPlus.FullChatList&gt;, Swift.Bool, Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-                  timestampString = "565616852.788676"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "998">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static YandexTaxiPlus.GetFullChats.Get(type: Swift.Int, completion: (Swift.Array&lt;YandexTaxiPlus.FullChatList&gt;, Swift.Bool, Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "YandexTaxiPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-                  timestampString = "565616852.791577"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "90">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776562"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776595"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776629"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776679"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776714"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776749"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776782"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776816"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "Get(type:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.77685"
+            timestampString = "566854830.807897"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -4684,7 +4007,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776883"
+            timestampString = "566854830.807932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -4700,7 +4023,263 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.776917"
+            timestampString = "566854830.8079799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.80812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808174"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808238"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808285"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808439"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.8085231"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808569"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.8086261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808673"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.8087341"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808785"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "Get(type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
+            timestampString = "566854830.808836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -4716,7 +4295,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/DriverInterFace/FullChats/GetFullChatList.swift"
-            timestampString = "565535364.77695"
+            timestampString = "566854830.808894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -4731,28 +4310,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/TaxiOrdersTableViewCell.swift"
-            timestampString = "565538133.577009"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "viewModel"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "565618290.1937031"
+            timestampString = "567335334.201067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "PushDetail()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4764,11 +4327,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "565618290.193754"
+            timestampString = "567335334.2011189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "PushDetail()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4780,11 +4343,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "565618290.193801"
+            timestampString = "567335334.201158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "PushDetail()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4796,11 +4359,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "565618290.193845"
+            timestampString = "567335334.201194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "PushDetail()"
             landmarkType = "7">
          </BreakpointContent>
@@ -4812,12 +4375,876 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/DriverOrderSettingCollectionViewCell/SettingView.swift"
-            timestampString = "565696334.80452"
+            timestampString = "566854830.810212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
             endingLineNumber = "144"
             landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverCoins/GetDriverCoins.swift"
+            timestampString = "566854830.810266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "get(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverCoins/MoneyRequest.swift"
+            timestampString = "566854830.810364"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "makerequest(card_num:amount:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static YandexTaxiPlus.MoneyRequest.makerequest(card_num: Swift.String, amount: Swift.String, completion: (Swift.Bool, Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "YandexTaxiPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/DriverCoins/MoneyRequest.swift"
+                  timestampString = "567331435.929354"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "912">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static YandexTaxiPlus.MoneyRequest.makerequest(card_num: Swift.String, amount: Swift.String, completion: (Swift.Bool, Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "YandexTaxiPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/DriverCoins/MoneyRequest.swift"
+                  timestampString = "567331435.931565"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "45">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.810444"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.810558"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.810608"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.810656"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.810716"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.810762"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.810827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.810861"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.8108931"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverNews/getNews.swift"
+            timestampString = "566854830.81094"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getnews(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.505613"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.505681"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.505776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.505887"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.505936"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.505981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.506019"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YandexTaxiPlus.GetUser.restartapp(comletion: (YandexTaxiPlus.MainInfo) -&gt; ()) -&gt; ()"
+                  moduleName = "YandexTaxiPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/OtherStructure/GetUser.swift"
+                  timestampString = "567331436.012804"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "903">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in YandexTaxiPlus.GetUser.restartapp(comletion: (YandexTaxiPlus.MainInfo) -&gt; ()) -&gt; ()"
+                  moduleName = "YandexTaxiPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/OtherStructure/GetUser.swift"
+                  timestampString = "567331436.015057"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.506055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
+            timestampString = "567334699.50609"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "restartapp(comletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.81159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.811653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.811699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.811747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.811781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.811828"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.81186"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.8119251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/TaxiOrders/GetChatOrders.swift"
+            timestampString = "566854830.811987"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "get(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserStates/OnOrderView.swift"
+            timestampString = "566854830.812044"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "datareload()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserStates/OnOrderView.swift"
+            timestampString = "566854830.812109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "datareload()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserStates/OnOrderView.swift"
+            timestampString = "566854830.812165"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "datareload()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
+            timestampString = "566854830.812233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "collectionView(_:messageBubbleImageDataForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
+            timestampString = "566854830.812498"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
+            timestampString = "566854830.812637"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
+            timestampString = "566854830.8127739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "send(token:message:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static YandexTaxiPlus.SendChat.send(token: Swift.String, message: Swift.String) -&gt; ()"
+                  moduleName = "YandexTaxiPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
+                  timestampString = "567331436.097303"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "666">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static YandexTaxiPlus.SendChat.send(token: Swift.String, message: Swift.String) -&gt; ()"
+                  moduleName = "YandexTaxiPlus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
+                  timestampString = "567331436.099468"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
+            timestampString = "566854830.812885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "send(token:message:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
+            timestampString = "566854830.812956"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "send(token:message:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
+            timestampString = "566854830.813027"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "send(token:message:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
+            timestampString = "566854830.813112"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "didPressSend(_:withMessageText:senderId:senderDisplayName:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
+            timestampString = "566854830.813176"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "OrderApi(second_long:second_lat:first_long:first_lat:service_id:comment:date:payment_type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/UserOrder_Settings/UserMakeOrder.swift"
+            timestampString = "566854830.8132581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "OrderApi(second_long:second_lat:first_long:first_lat:service_id:comment:date:payment_type:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserStates/CancelOrder.swift"
+            timestampString = "567154879.35805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "Cancel(order_id:complition:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverOrderSettingCollectionViewCell/SetView2.swift"
+            timestampString = "566892739.036531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "makeorder()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverOrderSettingCollectionViewCell/SetView2.swift"
+            timestampString = "566892739.036579"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "makeorder()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverOrderSettingCollectionViewCell/SetView2.swift"
+            timestampString = "566892739.036616"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "makeorder()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/UserInterFace/DriverOrderSettingCollectionViewCell/SetView2.swift"
+            timestampString = "566892739.036652"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "makeorder()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

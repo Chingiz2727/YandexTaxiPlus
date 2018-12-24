@@ -7,38 +7,28 @@
 //
 
 import UIKit
+import Alamofire
 import SideMenu
-class DriverMenuTableViewController: UITableViewController {
+import Social
+class DriverMenuTableViewController: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var outview : UIView = UIView()
     var outbutton : UIButton = UIButton()
     var cellid = "cellid"
     var headerid = "headerid"
-    var titlemenu = [MenuModule(menu: "", img: "")]
-    
-    
+    var titlemenu = [MenuModule(menu: "", img: "", id: "", contains: false)]
+    let window = UIApplication.shared.keyWindow
+    var sidemenu = SideMenuManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("color")
-        print(APItoken.getColorType())
         tableView.delegate = self
         tableView.dataSource = self
         tableView.bounces = false
         tableView.separatorStyle = .none
         tableView.register(MainPageHeader.self, forCellReuseIdentifier: headerid)
         navigationController?.isNavigationBarHidden = true
-
-      
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        tableView.reloadData()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(true)
         UIColourScheme.instance.set(for:self)
         tableView.register(MainPageMenuCell.self, forCellReuseIdentifier: cellid)
-
+        
         var ColorMenu = ""
         if APItoken.getColorType() == 0 {
             ColorMenu = "Ночной режим"
@@ -46,37 +36,68 @@ class DriverMenuTableViewController: UITableViewController {
         else {
             ColorMenu = "Дневной режим"
         }
-        var menu = [
-            MenuModule(menu: "Открытие смены", img: "icon_taxi"),
-            MenuModule(menu: "Текущий заказ", img: "icon_main"),
-            MenuModule(menu: "Город", img: "icon_taxi"),
-            MenuModule(menu: "Межгород", img: "icon_cities_taxi"),
-            MenuModule(menu: "Грузовые", img: "icon_cargo"),
-            MenuModule(menu: "Эвакуатор", img: "icon_evo"),
-            MenuModule(menu: "Инва Такси", img: "icon_inva"),
-            MenuModule(menu: "История поездок", img: "wall-clock"),
-            MenuModule(menu: "Монеты", img: "icon_by_bonuses"),
-            MenuModule(menu: "Режим клиента", img: "icon_switch"),
-            MenuModule(menu: "Настройки", img: "settings-6"),
-            MenuModule(menu: ColorMenu, img: "view"),
-            MenuModule(menu: "Поделиться", img: "icon_share")]
+        let menu = [MenuModule(menu: "Открытие смены", img: "clock-1", id: "1", contains: true),
+                    MenuModule(menu: "Текущий заказ", img: "icon_main", id: "2", contains: true),
+                    MenuModule(menu: "Город", img: "icon_taxi", id: "2", contains: true),
+                    MenuModule(menu: "Межгород", img: "icon_cities_taxi", id: "2", contains: true),
+                    MenuModule(menu: "Грузоперевозки", img: "icon_cargo", id: "2", contains: true),
+                    MenuModule(menu: "Эвакуатор", img: "icon_evo", id: "2", contains: true),
+                    MenuModule(menu: "Инва Такси", img: "icon_inva", id: "2", contains: true),
+                    MenuModule(menu: "История поездок", img: "wall-clock", id: "2", contains: true),
+                    MenuModule(menu: "Монеты", img: "icon_by_bonuses", id: "2", contains: true),
+                    MenuModule(menu: "Новости", img: "ic_news", id: "2", contains: true),
+                    MenuModule(menu: "Режим клиента", img: "icon_switch", id: "2", contains: true),
+                    MenuModule(menu: "Настройки", img: "settings-6", id: "2", contains: true),
+                    MenuModule(menu: ColorMenu, img: "view", id: "2", contains: true),
+                    MenuModule(menu: "Поделиться", img: "icon_share", id: "2", contains: true)
+        ]
         self.titlemenu = menu
         self.tableView.reloadData()
+      
+    }
+  
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+ 
     }
  
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
             return 70
         }
-        return 150
+        return 200
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let head = tableView.dequeueReusableCell(withIdentifier: headerid) as! MainPageHeader
+        head.avatarImageView.isUserInteractionEnabled = true
+        let gest = UITapGestureRecognizer.init(target: self, action: #selector(sec))
+        head.avatarImageView.addGestureRecognizer(gest)
         UserInformation.shared.getinfo { (info) in
-            guard let name = info.user!.name else {return}
-            head.nameLabel.text = name
-            guard let phone = info.user!.phone else {return}
-            head.phone.text = phone
+            if let name = info.user?.name {
+                head.nameLabel.text = name
+            }
+            else {
+                head.nameLabel.text = ""
+            }
+            if let phone = info.user?.phone {
+                head.phone.text = phone
+            }
+            else {
+                head.phone.text = ""
+                
+            }
+            sendPushId.send(completion: { (info, type) in
+                let url = "http://185.236.130.126/profile/uploads/avatars/\(info.avatar ?? "")"
+                Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                    head.avatarImageView.image = UIImage(data: response.data!)
+                })
+                GetDriverAvatar.get(rating: info.rating!, star: info.stars!, completion: { (avatars) in
+                    head.starsAvatar.image = UIImage.init(named: avatars)
+
+                })
+                
+            })
         }
         if section == 1 {
             view.addSubview(outview)
@@ -91,7 +112,35 @@ class DriverMenuTableViewController: UITableViewController {
         return head
     }
     
-  
+    @objc func sec() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        self.present(picker,animated: true,completion:nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+        tableView.reloadData()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedimage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.picker_image = editedimage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.picker_image = originalImage
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    var picker_image : UIImage? {
+        didSet {
+            MakePhoto.createPhoto(photo: picker_image!) { (error, success) in
+                print("error")
+            }
+        }
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -110,7 +159,32 @@ class DriverMenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! MainPageMenuCell
-        
+        GetAmount.get { (amount) in
+            
+            switch indexPath.row {
+            case 2:
+                cell.countlabel.text = amount.taxi!
+                cell.countlabel.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.2588235294, blue: 0.368627451, alpha: 1)
+                
+            case 3 :
+                cell.countlabel.text = amount.mejgorod!
+                cell.countlabel.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.2588235294, blue: 0.368627451, alpha: 1)
+            case 6:
+                cell.countlabel.text = amount.inva!
+                cell.countlabel.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.2588235294, blue: 0.368627451, alpha: 1)
+                
+            case 4:
+                cell.countlabel.text = amount.gruzotaxi!
+                cell.countlabel.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.2588235294, blue: 0.368627451, alpha: 1)
+                
+            case 5:
+                cell.countlabel.text = amount.ekavuator!
+                cell.countlabel.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.2588235294, blue: 0.368627451, alpha: 1)
+                
+            default:
+                break
+            }
+        }
         // Configure the cell...
         cell.img.image = UIImage(named: titlemenu[indexPath.row].img)
         cell.label.text = titlemenu[indexPath.row].menu
@@ -129,11 +203,20 @@ cell.label.textColor = UIColor.white
         return 40
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dismiss(animated: true, completion: nil)
-        if indexPath.row == 11 {
-            self.tableView.reloadData()
+        switch indexPath.row {
+        case 13:
+         GetReferal.get { (referal) in
+            let toshare = [referal?.link!]
+            let activity = UIActivityViewController(activityItems: toshare, applicationActivities: nil)
+            activity.popoverPresentationController?.sourceView = self.view
+            activity.excludedActivityTypes = [UIActivity.ActivityType.airDrop,UIActivity.ActivityType.mail,UIActivity.ActivityType.message,UIActivity.ActivityType.postToFacebook,UIActivity.ActivityType.postToTwitter,UIActivity.ActivityType.copyToPasteboard]
+            self.present(activity, animated: true, completion: nil)
+         }
+            
+        default:
+            dismiss(animated: true, completion: nil)
+            PushDriver.push(index: indexPath)
         }
-        PushDriver.push(index: indexPath)
 
     }
     @objc func remove() {
@@ -211,16 +294,21 @@ class PushDriver : UISideMenuNavigationController {
         case 7:
             (window.rootViewController as? UINavigationController)?.pushViewController(HistoryTableViewController(), animated: true)
         case 8:
-            (window.rootViewController as? UINavigationController)?.pushViewController(DriverCoinsViewController(), animated: true)
+            (window.rootViewController as? UINavigationController)?.pushViewController(DriverCoins(), animated: true)
         case 9:
+            (window.rootViewController as? UINavigationController)?.pushViewController(NewsTableViewController(), animated: true)
+        case 10:
+            window.makeToastActivity(.center)
             ChangeRole.Change { (touser,todriver,torregister) in
                 if touser == true {
-                    window.rootViewController = UINavigationController.init(rootViewController: TestViewController())
-          }
+                    window.hideToastActivity()
+                    (window.rootViewController as? UINavigationController)?.pushViewController(TestViewController(), animated: true)
+                    
+                }
             }
-        case 10:
-            (window.rootViewController as? UINavigationController)?.pushViewController(DriverSettingTableViewController(), animated: true)
         case 11:
+            (window.rootViewController as? UINavigationController)?.pushViewController(DriverSettingTableViewController(), animated: true)
+        case 12:
             if APItoken.getColorType() == 0 {
                 APItoken.savecolor(color: 1)
                   (window.rootViewController as? UINavigationController)?.pushViewController(SessionOpenViewController(), animated: true)
@@ -229,6 +317,8 @@ class PushDriver : UISideMenuNavigationController {
                 APItoken.savecolor(color: 0)
                   (window.rootViewController as? UINavigationController)?.pushViewController(SessionOpenViewController(), animated: true)
             }
+            
+            
           
         default:
             break

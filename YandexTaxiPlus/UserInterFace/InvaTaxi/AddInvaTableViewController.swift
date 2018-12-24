@@ -147,9 +147,7 @@ class AddInvaTableViewController: UITableViewController,UITextFieldDelegate {
             "end_string":to,
             "date":time
             ] as [String : Any?]
-        print(params)
-         var check = checkEmptyDict(params)
-        print(check)
+         let check = checkEmptyDict(params)
         if check == true {
             let error = ErrorAlert(title: "", message: "", preferredStyle: .alert)
             error.show()

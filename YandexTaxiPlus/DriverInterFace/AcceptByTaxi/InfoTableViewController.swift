@@ -23,7 +23,6 @@ class InfoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 tableView.register(AcceptByTaxiCell.self, forCellReuseIdentifier: cellid)
-        print(order_id)
         reload()
         tableView.bounces = false
         UIColourScheme.instance.set(for:self)
@@ -49,8 +48,8 @@ tableView.register(AcceptByTaxiCell.self, forCellReuseIdentifier: cellid)
     func reload(){
         GetInfoForDriver.GetInfo(order_id: order_id!) { (info) in
             var price = info.order?.price
-            let module = [AccepTaxiModule(detail: "Имя:", menu: (info.client?.name!)!, img: "user"),
-                          AccepTaxiModule(detail: "Цена:", menu: String(price!), img: "icon_by_bonuses")]
+            let module = [AccepTaxiModule(detail: "Имя:", menu: (info.client?.name ?? "")!, img: "user"),
+                          AccepTaxiModule(detail: "Цена:", menu: String(price ?? 0), img: "icon_by_bonuses")]
             
             let fromlong = info.order?.fromLongitude?.toDouble()
             let fromlat = info.order?.fromLatitude?.toDouble()

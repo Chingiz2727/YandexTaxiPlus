@@ -48,6 +48,7 @@ protocol TableViewCellTaxiOrdersModelType: class {
     var from_long : String? {get}
     var to_lat : String? {get}
     var to_long : String? {get}
-
+    var from : String? {get}
+    var to : String? {get}
 }
 

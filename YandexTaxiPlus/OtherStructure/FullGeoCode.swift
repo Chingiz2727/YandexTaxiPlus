@@ -20,7 +20,6 @@ class FullGeo {
             else {
                 places = ""
             }
-            print(places)
         }
         if places == "" {
             return ""

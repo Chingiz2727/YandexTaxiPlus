@@ -14,7 +14,7 @@ class SessionOpenViewController:DayMode,CLLocationManagerDelegate{
     var locationManager:CLLocationManager!
     private var currentCoordinate: CLLocationCoordinate2D?
     var currentLocation:CLLocation?
-    
+    var window =  UIApplication.shared.keyWindow!
     
     var six : Int = 0 {
     didSet {
@@ -51,17 +51,20 @@ class SessionOpenViewController:DayMode,CLLocationManagerDelegate{
         }
     }
     let customSideMenuManager = SideMenuManager()
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let sideMenuNavigationController = segue.destination as? UISideMenuNavigationController {
-            sideMenuNavigationController.sideMenuManager = customSideMenuManager
-        }
-    }
     override func viewWillAppear(_ animated: Bool) {
+     
         let menubutton = UIBarButtonItem.init(image: UIImage(named: "hamburger-menu-icon"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(OpenMenu))
         self.navigationItem.leftBarButtonItem = menubutton
         navigationController?.navigationBar.barTintColor = maincolor
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.isHidden = false
+        let menuLeft = UISideMenuNavigationController(rootViewController: DriverMenuTableViewController())
+        menuLeft.sideMenuManager.menuPresentMode = .menuSlideIn
+        menuLeft.sideMenuManager.menuWidth = view.frame.width - view.frame.width*0.2
+        SideMenuManager.default.menuLeftNavigationController = menuLeft
+        SideMenuManager.default.menuFadeStatusBar = false
+        SideMenuManager.default.menuPushStyle = .subMenu
+        SideMenuManager.default.menuLeftNavigationController?.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +120,7 @@ class SessionOpenViewController:DayMode,CLLocationManagerDelegate{
     }
    @objc func OpenMenu() {
         
-        present(SideMenuManager.defaultManager.menuLeftNavigationController!,animated: true,completion: nil)
+    present(SideMenuManager.defaultManager.menuLeftNavigationController!,animated: true,completion: nil)
     }
     
     // Below method will provide you current location.
@@ -135,7 +138,7 @@ class SessionOpenViewController:DayMode,CLLocationManagerDelegate{
                         
                         self.balance = info.balance ?? 0
                         self.ostatok = info.balance ?? 0
-                        switch info.is_session_opened {
+                        switch info.isSessionOpened {
                         case 0:
                             self.session = "Открыть смену"
                         case 1:
@@ -147,7 +150,6 @@ class SessionOpenViewController:DayMode,CLLocationManagerDelegate{
                 }
                 
             }
-            print("locations = \(locationValue)")
             
             locationManager?.stopUpdatingLocation()
         }
@@ -165,8 +167,7 @@ class SessionOpenViewController:DayMode,CLLocationManagerDelegate{
 
                     }
                     if error {
-                        print(321)
-                    }
+self.view.makeToast("Ошибка")                     }
                 }
             }
             if MainView.tw_check.on {
@@ -178,8 +179,7 @@ class SessionOpenViewController:DayMode,CLLocationManagerDelegate{
 
                     }
                     if error {
-                        print(456)
-                    }
+self.view.makeToast("Ошибка")                    }
                 }
             }
         case 1 :

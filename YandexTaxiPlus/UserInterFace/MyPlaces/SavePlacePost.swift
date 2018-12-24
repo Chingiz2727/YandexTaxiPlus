@@ -27,7 +27,6 @@ class SavePlace {
                     print(err)
                 case.success(let val):
                     let json = JSON(val)
-                    print(json)
                 }
             }
         }

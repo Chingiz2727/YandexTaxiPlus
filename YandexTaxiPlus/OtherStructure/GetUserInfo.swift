@@ -20,11 +20,13 @@ class UserInformation {
             case.failure(let err):
                 print(err)
             case.success(let val):
-             
+             let json = JSON(val)
+             print(json)
                 guard let data = response.data else {return}
                 do {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .useDefaultKeys
+                    
                     let root = try decoder.decode(MainInfo.self, from: data)
                     completion(root)
                 }

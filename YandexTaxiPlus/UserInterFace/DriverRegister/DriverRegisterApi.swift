@@ -24,14 +24,12 @@ class DriverRegisterApi {
             "facilities":facilities,
             "token":APItoken.getToken()!
             ] as [String : Any]
-        print(params)
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
                 switch response.result {
                 case.failure(let error):
                     print(error)
                 case.success(let val):
-                    print(val)
                     let json = JSON(val)
                     if json["state"] == "success" {
                         completion(false,true)
@@ -39,7 +37,6 @@ class DriverRegisterApi {
                     else {
                         completion(true,false)
                     }
-                    print(json)
                     
                 }
             }
@@ -54,7 +51,6 @@ class DriverRegisterApi {
                     print(err)
                 case.success(let val):
                     var json = JSON(val)
-                    print(json)
                     var facilities = [Facilities]()
                     guard let dataarr = json["Facilities"].array else {
                         return

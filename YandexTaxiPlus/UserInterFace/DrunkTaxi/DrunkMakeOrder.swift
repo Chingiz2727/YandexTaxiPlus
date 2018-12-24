@@ -32,7 +32,6 @@ class DrunkMakerOrder {
                     print(error)
                 case.success(let val):
                     let json = JSON(val)
-                    print(json)
                     if json["state"].stringValue == "success" {
                         complition(true)
                     }

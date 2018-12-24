@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 class AccessShowFunc {
     
-    class func Show(completion:@escaping(_ info:AccessShowTypes)->()) {
+    class func Show(completion:@escaping(_ info:AccessShowTypes?)->()) {
         
         let url = baseurl + "/get-access-price/"
         Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in

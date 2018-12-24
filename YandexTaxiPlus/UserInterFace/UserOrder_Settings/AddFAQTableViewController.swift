@@ -9,9 +9,20 @@
 import UIKit
 
 class AddFAQTableViewController: UITableViewController {
-
+    var button = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        view.addSubview(button)
+        button.setAnchor(top: nil, left: tableView.layoutMarginsGuide.leftAnchor, bottom: tableView.layoutMarginsGuide.bottomAnchor, right: tableView.layoutMarginsGuide.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 10, paddingRight: 10,width: 10,height: 40)
+        button.backgroundColor = maincolor
+        button.layer.cornerRadius = 5
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitle("Рекомендации к сервису", for: .normal)
+        button.addTarget(self, action: #selector(push), for: .touchUpInside)
+        navigationController?.navigationBar.barTintColor = maincolor
+        navigationController?.navigationBar.isHidden = false
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -19,7 +30,9 @@ class AddFAQTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    @objc func push() {
+        self.navigationController?.pushViewController(MakeFAQViewController(), animated: true)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

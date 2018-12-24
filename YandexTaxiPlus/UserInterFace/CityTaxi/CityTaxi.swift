@@ -8,14 +8,16 @@
 
 import UIKit
 
-class CityTaxi: UITableViewController {
+class CityTaxi: UITableViewController,UISearchBarDelegate {
     let search = UISearchBar()
     var list = [RoadList]()
+    var searchlist = [RoadList]()
     var cellid = "cellid"
     override func viewDidLoad() {
         super.viewDidLoad()
         make()
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.title = "Межгород"
         let menubutton = UIBarButtonItem.init(image: UIImage(named: "icon_add"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(go))
         self.navigationItem.rightBarButtonItem = menubutton
@@ -25,6 +27,7 @@ class CityTaxi: UITableViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
         UIColourScheme.instance.set(for:self)
+        search.delegate = self
 
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -41,6 +44,8 @@ class CityTaxi: UITableViewController {
     func make() {
         GetChats.Get(type: 1) { (list:[RoadList]) in
             self.list = list
+            self.searchlist = list
+
             self.tableView.reloadData()
         }
     }
@@ -53,8 +58,8 @@ class CityTaxi: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let road = RoadedCityTableViewController()
-        road.startid = list[indexPath.row].StartId
-        road.endid = list[indexPath.row].endId
+        road.startid = searchlist[indexPath.row].StartId
+        road.endid = searchlist[indexPath.row].endId
         navigationController?.pushViewController(road, animated: true)
         
     }
@@ -63,8 +68,7 @@ class CityTaxi: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(list.count)
-        return list.count
+        return searchlist.count
     }
     
     
@@ -76,12 +80,26 @@ class CityTaxi: UITableViewController {
         else {
             cell.textLabel?.textColor = UIColor.white
         }
-        cell.textLabel?.text = "\(list[indexPath.row].Start!) -> \(list[indexPath.row].end!)"
+        cell.textLabel?.text = "\(searchlist[indexPath.row].Start!) -> \(searchlist[indexPath.row].end!)"
         cell.backgroundColor = UIColor.clear
         
         // Configure the cell...
 
         return cell
     }
- 
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else { searchlist = list
+            tableView.reloadData()
+            return }
+        
+        searchlist = list.filter({ (lst) -> Bool in
+           return lst.end!.contains(searchText) || lst.Start!.contains(searchText)
+        })
+       
+        tableView.reloadData()
+    }
+    
+    
+    
 }

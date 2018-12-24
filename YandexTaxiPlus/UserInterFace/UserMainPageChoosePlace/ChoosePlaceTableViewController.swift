@@ -8,35 +8,10 @@
 
 import UIKit
 import GooglePlaces
-class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,UISearchControllerDelegate,GMSAutocompleteResultsViewControllerDelegate,firstplacedelegate,secondplacedelegate {
-    func secondadded() {
-        secondplacedelegate?.second_lat = second_lat
-        secondplacedelegate?.second_long = second_long
-        secondplacedelegate?.second_name = second_name
-        self.navigationController?.popViewController(animated: true)
-    }
+class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,UISearchControllerDelegate,GMSAutocompleteResultsViewControllerDelegate {
     
-    var second_lat: Double = 0
-    
-    var second_long: Double = 0
-    
-    var second_name: String = ""
-    
-    func firstadded() {
-        firstdelegate?.first_name = first_name
-        firstdelegate?.first_lat = first_lat
-        firstdelegate?.first_long = first_long
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    var first_lat: Double = 0
-    
-    var first_long: Double = 0
-    
-    var first_name: String = ""
-    
-    
-    
+    var userprotcol : UserMainPageProtocol?
+
     
     var resultsViewController: GMSAutocompleteResultsViewController?
     var deleg : GMSAutocompleteViewController?
@@ -46,36 +21,30 @@ class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,
     var cellid = "cellid"
     var tag : Int? = 0
     
-    var firstdelegate : firstplacedelegate?
-    var secondplacedelegate : secondplacedelegate?
-    var firtsclick : firstplacebuttonclicked?
-    var secondcicked : secondplaceclicked?
     var array = ["Выбрать местоположение на карте","Сохраненные места"]
     override func viewDidLoad() {
         super.viewDidLoad()
         AddSearchBar()
         tableView.register(ChoosePlaceTableViewCell.self, forCellReuseIdentifier: cellid)
         navigationController?.navigationBar.isTranslucent = true
-        print(tag!)
         UIColourScheme.instance.set(for:self)
 
     }
     
     func tagItem(text:String,lang:Double,lat:Double)
     {
-        print("roooted")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             switch self.tag! {
             case 0:
-                self.firstdelegate?.first_lat = lat
-                self.firstdelegate?.first_long = lang
-                self.firstdelegate?.first_name  = text
-                self.firstdelegate?.firstadded()
+                self.userprotcol?.from_lat = lat
+                self.userprotcol?.from_long = lang
+                self.userprotcol?.first_name = text
+                self.userprotcol?.first_added()
             case 1:
-                self.secondplacedelegate?.second_lat  = lat
-                self.secondplacedelegate?.second_long = lang
-                self.secondplacedelegate?.second_name = text
-                self.secondplacedelegate?.secondadded()
+                self.userprotcol?.to_lat = lat
+                self.userprotcol?.to_long = lang
+                self.userprotcol?.second_name = text
+                self.userprotcol?.second_added()
             default:
                 break
             }
@@ -112,9 +81,11 @@ class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,
     if indexPath.row == 0 {
         switch tag! {
         case 0:
-            firtsclick!.first_clicked  = true
+            userprotcol?.first_clicked = true
+            userprotcol?.second_clicked = false
         case 1:
-            secondcicked!.second_clicked  = true
+            userprotcol?.first_clicked = false
+            userprotcol?.second_clicked = true
         default:
             break
         }
@@ -124,8 +95,8 @@ class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,
     else {
         let myplace = MyPlacesTableViewController()
         myplace.tag = tag
-        myplace.first_delegate = self
-        myplace.second_delegate = self
+        myplace.userprotocol = userprotcol
+      
         self.navigationController?.pushViewController(myplace, animated: true)
     }
     }
@@ -155,7 +126,6 @@ class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,
         resultsController.autocompleteFilter?.country = "KZ"
         // Do something with the selected place.
         searchController?.searchBar.text = place.name
-        print(place.coordinate.latitude)
         self.tagItem(text: place.name, lang: place.coordinate.longitude, lat: place.coordinate.latitude)
         self.navigationController?.popViewController(animated: true)
 

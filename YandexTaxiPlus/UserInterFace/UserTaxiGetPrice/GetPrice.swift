@@ -33,7 +33,6 @@ class getPrice {
                     guard let dataarr = json["price_list"].array else {
                         return
                     }
-                    print(json)
                     
                     for add in dataarr {
                         guard let add = add.dictionary else { return }

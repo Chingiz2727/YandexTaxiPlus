@@ -30,7 +30,6 @@ class GetDrunkPrice {
                     print(err)
                 case.success(let val):
                     let json = JSON(val)
-                    print(val)
                     let price = json["price"].stringValue
                     completion(price)
                 }

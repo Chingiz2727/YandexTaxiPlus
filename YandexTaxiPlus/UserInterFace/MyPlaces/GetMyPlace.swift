@@ -37,11 +37,9 @@ class GetMyPlace {
                         address.lat = add["latitude"]?.string ?? ""
                         address.lang = add["longitude"]?.string ?? ""
                         address.place = add["address"]?.string ?? ""
-                        print(address.lat)
                         myPlace.append(address)
                     }
                     completion(myPlace)
-                    print(json)
                 }
             }
         }

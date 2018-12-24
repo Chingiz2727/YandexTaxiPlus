@@ -25,7 +25,7 @@ class MainPageHeader:UITableViewCell {
     let nameLabel : UILabel = UILabel()
     let phone : UILabel = UILabel()
     var avatarImageView : UIImageView = UIImageView()
-    
+    var starsAvatar : UIImageView = UIImageView()
     let buttonContainerView2 : UIView = UIView()
     
   
@@ -44,16 +44,19 @@ class MainPageHeader:UITableViewCell {
     func subview()
     {
         
-        
         self.addSubview(nameLabel)
         self.addSubview(phone)
         self.addSubview(avatarImageView)
+        self.addSubview(starsAvatar)
+
         self.backgroundColor = maincolor
-        avatarImageView.image = UIImage(named: "zhan")
-        avatarImageView.layer.cornerRadius = 35.0
+        avatarImageView.image = UIImage(named: "userjpg")
+        starsAvatar.clipsToBounds = true
+        avatarImageView.layer.cornerRadius = 45
         avatarImageView.clipsToBounds = true
+        starsAvatar.contentMode = .scaleAspectFit
         avatarImageView.contentMode = .scaleAspectFill
-        
+        avatarImageView.backgroundColor = UIColor.gray
      
       
     }
@@ -64,30 +67,42 @@ class MainPageHeader:UITableViewCell {
         let isLandscape : Bool = UIDevice.current.orientation.isLandscape
         let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
       
-        let avatarSize = self.height * avatarHeightMultipler * 0.94
         //        avatarImageView.anchorInCorner(.bottomLeft, xPad: 120, yPad: 90, width: avatarSize, height: avatarSize)
         
         let centerX = nameLabel.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor)
         let centerXph = phone.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor)
         let centerXphoto = avatarImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        let centerXphotor = starsAvatar.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        let centeyphoto = starsAvatar.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor)
         nameLabel.setAnchor(top: avatarImageView.bottomAnchor ,left: nil, bottom: nil, right: nil, paddingTop: 15, paddingLeft: 0, paddingBottom:0, paddingRight: 0)
-        NSLayoutConstraint.activate([centerX,centerXph,centerXphoto])
+        NSLayoutConstraint.activate([centerX,centerXph,centerXphoto,centerXphotor,centeyphoto])
         phone.setAnchor(top: nameLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        avatarImageView.setAnchor(top: self.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 30, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: avatarSize, height: avatarSize)
+        avatarImageView.setAnchor(top: self.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 30, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 90, height: 90)
+         starsAvatar.setAnchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 115, height: 115)
     }
+    
+    
+    
+    
+    
     
 }
 
 class MenuModule {
     var menu : String!
     var img: String!
-    init(menu:String,img:String) {
+    var id : String!
+    var contains : Bool!
+    init(menu:String,img:String,id:String,contains:Bool) {
         self.menu = menu
         self.img = img
+        self.menu = menu
+        self.contains = contains
     }
 }
 class MainPageMenuCell: UITableViewCell {
     let img = UIImageView()
+    let countlabel = UILabel()
     let label = MainLabel()
     let view = UIView()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -102,9 +117,13 @@ class MainPageMenuCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
+   
+    
+    
     func setView() {
         self.addSubview(view)
         view.addSubview(label)
+        view.addSubview(countlabel)
         label.initialize()
         view.addSubview(img)
         img.contentMode = .scaleAspectFit
@@ -113,17 +132,24 @@ class MainPageMenuCell: UITableViewCell {
         label.text = "che tam"
         img.tintColor = maincolor
         img.image?.maskWithColor(color: maincolor)
-        GetAvatar.get { (url) in
-            Alamofire.request(url).responseJSON(completionHandler: { (response) in
-                self.img.image = UIImage.init(data: response.data!)
-            })
-        }
+     
         let centerY = img.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         let centerYLabel = label.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        let centerround = countlabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         label.setAnchor(top: self.topAnchor, left: img.rightAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 0)
         img.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0,width: 30,height: 30)
-        NSLayoutConstraint.activate([centerY,centerYLabel])
+        countlabel.setAnchor(top: nil, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 20, width: 30, height: 30)
+        countlabel.layer.cornerRadius = 15
+        countlabel.font = UIFont.systemFont(ofSize: 13)
+        countlabel.textAlignment = .center
+        countlabel.backgroundColor = UIColor.clear
+        countlabel.layer.masksToBounds = true
+        countlabel.textColor = UIColor.white
+        NSLayoutConstraint.activate([centerY,centerYLabel,centerround])
+        self.selectionStyle = .none
         self.backgroundColor = UIColor.clear
     }
+    
+ 
     
 }

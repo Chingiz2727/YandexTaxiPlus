@@ -14,8 +14,6 @@ class DrunkTaxiTable: UITableViewController,UITextFieldDelegate,firstplacedelega
     func secondadded() {
         if first_long != 0 {
             GetDrunkPrice.GetPrice(from_lat: first_lat, from_long: first_long, to_lat: second_lat, to_long: second_long, comment: comment) { (price) in
-                print(price)
-                self.price = price
                 self.tableView.reloadRows(at: [self.index], with: .none)
                 
             }
@@ -88,6 +86,8 @@ class DrunkTaxiTable: UITableViewController,UITextFieldDelegate,firstplacedelega
         navigationController?.navigationBar.isHidden = false
         sendButton.setAnchor(top: nil, left: tableView.layoutMarginsGuide.leftAnchor, bottom: tableView.layoutMarginsGuide.bottomAnchor, right: tableView.layoutMarginsGuide.rightAnchor, paddingTop: 0, paddingLeft: 15, paddingBottom: 15, paddingRight: 15, width: 15, height: 60)
         sendButton.Title(title: "Заказать")
+        navigationController?.navigationBar.isTranslucent = false
+
         sendButton.addTarget(self, action: #selector(makeOrder), for: .touchUpInside)
     }
     
@@ -175,7 +175,7 @@ class DrunkTaxiTable: UITableViewController,UITextFieldDelegate,firstplacedelega
         allView.addSubview(label1)
         allView.addSubview(label2)
         allView.addSubview(swiftcer)
-        allView.setAnchor(top: img.topAnchor, left: view.leftAnchor, bottom: img.bottomAnchor, right: label2.rightAnchor, paddingTop: 0, paddingLeft:15, paddingBottom: 0, paddingRight: 0)
+        allView.setAnchor(top: footerview.topAnchor, left: footerview.leftAnchor, bottom: footerview.bottomAnchor, right: footerview.rightAnchor, paddingTop: 0, paddingLeft:15, paddingBottom: 0, paddingRight: 0)
         img.setAnchor(top: nil, left: allView.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0,width: 25,height: 25)
         label1.setAnchor(top: nil, left: img.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
         label1.text = "АКПП"
@@ -207,8 +207,6 @@ class DrunkTaxiTable: UITableViewController,UITextFieldDelegate,firstplacedelega
         default:
             break
         }
-        print(kpp)
-        print(switcher.isOn)
     }
     @objc func makeOrder() {
         if first_lat == 0 && second_lat == 0 {

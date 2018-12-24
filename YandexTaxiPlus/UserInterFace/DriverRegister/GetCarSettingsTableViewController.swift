@@ -8,17 +8,21 @@
 
 import UIKit
 
-class GetCarSettingsTableViewController: UITableViewController {
+class GetCarSettingsTableViewController: UITableViewController,UISearchBarDelegate {
     var cellid = "cellid"
     var type : Int?
     var id : Int?
     var carmodel : CarModelDelegate?
     var carmark : CarMarkDelegate?
     var model = [SetModel]()
+    var searchmodel = [SetModel]()
     let searchbar : UISearchBar = UISearchBar()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+        searchbar.delegate = self
+        searchbar.tintColor = maincolor
+        searchbar.barTintColor = maincolor
         reload()
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -35,32 +39,34 @@ class GetCarSettingsTableViewController: UITableViewController {
         if type! == 0 {
         RegiterSettingApi.setting { (model) in
             self.model = model
+            self.searchmodel = model
             self.tableView.reloadData()
         }
         }
         else {
             RegiterSettingApi.Mark(id: id ?? 0) { (model) in
                 self.model = model
+                self.searchmodel = model
                 self.tableView.reloadData()
             }
         }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return model.count
+        return searchmodel.count
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(model[indexPath.row].model)
+        print(searchmodel[indexPath.row].model)
 
         if type! == 0
         {
             carmodel?.remove()
-            carmodel?.car_model_id = model[indexPath.row].id
-            carmodel?.car_model_name = model[indexPath.row].model
+            carmodel?.car_model_id = searchmodel[indexPath.row].id
+            carmodel?.car_model_name = searchmodel[indexPath.row].model
             
         }
         if type! == 1 {
-            carmark?.car_mark_name = model[indexPath.row].model
+            carmark?.car_mark_name = searchmodel[indexPath.row].model
         }
         self.navigationController?.popViewController(animated: true)
         
@@ -69,7 +75,7 @@ class GetCarSettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath)
-        cell.textLabel?.text = model[indexPath.row].model
+        cell.textLabel?.text = searchmodel[indexPath.row].model
         
         // Configure the cell...
 
@@ -77,49 +83,16 @@ class GetCarSettingsTableViewController: UITableViewController {
     }
  
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else { searchmodel = model
+            tableView.reloadData()
+            return }
+        
+        searchmodel = model.filter({ (lst) -> Bool in
+            return lst.model.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

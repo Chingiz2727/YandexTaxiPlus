@@ -119,8 +119,6 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         self.tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-        print(fac)
     }
     func get() {
         DriverRegisterApi.getOption { (facilities:[Facilities]!) in
@@ -210,10 +208,8 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         }
     }
     func recievedSelectedValue(name: String, imageName: String) {
-        print(name)
         var index = item.firstIndex(of: name)
         self.typeID = ids[index!]
-        print(self.typeID)
         dropDownObject.hideDropDown(senderObject: button, buttonFrame: buttonFrame!)
         dropDownObject = nil
         button.setTitle(name, for: .normal)
@@ -227,7 +223,6 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
     
     @objc func sender(sender:UIButton) {
         let setting = GetCarSettingsTableViewController()
-        print(sender.tag)
         switch sender.tag {
         case 0:
             setting.carmodel = self
@@ -353,7 +348,6 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
    @objc func chec(check:CheckboxButton) {
         if check.on {
             self.fac.append(String(check.tag))
-            print(self.fac)
         }
         else {
             if let index = self.fac.index(of: String(check.tag)) {

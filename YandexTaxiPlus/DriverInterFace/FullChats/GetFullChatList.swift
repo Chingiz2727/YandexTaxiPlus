@@ -16,7 +16,6 @@ class GetFullChats {
         let url = baseurl + "/get-specific-chats/"
         let params = ["token":APItoken.getToken()!,
                       "type":type] as [String : Any]
-        print("getchat")
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
                 switch response.result {
@@ -24,9 +23,7 @@ class GetFullChats {
                     print(error)
                 case.success(let val):
                     let json = JSON(val)
-                    print(json)
                     var list = [FullChatList]()
-
                     if json["state"].stringValue == "success" {
                         guard let dataarr = json["chats"].array else {
                             return
