@@ -129,7 +129,7 @@ class ChatViewController: JSQMessagesViewController {
         let time = Date().millisecondsSince1970
         let message = ["time": String(time), "from": receiver!, "message": text]
         messages.setValue(message)
-        SendChat.send(token: token, message: text)
+        SendChat.send(token: phone, message: text)
         finishSendingMessage()
     }
     

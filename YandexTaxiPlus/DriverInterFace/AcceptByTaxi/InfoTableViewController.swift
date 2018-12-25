@@ -50,23 +50,26 @@ tableView.register(AcceptByTaxiCell.self, forCellReuseIdentifier: cellid)
             var price = info.order?.price
             let module = [AccepTaxiModule(detail: "Имя:", menu: (info.client?.name ?? "")!, img: "user"),
                           AccepTaxiModule(detail: "Цена:", menu: String(price ?? 0), img: "icon_by_bonuses")]
-            
             let fromlong = info.order?.fromLongitude?.toDouble()
             let fromlat = info.order?.fromLatitude?.toDouble()
             let tolong = info.order?.toLongitude?.toDouble()
             let tolat = info.order?.toLatitude?.toDouble()
-            Route.Draw(startlat: fromlat!, startlong: fromlong!, endlat: tolat!, englong: tolong!, map: self.Map)
-            self.marker2.position = CLLocationCoordinate2D(latitude: tolat!, longitude: tolong!)
-            self.marker2.icon = self.imageWithImage(image: UIImage(named: "icon_point_b")!, scaledToSize: CGSize(width: 20, height: 20))
-            self.marker2.map = self.Map
-            self.marker1.icon = self.imageWithImage(image: UIImage(named: "icon_point_a")!, scaledToSize: CGSize(width: 20, height: 20))
-            self.marker1.position = CLLocationCoordinate2D(latitude: fromlat!, longitude: fromlong!)
-            self.marker1.map = self.Map
-            self.Map.isMyLocationEnabled = true
+            if let tolat = tolat {
+                Route.Draw(startlat: fromlat!, startlong: fromlong!, endlat: tolat, englong: tolong!, map: self.Map)
+                self.marker2.position = CLLocationCoordinate2D(latitude: tolat, longitude: tolong!)
+                self.marker2.icon = self.imageWithImage(image: UIImage(named: "icon_point_b")!, scaledToSize: CGSize(width: 20, height: 20))
+                self.marker2.map = self.Map
+                self.marker1.icon = self.imageWithImage(image: UIImage(named: "icon_point_a")!, scaledToSize: CGSize(width: 20, height: 20))
+                self.marker1.position = CLLocationCoordinate2D(latitude: fromlat!, longitude: fromlong!)
+                self.marker1.map = self.Map
+                self.Map.isMyLocationEnabled = true
+                let camera = GMSCameraPosition.camera(withLatitude: fromlat!, longitude: fromlong!, zoom: 13.0)
+                self.Map.camera = camera
+
+            }
+
             self.menu = module
             self.tableView.reloadData()
-            let camera = GMSCameraPosition.camera(withLatitude: fromlat!, longitude: fromlong!, zoom: 13.0)
-            self.Map.camera = camera
         }
     }
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage {

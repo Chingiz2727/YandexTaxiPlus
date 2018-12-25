@@ -29,7 +29,7 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
     }
     
     
-    var phone:String!
+    var phone:String?
     var window: UIWindow?
     
     override func viewDidLoad() {
@@ -59,12 +59,12 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
         navigationController?.present(city, animated: true, completion: nil)
     }
     func accessing(){
-        let name = updateView.PhoneField.text!
+        let name = updateView.PhoneField.text
         let url = baseurl + "/sign-up/"
         let url2 = baseurl + "/set-city/"
         let parametr = [
-            "phone":phone,
-            "name":name
+            "phone":phone!,
+            "name":name!
         ]
         if id_city! == "" || name == "" {
             view.makeToast("Заполните все поля")

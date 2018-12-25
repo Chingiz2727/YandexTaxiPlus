@@ -48,7 +48,7 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
         let tolong = to_long?.toDouble()
         let fromlat = from_lat?.toDouble()
         let tolat = to_lat?.toDouble()
-        Route.Draw(startlat: fromlat!, startlong: fromlong!, endlat: tolat!, englong: tolong!, map: MainMapView.mapview)
+        Route.Draw(startlat: (from_lat?.toDouble()!)!, startlong: (from_lat?.toDouble()!)!, endlat: (to_lat?.toDouble()!)!, englong: (to_long?.toDouble()!)!, map: MainMapView.mapview)
         marker1.position = CLLocationCoordinate2D(latitude: fromlat!, longitude: fromlong!)
         marker2.position = CLLocationCoordinate2D(latitude: tolat!, longitude: tolong!)
          self.marker2.icon = self.imageWithImage(image: UIImage(named: "icon_point_b")!, scaledToSize: CGSize(width: 20, height: 20))

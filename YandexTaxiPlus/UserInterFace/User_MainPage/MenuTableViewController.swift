@@ -87,8 +87,9 @@ class MenuTableViewController: UITableViewController,UIImagePickerControllerDele
                 let url = "http://185.236.130.126/profile/uploads/avatars/\(info.avatar ?? "")"
                 Alamofire.request(url).responseJSON(completionHandler: { (response) in
                     DispatchQueue.main.async {
-                        
-                        self.image = UIImage(data: response.data!)!
+                        if let data = response.data {
+                            self.image = UIImage(data: data)
+                        }
                     }
                 })
             })

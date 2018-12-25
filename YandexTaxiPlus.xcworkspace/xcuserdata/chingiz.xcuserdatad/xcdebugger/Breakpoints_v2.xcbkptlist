@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "566978879.715668"
+            timestampString = "567424358.138631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -104,12 +104,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-                  timestampString = "567331435.1196949"
+                  timestampString = "567424969.717484"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "1453">
+                  offsetFromSymbolStart = "1108">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -119,12 +119,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/UserTaxiGetPrice/GetPrice.swift"
-                  timestampString = "567331435.122385"
+                  timestampString = "567424969.7201999"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "101">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2168,12 +2168,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/CancelOrder.swift"
-                  timestampString = "567331435.352142"
+                  timestampString = "567424969.954246"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "942">
+                  offsetFromSymbolStart = "820">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2183,12 +2183,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/CancelOrder.swift"
-                  timestampString = "567331435.354215"
+                  timestampString = "567424969.956045"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "46">
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2456,12 +2456,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "567331435.376454"
+                  timestampString = "567424969.972056"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "138"
                   endingLineNumber = "138"
-                  offsetFromSymbolStart = "26">
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2471,12 +2471,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "567331435.3782721"
+                  timestampString = "567424969.973778"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "139"
                   endingLineNumber = "139"
-                  offsetFromSymbolStart = "59">
+                  offsetFromSymbolStart = "68">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2504,12 +2504,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "567331435.384094"
+                  timestampString = "567424969.978068"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
-                  offsetFromSymbolStart = "2573">
+                  offsetFromSymbolStart = "1684">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2519,12 +2519,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "567331435.386049"
+                  timestampString = "567424969.979854"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
                   endingLineNumber = "148"
-                  offsetFromSymbolStart = "3911">
+                  offsetFromSymbolStart = "2688">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2534,12 +2534,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserStates/OnOrderView.swift"
-                  timestampString = "567331435.387849"
+                  timestampString = "567424969.981549"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "141"
                   endingLineNumber = "141"
-                  offsetFromSymbolStart = "83">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2727,7 +2727,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "567335334.200135"
+            timestampString = "567419684.474803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -2903,12 +2903,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/Enter_Phone/EnterPhone.swift"
-                  timestampString = "567331435.4493279"
+                  timestampString = "567424970.0328799"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "4600">
+                  offsetFromSymbolStart = "3332">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2918,12 +2918,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/Enter_Phone/EnterPhone.swift"
-                  timestampString = "567331435.451117"
+                  timestampString = "567424970.034693"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
                   endingLineNumber = "51"
-                  offsetFromSymbolStart = "45">
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3399,7 +3399,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "566978879.720511"
+            timestampString = "567424358.1414191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -3415,7 +3415,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "566978879.720579"
+            timestampString = "567424358.141697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -3431,7 +3431,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "566978879.720625"
+            timestampString = "567424358.141965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -3447,7 +3447,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "566978879.720669"
+            timestampString = "567424358.142216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -3463,7 +3463,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/Enter_Code/EnterPhoneViewController.swift"
-            timestampString = "566978879.72071"
+            timestampString = "567424358.142446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -3639,12 +3639,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-                  timestampString = "567331435.570164"
+                  timestampString = "567424970.09972"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "9"
                   endingLineNumber = "9"
-                  offsetFromSymbolStart = "591">
+                  offsetFromSymbolStart = "508">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -3654,12 +3654,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/DriverInterFace/AcceptByTaxi/AcceptDriverOrder.swift"
-                  timestampString = "567331435.572584"
+                  timestampString = "567424970.101419"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "10"
                   endingLineNumber = "10"
-                  offsetFromSymbolStart = "39">
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3767,7 +3767,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
-            timestampString = "566854830.806424"
+            timestampString = "567425393.341634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -3783,7 +3783,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
-            timestampString = "566854830.8068531"
+            timestampString = "567425393.341713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -4311,7 +4311,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "567335334.201067"
+            timestampString = "567419684.478309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -4327,7 +4327,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "567335334.2011189"
+            timestampString = "567419684.47869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
@@ -4343,7 +4343,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "567335334.201158"
+            timestampString = "567419684.478958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -4359,7 +4359,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/User_MainPage/TestViewController.swift"
-            timestampString = "567335334.201194"
+            timestampString = "567419684.479443"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
@@ -4423,12 +4423,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/DriverCoins/MoneyRequest.swift"
-                  timestampString = "567331435.929354"
+                  timestampString = "567424970.261188"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
                   endingLineNumber = "23"
-                  offsetFromSymbolStart = "912">
+                  offsetFromSymbolStart = "764">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -4438,12 +4438,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/DriverCoins/MoneyRequest.swift"
-                  timestampString = "567331435.931565"
+                  timestampString = "567424970.262857"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "24"
                   endingLineNumber = "24"
-                  offsetFromSymbolStart = "45">
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -4611,11 +4611,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.505613"
+            timestampString = "567425393.342229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
@@ -4627,11 +4627,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.505681"
+            timestampString = "567425393.342289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -4647,7 +4647,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.505776"
+            timestampString = "567425393.342326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -4659,11 +4659,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.505887"
+            timestampString = "567425393.342374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
@@ -4675,11 +4675,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.505936"
+            timestampString = "567425393.34242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
@@ -4695,7 +4695,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.505981"
+            timestampString = "567425393.342454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "163"
@@ -4711,7 +4711,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.506019"
+            timestampString = "567425393.342487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
@@ -4727,12 +4727,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/OtherStructure/GetUser.swift"
-                  timestampString = "567331436.012804"
+                  timestampString = "567424970.307065"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
                   endingLineNumber = "164"
-                  offsetFromSymbolStart = "903">
+                  offsetFromSymbolStart = "788">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -4742,12 +4742,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/OtherStructure/GetUser.swift"
-                  timestampString = "567331436.015057"
+                  timestampString = "567424970.3088779"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "165"
                   endingLineNumber = "165"
-                  offsetFromSymbolStart = "89">
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -4759,7 +4759,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.506055"
+            timestampString = "567425393.34252"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -4775,7 +4775,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/OtherStructure/GetUser.swift"
-            timestampString = "567334699.50609"
+            timestampString = "567425393.3425519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -4983,7 +4983,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
-            timestampString = "566854830.812233"
+            timestampString = "567425393.342711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -4999,7 +4999,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
-            timestampString = "566854830.812498"
+            timestampString = "567425393.34275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -5015,7 +5015,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
-            timestampString = "566854830.812637"
+            timestampString = "567425393.342786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -5031,7 +5031,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
-            timestampString = "566854830.8127739"
+            timestampString = "567425393.342822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -5047,12 +5047,12 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
-                  timestampString = "567331436.097303"
+                  timestampString = "567424970.817727"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
-                  offsetFromSymbolStart = "666">
+                  offsetFromSymbolStart = "658">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -5062,7 +5062,7 @@
                   moduleName = "YandexTaxiPlus"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chingiz/Documents/Adobe/Xcode/YandexTaxiPlus/YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
-                  timestampString = "567331436.099468"
+                  timestampString = "567424970.820208"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -5079,7 +5079,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
-            timestampString = "566854830.812885"
+            timestampString = "567425393.342873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -5095,7 +5095,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
-            timestampString = "566854830.812956"
+            timestampString = "567425393.342906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -5111,7 +5111,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/SendChat.swift"
-            timestampString = "566854830.813027"
+            timestampString = "567425393.342937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -5127,7 +5127,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTaxiPlus/UserInterFace/ChatController/ChatController.swift"
-            timestampString = "566854830.813112"
+            timestampString = "567425393.3429689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
@@ -5245,6 +5245,22 @@
             startingLineNumber = "143"
             endingLineNumber = "143"
             landmarkName = "makeorder()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YandexTaxiPlus/DriverInterFace/DriverMap/DriverMap.swift"
+            timestampString = "567425393.343083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "DrawMap()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -466,7 +466,6 @@
 				7236068C2179ABE9000D1E10 /* InvaTaxi */,
 				729F415D21788E310057A788 /* ChatController */,
 				729D25BC2177449900BF10FF /* UserTaxiGetPrice */,
-				729D25B92177403000BF10FF /* UserOrder_Details */,
 				729D25A8217729E800BF10FF /* UserOrder_Settings */,
 				72DAF3432174939900603559 /* UserMainPageChoosePlace */,
 				728284AB2171DB4B00AA2C29 /* User_MainPage */,
@@ -743,13 +742,6 @@
 			path = UserOrder_Settings;
 			sourceTree = "<group>";
 		};
-		729D25B92177403000BF10FF /* UserOrder_Details */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserOrder_Details;
-			sourceTree = "<group>";
-		};
 		729D25BC2177449900BF10FF /* UserTaxiGetPrice */ = {
 			isa = PBXGroup;
 			children = (
@@ -957,6 +949,9 @@
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 722F6E132170927200FB11E4;
 			productRefGroup = 722F6E1D2170927200FB11E4 /* Products */;
 			projectDirPath = "";
