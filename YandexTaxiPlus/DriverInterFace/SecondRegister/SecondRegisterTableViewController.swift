@@ -278,9 +278,17 @@ class SecondRegisterTableViewController: UITableViewController,UITextFieldDelega
             view.makeToast("Заполните все поля")
         case false:
             UserInformation.shared.getinfo { (info) in
-                Register.register(gender: ((info.user?.genderID!)!), car_number: self.number_car!, car_model: car_model, year_of_birth: (info.user?.yearOfBirth!)!, car_year: self.create_year!, seats_num: self.sits!, fac: self.fac, type: self.typeID!)
+                
+                self.view.makeToastActivity(.center)
                 self.navigationController?.popViewController(animated: true)
-
+                Register.register(gender: (info.user?.genderID!)!, car_number: self.number_car!, car_model: "\(car_model)", year_of_birth: (info.user?.yearOfBirth!)!, car_year: self.create_year!, seats_num: self.sits!, fac: self.fac, type: self.typeID!, completion: { (success) in
+                    if success == true {
+                        self.view.hideToastActivity()
+                    }
+                    else {
+                      self.view.makeToast("Ошибка")
+                    }
+                })
             }
             
             

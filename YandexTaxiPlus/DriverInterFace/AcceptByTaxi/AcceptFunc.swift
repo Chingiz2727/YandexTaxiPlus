@@ -20,15 +20,19 @@ class AcceptFunc {
             switch response.result {
             case.failure(let error):
                 print(error)
+                completion(false,true)
+
             case.success(let value):
                 let json = JSON(value)
+                print(json)
                 if json["state"].stringValue == "success" {
                     completion(true,false)
 
                 }
-                if json["state"].stringValue == "exist" {
-                    completion(false,true)
+                else {
+                    completion(false,false)
                 }
+                
             }
         }
     }

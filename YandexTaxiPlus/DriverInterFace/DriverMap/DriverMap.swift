@@ -44,11 +44,11 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
     
     
     func DrawMap() {
-        let fromlong = from_long?.toDouble()
-        let tolong = to_long?.toDouble()
-        let fromlat = from_lat?.toDouble()
-        let tolat = to_lat?.toDouble()
-        Route.Draw(startlat: (from_lat?.toDouble()!)!, startlong: (from_lat?.toDouble()!)!, endlat: (to_lat?.toDouble()!)!, englong: (to_long?.toDouble()!)!, map: MainMapView.mapview)
+        let fromlong = Double(from_long!)
+        let tolong = Double(to_long!)
+        let fromlat = Double(from_lat!)
+        let tolat = Double(to_lat!)
+        Route.Draw(startlat: fromlat!, startlong: fromlong!, endlat:tolat!, englong:tolong!, map: MainMapView.mapview)
         marker1.position = CLLocationCoordinate2D(latitude: fromlat!, longitude: fromlong!)
         marker2.position = CLLocationCoordinate2D(latitude: tolat!, longitude: tolong!)
          self.marker2.icon = self.imageWithImage(image: UIImage(named: "icon_point_b")!, scaledToSize: CGSize(width: 20, height: 20))
@@ -157,12 +157,23 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
             let phone_driver = order.driver?.phone
             let phone_user = order.client?.phone
             self.view.makeToastActivity(.center)
-            chat.chatid = "\(phone_driver!)\(phone_user!)"
             UserInformation.shared.getinfo(completion: { (info) in
+                if let dispathcer = order.dispatcher {
+                    chat.name = dispathcer.firstName!
+                    chat.phone = dispathcer.phone!
+                    chat.token = dispathcer.token!
+                    chat.chatid = "\(phone_driver!)\(dispathcer.phone!)"
+
+                }
+                else {
+                    chat.name = info.user?.name!
+                    chat.phone = info.user?.phone!
+                    chat.token = info.user?.token!
+                    chat.chatid = "\(phone_driver!)\(phone_user!)"
+
+                }
                 chat.receiver  = order.driver?.phone!
-                chat.name = info.user?.name!
-                chat.phone = info.user?.phone!
-                chat.token = info.user?.token!
+              
                 self.view.hideToastActivity()
                 self.navigationController?.pushViewController(chat, animated: true)
             })
@@ -177,9 +188,20 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
     @objc func call() {
         sendPushId.send { (info, order_id) in
             GetOrderInfo.GetInfo(order_id: String(order_id!)) { (order) in
-                let phone_user = order.client?.phone
-                if let url = URL(string: "tel://\("+" + phone_user!)") {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                var phone : String?
+                
+                if let dispatcher = order.dispatcher {
+                    phone = dispatcher.phone
+                }
+                    
+                else {
+                    phone = order.client?.phone
+                }
+                if let phone = phone {
+                    if let url = URL(string: "tel://\("+" + phone)") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+             
                 }
                 
             }

@@ -1,106 +1,114 @@
-// To parse the JSON, add this file to your project and do:
-//
-//   let orderInfo = try? newJSONDecoder().decode(OrderInfo.self, from: jsonData)
-
-import Foundation
-
 struct OrderInfo: Codable {
-    let rating: Int?
-    let state: String?
-    let driver: Clientd?
-    let car: [Car]?
-    let stars: Int?
+    let car: [Card]?
     let order: Orderd?
-    let client: Clientd?
+    let dispatcher: Dispatcher?
+    let rating, stars: Int?
+    let state: String?
     let avatar: String?
+    let client, driver: Clientd?
 }
 
 struct Card: Codable {
-    let id, submodel, type, seatsNumber: String?
-    let number: String?
-    let tonns, body: String?
-    let model, year, carID: String?
+    let tonns: String?
+    let carID, seatsNumber: String?
+    let body: String?
+    let number, year, type, model: String?
+    let id, submodel: String?
     
     enum CodingKeys: String, CodingKey {
-        case id, submodel, type
-        case seatsNumber = "seats_number"
-        case number, tonns, body, model, year
+        case tonns
         case carID = "car_id"
+        case seatsNumber = "seats_number"
+        case body, number, year, type, model, id, submodel
+    }
+}
+struct Dispatcher: Codable {
+    let password: String?
+    let companyID: Int?
+    let firstName, lastName: String?
+    let id: Int?
+    let created, phone, token, lastEdit: String?
+    let deleted, roleID, taxiParkID: Int?
+    let email: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case password
+        case companyID = "company_id"
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case id, created, phone, token
+        case lastEdit = "last_edit"
+        case deleted
+        case roleID = "role_id"
+        case taxiParkID = "taxi_park_id"
+        case email
     }
 }
 
 struct Clientd: Codable {
-    let isActive, rating, taxiParkID, balance: Int?
-    let name, pushID: String?
+    let roleID, isActive, balance: Int?
     let companyID: Int?
-    let lastEdit: String?
-    let yearOfBirth: Int?
-    let phone: String?
-    let parentID: JSONNull?
-    let platform, roleID, id, cityID: Int?
-    let genderID: Int?
-    let token: String?
     let created: Int?
+    let pushID, name: String?
+    let yearOfBirth: String?
+    let rating, cityID, id: Int?
+    let token, phone: String?
+    let parentID, platform: Int?
+    let lastEdit: String?
+    let genderID, taxiParkID: Int?
     
     enum CodingKeys: String, CodingKey {
+        case roleID = "role_id"
         case isActive = "is_active"
-        case rating
-        case taxiParkID = "taxi_park_id"
-        case balance, name
-        case pushID = "push_id"
+        case balance
         case companyID = "company_id"
-        case lastEdit = "last_edit"
+        case created
+        case pushID = "push_id"
+        case name
         case yearOfBirth = "year_of_birth"
-        case phone
+        case rating
+        case cityID = "city_id"
+        case id, token, phone
         case parentID = "parent_id"
         case platform
-        case roleID = "role_id"
-        case id
-        case cityID = "city_id"
+        case lastEdit = "last_edit"
         case genderID = "gender_id"
-        case token, created
+        case taxiParkID = "taxi_park_id"
     }
 }
 
 struct Orderd: Codable {
-    let deleted: Int?
-    let date: String?
     let dispatcherID: Int?
-    let toLongitude: String?
-    let taxiParkID: Int?
-    let toLatitude, created: String?
-    let paymentType, price: Int?
+    let userID, deleted, taxiParkID, paymentType: Int?
     let companyID: Int?
-    let isCommon, driverID: Int?
-    let lastEdit, comment: String?
-    let orderType: Int?
-    let fromLongitude: String?
-    let id, status, isRated: Int?
-    let fromLatitude: String?
-    let userID: Int?
+    let toLongitude: String?
+    let status: Int?
+    let created: String?
+    let isCommon: Int?
+    let orderType, isRated, price: Int?
+    let fromLongitude, date: String?
+    let driverID, id: Int?
+    let comment, lastEdit, fromLatitude, toLatitude: String?
     
     enum CodingKeys: String, CodingKey {
-        case deleted, date
         case dispatcherID = "dispatcher_id"
-        case toLongitude = "to_longitude"
-        case taxiParkID = "taxi_park_id"
-        case toLatitude = "to_latitude"
-        case created
-        case paymentType = "payment_type"
-        case price
-        case companyID = "company_id"
-        case isCommon = "is_common"
-        case driverID = "driver_id"
-        case lastEdit = "last_edit"
-        case comment
-        case orderType = "order_type"
-        case fromLongitude = "from_longitude"
-        case id, status
-        case isRated = "is_rated"
-        case fromLatitude = "from_latitude"
         case userID = "user_id"
+        case deleted
+        case taxiParkID = "taxi_park_id"
+        case paymentType = "payment_type"
+        case companyID = "company_id"
+        case toLongitude = "to_longitude"
+        case status, created
+        case isCommon = "is_common"
+        case orderType = "order_type"
+        case isRated = "is_rated"
+        case price
+        case fromLongitude = "from_longitude"
+        case date
+        case driverID = "driver_id"
+        case id, comment
+        case lastEdit = "last_edit"
+        case fromLatitude = "from_latitude"
+        case toLatitude = "to_latitude"
     }
 }
-
-// MARK: Encode/decode helpers
-

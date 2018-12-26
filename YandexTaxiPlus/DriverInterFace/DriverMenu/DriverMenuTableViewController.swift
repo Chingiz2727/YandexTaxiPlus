@@ -92,10 +92,13 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
                 Alamofire.request(url).responseJSON(completionHandler: { (response) in
                     head.avatarImageView.image = UIImage(data: response.data!)
                 })
-                GetDriverAvatar.get(rating: info.rating!, star: info.stars!, completion: { (avatars) in
-                    head.starsAvatar.image = UIImage.init(named: avatars)
-
-                })
+                if let rating = info.rating {
+                    GetDriverAvatar.get(rating: rating, star: info.stars!, completion: { (avatars) in
+                        head.starsAvatar.image = UIImage.init(named: avatars)
+                        
+                    })
+                }
+              
                 
             })
         }

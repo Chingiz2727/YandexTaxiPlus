@@ -50,13 +50,12 @@ tableView.register(AcceptByTaxiCell.self, forCellReuseIdentifier: cellid)
             var price = info.order?.price
             let module = [AccepTaxiModule(detail: "Имя:", menu: (info.client?.name ?? "")!, img: "user"),
                           AccepTaxiModule(detail: "Цена:", menu: String(price ?? 0), img: "icon_by_bonuses")]
-            let fromlong = info.order?.fromLongitude?.toDouble()
-            let fromlat = info.order?.fromLatitude?.toDouble()
-            let tolong = info.order?.toLongitude?.toDouble()
-            let tolat = info.order?.toLatitude?.toDouble()
-            if let tolat = tolat {
-                Route.Draw(startlat: fromlat!, startlong: fromlong!, endlat: tolat, englong: tolong!, map: self.Map)
-                self.marker2.position = CLLocationCoordinate2D(latitude: tolat, longitude: tolong!)
+            let fromlong = Double(info.order!.fromLongitude!)
+            let tolong = Double(info.order!.toLongitude!)
+            let fromlat = Double(info.order!.fromLatitude!)
+            let tolat = Double(info.order!.toLatitude!)
+            Route.Draw(startlat: fromlat!, startlong: fromlong!, endlat: tolat!, englong: tolong!, map: self.Map)
+            self.marker2.position = CLLocationCoordinate2D(latitude: tolat!, longitude: tolong!)
                 self.marker2.icon = self.imageWithImage(image: UIImage(named: "icon_point_b")!, scaledToSize: CGSize(width: 20, height: 20))
                 self.marker2.map = self.Map
                 self.marker1.icon = self.imageWithImage(image: UIImage(named: "icon_point_a")!, scaledToSize: CGSize(width: 20, height: 20))
@@ -66,7 +65,7 @@ tableView.register(AcceptByTaxiCell.self, forCellReuseIdentifier: cellid)
                 let camera = GMSCameraPosition.camera(withLatitude: fromlat!, longitude: fromlong!, zoom: 13.0)
                 self.Map.camera = camera
 
-            }
+            
 
             self.menu = module
             self.tableView.reloadData()
@@ -127,7 +126,11 @@ tableView.register(AcceptByTaxiCell.self, forCellReuseIdentifier: cellid)
                 self.window.rootViewController = UINavigationController.init(rootViewController: DriverMapViewController())
             }
             if exist == true {
-                self.window.makeToast("У вас уже есть заказ")
+                self.window.makeToast("Недостаточно средств")
+            }
+            if order_make == false && exist == false {
+                self.window.makeToast("Ошибка данных")
+
             }
         }
       

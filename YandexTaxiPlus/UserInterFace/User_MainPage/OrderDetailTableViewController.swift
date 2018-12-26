@@ -43,13 +43,19 @@ class OrderDetailTableViewController: UITableViewController {
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             GetOrderInfo.GetInfo(order_id: String(self.order_id!), completion: { (info) in
-                let url = "http://185.236.130.126/profile/uploads/avatars/\(info.avatar!)"
-                Alamofire.request(url).responseJSON(completionHandler: { (response) in
-                    DispatchQueue.main.async {
-                        self.image = UIImage(data: response.data!)
-                        self.tableView.reloadData()
-                    }
-                })
+                if let avatar = info.avatar {
+                    let url = "http://185.236.130.126/profile/uploads/avatars/\(avatar)"
+                    Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                        DispatchQueue.main.async {
+                            self.image = UIImage(data: response.data!)
+                            self.tableView.reloadData()
+                        }
+                    })
+                }
+                else {
+                    self.image = UIImage.init(named: "userjpg")
+                }
+            
 
             })
         }
@@ -90,6 +96,7 @@ class OrderDetailTableViewController: UITableViewController {
         sendPushId.send { (info, order_id) in
             let inf = info.activeOrders![0]
             GetOrderInfo.GetInfo(order_id: String(inf.id!)) { (order) in
+    
                 let phone_user = order.driver?.phone
                 if let url = URL(string: "tel://\("+" + phone_user!)") {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -108,9 +115,11 @@ class OrderDetailTableViewController: UITableViewController {
             chat.chatid = "\(phone_driver!)\(phone_user!)"
             UserInformation.shared.getinfo(completion: { (info) in
                 chat.receiver  = info.user?.phone!
-                chat.name = order.driver?.name!
-                chat.phone = order.driver?.phone!
-                chat.token = order.driver?.token!
+                    chat.name = order.driver?.name!
+                    chat.phone = order.driver?.phone!
+                    chat.token = order.driver?.token!
+                
+                
                 self.dismiss(animated: true, completion: nil)
                 
                 self.window.hideToastActivity()

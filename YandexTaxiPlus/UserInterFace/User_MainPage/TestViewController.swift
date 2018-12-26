@@ -135,7 +135,7 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
     var marker2 = GMSMarker()
     var myloc_lat : Double?
     var myloc_long: Double?
-    var second_name: String = "Куда" {
+    var second_name: String? = "Куда" {
         didSet {
             ButView?.toButton.setTitle(second_name, for: .normal)
         }
@@ -228,6 +228,7 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
                 self.userprotocol?.first_clicked = false
                 self.userprotocol?.second_clicked = false
                 self.userprotocol?.second_added()
+                self.userprotocol?.second_name = "Куда?"
             }
         }
     }

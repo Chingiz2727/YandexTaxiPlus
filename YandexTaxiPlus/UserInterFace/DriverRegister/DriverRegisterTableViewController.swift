@@ -307,7 +307,7 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         "token":APItoken.getToken(),
         "gender":gender_id,
         "car_number":number_car,
-        "car_model":car_model,
+        "car_model":car_model_id,
         "year_of_birth":1998,
         "car_year":create_year,
         "seats_number":sits,
@@ -319,11 +319,22 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
     case true:
         view.makeToast("Заполните все поля")
     case false:
-      
-        Register.register(gender: gender_id!, car_number: number_car!, car_model: car_model, year_of_birth: 1900, car_year: create_year!, seats_num: sits!, fac: fac, type: typeID!)
-        guard let window = UIApplication.shared.keyWindow else {return}
-        window.makeKeyAndVisible()
-        window.rootViewController = UINavigationController.init(rootViewController: SessionOpenViewController())
+      view.makeToastActivity(.center)
+        Register.register(gender: gender_id!, car_number: number_car!, car_model: "\(car_model)", year_of_birth: 1900, car_year: create_year!, seats_num: sits!, fac: fac, type: typeID!) { (success) in
+            if success == true {
+                self.view.hideToastActivity()
+                guard let window = UIApplication.shared.keyWindow else {return}
+                
+                window.makeKeyAndVisible()
+                window.rootViewController = UINavigationController.init(rootViewController: SessionOpenViewController())
+                
+            }
+            else {
+                self.view.hideToastActivity()
+                self.view.makeToast("Ошибка")
+            }
+        }
+
    
     }
     

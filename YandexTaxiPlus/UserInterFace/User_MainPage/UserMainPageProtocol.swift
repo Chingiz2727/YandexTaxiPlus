@@ -15,7 +15,7 @@ protocol UserMainPageProtocol {
     var first_clicked:Bool? {get set}
     var second_clicked:Bool? {get set}
     var first_name : String? {get set}
-    var second_name : String {get set}
+    var second_name : String? {get set}
     var from_lat : Double? {get set}
     var from_long : Double?  {get set}
     var to_lat : Double? {get set}
