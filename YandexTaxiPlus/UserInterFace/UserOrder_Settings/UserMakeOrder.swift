@@ -37,16 +37,16 @@ class MakeOrder {
                     print(json)
                     let state = json["state"].string!
                      let url = json["url"].string
-                    let orderid = json["message"].int
+                    let orderid = json["message"].intValue
                     if state == "success"
                     {
-                        
-                        completion(true,false, url ?? "", orderid ?? 0)
+                        print(orderid)
+                        completion(true,false, url ?? "", orderid)
                     }
                         
                 
                     if state == "fail" {
-                        completion(false,true,"",orderid ?? 0)
+                        completion(false,true,"",0)
                     }
                 }
             }

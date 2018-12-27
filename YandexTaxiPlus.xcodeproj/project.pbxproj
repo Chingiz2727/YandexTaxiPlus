@@ -41,6 +41,7 @@
 		7231EC6521A55E810000295A /* Image color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231EC6421A55E810000295A /* Image color.swift */; };
 		7231EC6721A573990000295A /* DistanceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231EC6621A573990000295A /* DistanceClass.swift */; };
 		7231EC6921A5762B0000295A /* GetDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231EC6821A5762B0000295A /* GetDistance.swift */; };
+		7234764D21D4BB0700E9A001 /* SimpleSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7234764C21D4BB0700E9A001 /* SimpleSegment.swift */; };
 		7236068E2179AC05000D1E10 /* InvaTaxiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236068D2179AC05000D1E10 /* InvaTaxiTableViewController.swift */; };
 		723F901F21BE611900CA95B1 /* GetFullAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F901E21BE611900CA95B1 /* GetFullAmount.swift */; };
 		723F902121BE7F9B00CA95B1 /* UploadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F902021BE7F9B00CA95B1 /* UploadPhoto.swift */; };
@@ -228,6 +229,7 @@
 		7231EC6421A55E810000295A /* Image color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image color.swift"; sourceTree = "<group>"; };
 		7231EC6621A573990000295A /* DistanceClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceClass.swift; sourceTree = "<group>"; };
 		7231EC6821A5762B0000295A /* GetDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDistance.swift; sourceTree = "<group>"; };
+		7234764C21D4BB0700E9A001 /* SimpleSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSegment.swift; sourceTree = "<group>"; };
 		7236068D2179AC05000D1E10 /* InvaTaxiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaTaxiTableViewController.swift; sourceTree = "<group>"; };
 		723F901E21BE611900CA95B1 /* GetFullAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFullAmount.swift; sourceTree = "<group>"; };
 		723F902021BE7F9B00CA95B1 /* UploadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhoto.swift; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 				72A6F732218475D90037AA13 /* TaxiOrders */,
 				728B640E21833BCB00B3CF7E /* DriverSession */,
 				721BEDF5219C3544003799DB /* UserTypeInfo.swift */,
+				7234764C21D4BB0700E9A001 /* SimpleSegment.swift */,
 				7218287A21C3B42B0090ECF4 /* ListOfOrdersTableViewCell.swift */,
 				7218287821C3A5910090ECF4 /* ListOfOrdersTable.swift */,
 				72BFF8A921ABE1EC0008981B /* CheckAccess */,
@@ -1183,6 +1186,7 @@
 				72D4A71521AFB0F600923BC5 /* CheckForChats.swift in Sources */,
 				72EC886421AE607E00C25095 /* GetMyPlace.swift in Sources */,
 				7231EC6521A55E810000295A /* Image color.swift in Sources */,
+				7234764D21D4BB0700E9A001 /* SimpleSegment.swift in Sources */,
 				722F6E332170956400FB11E4 /* PhoneFieldView.swift in Sources */,
 				7275C85B21817AE50018BFEE /* ButtonsTableViewCell.swift in Sources */,
 				72BFAAF321A66B4700C70E50 /* CheckContains.swift in Sources */,

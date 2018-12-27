@@ -64,8 +64,10 @@ protocol orderCanceled {
     func Canceled()
 }
 protocol ordermaked {
+    var sec_id : Int? { get set }
     func OrderMaked()
 }
+
 protocol GetDate {
     var date : Int? {get set}
     func reload()

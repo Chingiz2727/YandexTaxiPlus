@@ -119,12 +119,12 @@ class OrderDetailTableViewController: UITableViewController {
                     chat.phone = order.driver?.phone!
                     chat.token = order.driver?.token!
                 
-                
+                (self.window.rootViewController as? UINavigationController)?.pushViewController(
+                    chat, animated: true)
                 self.dismiss(animated: true, completion: nil)
                 
                 self.window.hideToastActivity()
-                (self.window.rootViewController as? UINavigationController)?.pushViewController(
-                    chat, animated: true)
+               
             })
             
           }

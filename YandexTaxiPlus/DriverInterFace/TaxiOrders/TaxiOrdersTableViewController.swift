@@ -9,7 +9,15 @@
 import UIKit
 import Presentr
 import Toast_Swift
-class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDelegate {
+class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDelegate,CustomSegmentedControlDelegate {
+    func changeToIndex(index: Int) {
+        print(index)
+    }
+    
+    
+    
+    
+    
     var cellid = "cellid"
     var ViewModel : TableViewTaxiOrdersModelType?
     var module = TaxiOrdersViewModel()
@@ -52,7 +60,8 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TaxiOrdersTableViewCell.self, forCellReuseIdentifier: cellid)
-               NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "101"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "101"), object: nil)
+      
         NotificationCenter.default.addObserver(self, selector: #selector(sendcoor(notification:)), name: NSNotification.Name(rawValue: "1"), object: nil)
         navigationController?.navigationBar.isHidden = false
         CheckForChats.check { (state) in
@@ -62,6 +71,12 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
             case false :
                 self.items = ["Общий чат"]
             }
+            let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50), buttonTitle: self.items)
+            codeSegmented.backgroundColor = .clear
+            codeSegmented.delegate = self
+            self.view.addSubview(codeSegmented)
+            self.navigationItem.titleView = codeSegmented
+
             self.makeSegment()
             self.reload()
         }
@@ -84,7 +99,8 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
     func makeSegment() {
         segment.tintColor = UIColor.white
         segment.backgroundColor  = maincolor
-        navigationItem.titleView = segment
+        
+//        navigationItem.titleView = segment
         segment.addTarget(self, action: #selector(segment(seg:)), for: .valueChanged)
         segment.selectedSegmentIndex = 0
     }

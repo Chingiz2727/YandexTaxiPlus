@@ -58,7 +58,8 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     var second_long : String?
     var button : MainButton = MainButton()
     var fullview = UIView()
-    
+    var fullview1 = UIView()
+
     
     
     override init() {
@@ -102,6 +103,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
             if let window = UIApplication.shared.keyWindow {
                 self.blackview.alpha = 0
                 self.fullview.removeFromSuperview()
+                self.fullview1.removeFromSuperview()
             }
         }
     }
@@ -129,14 +131,18 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id!, comment: comment!, date: date!, payment_type: String(payment_type)) { (yes, no,url,id)  in
             if yes {
                 if self.payment_type == 2 {
+
                     self.paybaycard?.PayingByCard(url: url)
                     self.user?.order_id = id
+                    
+                    self.Ordered?.OrderMaked()
 
                 }
-                self.Ordered?.OrderMaked()
                 window.hideToastActivity()
                 self.handleDismiss()
                 self.user?.order_id = id
+                self.Ordered?.OrderMaked()
+
             }
             if no == true {
                 window.hideToastActivity()
@@ -245,13 +251,26 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     }
     
     
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var prevselected:IndexPath!
         var prevselected1: IndexPath!
+        let height : CGFloat = 135
+        let y = window.frame.height - height
         
         switch collectionView {
         case CarsCollection:
+            switch indexPath.row {
+            case 2:
+              PayCollection.removeFromSuperview()
+              addfull()
+            default:
+                if  fullview1.isDescendant(of: window) {
+                    fullview1.removeFromSuperview()
+                    lets()
+                }
+                
+            }
             if selectedindexpath != nil {
                 if selectedindexpath == indexPath  {
                     selectedindexpath = nil
@@ -272,6 +291,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
             }
             service_id = PriceCar[indexPath.row].service_id
         case PayCollection:
+            
             if selectedindexpath1 != nil {
                 if selectedindexpath1 == indexPath  {
                     selectedindexpath1 = nil
@@ -294,6 +314,29 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         default:
             break
         }
+    }
+    
+    
+    
+    
+    func addfull() {
+        PayCollection.removeFromSuperview()
+        fullview.removeFromSuperview()
+        window.addSubview(fullview1)
+        fullview1.backgroundColor = UIColor.white
+        fullview1.addSubview(CarsCollection)
+        fullview1.addSubview(button)
+        button.initialize()
+        self.payment_type = 0
+        fullview1.setAnchor(top: nil, left: window.leftAnchor, bottom: window.bottomAnchor, right: window.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 400, height: 170)
+        fullview.backgroundColor = UIColor.white
+        CarsCollection.setAnchor(top: fullview1.topAnchor, left: fullview1.leftAnchor, bottom: nil, right: fullview1.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 400, height: 90)
+        button.setAnchor(top: CarsCollection.bottomAnchor, left: fullview1.leftAnchor, bottom: nil, right: fullview1.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 50)
+        button.layer.cornerRadius = 10
+        button.setTitle("Заказать", for: .normal)
+        button.addTarget(self, action: #selector(makeorder), for: .touchUpInside)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = maincolor
     }
     
 

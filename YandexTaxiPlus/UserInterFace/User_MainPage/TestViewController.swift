@@ -15,7 +15,7 @@ import SideMenu
 import UserNotifications
 import Presentr
 class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,commentAndDate,ordermaked,orderCanceled,Rated,UIGestureRecognizerDelegate,payByCard,UserMainPageProtocol {
-
+ 
     func first_added() {
         marker1.position = CLLocationCoordinate2D(latitude: from_lat!, longitude: from_long!)
         marker1.icon = self.imageWithImage(image: UIImage(named: "icon_point_a")!, scaledToSize: CGSize(width: 30, height: 30))
@@ -113,10 +113,11 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
         remove()
         first_clicked = false
         second_clicked = false
+        Cancel.order_id = order_id
         Route.Draw(startlat: from_lat!, startlong: from_long!, endlat: to_lat!, englong: to_long!, map: (mapview?.map)!)
         Cancel.addcancel(view: self.view)
     }
-    
+    var sec_id: Int?
     var Cancel = CancelView()
     func remove() {
         ButView?.removeFromSuperview()

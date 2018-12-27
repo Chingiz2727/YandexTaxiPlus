@@ -24,6 +24,7 @@ class AcceptFunc {
 
             case.success(let value):
                 let json = JSON(value)
+                
                 print(json)
                 if json["state"].stringValue == "success" {
                     completion(true,false)
