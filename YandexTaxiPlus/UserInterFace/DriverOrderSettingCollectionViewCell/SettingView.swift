@@ -27,9 +27,9 @@ class SettingColectionVierw : NSObject,UICollectionViewDelegate,UICollectionView
     var selectedindexpath : IndexPath!
     var selectedindexpath1 : IndexPath!
 
-    var paytype = [Payment(type: "Наличные", icon: "icon_by_hand", sec_icon: "icon_by_hand_p"),
-                   Payment(type: "Карта", icon: "icon_by_card", sec_icon: "icon_by_card_p"),
-                   Payment(type: "Монеты", icon: "icon_by_bonuses", sec_icon: "icon_by_bonuses_p")]
+    var paytype = [Payment(type: "Наличные", icon: "icon_by_hand", sec_icon: "icon_by_hand_p",pay_type:"1"),
+                   Payment(type: "Карта", icon: "icon_by_card", sec_icon: "icon_by_card_p",pay_type:"2"),
+                   Payment(type: "Монеты", icon: "icon_by_bonuses", sec_icon: "icon_by_bonuses_p",pay_type:"3")]
 
     var PriceCar = [carPrice]()
     var cellid = "cellid"
@@ -38,7 +38,7 @@ class SettingColectionVierw : NSObject,UICollectionViewDelegate,UICollectionView
     var comment : String?
     var date : String?
     var service_id : Int?
-    var payment_type : Int?
+    var payment_type : String?
     var first_lat : String?
     let window : UIWindow = UIApplication.shared.keyWindow!
 
@@ -108,7 +108,7 @@ class SettingColectionVierw : NSObject,UICollectionViewDelegate,UICollectionView
             else {
                 collectionView.reloadItems(at: [indexPath])
             }
-            payment_type = indexPath.row + 1
+            payment_type = paytype[indexPath.row].pay_type
 
         }
         if indexPath.section == 0 {
@@ -218,14 +218,14 @@ class SettingColectionVierw : NSObject,UICollectionViewDelegate,UICollectionView
         window.makeKeyAndVisible()
         MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id!, comment: comment!, date: date!, payment_type: String(payment_type!)) { (yes, no,url,order_id)  in
             if yes {
-                if self.payment_type! == 2 {
+                if self.payment_type! == "2" {
                     self.paybaycard?.PayingByCard(url: url)
                 }
                 self.Ordered?.OrderMaked()
                 window.hideToastActivity()
                 self.handleDismiss()
-                
             }
+          
             if no == true {
                 window.hideToastActivity()
                 self.handleDismiss()

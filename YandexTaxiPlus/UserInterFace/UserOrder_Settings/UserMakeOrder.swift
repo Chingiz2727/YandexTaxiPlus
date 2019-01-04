@@ -35,7 +35,7 @@ class MakeOrder {
                 case.success(let val):
                     let json = JSON(val)
                     print(json)
-                    let state = json["state"].string!
+                    let state = json["state"].stringValue
                      let url = json["url"].string
                     let orderid = json["message"].intValue
                     if state == "success"
@@ -43,7 +43,10 @@ class MakeOrder {
                         print(orderid)
                         completion(true,false, url ?? "", orderid)
                     }
+                    if state == "city" {
                         
+                        completion(true,true,url ?? "",0)
+                    }
                 
                     if state == "fail" {
                         completion(false,true,"",0)

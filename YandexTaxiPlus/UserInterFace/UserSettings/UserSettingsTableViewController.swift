@@ -45,8 +45,8 @@ class UserSettingsTableViewController: UITableViewController,FromCitiesTableView
         tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: sec2)
         navigationController?.navigationBar.barTintColor = maincolor
         navigationController?.navigationBar.isHidden = false
-        let menubutton = UIBarButtonItem.init(image: UIImage(named: "icon_edit"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(edit))
-        self.navigationItem.rightBarButtonItem = menubutton
+//        let menubutton = UIBarButtonItem.init(image: UIImage(named: "icon_edit"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(edit))
+//        self.navigationItem.rightBarButtonItem = menubutton
         tableView.allowsSelection = false
 
         // Uncomment the following line to preserve selection between presentations
@@ -75,6 +75,7 @@ class UserSettingsTableViewController: UITableViewController,FromCitiesTableView
         
     }
     func getinfo() {
+        view.makeToastActivity(.center)
         UserInformation.shared.getinfo { (info) in
             let list = [UserSetting(name: "Имя", placeholder: (info.user?.name!)!),
                         UserSetting(name: "Телефон", placeholder: (info.user?.phone!)!),
@@ -84,6 +85,7 @@ class UserSettingsTableViewController: UITableViewController,FromCitiesTableView
             if let car = info.cars {
                 self.cars = car
             }
+            self.view.hideToastActivity()
             self.tableView.reloadData()
         }
     }

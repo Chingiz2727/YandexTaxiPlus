@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Toast_Swift
 import Alamofire
+import Presentr
 class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     var user:UserMainPageProtocol?
     var CarsCollection : UICollectionView = {
@@ -20,7 +21,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         cv.layer.masksToBounds = false
         return cv
     }()
-    
+    var available : Bool?
     var PayCollection : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero , collectionViewLayout: layout)
@@ -38,9 +39,9 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     var selectedindexpath : IndexPath!
     var selectedindexpath1 : IndexPath!
     
-    var paytype = [Payment(type: "Наличные", icon: "icon_by_hand", sec_icon: "icon_by_hand_p"),
-                   Payment(type: "Карта", icon: "icon_by_card", sec_icon: "icon_by_card_p"),
-                   Payment(type: "Монеты", icon: "icon_by_bonuses", sec_icon: "icon_by_bonuses_p")]
+    var paytype = [Payment(type: "Наличные", icon: "icon_by_hand", sec_icon: "icon_by_hand_p",pay_type:"1"),
+                   Payment(type: "Карта", icon: "icon_by_card", sec_icon: "icon_by_card_p",pay_type:"2"),
+                   Payment(type: "Монеты", icon: "icon_by_bonuses", sec_icon: "icon_by_bonuses_p",pay_type:"3")]
     
     var PriceCar = [carPrice]()
     var cellid = "cellid"
@@ -49,7 +50,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     var comment : String?
     var date : String?
     var service_id : Int?
-    var payment_type : Int = 1
+    var payment_type : String = "1"
     var first_lat : String?
     let window : UIWindow = UIApplication.shared.keyWindow!
     
@@ -128,28 +129,50 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         button.isEnabled = false
         guard let window = UIApplication.shared.keyWindow else {return}
         window.makeKeyAndVisible()
-        MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id!, comment: comment!, date: date!, payment_type: String(payment_type)) { (yes, no,url,id)  in
-            if yes {
-                if self.payment_type == 2 {
-
-                    self.paybaycard?.PayingByCard(url: url)
+        print("istepzhatyr")
+        if available! == true {
+            MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id!, comment: comment!, date: date!, payment_type: String(payment_type)) { (yes, no,url,id)  in
+                if yes == true && no == false {
+                    if self.payment_type == "2" {
+                        
+                        self.paybaycard?.PayingByCard(url: url)
+                        self.user?.order_id = id
+                        
+                        self.Ordered?.OrderMaked()
+                        
+                    }
+                    window.hideToastActivity()
+                    self.handleDismiss()
                     self.user?.order_id = id
-                    
                     self.Ordered?.OrderMaked()
-
+                    
                 }
-                window.hideToastActivity()
-                self.handleDismiss()
-                self.user?.order_id = id
-                self.Ordered?.OrderMaked()
-
+                
+                if yes == true && no == true {
+                    let citylist = CitiesTableViewController()
+                    let alert = ChangeCityAlert(title: "", message: "", preferredStyle: .alert)
+                    alert.show()
+                    citylist.tag = 5
+                    //                (self.window.rootViewController as? UINavigationController)?.pushViewController(citylist, animated: true)
+                    
+                }
+                
+                if no == true
+                {
+                    window.hideToastActivity()
+                    self.handleDismiss()
+                }
+                
             }
-            if no == true {
-                window.hideToastActivity()
-                self.handleDismiss()
-            }
-            
         }
+        else {
+            window.hideToastActivity()
+
+            let alert = UIAlertController(title: "Ошибка", message: "У вас нет доступа", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            alert.show()
+        }
+       
     }
     
     
@@ -260,10 +283,12 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         
         switch collectionView {
         case CarsCollection:
+            self.available = PriceCar[indexPath.row].available
             switch indexPath.row {
             case 2:
               PayCollection.removeFromSuperview()
               addfull()
+
             default:
                 if  fullview1.isDescendant(of: window) {
                     fullview1.removeFromSuperview()
@@ -310,7 +335,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
             else {
                 collectionView.reloadItems(at: [indexPath])
             }
-            payment_type = indexPath.row + 1
+            payment_type = paytype[indexPath.row].pay_type
         default:
             break
         }
@@ -327,12 +352,14 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         fullview1.addSubview(CarsCollection)
         fullview1.addSubview(button)
         button.initialize()
-        self.payment_type = 0
+        self.payment_type = "1"
         fullview1.setAnchor(top: nil, left: window.leftAnchor, bottom: window.bottomAnchor, right: window.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 400, height: 170)
         fullview.backgroundColor = UIColor.white
         CarsCollection.setAnchor(top: fullview1.topAnchor, left: fullview1.leftAnchor, bottom: nil, right: fullview1.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 400, height: 90)
         button.setAnchor(top: CarsCollection.bottomAnchor, left: fullview1.leftAnchor, bottom: nil, right: fullview1.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 50)
         button.layer.cornerRadius = 10
+        button.isEnabled = true
+       
         button.setTitle("Заказать", for: .normal)
         button.addTarget(self, action: #selector(makeorder), for: .touchUpInside)
         button.setTitleColor(UIColor.white, for: .normal)

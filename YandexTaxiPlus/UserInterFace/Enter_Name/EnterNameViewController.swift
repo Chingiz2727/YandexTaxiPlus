@@ -10,9 +10,10 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 import Toast_Swift
-class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDelegate {
+class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDelegate,CLLocationManagerDelegate {
     var updateView : EnterNameView!
-
+    var latitude : Double?
+    var longitude : Double?
     var id_city : String? = ""
     var region : String?
     var name : String?
@@ -21,6 +22,8 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
             updateView.City.setTitle(cname!, for: .normal)
         }
     }
+    var locationManager = CLLocationManager()
+
     func CityFromData(id: String, region_id: String, name: String, cname: String) {
         self.id_city = id
         self.region = region_id
@@ -35,9 +38,22 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         setupview()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         updateView.City.addTarget(self, action: #selector(gotoCity), for: .touchUpInside)
         updateView.loginAction = accessing
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.latitude = locValue.latitude
+        self.longitude = locValue.longitude
+        print(locValue)
+        manager.stopUpdatingLocation()
     }
     
     func setupview()
@@ -64,8 +80,10 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
         let url2 = baseurl + "/set-city/"
         let parametr = [
             "phone":phone!,
-            "name":name!
-        ]
+            "name":name!,
+            "latitude":latitude!,
+            "longitude":longitude!
+            ] as [String : Any]
         if id_city! == "" || name == "" {
             view.makeToast("Заполните все поля")
         }
@@ -78,21 +96,27 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
                         print(err)
                     case.success(let val):
                         var json = JSON(val)
-                        let token = json["token"].string
-                        let param2 = ["token":token!,
-                                      "city_id":self.id_city!]
-                        Alamofire.request(url2, method: .post, parameters: param2, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (cresp) in
-                            if cresp.data != nil {
-                                switch cresp.result {
-                                case.failure(let error):
-                                    print(error)
-                                case.success(let val2):
-                                    let js = JSON(val2)
-                                    APItoken.saveapitoken(token: token!)
-                                    self.goToMain()
+                        let state =  json["state"].stringValue
+                        print(json)
+                        if state == "success" {
+                            let token = json["token"].string
+                            let param2 = ["token":token!,
+                                          "city_id":self.id_city!]
+                            Alamofire.request(url2, method: .post, parameters: param2, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (cresp) in
+                                if cresp.data != nil {
+                                    switch cresp.result {
+                                    case.failure(let error):
+                                        print(error)
+                                    case.success(let val2):
+                                        let js = JSON(val2)
+                                        print(js)
+                                        APItoken.saveapitoken(token: token!)
+                                        self.goToMain()
+                                    }
                                 }
-                            }
-                        })
+                            })
+                        }
+                    
                         
                     }
                 }

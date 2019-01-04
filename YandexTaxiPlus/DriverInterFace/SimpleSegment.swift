@@ -14,12 +14,12 @@ protocol CustomSegmentedControlDelegate:class {
 class CustomSegmentedControl: UIView {
     private var buttonTitles:[String]!
     var buttons: [UIButton]!
-    var label : [UILabel]!
     private var selectorView: UIView!
-    
     var textColor:UIColor = .black
-    var selectorViewColor: UIColor =  UIColor.white
-    var selectorTextColor: UIColor = UIColor.white
+    var selectorViewColor: UIColor = .red
+    var selectorTextColor: UIColor = .white
+    let label1 = UILabel()
+    let label2 = UILabel()
     
     weak var delegate:CustomSegmentedControlDelegate?
     
@@ -32,7 +32,7 @@ class CustomSegmentedControl: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.white
         updateView()
     }
     
@@ -51,7 +51,28 @@ class CustomSegmentedControl: UIView {
             self.selectorView.frame.origin.x = selectorPosition
         }
     }
-    
+    func addlabel() {
+        addSubview(label1)
+        addSubview(label2)
+        label1.setAnchor(top: nil, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 25, height: 25)
+        label2.backgroundColor = UIColor.red
+        label1.backgroundColor = UIColor.red
+        label2.setAnchor(top: nil, left: nil, bottom: nil, right: self.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 10, width: 25, height: 25)
+        label1.layer.cornerRadius = label1.frame.width/2
+        label2.layer.cornerRadius = label2.frame.width/2
+        label2.textColor = UIColor.white
+        label2.textAlignment = .center
+        label1.font = UIFont.systemFont(ofSize: 10)
+        label2.font = UIFont.systemFont(ofSize: 10)
+        
+        label1.textAlignment = .center
+        label1.textColor = UIColor.white
+        label2.layer.masksToBounds = true
+        label1.layer.masksToBounds = true
+        let l1y = label1.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        let l2y = label2.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        NSLayoutConstraint.activate([l1y,l2y])
+    }
     @objc func buttonAction(sender:UIButton) {
         for (buttonIndex, btn) in buttons.enumerated() {
             btn.setTitleColor(textColor, for: .normal)
@@ -74,19 +95,21 @@ extension CustomSegmentedControl {
         createButton()
         configSelectorView()
         configStackView()
+        addlabel()
+
     }
     
     private func configStackView() {
         let stack = UIStackView(arrangedSubviews: buttons)
+     
+        
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
         addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stack.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stack.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        stack.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        
+        stack.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+       
     }
     
     private func configSelectorView() {
@@ -99,14 +122,21 @@ extension CustomSegmentedControl {
     private func createButton() {
         buttons = [UIButton]()
         buttons.removeAll()
+    
+        
         subviews.forEach({$0.removeFromSuperview()})
         for buttonTitle in buttonTitles {
             let button = UIButton(type: .system)
+            button.titleLabel?.font = UIFont(name: "Arial", size: 12)
             button.setTitle(buttonTitle, for: .normal)
             button.addTarget(self, action:#selector(CustomSegmentedControl.buttonAction(sender:)), for: .touchUpInside)
             button.setTitleColor(textColor, for: .normal)
+            button.backgroundColor = maincolor
+            
             buttons.append(button)
         }
+   
+        
         buttons[0].setTitleColor(selectorTextColor, for: .normal)
     }
     

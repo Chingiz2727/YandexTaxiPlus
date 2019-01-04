@@ -8,12 +8,16 @@
 
 import UIKit
 
-class FullChatsTableViewController: UITableViewController,UIGestureRecognizerDelegate,UISearchBarDelegate {
+class FullChatsTableViewController: UITableViewController,UIGestureRecognizerDelegate,UISearchBarDelegate,Payed {
+    func reloading() {
+        reload()
+    }
+    
     var cellid = "cellid"
     var type : Int?
     var nav_title: String! = ""
     let search = UISearchBar()
-
+    var pay : Payed?
     var chats : TableViewFullChatsModelType?
     var model = FullChatsViewModel()
     var searchrlist = FullChatsViewModel()
@@ -88,14 +92,12 @@ class FullChatsTableViewController: UITableViewController,UIGestureRecognizerDel
                     if let info = info {
                         alert.label.text = "Для публикации оплатите \(info.types[self.type!-1].hourPrice ?? 0) тг"
                         alert.show()
+                        alert.pay = self
                         self.model.chats = list
                         self.searchrlist.chats = list
                     }
                 })
 
-                if alert.isBeingDismissed {
-                    self.tableView.reloadData()
-                }
            
 
                 self.tableView.reloadData()

@@ -104,6 +104,10 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
     
     func Canceled() {
         mapview?.map.clear()
+        from_lat = 0
+        to_lat = 0
+        from_long = 0
+        to_long = 0
         first_name = "Откуда"
         second_name = "Куда"
         addview()

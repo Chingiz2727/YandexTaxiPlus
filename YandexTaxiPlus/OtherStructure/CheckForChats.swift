@@ -12,7 +12,7 @@ import SwiftyJSON
 
 
 class CheckForChats {
-    class func check(complition:@escaping(_ contain:Bool)->()) {
+    class func check(complition:@escaping(_ contain:MyChats?)->()) {
         let url = baseurl + "/how-many-chats/"
         let params = ["token":APItoken.getToken()!]
         
@@ -22,9 +22,17 @@ class CheckForChats {
                 case.failure(let error):
                     print(error)
                 case.success(let val):
-                    let json = JSON(val)
-                    let state = json["show_chat"].boolValue
-                    complition(state)
+                    guard let data = response.data else {return}
+                    do {
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .useDefaultKeys
+                        let root = try decoder.decode(MyChats.self, from: response.data!)
+                        complition(root)
+                    }
+                    catch {
+                        print("Bigerrorbek")
+                        print(error)
+                    }
                 }
             }
         }

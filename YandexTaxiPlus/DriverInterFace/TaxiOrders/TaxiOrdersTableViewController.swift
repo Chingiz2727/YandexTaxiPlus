@@ -9,15 +9,12 @@
 import UIKit
 import Presentr
 import Toast_Swift
-class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDelegate,CustomSegmentedControlDelegate {
+class TaxiOrdersTableViewController:UIViewController, UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,CustomSegmentedControlDelegate {
+    var codeSegmented : CustomSegmentedControl = CustomSegmentedControl()
     func changeToIndex(index: Int) {
-        print(index)
+        reload(index: index)
     }
-    
-    
-    
-    
-    
+    let tableview = UITableView()
     var cellid = "cellid"
     var ViewModel : TableViewTaxiOrdersModelType?
     var module = TaxiOrdersViewModel()
@@ -32,21 +29,15 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
         let customtype = PresentationType.custom(width: width, height: heigh, center: center)
         let customPresenter = Presentr(presentationType: customtype)
         customPresenter.backgroundOpacity  = 0.5
-        
         return customPresenter
     }()
 
-    var items : [String] = [] {
-        didSet {
-            segment = UISegmentedControl(items: items)
-        }
-    }
+    var items : [String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isTranslucent = false
-
         ViewModel = module
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
@@ -55,32 +46,19 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        addview()
+        navigationController?.navigationBar.isTranslucent = false
         UIColourScheme.instance.set(for:self)
-
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(TaxiOrdersTableViewCell.self, forCellReuseIdentifier: cellid)
+        tableview.dataSource = self
+        tableview.delegate = self
+        tableview.register(TaxiOrdersTableViewCell.self, forCellReuseIdentifier: cellid)
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "101"), object: nil)
-      
         NotificationCenter.default.addObserver(self, selector: #selector(sendcoor(notification:)), name: NSNotification.Name(rawValue: "1"), object: nil)
         navigationController?.navigationBar.isHidden = false
-        CheckForChats.check { (state) in
-            switch state {
-            case true:
-                self.items = ["Общий чат","Мой таксопарк"]
-            case false :
-                self.items = ["Общий чат"]
-            }
-            let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 50, width: self.view.frame.width, height: 50), buttonTitle: self.items)
-            codeSegmented.backgroundColor = .clear
-            codeSegmented.delegate = self
-            self.view.addSubview(codeSegmented)
-            self.navigationItem.titleView = codeSegmented
-
-            self.makeSegment()
-            self.reload()
-        }
         navigationController?.navigationBar.barTintColor = maincolor
+        
+        reload(index: 0)
+        tableview.bounces = false
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -96,30 +74,45 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
     }
    
     
-    func makeSegment() {
-        segment.tintColor = UIColor.white
-        segment.backgroundColor  = maincolor
+  
+    func addview() {
+//        self.view.addSubview(codeSegmented)
+        view.addSubview(codeSegmented)
+        view.addSubview(tableview)
+        tableview.setAnchor(top: codeSegmented.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 2, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        codeSegmented.setButtonTitles(buttonTitles: [""])
+        codeSegmented.setAnchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: self.view.frame.width, height: 50)
+        CheckForChats.check { (state) in
+            switch state!.showChat! {
+            case true:
+                self.items = ["Общий чат","Мой таксопарк"]
+                self.codeSegmented.label2.isHidden = false
+            case false :
+                self.items = ["Общий чат"]
+                self.codeSegmented.label2.isHidden = true
+            }
+            self.codeSegmented.label1.text = "\(state?.amountShared ?? 0)"
+            self.codeSegmented.label2.text = "\(state?.amountOwn ?? 0)"
+            self.codeSegmented.setButtonTitles(buttonTitles: self.items)
+            self.codeSegmented.backgroundColor = .clear
+            self.codeSegmented.delegate = self
+            
+        }
         
-//        navigationItem.titleView = segment
-        segment.addTarget(self, action: #selector(segment(seg:)), for: .valueChanged)
-        segment.selectedSegmentIndex = 0
     }
-    
-    @objc func segment(seg:UISegmentedControl) {
-        reload()
-    }
+   
     override func viewWillAppear(_ animated: Bool) {
-        tableView.estimatedRowHeight = 70
-        tableView.rowHeight = UITableView.automaticDimension
+        tableview.estimatedRowHeight = 70
+        tableview.rowHeight = UITableView.automaticDimension
     }
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
         
-  @objc func reload () {
+    @objc func reload (index:Int) {
     self.view.makeToastActivity(.center)
         var mainurl : String!
-        switch segment.selectedSegmentIndex {
+        switch index {
         case 0:
             mainurl = "/get-shared-orders/"
         case 1:
@@ -130,23 +123,23 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
         getcharorders.get(url: mainurl!) { (info) in
             if let info = info {
                 self.module.chats = info
-                self.tableView.reloadData()
+                self.tableview.reloadData()
                 self.view.hideToastActivity()
             }
           
         }
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ViewModel?.numofrows ?? 0
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as? TaxiOrdersTableViewCell
         guard let tableViewCell = cell, let viewModel = ViewModel else {
             return UITableViewCell()
@@ -159,7 +152,7 @@ class TaxiOrdersTableViewController: UITableViewController,CLLocationManagerDele
     
     
     
-  override  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let table = InfoTableViewController()
     guard let viewModel = ViewModel else {
         return

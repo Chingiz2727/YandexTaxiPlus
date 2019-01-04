@@ -36,8 +36,9 @@ class ButtonView: UIView {
         FromButton.initialize()
         toButton.initialize()
         Send.initialize()
-        FromButton.setTitle("Куда?", for: .normal)
+        FromButton.setTitle("Откуда?", for: .normal)
         FromButton.backgroundColor = UIColor.white
+        toButton.setTitle("Куда?", for: .normal)
         toButton.backgroundColor = UIColor.white
         toButton.setTitleColor(maincolor, for: .normal)
         FromButton.setTitleColor(maincolor, for: .normal)

@@ -172,7 +172,6 @@ class GetUser:UINavigationController
                         self.fullview.removeFromSuperview()
                         self.label.removeFromSuperview()
                         self.isNavigationBarHidden = false
-
                         (self.window!.rootViewController as? UINavigationController)?.pushViewController(SessionOpenViewController(), animated: true)
                         let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: DriverMenuTableViewController())
                         SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController

@@ -18,6 +18,9 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
     var titlemenu = [MenuModule(menu: "", img: "", id: "", contains: false)]
     let window = UIApplication.shared.keyWindow
     var sidemenu = SideMenuManager()
+    fileprivate var image : UIImage?
+    fileprivate var name : String?
+    fileprivate var phone : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -28,7 +31,7 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
         navigationController?.isNavigationBarHidden = true
         UIColourScheme.instance.set(for:self)
         tableView.register(MainPageMenuCell.self, forCellReuseIdentifier: cellid)
-        
+        fetchdata()
         var ColorMenu = ""
         if APItoken.getColorType() == 0 {
             ColorMenu = "Ночной режим"
@@ -53,7 +56,6 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
         ]
         self.titlemenu = menu
         self.tableView.reloadData()
-      
     }
   
     override func viewWillAppear(_ animated: Bool) {
@@ -73,25 +75,10 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
         head.avatarImageView.isUserInteractionEnabled = true
         let gest = UITapGestureRecognizer.init(target: self, action: #selector(sec))
         head.avatarImageView.addGestureRecognizer(gest)
-        UserInformation.shared.getinfo { (info) in
-            if let name = info.user?.name {
-                head.nameLabel.text = name
-            }
-            else {
-                head.nameLabel.text = ""
-            }
-            if let phone = info.user?.phone {
-                head.phone.text = phone
-            }
-            else {
-                head.phone.text = ""
-                
-            }
+         head.nameLabel.text = name
+            head.phone.text = phone
+        head.avatarImageView.image = image
             sendPushId.send(completion: { (info, type) in
-                let url = "http://185.236.130.126/profile/uploads/avatars/\(info.avatar ?? "")"
-                Alamofire.request(url).responseJSON(completionHandler: { (response) in
-                    head.avatarImageView.image = UIImage(data: response.data!)
-                })
                 if let rating = info.rating {
                     GetDriverAvatar.get(rating: rating, star: info.stars!, completion: { (avatars) in
                         head.starsAvatar.image = UIImage.init(named: avatars)
@@ -101,7 +88,7 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
               
                 
             })
-        }
+        
         if section == 1 {
             view.addSubview(outview)
             outview.addSubview(outbutton)
@@ -113,6 +100,35 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
             return outview
         }
         return head
+    }
+    fileprivate func fetchdata() {
+        let queue = DispatchQueue.global(qos: .utility)
+        queue.async {
+            sendPushId.send(completion: { (info, type) in
+                let url = "http://185.236.130.126/profile/uploads/avatars/\(info.avatar ?? "")"
+                Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                    DispatchQueue.main.async {
+                        if let data = response.data {
+                            self.image = UIImage(data: data)
+                        }
+                    }
+                })
+            })
+        }
+        queue.async {
+            UserInformation.shared.getinfo(completion: { (info) in
+                if let name = info.user?.name {
+                    DispatchQueue.main.async {
+                        self.name = name
+                    }
+                }
+                if let phone = info.user?.phone {
+                    DispatchQueue.main.async {
+                        self.phone = phone
+                    }
+                }
+            })
+        }
     }
     
     @objc func sec() {
@@ -310,7 +326,7 @@ class PushDriver : UISideMenuNavigationController {
                 }
             }
         case 11:
-            (window.rootViewController as? UINavigationController)?.pushViewController(DriverSettingTableViewController(), animated: true)
+            (window.rootViewController as? UINavigationController)?.pushViewController(UserSettingsTableViewController(), animated: true)
         case 12:
             if APItoken.getColorType() == 0 {
                 APItoken.savecolor(color: 1)

@@ -72,3 +72,7 @@ protocol GetDate {
     var date : Int? {get set}
     func reload()
 }
+
+protocol Payed {
+    func reloading()
+}

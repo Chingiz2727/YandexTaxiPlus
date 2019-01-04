@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class Register {
-    class func register(gender:Int,car_number:String,car_model:String,year_of_birth:Int,car_year:String,seats_num:String,fac:Array<Any>,type:String,completion:@escaping(_ car:Bool)->()){
+    class func register(gender:Int,car_number:String,car_model:String,year_of_birth:Int,car_year:String,seats_num:String,fac:Array<Any>,type:String,completion:@escaping(_ car:Bool)->())
+    {
         let url = baseurl + "/driver-sign-up/"
         let params = [
             "token":APItoken.getToken()!,
@@ -32,14 +33,11 @@ class Register {
                     completion(false)
                 case.success(let value):
                     let json = JSON(value)
-                    let state = json["state"].stringValue
-                    if state == "success" {
-                        completion(true)
+                    print(json)
+                    let state = json["car"].bool
+                    if let state = state {
+                        completion(state)
                     }
-                    else {
-                        completion(false)
-                    }
-                    print(json.object)
                 }
             }
         }

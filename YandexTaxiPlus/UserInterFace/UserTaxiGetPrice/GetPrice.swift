@@ -29,6 +29,7 @@ class getPrice {
                     print(error)
                 case.success(let value):
                     var json = JSON(value)
+                    print(json)
                     var price = [carPrice]()
                     guard let dataarr = json["price_list"].array else {
                         return
@@ -42,6 +43,7 @@ class getPrice {
                         pricing.price = add["price"]?.int ?? 0
                         pricing.type = add["service_name"]?.string ?? ""
                         pricing.service_id = add["service_id"]?.int ?? 0
+                        pricing.available = add["available"]?.bool
                         price.append(pricing)
                     }
                     completion(price)

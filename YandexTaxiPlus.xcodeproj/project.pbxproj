@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A33AF3410FD43FD7658D457 /* Pods_YandexTaxiPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F1B9A33DBF4E4B32ED2B9C /* Pods_YandexTaxiPlus.framework */; };
 		7206EEEB21BA7CAD00F29A08 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206EEEA21BA7CAD00F29A08 /* NewsTableViewCell.swift */; };
 		7206EEED21BA83AF00F29A08 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7206EEEC21BA83AF00F29A08 /* NewsDetailViewController.swift */; };
 		720D450621B141A1005BF98E /* PayByCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D450521B141A1005BF98E /* PayByCardViewController.swift */; };
@@ -114,6 +115,7 @@
 		728B641021833BDF00B3CF7E /* SessionFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728B640F21833BDF00B3CF7E /* SessionFunc.swift */; };
 		728B641221833C3800B3CF7E /* SessionStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728B641121833C3800B3CF7E /* SessionStruct.swift */; };
 		728B641421833DDD00B3CF7E /* SessionOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728B641321833DDD00B3CF7E /* SessionOpenView.swift */; };
+		7291383B21DF215E00351011 /* ChangeCityAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7291383A21DF215E00351011 /* ChangeCityAlert.swift */; };
 		7295475321CB65EF00B66CB5 /* HeaderOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7295475221CB65EF00B66CB5 /* HeaderOrderTableViewCell.swift */; };
 		7296A946219ABEC6003B9A64 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296A945219ABEC6003B9A64 /* MainButton.swift */; };
 		7296A948219ACB8F003B9A64 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7296A947219ACB8F003B9A64 /* TestViewController.swift */; };
@@ -170,6 +172,7 @@
 		72DAF30C21746E5100603559 /* MapStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAF30B21746E5100603559 /* MapStyle.swift */; };
 		72DAF3452174949900603559 /* ChoosePlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAF3442174949900603559 /* ChoosePlaceTableViewController.swift */; };
 		72DAF3472174A48600603559 /* ExtenSionAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DAF3462174A48600603559 /* ExtenSionAutoComplete.swift */; };
+		72DCB04521D6226B0028B641 /* MyChats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DCB04421D6226B0028B641 /* MyChats.swift */; };
 		72E72FC621CE8A8F00B9B25C /* GetDriverAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E72FC521CE8A8F00B9B25C /* GetDriverAvatar.swift */; };
 		72EC886321AE607E00C25095 /* SavePlacePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC885C21AE607E00C25095 /* SavePlacePost.swift */; };
 		72EC886421AE607E00C25095 /* GetMyPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC885D21AE607E00C25095 /* GetMyPlace.swift */; };
@@ -187,12 +190,9 @@
 		72F80DB221C97D91003A57E9 /* AddComent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F80DB121C97D91003A57E9 /* AddComent.swift */; };
 		72F80DB421C97DF4003A57E9 /* AddFAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F80DB321C97DF3003A57E9 /* AddFAQTableViewController.swift */; };
 		72F80DB821C97E4B003A57E9 /* MakeFAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F80DB721C97E4B003A57E9 /* MakeFAQViewController.swift */; };
-		DA836F9F392224CD318B0403 /* Pods_YandexTaxiPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4BE7FF6728D754FBB69517 /* Pods_YandexTaxiPlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F4BE7FF6728D754FBB69517 /* Pods_YandexTaxiPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexTaxiPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36978A6D91CDD54B9B87635B /* Pods-YandexTaxiPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTaxiPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus.release.xcconfig"; sourceTree = "<group>"; };
 		7206EEEA21BA7CAD00F29A08 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		7206EEEC21BA83AF00F29A08 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		720D450521B141A1005BF98E /* PayByCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayByCardViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +302,7 @@
 		728B640F21833BDF00B3CF7E /* SessionFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFunc.swift; sourceTree = "<group>"; };
 		728B641121833C3800B3CF7E /* SessionStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStruct.swift; sourceTree = "<group>"; };
 		728B641321833DDD00B3CF7E /* SessionOpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOpenView.swift; sourceTree = "<group>"; };
+		7291383A21DF215E00351011 /* ChangeCityAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityAlert.swift; sourceTree = "<group>"; };
 		7295475221CB65EF00B66CB5 /* HeaderOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOrderTableViewCell.swift; sourceTree = "<group>"; };
 		7296A945219ABEC6003B9A64 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		7296A947219ACB8F003B9A64 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +361,7 @@
 		72DAF30B21746E5100603559 /* MapStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyle.swift; sourceTree = "<group>"; };
 		72DAF3442174949900603559 /* ChoosePlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceTableViewController.swift; sourceTree = "<group>"; };
 		72DAF3462174A48600603559 /* ExtenSionAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtenSionAutoComplete.swift; sourceTree = "<group>"; };
+		72DCB04421D6226B0028B641 /* MyChats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChats.swift; sourceTree = "<group>"; };
 		72E72FC521CE8A8F00B9B25C /* GetDriverAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDriverAvatar.swift; sourceTree = "<group>"; };
 		72EC885C21AE607E00C25095 /* SavePlacePost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavePlacePost.swift; sourceTree = "<group>"; };
 		72EC885D21AE607E00C25095 /* GetMyPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMyPlace.swift; sourceTree = "<group>"; };
@@ -377,7 +379,9 @@
 		72F80DB121C97D91003A57E9 /* AddComent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComent.swift; sourceTree = "<group>"; };
 		72F80DB321C97DF3003A57E9 /* AddFAQTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFAQTableViewController.swift; sourceTree = "<group>"; };
 		72F80DB721C97E4B003A57E9 /* MakeFAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeFAQViewController.swift; sourceTree = "<group>"; };
-		9C24D717C82F68D196773341 /* Pods-YandexTaxiPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTaxiPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		765141DD17DBB81E8862E7E5 /* Pods-YandexTaxiPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTaxiPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		B0F1B9A33DBF4E4B32ED2B9C /* Pods_YandexTaxiPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexTaxiPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D11304107FA039F0F196C4E6 /* Pods-YandexTaxiPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTaxiPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,26 +389,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA836F9F392224CD318B0403 /* Pods_YandexTaxiPlus.framework in Frameworks */,
+				2A33AF3410FD43FD7658D457 /* Pods_YandexTaxiPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A940E6C874B9721ABCF3EA9 /* Frameworks */ = {
+		2A84C52A1A179EE68FE45951 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2F4BE7FF6728D754FBB69517 /* Pods_YandexTaxiPlus.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6D5CD82C352E3A23EED69311 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9C24D717C82F68D196773341 /* Pods-YandexTaxiPlus.debug.xcconfig */,
-				36978A6D91CDD54B9B87635B /* Pods-YandexTaxiPlus.release.xcconfig */,
+				765141DD17DBB81E8862E7E5 /* Pods-YandexTaxiPlus.debug.xcconfig */,
+				D11304107FA039F0F196C4E6 /* Pods-YandexTaxiPlus.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -414,8 +410,8 @@
 			children = (
 				722F6E1E2170927200FB11E4 /* YandexTaxiPlus */,
 				722F6E1D2170927200FB11E4 /* Products */,
-				6D5CD82C352E3A23EED69311 /* Pods */,
-				2A940E6C874B9721ABCF3EA9 /* Frameworks */,
+				2A84C52A1A179EE68FE45951 /* Pods */,
+				EEFD6E9769524FCCDDAAE211 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -769,6 +765,7 @@
 			isa = PBXGroup;
 			children = (
 				72B2B19E21B40BFF00406DAD /* FullGeoCode.swift */,
+				7291383A21DF215E00351011 /* ChangeCityAlert.swift */,
 				7286E52821C0F4E4000F92A4 /* GetReferal.swift */,
 				723F902021BE7F9B00CA95B1 /* UploadPhoto.swift */,
 				72886E1321B53AD200B1135E /* DayMode.swift */,
@@ -808,6 +805,7 @@
 			isa = PBXGroup;
 			children = (
 				72A6F733218475F90037AA13 /* TaxiOrdersTableViewController.swift */,
+				72DCB04421D6226B0028B641 /* MyChats.swift */,
 				721D962C219040110030EB13 /* ChatOrderStructure.swift */,
 				72130A90218C28D600309FDD /* TaxiOrdersTableViewCell.swift */,
 				721D962A21903EFB0030EB13 /* GetChatOrders.swift */,
@@ -905,6 +903,14 @@
 			path = DriverCoins;
 			sourceTree = "<group>";
 		};
+		EEFD6E9769524FCCDDAAE211 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0F1B9A33DBF4E4B32ED2B9C /* Pods_YandexTaxiPlus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -912,12 +918,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 722F6E2E2170927500FB11E4 /* Build configuration list for PBXNativeTarget "YandexTaxiPlus" */;
 			buildPhases = (
-				881DFCD32F39F69CDAEC80E2 /* [CP] Check Pods Manifest.lock */,
+				AE43B17E65526A0297DBCED5 /* [CP] Check Pods Manifest.lock */,
 				722F6E182170927200FB11E4 /* Sources */,
 				722F6E192170927200FB11E4 /* Frameworks */,
 				722F6E1A2170927200FB11E4 /* Resources */,
-				E1C0954D106FD4465F4463F5 /* [CP] Embed Pods Frameworks */,
-				733E97483ACAA3A3200711B9 /* [CP] Copy Pods Resources */,
+				05746D92AFF84E184C1855EE /* [CP] Embed Pods Frameworks */,
+				14DF7BDDDF77DE0CC1F6C5F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -980,47 +986,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		733E97483ACAA3A3200711B9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		881DFCD32F39F69CDAEC80E2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YandexTaxiPlus-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E1C0954D106FD4465F4463F5 /* [CP] Embed Pods Frameworks */ = {
+		05746D92AFF84E184C1855EE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1070,6 +1036,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14DF7BDDDF77DE0CC1F6C5F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YandexTaxiPlus/Pods-YandexTaxiPlus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE43B17E65526A0297DBCED5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YandexTaxiPlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1184,6 +1190,7 @@
 				7218288321C3BD120090ECF4 /* DriverProtocol.swift in Sources */,
 				72A6F734218475F90037AA13 /* TaxiOrdersTableViewController.swift in Sources */,
 				72D4A71521AFB0F600923BC5 /* CheckForChats.swift in Sources */,
+				72DCB04521D6226B0028B641 /* MyChats.swift in Sources */,
 				72EC886421AE607E00C25095 /* GetMyPlace.swift in Sources */,
 				7231EC6521A55E810000295A /* Image color.swift in Sources */,
 				7234764D21D4BB0700E9A001 /* SimpleSegment.swift in Sources */,
@@ -1233,6 +1240,7 @@
 				72DAF30C21746E5100603559 /* MapStyle.swift in Sources */,
 				72880975217F1DAF00FD073C /* CitiesList.swift in Sources */,
 				724DEFB22194180B00BF47B7 /* CommendAndDate.swift in Sources */,
+				7291383B21DF215E00351011 /* ChangeCityAlert.swift in Sources */,
 				729927D52186D3120039C2EC /* GetOrderInfo.swift in Sources */,
 				7218287B21C3B42B0090ECF4 /* ListOfOrdersTableViewCell.swift in Sources */,
 				722F6E38217097F200FB11E4 /* GlobalVars.swift in Sources */,
@@ -1400,7 +1408,7 @@
 		};
 		722F6E2F2170927500FB11E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C24D717C82F68D196773341 /* Pods-YandexTaxiPlus.debug.xcconfig */;
+			baseConfigurationReference = 765141DD17DBB81E8862E7E5 /* Pods-YandexTaxiPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = YandexTaxiPlus/YandexTaxiPlus.entitlements;
@@ -1423,7 +1431,7 @@
 		};
 		722F6E302170927500FB11E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36978A6D91CDD54B9B87635B /* Pods-YandexTaxiPlus.release.xcconfig */;
+			baseConfigurationReference = D11304107FA039F0F196C4E6 /* Pods-YandexTaxiPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = YandexTaxiPlus/YandexTaxiPlus.entitlements;

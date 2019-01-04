@@ -8,7 +8,11 @@
 
 import UIKit
 
-class RoadedCityTableViewController: UITableViewController {
+class RoadedCityTableViewController: UITableViewController,Payed {
+    func reloading() {
+        reload()
+    }
+    
 var cellid = "cellid"
     var startid: String? = ""
     var endid :String? = ""
@@ -46,9 +50,11 @@ var cellid = "cellid"
                 alert.publish = "0"
                 alert.type = "1"
                 alert.title = ""
+                alert.pay = self
                 AccessShowFunc.Show(completion: { (info) in
                     if let info = info {
                         print(info)
+                        
                         alert.label.text = "Для публикации оплатите \(info.types[0].hourPrice ?? 0) тг"
                         self.road = list
                     }

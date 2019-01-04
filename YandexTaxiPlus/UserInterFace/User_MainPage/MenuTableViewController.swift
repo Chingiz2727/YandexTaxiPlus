@@ -84,14 +84,20 @@ class MenuTableViewController: UITableViewController,UIImagePickerControllerDele
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             sendPushId.send(completion: { (info, type) in
-                let url = "http://185.236.130.126/profile/uploads/avatars/\(info.avatar ?? "")"
-                Alamofire.request(url).responseJSON(completionHandler: { (response) in
-                    DispatchQueue.main.async {
-                        if let data = response.data {
-                            self.image = UIImage(data: data)
+                if let avatar = info.avatar {
+                    let url = "http://185.236.130.126/profile/uploads/avatars/\(avatar)"
+                    Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                        DispatchQueue.main.async {
+                            if let data = response.data {
+                                self.image = UIImage(data: data)
+                            }
                         }
-                    }
-                })
+                    })
+                }
+                else {
+                    self.image = #imageLiteral(resourceName: "userjpg")
+                }
+            
             })
         }
         queue.async {
@@ -253,7 +259,7 @@ class PushFromMain : UINavigationController {
         case 7:
             (window.rootViewController as? UINavigationController)?.pushViewController(HistoryTableViewController(), animated: true)
         case 8:
-              (window.rootViewController as? UINavigationController)?.pushViewController(DriverSettingTableViewController(), animated: true)
+              (window.rootViewController as? UINavigationController)?.pushViewController(UserSettingsTableViewController(), animated: true)
         case 9:
               (window.rootViewController as? UINavigationController)?.pushViewController(UserCoinViewController(), animated: true)
         case 10:

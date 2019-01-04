@@ -21,6 +21,7 @@ class getcharorders {
                     print(error)
                 case.success(let val):
                     let json = JSON(val)
+                    print(json)
                     var price = [ChatOrders]()
                     guard let dataarr = json["orders"].array else {
                         return

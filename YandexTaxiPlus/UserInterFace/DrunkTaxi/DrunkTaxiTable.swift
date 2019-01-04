@@ -54,9 +54,12 @@ class DrunkTaxiTable: UITableViewController,UITextFieldDelegate,firstplacedelega
     var HeadView = UIView()
     
     func firstadded() {
+        
         if second_long != 0 {
+            print("adding")
             GetDrunkPrice.GetPrice(from_lat: first_lat, from_long: first_long, to_lat: second_lat, to_long: second_long, comment: comment) { (price) in
                 self.price = price
+                print(price)
                 self.tableView.reloadRows(at: [self.index], with: .none)
             }
 
@@ -87,7 +90,6 @@ class DrunkTaxiTable: UITableViewController,UITextFieldDelegate,firstplacedelega
         sendButton.setAnchor(top: nil, left: tableView.layoutMarginsGuide.leftAnchor, bottom: tableView.layoutMarginsGuide.bottomAnchor, right: tableView.layoutMarginsGuide.rightAnchor, paddingTop: 0, paddingLeft: 15, paddingBottom: 15, paddingRight: 15, width: 15, height: 60)
         sendButton.Title(title: "Заказать")
         navigationController?.navigationBar.isTranslucent = false
-
         sendButton.addTarget(self, action: #selector(makeOrder), for: .touchUpInside)
     }
     
@@ -132,6 +134,11 @@ class DrunkTaxiTable: UITableViewController,UITextFieldDelegate,firstplacedelega
     tobutton.tag = 1
     tobutton.setTitle("Куда", for: .normal)
     return HeadView
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        firstadded()
+
     }
    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

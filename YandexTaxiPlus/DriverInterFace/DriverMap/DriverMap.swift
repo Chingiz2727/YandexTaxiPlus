@@ -16,6 +16,7 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
     var from_long: String?
     var to_long: String?
     var manager = CLLocationManager()
+    var list : DriverProtocol?
 
     var from_lat: String?
     var to_lat: String?
@@ -221,11 +222,26 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
         setup()
         let Tables = ListOfOrdersTable()
         Tables.list = self
+        list = self
+
         sendPushId.send { (info, type) in
-            if (info.activeOrders?.count)! > 0 {
+            if (info.activeOrders?.count)! > 1 {
                 self.customPresentViewController(self.presenter, viewController: Tables, animated: true)
             }
+            if (info.activeOrders?.count)! == 1 {
+                print("too")
+                let orders = info.activeOrders![0]
+                self.list?.from_lat = orders.fromLatitude!
+                self.list?.from_long = (orders.fromLongitude!)
+                self.list?.to_lat = (orders.toLatitude!)
+                self.list?.to_long = (orders.toLongitude!)
+                self.list?.order_id = orders.id
+                self.list?.status = orders.status
+                self.list?.showButton()
+                self.list?.DrawMap()
+            }
         }
+        
         MainMapView.mapview.delegate = self
         manager.delegate = self
         manager.requestWhenInUseAuthorization()

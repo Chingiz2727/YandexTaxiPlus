@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class CitiesTableViewController: UITableViewController {
     var cellid = "cellid"
     var citie = [CitiesList]()
@@ -22,7 +23,14 @@ class CitiesTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
         UIColourScheme.instance.set(for:self)
-
+        navigationController?.navigationBar.topItem?.title = "Выберите город"
+        if tag == 5 {
+            let alert = UIAlertController(title: "Кажется вы поменяли город", message: "Выберите город где вы находитесь", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            alert.show()
+        }
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.tintColor = UIColor.white
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -61,10 +69,10 @@ class CitiesTableViewController: UITableViewController {
     if tag! == 0 {
         delegateFrom?.CityFromData(id: citie[indexPath.row].id!, region_id: citie[indexPath.row].regionId!, name: citie[indexPath.row].Region!, cname: citie[indexPath.row].Name!)
     }
+
     else {
         delegateto?.CityToData(id: citie[indexPath.row].id!, region_id: citie[indexPath.row].regionId!, name: citie[indexPath.row].Region!, cname: citie[indexPath.row].Name!)
     }
-
     self.dismiss(animated: true, completion: nil)
     }
     /*
@@ -112,4 +120,27 @@ class CitiesTableViewController: UITableViewController {
     }
     */
 
+}
+
+
+
+class  ChangeCity {
+    class func ChangeCity(city_id:String,latitude:Double,longitude:Double,completion:@escaping(_ success:String)->())
+    {
+        let url = baseurl + "/change-city/"
+        let params = ["token":APItoken.getToken()!,"city_id":city_id,"latitude":latitude,"longitude":longitude] as [String : Any]
+        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            if response.data != nil {
+                switch response.result {
+                case.failure(let error):
+                    print(error)
+                case.success(let val):
+                    let json = JSON(val)
+                    let succes = json["state"].stringValue
+                    completion(succes)
+                    print(json)
+                }
+            }
+        }
+    }
 }
