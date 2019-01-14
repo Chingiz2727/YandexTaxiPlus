@@ -9,6 +9,7 @@
 import UIKit
 
 class ChangeCityAlert: UIAlertController,JKDropDownDelegate,CLLocationManagerDelegate {
+    let window = UIApplication.shared.keyWindow!
     var latitude : Double?
     var longitude : Double?
     var citie = [CitiesList]()
@@ -16,8 +17,8 @@ class ChangeCityAlert: UIAlertController,JKDropDownDelegate,CLLocationManagerDel
     var ids = [String]()
     var id : String?
     var buttonFrame : CGRect?
-    let window = UIApplication.shared.keyWindow!
     var dropDownObject:JKDropDown!
+    var mainview : UIView = UIView()
     var locationManager = CLLocationManager()
     var button : UIButton = UIButton()
     var sendbutton : UIButton = UIButton()
@@ -45,16 +46,16 @@ class ChangeCityAlert: UIAlertController,JKDropDownDelegate,CLLocationManagerDel
             self.citie = list
             print(self.citie)
             for i in list {
-                self.items.append(i.Region!)
-                self.ids.append(i.regionId!)
-                print(i.regionId!)
-                print(i.Region!)
+                self.items.append(i.Name!)
+                self.ids.append(i.id!)
+                print(i.id!)
+                print(i.Name!)
             }
             self.addview()
         }
     }
     func addview () {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.clear
         button.setTitle("Выберите город", for: .normal)
         sendbutton.setTitle("Выбрать", for: .normal)
         view.addSubview(label)
@@ -78,7 +79,7 @@ class ChangeCityAlert: UIAlertController,JKDropDownDelegate,CLLocationManagerDel
         sendbutton.backgroundColor = maincolor
         button.addTarget(self, action: #selector(tapsOnButton), for: .touchUpInside)
         sendbutton.addTarget(self, action: #selector(sendcity), for: .touchUpInside)
-        sendbutton.setAnchor(top: button.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 20, paddingLeft: 5, paddingBottom: 10, paddingRight: 5, width: 0, height: 40)
+        sendbutton.setAnchor(top: button.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 5, paddingBottom: 20, paddingRight: 5, width: 0, height: 40)
         img.image = #imageLiteral(resourceName: "icon_city")
         
     }
@@ -91,7 +92,7 @@ class ChangeCityAlert: UIAlertController,JKDropDownDelegate,CLLocationManagerDel
             dropDownObject.dropDelegate = self
             let frame = view.convert(button.frame, to: view)
             self.buttonFrame = frame
-           dropDownObject.showJKDropDown(senderObject: button, height: CGFloat(citie.count*10), arrayList: items , arrayImages: [""],buttonFrame:frame,direction : "down")
+           dropDownObject.showJKDropDown(senderObject: button, height: CGFloat(citie.count*20), arrayList: items , arrayImages: [""],buttonFrame:frame,direction : "down")
             view.addSubview(dropDownObject)
         }
             

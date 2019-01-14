@@ -61,7 +61,7 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
- 
+        fetchdata()
     }
  
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -105,15 +105,24 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
             sendPushId.send(completion: { (info, type) in
-                let url = "http://185.236.130.126/profile/uploads/avatars/\(info.avatar ?? "")"
-                Alamofire.request(url).responseJSON(completionHandler: { (response) in
-                    DispatchQueue.main.async {
-                        if let data = response.data {
-                            self.image = UIImage(data: data)
+                if let avatar = info.avatar {
+                    let url = "http://185.236.130.126/profile/uploads/\(avatar)"
+                    print(url)
+                    Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                        DispatchQueue.main.async {
+                                if let data = response.data {
+                                self.image = UIImage(data: data)
+                                self.tableView.reloadData()
+                            }
                         }
-                    }
-                })
+                    })
+                }
+                else {
+                    self.image = #imageLiteral(resourceName: "userjpg")
+                }
+                
             })
+            
         }
         queue.async {
             UserInformation.shared.getinfo(completion: { (info) in
@@ -128,7 +137,9 @@ class DriverMenuTableViewController: UITableViewController,UIImagePickerControll
                     }
                 }
             })
+            
         }
+        self.tableView.reloadData()
     }
     
     @objc func sec() {

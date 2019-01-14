@@ -17,7 +17,8 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
     var to_long: String?
     var manager = CLLocationManager()
     var list : DriverProtocol?
-
+    var lat : Double!
+    var long : Double!
     var from_lat: String?
     var to_lat: String?
     var status: Int?
@@ -223,7 +224,8 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
         let Tables = ListOfOrdersTable()
         Tables.list = self
         list = self
-
+        NotificationCenter.default.addObserver(self, selector: #selector(sendcoor(notification:)), name: NSNotification.Name(rawValue: "1"), object: nil)
+        setupLocationManager()
         sendPushId.send { (info, type) in
             if (info.activeOrders?.count)! > 1 {
                 self.customPresentViewController(self.presenter, viewController: Tables, animated: true)
@@ -253,6 +255,11 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
         let camera = GMSCameraPosition.camera(withLatitude: (MainMapView.mapview.myLocation?.coordinate.latitude)!, longitude: (MainMapView.mapview.myLocation?.coordinate.longitude)!, zoom: 16.0)
         MainMapView.mapview.camera = camera
     }
+    @objc func sendcoor(notification:NSNotification) {
+        let ord_id = notification.userInfo![AnyHashable("order_id")] as? String
+        SendLocation.sendloc(longitude: String(self.long!), latitude: String(self.lat!), order_id: ord_id!)
+    }
+
     
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
@@ -276,12 +283,22 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
         self.MainMapView = mainView
         self.view.addSubview(mainView)
     }
+    func setupLocationManager(){
+        self.manager.requestAlwaysAuthorization()
+        manager = CLLocationManager()
+        manager.delegate = self
+        self.manager.requestAlwaysAuthorization()
+        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        manager.startUpdatingLocation()
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 13)
         self.MainMapView.mapview.animate(to: camera)
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.lat = locValue.latitude
+        self.long = locValue.longitude
         
-        self.manager.stopUpdatingLocation()
     }
     
 }

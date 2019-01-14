@@ -20,7 +20,7 @@ class AcceptFunc {
             switch response.result {
             case.failure(let error):
                 print(error)
-                completion(false,true)
+                completion(false,false)
 
             case.success(let value):
                 let json = JSON(value)
@@ -30,9 +30,10 @@ class AcceptFunc {
                     completion(true,false)
 
                 }
-                else {
-                    completion(false,false)
+                if json["state"].stringValue == "balance" {
+                    completion(false,true)
                 }
+              
                 
             }
         }

@@ -38,7 +38,7 @@
     
     @objc func go() {
             delegate?.getdata(coment: comment ?? "", data: String(datestring ?? 0))
-            
+        
             self.navigationController?.popViewController(animated: true)
     }
     

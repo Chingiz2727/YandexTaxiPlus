@@ -28,6 +28,7 @@ class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,
         tableView.register(ChoosePlaceTableViewCell.self, forCellReuseIdentifier: cellid)
         navigationController?.navigationBar.isTranslucent = true
         UIColourScheme.instance.set(for:self)
+        tableView.bounces = false
 
     }
     
@@ -71,12 +72,23 @@ class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
         searchController?.searchBar.sizeToFit()
-        navigationItem.titleView = searchController?.searchBar
+//        navigationItem.titleView = searchController?.searchBar
         searchController?.searchBar.barTintColor = maincolor
         definesPresentationContext = true
         searchController?.hidesNavigationBarDuringPresentation = false
     }
+  override  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    if searchController?.isEditing == true  {
+        return 0
+    }
     
+        return 40
+    }
+    
+   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    view.addSubview((searchController?.searchBar)!)
+        return searchController?.searchBar
+    }
   override  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if indexPath.row == 0 {
         switch tag! {
@@ -107,10 +119,7 @@ class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-    
+ 
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -120,12 +129,14 @@ class ChoosePlaceTableViewController: UITableViewController,UISearchBarDelegate,
         cell.selectionStyle = .none
         return cell
     }
+
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                            didAutocompleteWith place: GMSPlace) {
         searchController?.isActive = false
         resultsController.autocompleteFilter?.country = "KZ"
         // Do something with the selected place.
         searchController?.searchBar.text = place.name
+        
         self.tagItem(text: place.name, lang: place.coordinate.longitude, lat: place.coordinate.latitude)
         self.navigationController?.popViewController(animated: true)
 

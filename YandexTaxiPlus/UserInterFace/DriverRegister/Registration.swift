@@ -38,6 +38,9 @@ class Register {
                     if let state = state {
                         completion(state)
                     }
+                    else {
+                        completion(true)
+                    }
                 }
             }
         }

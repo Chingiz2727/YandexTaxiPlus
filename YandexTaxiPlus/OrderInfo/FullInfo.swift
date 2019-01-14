@@ -50,7 +50,7 @@ struct Clientd: Codable {
     let companyID: Int?
     let created: Int?
     let pushID, name: String?
-    let yearOfBirth: String?
+    let yearOfBirth: Int?
     let rating, cityID, id: Int?
     let token, phone: String?
     let parentID, platform: Int?

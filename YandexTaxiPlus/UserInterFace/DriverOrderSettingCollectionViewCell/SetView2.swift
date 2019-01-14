@@ -52,8 +52,22 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     var service_id : Int?
     var payment_type : String = "1"
     var first_lat : String?
-    let window : UIWindow = UIApplication.shared.keyWindow!
     
+    var window : UIView = UIView()
+    
+    
+    var first_name : String? {
+        didSet {
+            first_place.text = first_name ?? ""
+        }
+    }
+    var second_name : String? {
+        didSet {
+        second_place.text = second_name ?? ""
+        }
+    }
+    var first_place = UITextField()
+    var second_place = UITextField()
     var first_long : String?
     var second_lat:String?
     var second_long : String?
@@ -79,9 +93,21 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     func lets() {
         window.addSubview(blackview)
         window.addSubview(fullview)
+        window.addSubview(first_place)
+        window.addSubview(second_place)
+        first_place.setAnchor(top: window.topAnchor, left: window.leftAnchor, bottom: nil, right: window.rightAnchor, paddingTop: 15, paddingLeft: 10, paddingBottom: 0, paddingRight: 10,width: 0,height: 40)
+        second_place.setAnchor(top: first_place.bottomAnchor, left: window.leftAnchor, bottom: nil, right: window.rightAnchor, paddingTop: 5, paddingLeft: 10, paddingBottom: 0, paddingRight: 10,width: 0,height: 40)
+        second_place.textAlignment = .center
+        first_place.textAlignment = .center
+        first_place.backgroundColor = maincolor
+        first_place.textColor = UIColor.white
+        second_place.backgroundColor = UIColor.white
+        second_place.textColor = maincolor
+        second_place.isUserInteractionEnabled = false
+        first_place.isUserInteractionEnabled = false
         fullview.addSubview(CarsCollection)
         fullview.addSubview(PayCollection)
-        blackview.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        blackview.backgroundColor = UIColor(white: 0, alpha: 0.3)
         blackview.frame = window.frame
         blackview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
         fullview.setAnchor(top: nil, left: window.leftAnchor, bottom: window.bottomAnchor, right: window.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 400, height: 270)
@@ -103,6 +129,8 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         UIView.animate(withDuration: 0.1) {
             if let window = UIApplication.shared.keyWindow {
                 self.blackview.alpha = 0
+                self.first_place.removeFromSuperview()
+                self.second_place.removeFromSuperview()
                 self.fullview.removeFromSuperview()
                 self.fullview1.removeFromSuperview()
             }
@@ -127,8 +155,6 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     @objc func makeorder(){
         window.makeToastActivity(.center)
         button.isEnabled = false
-        guard let window = UIApplication.shared.keyWindow else {return}
-        window.makeKeyAndVisible()
         print("istepzhatyr")
         if available! == true {
             MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id!, comment: comment!, date: date!, payment_type: String(payment_type)) { (yes, no,url,id)  in
@@ -141,7 +167,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
                         self.Ordered?.OrderMaked()
                         
                     }
-                    window.hideToastActivity()
+                    self.window.hideToastActivity()
                     self.handleDismiss()
                     self.user?.order_id = id
                     self.Ordered?.OrderMaked()
@@ -151,6 +177,9 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
                 if yes == true && no == true {
                     let citylist = CitiesTableViewController()
                     let alert = ChangeCityAlert(title: "", message: "", preferredStyle: .alert)
+                    let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: self.window.frame.height * 0.5)
+                    
+                    alert.view.addConstraint(height);
                     alert.show()
                     citylist.tag = 5
                     //                (self.window.rootViewController as? UINavigationController)?.pushViewController(citylist, animated: true)
@@ -159,7 +188,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
                 
                 if no == true
                 {
-                    window.hideToastActivity()
+                    self.window.hideToastActivity()
                     self.handleDismiss()
                 }
                 

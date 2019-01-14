@@ -38,14 +38,22 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         setupview()
+      setupLocationManager()
+        updateView.City.addTarget(self, action: #selector(gotoCity), for: .touchUpInside)
+        updateView.loginAction = check
+        navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if CLLocationManager.locationServicesEnabled() {
+            print("enabled")
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-        updateView.City.addTarget(self, action: #selector(gotoCity), for: .touchUpInside)
-        updateView.loginAction = accessing
-        navigationController?.isNavigationBarHidden = true
+        else {
+            print("notenabled")
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -53,6 +61,7 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
         self.latitude = locValue.latitude
         self.longitude = locValue.longitude
         print(locValue)
+        print("selfplace")
         manager.stopUpdatingLocation()
     }
     
@@ -66,6 +75,27 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController.init(rootViewController: TestViewController())
+    }
+    
+    func check() {
+        if latitude != nil {
+            accessing()
+        }
+        else {
+            let alertController = UIAlertController(title: "Подключите передачу геоданных", message: "Для использования приложения нужно включить передачу геоданных", preferredStyle: UIAlertController.Style.alert)
+            
+            let okAction = UIAlertAction(title: "Настройки", style: .default, handler: {(cAlertAction) in
+                //Redirect to Settings app
+                UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Отменить", style: UIAlertAction.Style.cancel)
+            alertController.addAction(cancelAction)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     @objc func  gotoCity() {
@@ -124,5 +154,15 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
        
         }
     }
-
+    func setupLocationManager(){
+        self.locationManager.requestAlwaysAuthorization()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        self.locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }

@@ -38,8 +38,10 @@ class MenuTableViewController: UITableViewController,UIImagePickerControllerDele
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchdata()
+
         UIColourScheme.instance.set(for:self)
-        
+        self.tableView.reloadData()
         tableView.bounces = false
         tableView.separatorStyle = .none
         tableView.delegate = self
@@ -85,11 +87,15 @@ class MenuTableViewController: UITableViewController,UIImagePickerControllerDele
         queue.async {
             sendPushId.send(completion: { (info, type) in
                 if let avatar = info.avatar {
-                    let url = "http://185.236.130.126/profile/uploads/avatars/\(avatar)"
+                    let url = "http://185.236.130.126/profile/uploads/\(avatar)"
+                    print(url)
                     Alamofire.request(url).responseJSON(completionHandler: { (response) in
                         DispatchQueue.main.async {
+                            print(response.result)
+                            print(response.data)
                             if let data = response.data {
                                 self.image = UIImage(data: data)
+                                self.tableView.reloadData()
                             }
                         }
                     })
@@ -99,6 +105,7 @@ class MenuTableViewController: UITableViewController,UIImagePickerControllerDele
                 }
             
             })
+
         }
         queue.async {
             UserInformation.shared.getinfo(completion: { (info) in
@@ -114,6 +121,7 @@ class MenuTableViewController: UITableViewController,UIImagePickerControllerDele
                 }
             })
         }
+        self.tableView.reloadData()
     }
     
     @objc func remove() {

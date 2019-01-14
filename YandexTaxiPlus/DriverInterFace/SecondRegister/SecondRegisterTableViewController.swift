@@ -9,6 +9,9 @@
 import UIKit
 
 class SecondRegisterTableViewController: UITableViewController,UITextFieldDelegate,CarModelDelegate,CarMarkDelegate,JKDropDownDelegate {
+    var car_mark_id: Int?
+    
+    
     func remove() {
         car_mark_name = ""
     }
@@ -279,7 +282,7 @@ class SecondRegisterTableViewController: UITableViewController,UITextFieldDelega
         case false:
             UserInformation.shared.getinfo { (info) in
                 self.view.makeToastActivity(.center)
-                Register.register(gender: (info.user?.genderID!)!, car_number: self.number_car!, car_model: "\(car_model)", year_of_birth: 1900, car_year: self.create_year!, seats_num: self.sits!, fac: self.fac, type: self.typeID!, completion: { (success) in
+                Register.register(gender: (info.user?.genderID!)!, car_number: self.number_car!, car_model: "\(self.car_mark_id ?? self.car_model_id)", year_of_birth: 1900, car_year: self.create_year!, seats_num: self.sits!, fac: self.fac, type: self.typeID!, completion: { (success) in
                     if success == true {
                         self.view.hideToastActivity()
                         self.navigationController?.popViewController(animated: true)

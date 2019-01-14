@@ -67,6 +67,7 @@ class GetCarSettingsTableViewController: UITableViewController,UISearchBarDelega
         }
         if type! == 1 {
             carmark?.car_mark_name = searchmodel[indexPath.row].model
+            carmark?.car_mark_id = searchmodel[indexPath.row].id
         }
         self.navigationController?.popViewController(animated: true)
         

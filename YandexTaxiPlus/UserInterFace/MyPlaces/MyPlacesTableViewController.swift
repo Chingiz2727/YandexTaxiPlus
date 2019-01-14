@@ -16,7 +16,7 @@ class MyPlacesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(MyPlacesTableViewCell.self, forCellReuseIdentifier: cellid)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "check"), style: .plain, target: self, action: #selector(create))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_add"), style: .plain, target: self, action: #selector(create))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 class Taxi {
     var id : String?
     var name: String?
@@ -22,14 +24,18 @@ class Taxi {
 
 
 class DriverRegisterTableViewController: UITableViewController,UITextFieldDelegate,CarModelDelegate,CarMarkDelegate,JKDropDownDelegate {
+    var car_mark_id: Int?
+    
+    
     func remove() {
         car_mark_name = ""
     }
+    fileprivate var image : UIImage?
+
     
     var car_mark_name: String = "Марка Машины"
     
     var car_model_id: Int = 0
-    
     var car_model_name: String  = "Модель машины"
     var cellid = "cellid"
     var cellid5 = "cellid5"
@@ -97,6 +103,7 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         tableView.register(CarInfoCell.self, forCellReuseIdentifier: cellid5)
         tableView.separatorStyle = .none
         UIColourScheme.instance.set(for:self)
+        fetchdata()
 
     }
    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -119,6 +126,7 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         self.tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     func get() {
         DriverRegisterApi.getOption { (facilities:[Facilities]!) in
@@ -182,7 +190,9 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
             view.addSubview(avatar)
             avatar.setAnchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
             avatar.layer.cornerRadius = 50
-            avatar.image = UIImage(named: "zhan")
+            avatar.layer.borderColor = maincolor.cgColor
+            avatar.layer.borderWidth = 1
+            avatar.image = image
             avatar.clipsToBounds = true
             avatar.contentMode = .scaleAspectFill
             let centerXavatar = avatar.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -192,6 +202,33 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         break
         }
         return nil
+    }
+    fileprivate func fetchdata() {
+        let queue = DispatchQueue.global(qos: .utility)
+        queue.async {
+            sendPushId.send(completion: { (info, type) in
+                if let avatar = info.avatar {
+                    let url = "http://185.236.130.126/profile/uploads/\(avatar)"
+                    print(url)
+                    Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                        DispatchQueue.main.async {
+                            print(response.result.value)
+                            if let data = response.data {
+                                self.image = UIImage(data: data)
+                                self.tableView.reloadData()
+
+                            }
+                        }
+                    })
+                }
+                else {
+                    self.image = #imageLiteral(resourceName: "userjpg")
+                    self.tableView.reloadData()
+
+                }
+                
+            })
+        }
     }
     @objc func tapsOnButton() {
         if dropDownObject == nil {
@@ -320,7 +357,7 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         view.makeToast("Заполните все поля")
     case false:
       view.makeToastActivity(.center)
-        Register.register(gender: gender_id!, car_number: number_car!, car_model: "\(car_model)", year_of_birth: 1900, car_year: create_year!, seats_num: sits!, fac: fac, type: typeID!) { (success) in
+      Register.register(gender: gender_id!, car_number: number_car!, car_model: "\(car_mark_id ?? car_model_id)", year_of_birth: 1900, car_year: create_year!, seats_num: sits!, fac: fac, type: typeID!) { (success) in
             if success == true {
                 self.view.hideToastActivity()
                 guard let window = UIApplication.shared.keyWindow else {return}

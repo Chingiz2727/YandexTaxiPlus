@@ -52,6 +52,7 @@ protocol CarModelDelegate{
 }
 protocol CarMarkDelegate{
     var car_mark_name : String {get set}
+    var car_mark_id : Int? {get set}
 }
 
 protocol FromCitiesTableViewControllerDelegate {

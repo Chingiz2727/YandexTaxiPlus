@@ -28,7 +28,7 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
         marker2.map = mapview?.map
     }
     var orderbutton = UIButton()
-
+    
     var userprotocol : UserMainPageProtocol?
     var first_clicked: Bool? = false
     var second_clicked: Bool? = false
@@ -61,6 +61,14 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
             onOnder.order_id = order_id!
             
         }
+    }
+    @objc func updatemarker(notifacation:NSNotification) {
+        let lat = notifacation.userInfo![AnyHashable("latitude")] as? String
+        let long = notifacation.userInfo![AnyHashable("longitude")] as? String
+    
+        taximarker.icon = self.imageWithImage(image: UIImage(named: "icon_taxi")!, scaledToSize: CGSize(width: 30, height: 30))
+        taximarker.position = CLLocationCoordinate2D(latitude: Double(lat ?? "0")!, longitude: Double(long ?? "0")!)
+        taximarker.map = mapview?.map
     }
     
     func newOrders() {
@@ -129,6 +137,9 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
     var setting_view = SettingColectionView()
     
     func getdata(coment: String, data: String){
+        setting_view.first_name = self.first_name
+        setting_view.second_name = self.second_name
+        setting_view.window = self.view
         setting_view.datareload(first_long: String(from_long!), first_lat: String(from_lat!), second_lat: String(to_lat!), second_long: String(to_long!),comment: coment,date:data, type: type)
         setting_view.user = self
         setting_view.Ordered = self
@@ -138,6 +149,7 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
     var type : String = "1"
     var marker1 = GMSMarker()
     var marker2 = GMSMarker()
+    var taximarker = GMSMarker()
     var myloc_lat : Double?
     var myloc_long: Double?
     var second_name: String? = "Куда" {
@@ -213,6 +225,8 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
         NotificationCenter.default.addObserver(self, selector: #selector(drivercame(notification:)), name: NSNotification.Name(rawValue: "201"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatemarker(notifacation:)), name: NSNotification.Name(rawValue: "601"), object: nil)
+
         NotificationCenter.default.addObserver(self, selector: #selector(drivercame(notification:)), name: NSNotification.Name(rawValue: "401"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(drivercame(notification:)), name: NSNotification.Name(rawValue: "501"), object: nil)
     }
