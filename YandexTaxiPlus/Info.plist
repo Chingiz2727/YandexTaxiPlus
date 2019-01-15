@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>NSLocationUsageDescription</key>
+	<string>Приложение хочет получить доступ к вашим геоданным для дальнейшего использования</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en-US</string>
 	<key>CFBundleDisplayName</key>
@@ -25,11 +29,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We need to access your location</string>
+	<string>Приложение хочет получить доступ к вашим геоданным для корректного использования приложения</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need to access your location</string>
+	<string>Приложение хочет получить доступ к вашим геоданным для корректного использования приложения</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need to acces your location</string>
+	<string>Приложение хочет получить доступ к вашим геоданным для корректного использования приложения</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Приложение хочет получить доступ к вашим фотографиям</string>
 	<key>UIBackgroundModes</key>

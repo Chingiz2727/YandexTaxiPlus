@@ -284,10 +284,9 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
         self.view.addSubview(mainView)
     }
     func setupLocationManager(){
-        self.manager.requestAlwaysAuthorization()
+        self.manager.requestLocation()
         manager = CLLocationManager()
         manager.delegate = self
-        self.manager.requestAlwaysAuthorization()
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         manager.startUpdatingLocation()
     }
