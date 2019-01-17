@@ -221,7 +221,6 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
         SideMenuManager.default.menuPushStyle = .subMenu
         manager.delegate = self
         SideMenuManager.default.menuLeftNavigationController?.dismiss(animated: true, completion: nil)
-        manager.requestWhenInUseAuthorization()
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
         NotificationCenter.default.addObserver(self, selector: #selector(drivercame(notification:)), name: NSNotification.Name(rawValue: "201"), object: nil)

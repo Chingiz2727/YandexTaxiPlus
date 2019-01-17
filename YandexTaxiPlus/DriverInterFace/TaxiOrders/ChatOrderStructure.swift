@@ -21,7 +21,7 @@ class ChatOrders {
     var to_longitude : String?
     var from : String?
     var to : String?
-    
+    var order_type : String?
 }
 
 class TableViewCellViewModel:TableViewCellTaxiOrdersModelType {
@@ -39,6 +39,9 @@ class TableViewCellViewModel:TableViewCellTaxiOrdersModelType {
     
     var to_long: String? {
         return orders.to_longitude!
+    }
+    var order_type : String? {
+        return orders.order_type!
     }
     
     private var orders:ChatOrders

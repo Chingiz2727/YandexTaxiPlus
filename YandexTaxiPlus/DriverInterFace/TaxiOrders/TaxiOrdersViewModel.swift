@@ -50,5 +50,6 @@ protocol TableViewCellTaxiOrdersModelType: class {
     var to_long : String? {get}
     var from : String? {get}
     var to : String? {get}
+    var order_type : String? {get}
 }
 

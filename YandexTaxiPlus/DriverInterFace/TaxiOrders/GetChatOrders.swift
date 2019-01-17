@@ -39,6 +39,7 @@ class getcharorders {
                         pricing.price = add["price"]?.string ?? ""
                         pricing.to_latitude = add["to_latitude"]?.string ?? ""
                         pricing.to_longitude = add["to_longitude"]?.string ?? ""
+                        pricing.order_type = add["order_type"]?.string ?? ""
                         price.append(pricing)
                     }
                     completion(price)
