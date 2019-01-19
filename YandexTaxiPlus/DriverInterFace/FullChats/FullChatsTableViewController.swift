@@ -122,7 +122,7 @@ class FullChatsTableViewController: UITableViewController,UIGestureRecognizerDel
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as? CityTaxiTableViewCell
         
-        guard let tableViewCell = cell, let viewModel = chats else {
+        guard let tableViewCell = cell, let _ = chats else {
             return UITableViewCell()
         }
         let cellviewmodel = chats?.cellViewModile(forIndexPath: indexPath)

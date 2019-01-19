@@ -53,7 +53,7 @@ class SessionPrice {
                 case.failure(let err):
                     print(err)
                 case.success(let val):
-                    var json = JSON(val)
+                    _ = JSON(val)
                 }
             }
         }

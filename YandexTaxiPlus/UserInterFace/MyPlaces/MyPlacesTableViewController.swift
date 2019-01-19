@@ -64,7 +64,6 @@ class MyPlacesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! MyPlacesTableViewCell
         cell.place.text = myplace[indexPath.row].place
-        let item = myplace[indexPath.row]
                 cell.img.image = UIImage(named: "placeholder")
         return cell
     }

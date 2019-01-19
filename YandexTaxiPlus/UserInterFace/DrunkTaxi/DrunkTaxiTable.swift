@@ -211,8 +211,6 @@ class DrunkTaxiTable: UITableViewController,UITextFieldDelegate,firstplacedelega
             kpp = 0
         case true:
             kpp = 2
-        default:
-            break
         }
     }
     @objc func makeOrder() {

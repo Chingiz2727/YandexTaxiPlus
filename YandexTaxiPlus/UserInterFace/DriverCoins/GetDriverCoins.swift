@@ -24,7 +24,6 @@ class GetCoinsDriver {
             case.failure(let err):
                 print(err)
             case.success(let val):
-                let json = JSON(val)
                 guard let data = response.data else {return}
                 do {
                     let decoder = JSONDecoder()

@@ -92,7 +92,6 @@ class MenuTableViewController: UITableViewController,UIImagePickerControllerDele
                     Alamofire.request(url).responseJSON(completionHandler: { (response) in
                         DispatchQueue.main.async {
                             print(response.result)
-                            print(response.data)
                             if let data = response.data {
                                 self.image = UIImage(data: data)
                                 self.tableView.reloadData()
@@ -241,7 +240,7 @@ class PushFromMain : UINavigationController {
     class func push (index:IndexPath){
         guard let window = UIApplication.shared.keyWindow else {return}
         let fuull = FullChatsTableViewController()
-        var Mainpage = TestViewController()
+        let Mainpage = TestViewController()
         switch index.row {
         case 0:
             Mainpage.type = "1"

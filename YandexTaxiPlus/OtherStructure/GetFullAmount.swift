@@ -24,7 +24,7 @@ class GetAmount {
                 switch response.result {
                 case.failure(let error):
                     print(error)
-                case.success(let val):
+                case.success(let _):
                     guard let data = response.data else {return}
                     do {
                         let decoder = JSONDecoder()

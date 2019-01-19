@@ -69,11 +69,65 @@ class MapView : UIView {
         next.addTarget(self, action: #selector(Detection), for: .touchUpInside)
         return next
     }()
+    func check(complition:@escaping(_ success:Bool)->()) {
+      
+        // Here you can check whether you have allowed the permission or not.
+        if CLLocationManager.locationServicesEnabled()
+        {
+            switch(CLLocationManager.authorizationStatus())
+            {
+            case .authorizedAlways, .authorizedWhenInUse:
+                
+                print("Authorize.")
+                complition(true)
+                break
+                
+            case .notDetermined:
+                
+                print("Not determined.")
+                complition(false)
+                
+                break
+                
+            case .restricted:
+                
+                print("Restricted.")
+                complition(true)
+                
+                break
+                
+            case .denied:
+                
+                complition(false)
+            }
+        }
+        
+    }
     
+    func determine() {
+        let alertController = UIAlertController(title: "Подключите передачу геоданных", message: "Для использования приложения нужно включить передачу геоданных", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "Настройки", style: .default, handler: {(cAlertAction) in
+            //Redirect to Settings app
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        })
+        let cancelAction = UIAlertAction(title: "Отменить", style: UIAlertAction.Style.cancel)
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        alertController.show()
+//        self.present(alertController, animated: true, completion: nil)
+    }
     
     @objc func Detection() {
-        let camera = GMSCameraPosition.camera(withLatitude: (map.myLocation?.coordinate.latitude)!, longitude: (map.myLocation?.coordinate.longitude)!, zoom: 16.0)
-        map.camera = camera
+        check { (success) in
+            if success == true {
+                let camera = GMSCameraPosition.camera(withLatitude: (self.map.myLocation?.coordinate.latitude)!, longitude: (self.map.myLocation?.coordinate.longitude)!, zoom: 16.0)
+                self.map.camera = camera
+            }
+            else {
+                self.determine()
+            }
+        }
+       
     }
     public override init(frame: CGRect) {
         super.init(frame: frame)

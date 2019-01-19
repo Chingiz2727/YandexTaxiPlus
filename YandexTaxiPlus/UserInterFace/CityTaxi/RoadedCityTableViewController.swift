@@ -85,7 +85,7 @@ var cellid = "cellid"
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! CityTaxiTableViewCell
         let info = road[indexPath.row]
-        var timer = Double(info.date!)
+        let timer = Double(info.date!)
         let data = Date(timeIntervalSince1970: timer!)
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+06:00") //Set timezone that you want

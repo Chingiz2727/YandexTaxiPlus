@@ -77,7 +77,7 @@ class SettingColectionVierw : NSObject,UICollectionViewDelegate,UICollectionView
     
     @objc func handleDismiss() {
         UIView.animate(withDuration: 0.1) {
-            if let window = UIApplication.shared.keyWindow {
+            if UIApplication.shared.keyWindow != nil {
                 self.blackview.alpha = 0
                 self.collectionView.removeFromSuperview()
             }

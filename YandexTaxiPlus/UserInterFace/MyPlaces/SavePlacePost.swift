@@ -26,7 +26,7 @@ class SavePlace {
                 case.failure(let err):
                     print(err)
                 case.success(let val):
-                    let json = JSON(val)
+                    _ = JSON(val)
                 }
             }
         }

@@ -21,8 +21,8 @@ class CheckForChats {
                 switch response.result {
                 case.failure(let error):
                     print(error)
-                case.success(let val):
-                    guard let data = response.data else {return}
+                case.success(let _):
+                    guard response.data != nil else {return}
                     do {
                         let decoder = JSONDecoder()
                         decoder.keyDecodingStrategy = .useDefaultKeys

@@ -26,7 +26,7 @@ class getHistory {
                 var history = [History]()
                 for h in dataarr {
                     guard let istorya = h.dictionary else {return}
-                    var hist = History()
+                    let hist = History()
                     hist.from_lat = istorya["from_latitude"]?.stringValue
                     hist.to_lat = istorya["to_latitude"]?.stringValue
                     hist.from_long = istorya["from_longitude"]?.stringValue

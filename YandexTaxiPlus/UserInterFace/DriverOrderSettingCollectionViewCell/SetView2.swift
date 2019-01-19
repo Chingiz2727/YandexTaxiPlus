@@ -21,7 +21,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         cv.layer.masksToBounds = false
         return cv
     }()
-    var available : Bool?
+    var available : Bool = true
     var PayCollection : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero , collectionViewLayout: layout)
@@ -49,7 +49,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     var footerview = "foooter"
     var comment : String?
     var date : String?
-    var service_id : Int?
+    var service_id : Int = 1
     var payment_type : String = "1"
     var first_lat : String?
     
@@ -127,7 +127,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     
     @objc func handleDismiss() {
         UIView.animate(withDuration: 0.1) {
-            if let window = UIApplication.shared.keyWindow {
+            if UIApplication.shared.keyWindow != nil {
                 self.blackview.alpha = 0
                 self.first_place.removeFromSuperview()
                 self.second_place.removeFromSuperview()
@@ -156,8 +156,8 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         window.makeToastActivity(.center)
         button.isEnabled = false
         print("istepzhatyr")
-        if available! == true {
-            MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id!, comment: comment!, date: date!, payment_type: String(payment_type)) { (yes, no,url,id)  in
+        if available == true {
+            MakeOrder.OrderApi(second_long: self.second_long!, second_lat: self.second_lat!, first_long: self.first_long!, first_lat: self.first_lat!, service_id: service_id, comment: comment!, date: date!, payment_type: String(payment_type)) { (yes, no,url,id)  in
                 if yes == true && no == false {
                     if self.payment_type == "2" {
                         
@@ -172,6 +172,14 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
                     self.user?.order_id = id
                     self.Ordered?.OrderMaked()
                     
+                }
+                if yes == false && no == false {
+                    let alert = UIAlertController(title: "Ошибка", message: "Ваш пользователь заблокирован , пожалуйста обратитесь к администратору", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (alert) in
+                        self.window.hideToastActivity()
+                        self.handleDismiss()
+                    }))
+                    alert.show()
                 }
                 
                 if yes == true && no == true {
@@ -307,12 +315,9 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var prevselected:IndexPath!
         var prevselected1: IndexPath!
-        let height : CGFloat = 135
-        let y = window.frame.height - height
-        
         switch collectionView {
         case CarsCollection:
-            self.available = PriceCar[indexPath.row].available
+            self.available = PriceCar[indexPath.row].available!
             switch indexPath.row {
             case 2:
               PayCollection.removeFromSuperview()

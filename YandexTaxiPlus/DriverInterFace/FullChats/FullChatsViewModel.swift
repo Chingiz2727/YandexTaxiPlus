@@ -14,7 +14,7 @@ class FullChatsViewModel:TableViewFullChatsModelType {
     
     var chats = [FullChatList]()
     func cellViewModile(forIndexPath indexPath: IndexPath) -> TableViewCellFullChatsModelType? {
-        var chat = chats[indexPath.row]
+        let chat = chats[indexPath.row]
         return TableViewFullChatCellViewModel(orders: chat)
     }
     

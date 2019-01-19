@@ -62,7 +62,7 @@ class TaxiOrdersTableViewCell: UITableViewCell {
         price.textAlignment = .left
         price.textColor = maincolor
         DistanLabel.textColor = UIColor.red
-        let center_price = price.centerYAnchor.constraint(equalTo: from.centerYAnchor)
+        _ = price.centerYAnchor.constraint(equalTo: from.centerYAnchor)
         let center_distance = DistanLabel.centerYAnchor.constraint(equalTo: to.centerYAnchor)
         NSLayoutConstraint.activate([center_distance])
         from.numberOfLines = 3

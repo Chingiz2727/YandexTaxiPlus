@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import SideMenu
 import Presentr
-
+import CoreLocation
 
 class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManagerDelegate,GMSMapViewDelegate {
     var from_long: String?
@@ -221,39 +221,104 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        let Tables = ListOfOrdersTable()
-        Tables.list = self
-        list = self
-        NotificationCenter.default.addObserver(self, selector: #selector(sendcoor(notification:)), name: NSNotification.Name(rawValue: "1"), object: nil)
-        setupLocationManager()
-        sendPushId.send { (info, type) in
-            if (info.activeOrders?.count)! > 1 {
-                self.customPresentViewController(self.presenter, viewController: Tables, animated: true)
+        check { (succes) in
+            if succes == true {
+                
+                let Tables = ListOfOrdersTable()
+                Tables.list = self
+                self.list = self
+                //        NotificationCenter.default.addObserver(self, selector: #selector(sendcoor(notification:)), name: NSNotification.Name(rawValue: "1"), object: nil)
+                sendPushId.send { (info, type) in
+                    if (info.activeOrders?.count)! > 1 {
+                        self.customPresentViewController(self.presenter, viewController: Tables, animated: true)
+                    }
+                    if (info.activeOrders?.count)! == 1 {
+                        print("too")
+                        let orders = info.activeOrders![0]
+                        self.list?.from_lat = orders.fromLatitude!
+                        self.list?.from_long = (orders.fromLongitude!)
+                        self.list?.to_lat = (orders.toLatitude!)
+                        self.list?.to_long = (orders.toLongitude!)
+                        self.list?.order_id = orders.id
+                        self.list?.status = orders.status
+                        self.list?.showButton()
+                        self.list?.DrawMap()
+                    }
+                }
             }
-            if (info.activeOrders?.count)! == 1 {
-                print("too")
-                let orders = info.activeOrders![0]
-                self.list?.from_lat = orders.fromLatitude!
-                self.list?.from_long = (orders.fromLongitude!)
-                self.list?.to_lat = (orders.toLatitude!)
-                self.list?.to_long = (orders.toLongitude!)
-                self.list?.order_id = orders.id
-                self.list?.status = orders.status
-                self.list?.showButton()
-                self.list?.DrawMap()
+            else {
+                self.determine()
             }
         }
+
+
         
         MainMapView.mapview.delegate = self
+      
+    }
+    func check(complition:@escaping(_ success:Bool)->()) {
+        manager = CLLocationManager()
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
+        manager.startMonitoringSignificantLocationChanges()
+        // Here you can check whether you have allowed the permission or not.
+        if CLLocationManager.locationServicesEnabled()
+        {
+            switch(CLLocationManager.authorizationStatus())
+            {
+            case .authorizedAlways, .authorizedWhenInUse:
+                
+                print("Authorize.")
+                complition(true)
+                break
+                
+            case .notDetermined:
+                
+                print("Not determined.")
+                complition(false)
+
+                break
+                
+            case .restricted:
+                
+                print("Restricted.")
+                complition(true)
+
+                break
+                
+            case .denied:
+               
+                complition(false)
+            }
+        }
+      
+    }
+    
+    func determine() {
+        let alertController = UIAlertController(title: "Подключите передачу геоданных", message: "Для использования приложения нужно включить передачу геоданных", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "Настройки", style: .default, handler: {(cAlertAction) in
+            //Redirect to Settings app
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        })
+        let cancelAction = UIAlertAction(title: "Отменить", style: UIAlertAction.Style.cancel)
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func Detection() {
-        let camera = GMSCameraPosition.camera(withLatitude: (MainMapView.mapview.myLocation?.coordinate.latitude)!, longitude: (MainMapView.mapview.myLocation?.coordinate.longitude)!, zoom: 16.0)
-        MainMapView.mapview.camera = camera
+        check { (yes) in
+            if yes == true {
+                let camera = GMSCameraPosition.camera(withLatitude: (self.MainMapView.mapview.myLocation?.coordinate.latitude)!, longitude: (self.MainMapView.mapview.myLocation?.coordinate.longitude)!, zoom: 16.0)
+                self.MainMapView.mapview.camera = camera
+            }
+            else {
+                self.determine()
+            }
+        }
+    
     }
     @objc func sendcoor(notification:NSNotification) {
         let ord_id = notification.userInfo![AnyHashable("order_id")] as? String
@@ -284,10 +349,6 @@ class DriverMapViewController: UIViewController,DriverProtocol,CLLocationManager
         self.view.addSubview(mainView)
     }
     func setupLocationManager(){
-        self.manager.requestLocation()
-        manager = CLLocationManager()
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         manager.startUpdatingLocation()
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

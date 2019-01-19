@@ -65,7 +65,6 @@ class MainPageHeader:UITableViewCell {
     {
         
         let isLandscape : Bool = UIDevice.current.orientation.isLandscape
-        let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
       
         //        avatarImageView.anchorInCorner(.bottomLeft, xPad: 120, yPad: 90, width: avatarSize, height: avatarSize)
         

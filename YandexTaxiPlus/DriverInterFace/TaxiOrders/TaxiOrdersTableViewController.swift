@@ -142,7 +142,7 @@ class TaxiOrdersTableViewController:UIViewController, UITableViewDelegate,UITabl
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as? TaxiOrdersTableViewCell
-        guard let tableViewCell = cell, let viewModel = ViewModel else {
+        guard let tableViewCell = cell, let _ = ViewModel else {
             return UITableViewCell()
         }
         let cellviewmodel = ViewModel?.cellViewModile(forIndexPath: indexPath)

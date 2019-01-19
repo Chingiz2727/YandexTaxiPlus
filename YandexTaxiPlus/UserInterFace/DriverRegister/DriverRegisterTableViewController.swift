@@ -212,7 +212,7 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
                     print(url)
                     Alamofire.request(url).responseJSON(completionHandler: { (response) in
                         DispatchQueue.main.async {
-                            print(response.result.value)
+                            print(response.result.value as Any)
                             if let data = response.data {
                                 self.image = UIImage(data: data)
                                 self.tableView.reloadData()
@@ -245,7 +245,7 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         }
     }
     func recievedSelectedValue(name: String, imageName: String) {
-        var index = item.firstIndex(of: name)
+        let index = item.firstIndex(of: name)
         self.typeID = ids[index!]
         dropDownObject.hideDropDown(senderObject: button, buttonFrame: buttonFrame!)
         dropDownObject = nil
@@ -337,7 +337,6 @@ class DriverRegisterTableViewController: UITableViewController,UITextFieldDelega
         
     }
   @objc  func register() {
-        let car_model = "\(car_mark_name ) \(car_model_name)"
 //        Register.register(gender: gender_id!, car_number: number_car!, car_model: car_model, year_of_birth: 1998, car_year: create_year!, seats_num: sits!, fac: fac, type: typeID!)
  
     let params = [

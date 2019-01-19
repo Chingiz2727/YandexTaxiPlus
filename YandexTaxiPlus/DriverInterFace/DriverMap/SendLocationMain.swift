@@ -25,7 +25,7 @@ class SendLocation {
                 case.failure( let err):
                     print(err)
                 case.success(let val):
-                    let json = JSON(val)
+                    _ = JSON(val)
                 }
             }
         }

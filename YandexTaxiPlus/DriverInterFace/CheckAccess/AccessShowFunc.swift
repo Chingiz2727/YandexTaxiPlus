@@ -19,7 +19,7 @@ class AccessShowFunc {
             case.failure(let err):
                 print(err)
             case.success( _):
-                guard let data = response.data else {return}
+                guard response.data != nil else {return}
                 do {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .useDefaultKeys

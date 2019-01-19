@@ -17,7 +17,7 @@ class AddZayava {
             case.failure(let error):
                 print(error)
                 completion(false)
-            case.success(let val):
+            case.success(let _):
                 completion(true)
             }
         }

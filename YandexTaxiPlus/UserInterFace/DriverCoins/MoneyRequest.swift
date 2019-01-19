@@ -23,7 +23,7 @@ class MoneyRequest {
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if response.data != nil {
                 switch response.result {
-                case.failure(let error):
+                case.failure(let _):
                     completion(false,false)
                 case.success(let val):
                     let json = JSON(val)

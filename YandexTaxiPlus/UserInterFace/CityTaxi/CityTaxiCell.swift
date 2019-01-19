@@ -81,7 +81,7 @@ class CityTaxiTableViewCell: UITableViewCell {
             guard  let viewModel = viewModel else {
                 return
             }
-            var timer = Double(viewModel.date!)
+            let timer = Double(viewModel.date!)
             let data = Date(timeIntervalSince1970: timer!)
             let dateFormatter = DateFormatter()
             dateFormatter.timeZone = TimeZone(abbreviation: "GMT+06:00") //Set timezone that you want

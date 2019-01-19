@@ -185,15 +185,23 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
     
     
     @objc func PushDetail() {
-        if from_lat != 0 && to_long != 0 {
-            let sets = SettingTableViewController()
-            sets.delegate = self
-            self.navigationController!.pushViewController(sets, animated: true)
+        check { (success) in
+            if success == true {
+                if self.from_lat != 0 && self.to_long != 0 {
+                    let sets = SettingTableViewController()
+                    sets.delegate = self
+                    self.navigationController!.pushViewController(sets, animated: true)
+                }
+                    
+                else  {
+                    self.view.makeToast("Заполните все поля")
+                }
+            }
+            else {
+                self.determine()
+            }
         }
-            
-        else  {
-            view.makeToast("Заполните все поля")
-        }
+    
 
     }
     
@@ -312,6 +320,57 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
     {
         
         present(SideMenuManager.defaultManager.menuLeftNavigationController!,animated: true,completion: nil)
+    }
+    func check(complition:@escaping(_ success:Bool)->()) {
+        manager = CLLocationManager()
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.startUpdatingLocation()
+        manager.startMonitoringSignificantLocationChanges()
+        // Here you can check whether you have allowed the permission or not.
+        if CLLocationManager.locationServicesEnabled()
+        {
+            switch(CLLocationManager.authorizationStatus())
+            {
+            case .authorizedAlways, .authorizedWhenInUse:
+                
+                print("Authorize.")
+                complition(true)
+                break
+                
+            case .notDetermined:
+                
+                print("Not determined.")
+                complition(false)
+                
+                break
+                
+            case .restricted:
+                
+                print("Restricted.")
+                complition(true)
+                
+                break
+                
+            case .denied:
+                
+                complition(false)
+            }
+        }
+        
+    }
+    
+    func determine() {
+        let alertController = UIAlertController(title: "Подключите передачу геоданных", message: "Для использования приложения нужно включить передачу геоданных", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "Настройки", style: .default, handler: {(cAlertAction) in
+            //Redirect to Settings app
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        })
+        let cancelAction = UIAlertAction(title: "Отменить", style: UIAlertAction.Style.cancel)
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     

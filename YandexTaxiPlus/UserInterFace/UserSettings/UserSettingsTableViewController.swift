@@ -68,8 +68,7 @@ class UserSettingsTableViewController: UITableViewController,FromCitiesTableView
         case false :
             EditButton.removeFromSuperview()
             tableView.allowsSelection = false
-        default:
-            break
+     
         }
      
         

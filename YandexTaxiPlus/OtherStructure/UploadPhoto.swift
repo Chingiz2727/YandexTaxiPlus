@@ -60,7 +60,6 @@ func createBodyWithParameters(parameters: [String: String]?, filePathKey: String
 class MakePhoto {
     class func createPhoto(photo: UIImage,completion: @escaping(_ error:Error?, _ success:Bool)-> Void)
     {
-        let id = APItoken.getToken()!
         let param = [
             "token" : APItoken.getToken()!,
             "file" : "user_photo"

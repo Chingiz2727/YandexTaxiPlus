@@ -47,7 +47,9 @@ class MakeOrder {
                         
                         completion(true,true,url ?? "",0)
                     }
-                
+                    if state == "Blocked user" {
+                        completion(false,false,url ?? "" ,0)
+                    }
                     if state == "fail" {
                         completion(false,true,"",0)
                     }

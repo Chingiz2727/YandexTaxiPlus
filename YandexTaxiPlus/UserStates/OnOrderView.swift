@@ -124,7 +124,7 @@ class OnOrder : NSObject,UITableViewDataSource,UITableViewDelegate {
     }
     @objc func call() {
         sendPushId.send { (info, order_id) in
-            var inf = info.activeOrders![0]
+            let inf = info.activeOrders![0]
             GetOrderInfo.GetInfo(order_id: String(inf.id!)) { (order) in
                 let phone_user = order.driver?.phone
                 if let url = URL(string: "tel://\("+" + phone_user!)") {

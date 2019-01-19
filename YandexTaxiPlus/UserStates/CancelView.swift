@@ -34,7 +34,6 @@ class CancelView : NSObject {
     }
     
     @objc func showCancel(){
-        print(order_id)
         let alert = UIAlertController.init(title: "Отмена", message: "Вы хотите отменить заказ?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Да", style: .default, handler: { (action) in
             if let order_id = self.order_id {

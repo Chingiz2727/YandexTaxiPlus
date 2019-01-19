@@ -47,7 +47,7 @@ tableView.register(AcceptByTaxiCell.self, forCellReuseIdentifier: cellid)
     
     func reload(){
         GetInfoForDriver.GetInfo(order_id: order_id!) { (info) in
-            var price = info.order?.price
+            let price = info.order?.price
             let module = [AccepTaxiModule(detail: "Имя:", menu: (info.client?.name ?? "")!, img: "user"),
                           AccepTaxiModule(detail: "Цена:", menu: String(price ?? 0), img: "icon_by_bonuses")]
             let fromlong = Double(info.order!.fromLongitude!)
