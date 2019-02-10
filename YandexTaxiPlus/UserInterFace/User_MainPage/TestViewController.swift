@@ -239,22 +239,22 @@ class TestViewController:UIViewController,CLLocationManagerDelegate,GMSMapViewDe
     }
     
     func check() {
-        sendPushId.send { (info, type) in
+        sendPushId.send { [weak self] (info, type) in
             if info.activeOrders!.count != 0 {
                 let orders = info.activeOrders![0]
-                self.userprotocol?.from_lat = Double(orders.fromLatitude!)
-                self.userprotocol?.from_long = Double(orders.fromLongitude!)
-                self.userprotocol?.to_lat = Double(orders.toLatitude!)
-                self.userprotocol?.to_long = Double(orders.toLongitude!)
-                self.userprotocol?.state_type = orders.status
-                self.userprotocol?.order_id = orders.id
-                self.userprotocol?.addbuttons()
-                self.userprotocol?.first_added()
-                self.userprotocol?.second_added()
-                self.userprotocol?.first_clicked = false
-                self.userprotocol?.second_clicked = false
-                self.userprotocol?.second_added()
-                self.userprotocol?.second_name = "Куда?"
+                self!.userprotocol?.from_lat = Double(orders.fromLatitude!)
+                self!.userprotocol?.from_long = Double(orders.fromLongitude!)
+                self!.userprotocol?.to_lat = Double(orders.toLatitude!)
+                self!.userprotocol?.to_long = Double(orders.toLongitude!)
+                self!.userprotocol?.state_type = orders.status
+                self!.userprotocol?.order_id = orders.id
+                self!.userprotocol?.addbuttons()
+                self!.userprotocol?.first_added()
+                self!.userprotocol?.second_added()
+                self!.userprotocol?.first_clicked = false
+                self!.userprotocol?.second_clicked = false
+                self!.userprotocol?.second_added()
+                self!.userprotocol?.second_name = "Куда?"
             }
         }
     }

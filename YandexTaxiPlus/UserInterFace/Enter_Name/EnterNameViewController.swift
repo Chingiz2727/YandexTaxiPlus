@@ -105,9 +105,10 @@ class EnterNameViewController: UIViewController,FromCitiesTableViewControllerDel
         navigationController?.present(city, animated: true, completion: nil)
     }
     func accessing(){
-        let name = updateView.PhoneField.text
+        var name = updateView.PhoneField.text
         let url = baseurl + "/sign-up/"
         let url2 = baseurl + "/set-city/"
+        name = name?.replacingOccurrences(of: " ", with: "")
         let parametr = [
             "phone":phone!,
             "name":name!,

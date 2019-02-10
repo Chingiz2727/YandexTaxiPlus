@@ -289,7 +289,7 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 1
-        let totalSpace = flowLayout.sectionInset.left
+        var totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(PriceCar.count - 1))
         if collectionView == CarsCollection {
@@ -297,7 +297,10 @@ class SettingColectionView : NSObject,UICollectionViewDelegate,UICollectionViewD
             return CGSize(width: size, height: 90)
         }
         if collectionView == PayCollection {
-            let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(paytype.count ))
+             totalSpace = flowLayout.sectionInset.left
+                + flowLayout.sectionInset.right
+                + (flowLayout.minimumInteritemSpacing * CGFloat(3 - 1))
+            let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(paytype.count))
             if indexPath.section == 1 {
                 return CGSize(width: (collectionView.window?.width)!, height: 90)
             }
